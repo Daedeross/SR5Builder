@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="SR5Builder/Metatypes.xsd">
+  <xs:element name="MetatypeStats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Name" type="xs:string" />
+        <xs:element name="BodyMin" type="xs:positiveInteger" />
+        <xs:element name="BodyMax" type="xs:positiveInteger" />
+        <xs:element name="AgilityMin" type="xs:positiveInteger" />
+        <xs:element name="AgilityMax" type="xs:positiveInteger" />
+        <xs:element name="ReactionMin" type="xs:positiveInteger" />
+        <xs:element name="ReactionMax" type="xs:positiveInteger" />
+        <xs:element name="StrengthMin" type="xs:positiveInteger" />
+        <xs:element name="StrengthMax" type="xs:positiveInteger" />
+        <xs:element name="WillpowerMin" type="xs:positiveInteger" />
+        <xs:element name="WillpowerMax" type="xs:positiveInteger" />
+        <xs:element name="LogicMin" type="xs:positiveInteger" />
+        <xs:element name="LogicMax" type="xs:positiveInteger" />
+        <xs:element name="IntuitionMin" type="xs:positiveInteger" />
+        <xs:element name="IntuitionMax" type="xs:positiveInteger" />
+        <xs:element name="CharismaMin" type="xs:positiveInteger" />
+        <xs:element name="CharismaMax" type="xs:positiveInteger" />
+        <xs:element name="EdgeMin" type="xs:positiveInteger" />
+        <xs:element name="EdgeMax" type="xs:positiveInteger" />
+        <xs:element name="Reach" type="xs:int" />
+        <xs:element name="VisionType">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Normal" />
+              <xs:enumeration value="LowLight" />
+              <xs:enumeration value="Thermographic" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ArmorBonus" type="xs:int" />
+        <xs:element name="SpecialPoints">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="5" minOccurs="1" name="item">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="key">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Priority">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="A" />
+                                <xs:enumeration value="B" />
+                                <xs:enumeration value="C" />
+                                <xs:enumeration value="D" />
+                                <xs:enumeration value="E" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="value">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="int" type="xs:unsignedByte" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="SR5Builder.Views.CharacterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:views="clr-namespace:SR5Builder.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" MinWidth="64" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0"
+              Grid.Row="1">
+            <views:AttributesSideView DataContext="{Binding}" Margin="2,2,6,2" />
+        </Grid>
+        
+        
+        <TabControl Name="typeTab"
+                    Grid.Column="1"
+                    Grid.Row="1">
+            <TabItem Header="Overview">
+                <views:CharacterOverview DataContext="{Binding}" />
+            </TabItem>
+            <TabItem Header="Priorities">
+                <views:PrioritiesView DataContext="{Binding PrioritiesVM}" />
+            </TabItem>
+            <TabItem Header="Attributes" IsEnabled="{Binding AttributesEnabled}">
+                <views:MetatypeAttributesView DataContext="{Binding}" />
+            </TabItem>
+            <TabItem Header="{Binding SpecialKind}">
+                <TabItem.Style>
+                    <Style TargetType="HeaderedContentControl">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SpecialKind}" Value="None">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TabItem.Style>
+                <views:SpecialsView DataContext="{Binding}" />
+            </TabItem>
+            <TabItem Header="Skills"
+                     IsEnabled="{Binding SkillsEnabled}">
+                <views:SkillsView DataContext="{Binding SkillsVM}" />
+            </TabItem>
+            <TabItem Header="Gear">
+                <views:AllGearView  DataContext="{Binding GearVM}"/>
+            </TabItem>
+            <TabItem Header="Weapons">
+                <views:WeaponsView DataContext="{Binding WeaponsVM}" />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

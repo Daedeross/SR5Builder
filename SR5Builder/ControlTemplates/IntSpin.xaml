@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:xtk="http://schemas.xceed.com/wpf/xaml/toolkit">
+    <Style x:Key="intSpin"
+           TargetType="{x:Type xtk:IntegerUpDown}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Control">
+                    <xtk:ButtonSpinner x:Name="PART_Spinner"
+                                       IsTabStop="False"
+                                       Background="{TemplateBinding Background}"
+                                       BorderThickness="{TemplateBinding BorderThickness}"
+                                       BorderBrush="{TemplateBinding BorderBrush}"
+                                       AllowSpin="{Binding AllowSpin, RelativeSource={RelativeSource TemplatedParent}}"
+                                       ShowButtonSpinner="{Binding ShowButtonSpinner, RelativeSource={RelativeSource TemplatedParent}}">
+                        <xtk:WatermarkTextBox x:Name="PART_TextBox"
+                                              Visibility="Collapsed"
+                                              BorderThickness="0"
+                                              Background="{TemplateBinding Background}"
+                                              ContextMenu="{TemplateBinding ContextMenu}"
+                                              FontFamily="{TemplateBinding FontFamily}" 
+                                              FontSize="{TemplateBinding FontSize}" 
+                                              FontStretch="{TemplateBinding FontStretch}"
+                                              FontStyle="{TemplateBinding FontStyle}" 
+                                              FontWeight="{TemplateBinding FontWeight}" 
+                                              Foreground="{TemplateBinding Foreground}" 
+                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}"
+                                              MinWidth="20"
+                                              AcceptsReturn="False"
+                                              Padding="{TemplateBinding Padding}"
+                                              SelectAllOnGotFocus="{Binding SelectAllOnGotFocus, RelativeSource={RelativeSource TemplatedParent}}"
+                                              AutoSelectBehavior="{Binding AutoSelectBehavior, RelativeSource={RelativeSource TemplatedParent}}"
+                                              AutoMoveFocus="{Binding AutoMoveFocus, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextAlignment="{Binding TextAlignment, RelativeSource={RelativeSource TemplatedParent}}"
+                                              TextWrapping="NoWrap" 
+                                              TabIndex="{TemplateBinding TabIndex}"
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Watermark="{Binding Watermark, RelativeSource={RelativeSource TemplatedParent}}"
+                                              WatermarkTemplate="{Binding WatermarkTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </xtk:ButtonSpinner>
+                    <!--<ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="PART_TextBox" Property="FocusManager.FocusedElement" Value="{Binding ElementName=PART_TextBox}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

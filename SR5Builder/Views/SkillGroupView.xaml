@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="SR5Builder.Views.SkillGroupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dg="http://schemas.xceed.com/wpf/xaml/datagrid"
+             xmlns:xtk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="360">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="3" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="ListViewItem" BasedOn="{StaticResource plainListViewItemStyle}">
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding AvailableSkillGroups}"
+                  SelectedItem="{Binding SelectedNewSkillGroup, Mode=TwoWay}"
+                  Grid.Row="1" MinWidth="150">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader" >
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="Group">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}">
+                                    <TextBlock.ToolTip>
+                                        <ListBox ItemsSource="{Binding SkillNames}"
+                                                 IsEnabled="False"
+                                                 >
+                                        </ListBox>
+                                    </TextBlock.ToolTip>
+                                </TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Column="1" Grid.Row="1" Margin="0,24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0"
+                    Command="{Binding AddSkillGroupCommand}">Add</Button>
+            <Button Grid.Row="1" Padding="2,1"
+                    Command="{Binding RemoveSkillGroupCommand}">Remove</Button>
+            <StackPanel Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button Width="18" Height="18"
+                        Command="{Binding IncreaseSkillGroupCommand}"
+                        ContentTemplate="{StaticResource IncreaseGlyphNormalKey}" />
+                <Button Width="18" Height="18"
+                        Command="{Binding DecreaseSkillGroupCommand}"
+                        ContentTemplate="{StaticResource DecreaseGlyphNormalKey}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="2" Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="38" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        
+        <ListBox Grid.Row="1" Grid.Column="2" MinWidth="150"
+                 ItemsSource="{Binding SkillGroupsList}"
+                 SelectedValue="{Binding SelectedSkillGroup}"
+                 SelectedValuePath="Value"
+                 HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Expander Header=" ">
+                            <ListBox ItemsSource="{Binding Value.Skills}"
+                                     HorizontalAlignment="Stretch"
+                                     HorizontalContentAlignment="Stretch"
+                                     Padding="0" Margin="0"
+                                     IsEnabled="False">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid HorizontalAlignment="Stretch">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition Width="36" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Value.Name}" />
+                                            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                                <StackPanel.Resources>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Margin" Value="0" />
+                                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                                    </Style>
+                                                </StackPanel.Resources>
+                                                <TextBlock Text="{Binding Value.Rating}" />
+                                                <TextBlock Text=" [" />
+                                                <TextBlock Text="{Binding Value.AugmentedPool}" />
+                                                <TextBlock Text="]" />
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Expander>
+                        <Grid Style="{StaticResource ResourceKey=ExpanderHeader}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="38" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Padding="9,3,0,0" Text="{Binding Value.Name}"
+                                       Margin="6,0"/>
+                            <xtk:IntegerUpDown Grid.Column="1"
+                                               Value="{Binding Value.Rating}"
+                                               Minimum="1" Maximum="6"
+                                               TextAlignment="Center"/>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

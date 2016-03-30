@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfGearModLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearModLoader>
+    <Name>Airburst link</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCost>600</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string></string>
+    </Taboo>
+    <Augments></Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Bipod</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCost>200</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Smart firing platform</string>
+      <string>Tripod</string>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>RC</Kind>
+        <Bonus>
+          <float>2</float>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Concealable holster</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating></Rating>
+    <FlatCost></FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string></string>
+    </Taboo>
+    <Augments></Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Gas-vent system 1</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>1</Rating>
+    <FlatCost>200</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Silencer</string>
+      <string>Silencer ALF</string>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>RC</Kind>
+        <Bonus>
+          <float>1</float>
+          <float>1</float>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Gas-vent system 2</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>1</Rating>
+    <FlatCost>400</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Silencer</string>
+      <string>Silencer ALF</string>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>RC</Kind>
+        <Bonus>
+          <float>2</float>
+          <float>2</float>
+          <float>2</float>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Gas-vent system 3</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>1</Rating>
+    <FlatCost>600</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Silencer</string>
+      <string>Silencer ALF</string>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>RC</Kind>
+        <Bonus>
+          <float>3</float>
+          <float>3</float>
+          <float>3</float>
+          <float>3</float>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Gyro mount</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCost>200</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>RC</Kind>
+        <Bonus>
+          <float>6</float>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Laser sight</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating></Rating>
+    <FlatCost>125</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Smartlink</string>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>Accuracy</Kind>
+        <Bonus>
+          <float>1</float>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Shockpad</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCost>50</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string></string>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>RC</Kind>
+        <Bonus>
+          <float>1</float>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Smartgun, internal</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <Rating>0</Rating>
+    <FlatCost>0</FlatCost>
+    <CostMult>2</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Smartgun, external</string>
+      <string>Laser sight</string>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>Accuracy</Kind>
+        <Bonus>
+          <float>2</float>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Smartgun, external</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <Rating>0</Rating>
+    <FlatCost>200</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Smartgun, internal</string>
+      <string>Laser sight</string>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>Accuracy</Kind>
+        <Bonus>
+          <float>2</float>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Silencer ALF</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <Rating>0</Rating>
+    <FlatCost>350</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Sim module</string>
+    </Taboo>
+    <Augments />
+  </GearModLoader>
+</ArrayOfGearModLoader>
+<!--
+<GearModLoader>
+    <Name></Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating></Rating>
+    <FlatCost></FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string></string>
+    </Taboo>
+    <Augments></Augments>
+  </GearModLoader>
+  -->

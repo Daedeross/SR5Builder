@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearLoader>
+    <Name>Meta Link</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>1</Rating>
+    <Availability>2</Availability>
+    <Cost>100</Cost>
+    <Capacity>0</Capacity>
+    <Mods>
+      <string>Sim module</string>
+      <string>Hot-sim module</string>
+    </Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Sony Emperor</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>2</Rating>
+    <Availability>4</Availability>
+    <Cost>700</Cost>
+    <Capacity>0</Capacity>
+    <Mods>
+      <string>Sim module</string>
+      <string>Hot-sim module</string>
+    </Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Renraku Sensei</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>6</Availability>
+    <Cost>1000</Cost>
+    <Capacity>0</Capacity>
+    <Mods>
+      <string>Sim module</string>
+      <string>Hot-sim module</string>
+    </Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Erika Elite</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>4</Rating>
+    <Availability>8</Availability>
+    <Cost>2500</Cost>
+    <Capacity>0</Capacity>
+    <Mods>
+      <string>Sim module</string>
+      <string>Hot-sim module</string>
+    </Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Hermese Ikon</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>5</Rating>
+    <Availability>10</Availability>
+    <Cost>3000</Cost>
+    <Capacity>0</Capacity>
+    <Mods>
+      <string>Sim module</string>
+      <string>Hot-sim module</string>
+    </Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Transys Avalon</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>6</Rating>
+    <Availability>12</Availability>
+    <Cost>5000</Cost>
+    <Capacity>0</Capacity>
+    <Mods>
+      <string>Sim module</string>
+      <string>Hot-sim module</string>
+    </Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Fairlight Caliban</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>7</Rating>
+    <Availability>14</Availability>
+    <Cost>8000</Cost>
+    <Capacity>0</Capacity>
+    <Mods>
+      <string>Sim module</string>
+      <string>Hot-sim module</string>
+    </Mods>
+  </GearLoader>
+</ArrayOfGearLoader>

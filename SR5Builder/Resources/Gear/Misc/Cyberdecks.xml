@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearLoader>
+    <Name>Erika MCD-1</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>1</Rating>
+    <Availability>3R</Availability>
+    <Cost>49500</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Microdeck Summit</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>1</Rating>
+    <Availability>4R</Availability>
+    <Cost>58000</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Microtrónica Azteca 200</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>2</Rating>
+    <Availability>6R</Availability>
+    <Cost>110250</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Hermes Chariot</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>2</Rating>
+    <Availability>6R</Availability>
+    <Cost>123000</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Novatech Navigator</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>9R</Availability>
+    <Cost>205750</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Renraku Tsurugi</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>9R</Availability>
+    <Cost>214125</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Sony CIY-720</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>4</Rating>
+    <Availability>12R</Availability>
+    <Cost>345000</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Shiawase Cyber-5</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>5</Rating>
+    <Availability>15R</Availability>
+    <Cost>549375</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Fairlight Excalibur</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>6</Rating>
+    <Availability>18R</Availability>
+    <Cost>823250</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+</ArrayOfGearLoader>

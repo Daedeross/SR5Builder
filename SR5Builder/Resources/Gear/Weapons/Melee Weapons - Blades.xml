@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearLoader xsi:type="MeleeWeaponLoader">
+    <Name>Combat axe</Name>
+    <Book>SR5</Book>
+    <Page>423</Page>
+    <Category>Melee Weapons - Blades</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>12R</Availability>
+    <Cost>4000</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods />
+    <Mods />
+    <DV>5</DV>
+    <DamageType>P</DamageType>
+    <AP>-4</AP>
+    <Acc>0</Acc>
+    <UseStrength>true</UseStrength>
+    <Reach>2</Reach>
+  </GearLoader>
+  <GearLoader xsi:type="MeleeWeaponLoader">
+    <Name>Combat Knife</Name>
+    <Book>SR5</Book>
+    <Page>423</Page>
+    <Category>Melee Weapons - Blades</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>0</Availability>
+    <Cost>300</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods />
+    <Mods />
+    <DV>2</DV>
+    <DamageType>P</DamageType>
+    <AP>-3</AP>
+    <Acc>6</Acc>
+    <UseStrength>true</UseStrength>
+    <Reach>0</Reach>
+  </GearLoader>
+  <GearLoader xsi:type="MeleeWeaponLoader">
+    <Name>Forarm snap-blades</Name>
+    <Book>SR5</Book>
+    <Page>423</Page>
+    <Category>Melee Weapons - Blades</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>7R</Availability>
+    <Cost>200</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods />
+    <Mods />
+    <DV>2</DV>
+    <DamageType>P</DamageType>
+    <AP>-2</AP>
+    <Acc>4</Acc>
+    <UseStrength>true</UseStrength>
+    <Reach>0</Reach>
+  </GearLoader>
+  <GearLoader xsi:type="MeleeWeaponLoader">
+    <Name>Katana</Name>
+    <Book>SR5</Book>
+    <Page>423</Page>
+    <Category>Melee Weapons - Blades</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>9R</Availability>
+    <Cost>1000</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods />
+    <Mods />
+    <DV>3</DV>
+    <DamageType>P</DamageType>
+    <AP>-3</AP>
+    <Acc>7</Acc>
+    <UseStrength>true</UseStrength>
+    <Reach>1</Reach>
+  </GearLoader>
+  <GearLoader xsi:type="MeleeWeaponLoader">
+    <Name>Knife</Name>
+    <Book>SR5</Book>
+    <Page>423</Page>
+    <Category>Melee Weapons - Blades</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>0</Availability>
+    <Cost>10</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods />
+    <Mods />
+    <DV>1</DV>
+    <DamageType>P</DamageType>
+    <AP>-1</AP>
+    <Acc>5</Acc>
+    <UseStrength>true</UseStrength>
+    <Reach>0</Reach>
+  </GearLoader>
+  <GearLoader xsi:type="MeleeWeaponLoader">
+    <Name>Pole arm</Name>
+    <Book>SR5</Book>
+    <Page>423</Page>
+    <Category>Melee Weapons - Blades</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>6R</Availability>
+    <Cost>1000</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods />
+    <Mods />
+    <DV>3</DV>
+    <DamageType>P</DamageType>
+    <AP>-2</AP>
+    <Acc>5</Acc>
+    <UseStrength>true</UseStrength>
+    <Reach>3</Reach>
+  </GearLoader>
+  <GearLoader xsi:type="MeleeWeaponLoader">
+    <Name>Survival knife</Name>
+    <Book>SR5</Book>
+    <Page>423</Page>
+    <Category>Melee Weapons - Blades</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>0</Availability>
+    <Cost>100</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods />
+    <Mods />
+    <DV>2</DV>
+    <DamageType>P</DamageType>
+    <AP>-1</AP>
+    <Acc>5</Acc>
+    <UseStrength>true</UseStrength>
+    <Reach>0</Reach>
+  </GearLoader>
+  <GearLoader xsi:type="MeleeWeaponLoader">
+    <Name>Sword</Name>
+    <Book>SR5</Book>
+    <Page>423</Page>
+    <Category>Melee Weapons - Blades</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>5R</Availability>
+    <Cost>500</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods />
+    <Mods />
+    <DV>3</DV>
+    <DamageType>P</DamageType>
+    <AP>-2</AP>
+    <Acc>6</Acc>
+    <UseStrength>true</UseStrength>
+    <Reach>2</Reach>
+  </GearLoader>
+</ArrayOfGearLoader>

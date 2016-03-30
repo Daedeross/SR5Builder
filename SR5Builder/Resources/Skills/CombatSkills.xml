@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSkillLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SkillLoader>
+    <Name>Archery</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Accuracy</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Automatics</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Accuracy</Limit>
+    <GroupName>Firearms</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Blades</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Accuracy</Limit>
+    <GroupName>Close Combat</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Clubs</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Accuracy</Limit>
+    <GroupName>Close Combat</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Heavy Weapons</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Accuracy</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Longarms</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Accuracy</Limit>
+    <GroupName>Firearms</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Pistols</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Accuracy</Limit>
+    <GroupName>Firearms</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Throwing Weapons</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Accuracy</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Unarmed Combat</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Phisical</Limit>
+    <GroupName>Close Combat</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+</ArrayOfSkillLoader>

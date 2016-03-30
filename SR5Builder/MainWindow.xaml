@@ -1,0 +1,53 @@
+﻿<Window x:Class="SR5Builder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:SR5Builder.ViewModels"
+        xmlns:views="clr-namespace:SR5Builder.Views"
+        Title="MainWindow" Height="500" Width="830" Icon=".\Resources\SR5 Logo Sigil.png">
+    <Window.Resources>
+        <vm:Workspace x:Key="workspace" />
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Control"
+                    Command="{Binding AddNewCharacter, Source={StaticResource workspace}}" />
+    </Window.InputBindings>
+    <Grid DataContext="{StaticResource workspace}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition/>
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Menu Name="MainMenu">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" Command="{Binding AddNewCharacter}" InputGestureText="Ctl+N" />
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Examine" Command="{Binding ExamineCharacterCommand}" />
+            </MenuItem>
+        </Menu>
+        <TabControl Name="CharacterTabs"
+                    Grid.Row="1"
+                    ItemsSource="{Binding CharacterVMs}"
+                    SelectedItem="{Binding SelectedCharacter}"
+                    >
+            <TabControl.ItemTemplate >
+                <DataTemplate>
+                    <TextBlock Text="{Binding DisplayName}" />
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <views:CharacterView DataContext="{Binding}" />
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </TabControl>
+        <StatusBar Name="statusBar" Grid.Row="2" DataContext="{Binding SelectedCharacter}">
+            <StatusBarItem>
+                <TextBlock Text="{Binding DisplayName}" />
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="{Binding IsValid}" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

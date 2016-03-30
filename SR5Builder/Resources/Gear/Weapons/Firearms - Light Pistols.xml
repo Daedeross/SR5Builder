@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearLoader xsi:type="RangedWeaponLoader">
+    <Name>Ares Light Fire 75</Name>
+    <Book>SR5</Book>
+    <Page>426</Page>
+    <Category>Ranged Weapons - Light Pistol</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>3R</Availability>
+    <Cost>200</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods>
+      <string>Silencer ALF</string>
+      <string>Smartgun</string>
+    </BaseMods>
+    <Mods />
+    <DV>6</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <Acc>7</Acc>
+    <AmmoCount>16</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearLoader>
+  <GearLoader xsi:type="RangedWeaponLoader">
+    <Name>Ares Light Fire 70</Name>
+    <Book>SR5</Book>
+    <Page>426</Page>
+    <Category>Ranged Weapons - Light Pistol</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>3R</Availability>
+    <Cost>200</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods>
+    </BaseMods>
+    <Mods>
+      <string>Silencer ALF</string>
+      <string>Hidden arm slide</string>
+      <string>Imaging scope</string>
+      <string>Laser sight</string>
+      <string>Periscope</string>
+      <string>Quick-draw holster</string>
+      <string></string>
+      <string>Smartgun</string>
+    </Mods>
+    <DV>6</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <Acc>7</Acc>
+    <AmmoCount>16</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearLoader>
+  <GearLoader xsi:type="RangedWeaponLoader">
+    <Name>Baretta 201T</Name>
+    <Book>SR5</Book>
+    <Page>426</Page>
+    <Category>Ranged Weapons - Light Pistol</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>7R</Availability>
+    <Cost>210</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods>
+      <string>Detatchable shoulder stock</string>
+    </BaseMods>
+    <Mods>
+      
+    </Mods>
+    <DV>6</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <Acc>6</Acc>
+    <AmmoCount>21</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearLoader>
+  <GearLoader xsi:type="RangedWeaponLoader">
+    <Name>Colt America L36</Name>
+    <Book>SR5</Book>
+    <Page>426</Page>
+    <Category>Ranged Weapons - Light Pistol</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>4R</Availability>
+    <Cost>320</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods>
+    </BaseMods>
+    <Mods>
+      <string>Silencer ALF</string>
+    </Mods>
+    <DV>7</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <Acc>7</Acc>
+    <AmmoCount>11</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearLoader>
+  <GearLoader xsi:type="RangedWeaponLoader">
+    <Name>Fichetti Security 600</Name>
+    <Book>SR5</Book>
+    <Page>426</Page>
+    <Category>Ranged Weapons - Light Pistol</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>6R</Availability>
+    <Cost>350</Cost>
+    <Capacity>0</Capacity>
+    <BaseMods>
+    </BaseMods>
+    <Mods>
+      <string>Silencer ALF</string>
+    </Mods>
+    <DV>7</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <Acc>7</Acc>
+    <AmmoCount>11</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearLoader>
+</ArrayOfGearLoader>

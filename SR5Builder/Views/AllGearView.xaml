@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="SR5Builder.Views.AllGearView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:views="clr-namespace:SR5Builder.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <TabControl SelectedValue="{Binding SelectedTab}"
+                    SelectedValuePath="Header">
+            <TabItem Header="Gear">
+                <views:GearView DataContext="{Binding}" />
+            </TabItem>
+            <TabItem Header="Augmentations">
+                <views:ImplantsView DataContext="{Binding}" />
+            </TabItem>
+        </TabControl>
+        <Grid Visibility="{Binding Editing, Converter={StaticResource boolToVisConverter}}">
+            <views:GearEditView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                            DataContext="{Binding GearEditVM}"
+                            />
+        </Grid>
+    </Grid>
+</UserControl>

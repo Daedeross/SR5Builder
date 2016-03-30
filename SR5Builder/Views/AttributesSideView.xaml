@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="SR5Builder.Views.AttributesSideView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" MinWidth="60">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Margin" Value="4,0" />
+            </Style>
+            <Style x:Key="nameLebel" TargetType="TextBlock">
+                
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Attributes -->
+        <TextBlock Grid.Row="0"><Bold>BOD</Bold></TextBlock>
+        <TextBlock Grid.Row="1"><Bold>AGI</Bold></TextBlock>
+        <TextBlock Grid.Row="2"><Bold>REA</Bold></TextBlock>
+        <TextBlock Grid.Row="3"><Bold>STR</Bold></TextBlock>
+        <TextBlock Grid.Row="4"><Bold>WIL</Bold></TextBlock>
+        <TextBlock Grid.Row="5"><Bold>LOG</Bold></TextBlock>
+        <TextBlock Grid.Row="6"><Bold>INT</Bold></TextBlock>
+        <TextBlock Grid.Row="7"><Bold>CHA</Bold></TextBlock>
+        <Button Grid.Row="8" Command="{Binding ExamineCommand}">Test</Button>
+        
+        <TextBlock Name="bodBox"
+                   Grid.Row="0" Grid.Column="1"
+                   Text="{Binding BodyText}"
+                   />
+        <TextBlock Name="agiBox"
+                   Grid.Row="1" Grid.Column="1"
+                   Text="{Binding AgilityText}"
+                   />
+        <TextBlock Name="reaBox"
+                   Grid.Row="2" Grid.Column="1"
+                   Text="{Binding ReactionText}"
+                   />
+        <TextBlock Name="strBox"
+                   Grid.Row="3" Grid.Column="1"
+                   Text="{Binding StrengthText}"
+                   />
+
+        <TextBlock Name="wilBox"
+                   Grid.Row="4" Grid.Column="1"
+                   Text="{Binding WillpowerText}"
+                   />
+        <TextBlock Name="logBox"
+                   Grid.Row="5" Grid.Column="1"
+                   Text="{Binding LogicText}"
+                   />
+        <TextBlock Name="intBox"
+                   Grid.Row="6" Grid.Column="1"
+                   Text="{Binding IntuitionText}"
+                   />
+        <TextBlock Name="chaBox"
+                   Grid.Row="7" Grid.Column="1"
+                   Text="{Binding CharismaText}"
+                   />
+    </Grid>
+</UserControl>

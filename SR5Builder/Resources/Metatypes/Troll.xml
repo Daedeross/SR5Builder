@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MetatypeStats
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Troll</Name>
+  <BodyMin>5</BodyMin>
+  <BodyMax>10</BodyMax>
+  <AgilityMin>1</AgilityMin>
+  <AgilityMax>5</AgilityMax>
+  <ReactionMin>1</ReactionMin>
+  <ReactionMax>6</ReactionMax>
+  <StrengthMin>5</StrengthMin>
+  <StrengthMax>10</StrengthMax>
+  <WillpowerMin>1</WillpowerMin>
+  <WillpowerMax>6</WillpowerMax>
+  <LogicMin>1</LogicMin>
+  <LogicMax>5</LogicMax>
+  <IntuitionMin>1</IntuitionMin>
+  <IntuitionMax>5</IntuitionMax>
+  <CharismaMin>1</CharismaMin>
+  <CharismaMax>4</CharismaMax>
+  <EdgeMin>1</EdgeMin>
+  <EdgeMax>6</EdgeMax>
+  <Reach>0</Reach>
+  <VisionType>Thermographic</VisionType>
+  <ArmorBonus>0</ArmorBonus>
+  <SpecialPoints>
+    <item>
+      <key>
+        <Priority>A</Priority>
+      </key>
+      <value>
+        <int>5</int>
+      </value>
+    </item>
+    <item>
+      <key>
+        <Priority>B</Priority>
+      </key>
+      <value>
+        <int>0</int>
+      </value>
+    </item>
+  </SpecialPoints>
+</MetatypeStats>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSpecialChoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SpecialChoice>
+    <Name>Adept</Name>
+    <Priority>B</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>6</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Active</SkillType>
+    <SkillRating>4</SkillRating>
+    <SkillCount>1</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>0</ComplexForms>
+	<PowerPoints>6</PowerPoints>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Adept</Name>
+    <Priority>C</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>4</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Active</SkillType>
+    <SkillRating>2</SkillRating>
+    <SkillCount>1</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>0</ComplexForms>
+	<PowerPoints>4</PowerPoints>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Adept</Name>
+    <Priority>D</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>2</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Active</SkillType>
+    <SkillRating>0</SkillRating>
+    <SkillCount>0</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>0</ComplexForms>
+	<PowerPoints>2</PowerPoints>
+  </SpecialChoice>
+</ArrayOfSpecialChoice>

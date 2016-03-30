@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="SR5Builder/AdeptPowers.xsd"
+  attributeFormDefault="unqualified"
+  elementFormDefault="qualified">
+  <xs:element name="ArrayOfAdeptPowerLoader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="AdeptPowerLoader">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="ExtLabel" minOccurs="0" type="xs:string" />
+              <xs:element name="ExtKind" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="None" />
+                    <xs:enumeration value="Skill" />
+                    <xs:enumeration value="Attribute"/>
+                    <xs:enumeration value="Combat Skill"/>
+                    <xs:enumeration value="Limit"/>
+                    <xs:enumeration value="Sense"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ExtArray" minOccurs="0" maxOccurs="1">
+                <xs:complexType mixed="false">
+                  <xs:sequence minOccurs="0">
+                    <xs:element maxOccurs="unbounded" name="string" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Book" type="xs:string" />
+              <xs:element name="Page" type="xs:unsignedShort" />
+              <xs:element name="Min" type="xs:unsignedByte" />
+              <xs:element name="Max" type="xs:unsignedByte" />
+              <xs:element name="FlatPoints" type="xs:decimal" />
+              <xs:element name="PointsPerLevel" type="xs:decimal" />
+              <xs:element name="Augments">
+                <xs:complexType mixed="false">
+                  <xs:sequence minOccurs="0">
+                    <xs:element maxOccurs="unbounded" name="AugmentLoader">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Kind">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:enumeration value="None" />
+                                <xs:enumeration value="Rating" />
+                                <xs:enumeration value="DamageValue" />
+                                <xs:enumeration value="DamageType" />
+                                <xs:enumeration value="Accuracy" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Bonus">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="float" type="xs:float" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="Target" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

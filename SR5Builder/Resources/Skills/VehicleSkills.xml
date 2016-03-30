@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfSkillLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SkillLoader>
+    <Name>Gunnery</Name>
+    <LinkedAttribute>Agility</LinkedAttribute>
+    <Limit>Accuracy</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Pilot Aerospace</Name>
+    <LinkedAttribute>Reaction</LinkedAttribute>
+    <Limit>Handling</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Pilot Aircraft</Name>
+    <LinkedAttribute>Reaction</LinkedAttribute>
+    <Limit>Handling</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Pilot Walker</Name>
+    <LinkedAttribute>Reaction</LinkedAttribute>
+    <Limit>Handling</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Pilot Exotic Vehicle</Name>
+    <LinkedAttribute>Reaction</LinkedAttribute>
+    <Limit>Handling</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Pilot Ground Craft</Name>
+    <LinkedAttribute>Reaction</LinkedAttribute>
+    <Limit>Handling</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+  <SkillLoader>
+    <Name>Pilot Watercraft</Name>
+    <LinkedAttribute>Reaction</LinkedAttribute>
+    <Limit>Handling</Limit>
+    <GroupName>None</GroupName>
+    <Kind>Active</Kind>
+  </SkillLoader>
+</ArrayOfSkillLoader>

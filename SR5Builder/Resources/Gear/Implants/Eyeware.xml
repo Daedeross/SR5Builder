@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfImplantLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ImplantLoader>
+    <Name>Cybereyes - Rating 1</Name>
+    <Book>SR5</Book>
+    <Page>453</Page>
+    <HasRating>true</HasRating>
+    <Rating>1</Rating>
+    <Availability>3</Availability>
+    <Cost>4000</Cost>
+    <Capacity>4</Capacity>
+    <Mods>
+      <string>Flare compensation</string>
+      <string>Image link</string>
+    </Mods>
+    <EssenceCost>0.2</EssenceCost>
+    <Augments></Augments>
+  </ImplantLoader>
+  <ImplantLoader>
+    <Name>Cybereyes - Rating 2</Name>
+    <Book>SR5</Book>
+    <Page>453</Page>
+    <HasRating>true</HasRating>
+    <Rating>2</Rating>
+    <Availability>6</Availability>
+    <Cost>6000</Cost>
+    <Capacity>8</Capacity>
+    <Mods>
+      <string>Flare compensation</string>
+      <string>Image link</string>
+    </Mods>
+    <EssenceCost>0.3</EssenceCost>
+    <Augments></Augments>
+  </ImplantLoader>
+  <ImplantLoader>
+    <Name>Flare compensation</Name>
+    <Book>SR5</Book>
+    <Page>453</Page>
+    <HasRating>false</HasRating>
+    <Rating>1</Rating>
+    <Availability>2</Availability>
+    <Cost>1000</Cost>
+    <Capacity>0</Capacity>
+    <EssenceCost>0.2</EssenceCost>
+    <Augments></Augments>
+  </ImplantLoader>
+</ArrayOfImplantLoader>

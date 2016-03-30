@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="SR5Builder.Views.WeaponsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <CollectionViewSource Source="{Binding MeleeWeapons}" x:Key="meleeWeapons">
+
+            </CollectionViewSource>
+            <CollectionViewSource Source="{Binding RangedWeapons}" x:Key="rangedWeapons">
+
+            </CollectionViewSource>
+            <Style TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Center" />
+            </Style>
+        </Grid.Resources>
+        <TabControl>
+            <TabItem Header="Melee Weapons">
+                <DataGrid AlternatingRowBackground="LightGray"
+                          RowBackground="DarkGray"
+                          Background="White"
+                          AutoGenerateColumns="False"
+                          ItemsSource="{Binding Source={StaticResource meleeWeapons}}" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Weapon" Width="*" Binding="{Binding Value.Name}" />
+                        <DataGridTextColumn Header="Acc" Width="auto" Binding="{Binding Value.DisplayAcc}" />
+                        <DataGridTextColumn Header="Reach" Width="auto" Binding="{Binding Value.Reach}" />
+                        <DataGridTextColumn Header="Damage" Width="auto" Binding="{Binding Value.DisplayDamage}" />
+                        <DataGridTextColumn Header="AP" Width="auto" Binding="{Binding Value.AP}" />
+                        <DataGridTextColumn Header="Avail" Width="auto" Binding="{Binding Value.Availability}" />
+                        <!--<DataGridTextColumn Header="Cost" Binding="{Binding Value.Cost}" />-->
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Ranged Weapons">
+                <DataGrid AlternatingRowBackground="LightGray"
+                          RowBackground="DarkGray"
+                          Background="White"
+                          AutoGenerateColumns="False"
+                          ItemsSource="{Binding RangedWeapons}" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Weapon" Width="*" Binding="{Binding Value.Name}" />
+                        <DataGridTextColumn Header="Acc" Width="auto" Binding="{Binding Value.DisplayAcc}" />
+                        <DataGridTextColumn Header="Damage" Width="auto" Binding="{Binding Value.DisplayDamage}" />
+                        <DataGridTextColumn Header="AP" Width="auto" Binding="{Binding Value.AP, Converter={StaticResource intToStringConverter}}" />
+                        <DataGridTextColumn Header="Mode" Width="auto" Binding="{Binding Value.DisplayModes}" />
+                        <DataGridTextColumn Header="RC" Width="auto" Binding="{Binding Value.DisplayRC}" />
+                        <DataGridTemplateColumn Header="Ammo">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0" HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding Value.Ammo}" />
+                                        <TextBlock Text="(" />
+                                        <TextBlock Text="{Binding Value}" />
+                                        <TextBlock Text=")" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Avail" Binding="{Binding Value.Availability}" />
+                        <!--<DataGridTextColumn Header="Cost" Binding="{Binding Value.Cost}" />-->
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

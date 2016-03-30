@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSpell xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Spell>
+    <Name>Acid Stream</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>LOS</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 3</Drain>
+    <Tags>
+      <string>Indirect</string>
+      <string>Elemental</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>283</Page>
+  </Spell>
+  <Spell>
+    <Name>Toxic Wave</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>LOS (A)</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 1</Drain>
+    <Tags>
+      <string>Indirect</string>
+      <string>Elemental</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>283</Page>
+  </Spell>
+  <Spell>
+    <Name>Punch</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>T</Range>
+    <Damage>S</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 6</Drain>
+    <Tags>
+      <string>Indirect</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>283</Page>
+  </Spell>
+  <Spell>
+    <Name>Clout</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>LOS</Range>
+    <Damage>S</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 3</Drain>
+    <Tags>
+      <string>Indirect</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Blast</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>LOS (A)</Range>
+    <Damage>S</Damage>
+    <Duration>I</Duration>
+    <Drain>F</Drain>
+    <Tags>
+      <string>Indirect</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Death Touch</Name>
+    <Category>Combat Spells</Category>
+    <Type>M</Type>
+    <Range>T</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 6</Drain>
+    <Tags>
+      <string>Direct</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Manabolt</Name>
+    <Category>Combat Spells</Category>
+    <Type>M</Type>
+    <Range>LOS</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 3</Drain>
+    <Tags>
+      <string>Direct</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Manaball</Name>
+    <Category>Combat Spells</Category>
+    <Type>M</Type>
+    <Range>LOS (A)</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F</Drain>
+    <Tags>
+      <string>Direct</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Flamethrower</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>LOS</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 3</Drain>
+    <Tags>
+      <string>Indirect</string>
+      <string>Elemental</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Fireball</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>LOS (A)</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 1</Drain>
+    <Tags>
+      <string>Indirect</string>
+      <string>Elemental</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Lightning Bolt</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>LOS</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 3</Drain>
+    <Tags>
+      <string>Indirect</string>
+      <string>Elemental</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Ball Lightning</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>LOS (A)</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 1</Drain>
+    <Tags>
+      <string>Indirect</string>
+      <string>Elemental</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Shatter</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>T</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 6</Drain>
+    <Tags>
+      <string>Direct</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Powerbolt</Name>
+    <Category>Combat Spells</Category>
+    <Type>P</Type>
+    <Range>LOS</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 3</Drain>
+    <Tags>
+      <string>Direct</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Powerball</Name>
+    <Category>Combat Spells</Category>
+    <Type>M</Type>
+    <Range>LOS (A)</Range>
+    <Damage>P</Damage>
+    <Duration>I</Duration>
+    <Drain>F</Drain>
+    <Tags>
+      <string>Direct</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Knockout</Name>
+    <Category>Combat Spells</Category>
+    <Type>M</Type>
+    <Range>T</Range>
+    <Damage>S</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 6</Drain>
+    <Tags>
+      <string>Direct</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Stunbolt</Name>
+    <Category>Combat Spells</Category>
+    <Type>M</Type>
+    <Range>LOS</Range>
+    <Damage>S</Damage>
+    <Duration>I</Duration>
+    <Drain>F - 3</Drain>
+    <Tags>
+      <string>Direct</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>284</Page>
+  </Spell>
+  <Spell>
+    <Name>Stunball</Name>
+    <Category>Combat Spells</Category>
+    <Type>M</Type>
+    <Range>LOS (A)</Range>
+    <Damage>S</Damage>
+    <Duration>I</Duration>
+    <Drain>F</Drain>
+    <Tags>
+      <string>Direct</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>285</Page>
+  </Spell>
+</ArrayOfSpell>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSpecialChoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SpecialChoice>
+    <Name>Mystic Adept</Name>
+    <Priority>A</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>6</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Magical</SkillType>
+    <SkillRating>5</SkillRating>
+    <SkillCount>2</SkillCount>
+    <Spells>10</Spells>
+    <ComplexForms>0</ComplexForms>
+	<PowerPoints>0</PowerPoints>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Mystic Adept</Name>
+    <Priority>B</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>4</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Magical</SkillType>
+    <SkillRating>4</SkillRating>
+    <SkillCount>2</SkillCount>
+    <Spells>7</Spells>
+    <ComplexForms>0</ComplexForms>
+	<PowerPoints>0</PowerPoints>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Mystic Adept</Name>
+    <Priority>C</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>3</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Magical</SkillType>
+    <SkillRating>0</SkillRating>
+    <SkillCount>0</SkillCount>
+    <Spells>5</Spells>
+    <ComplexForms>0</ComplexForms>
+	<PowerPoints>0</PowerPoints>
+  </SpecialChoice>
+</ArrayOfSpecialChoice>

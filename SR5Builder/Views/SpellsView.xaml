@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="SR5Builder.Views.SpellsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="Padding" Value="2,1" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="ListViewItem" BasedOn="{StaticResource plainListViewItemStyle}">
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ComboBox ItemsSource="{Binding SpellCategories}"
+                  SelectedItem="{Binding SelectedCategory}">
+            
+        </ComboBox>
+        <ListView Grid.Row="1" Grid.Column="0"
+                  ItemsSource="{Binding AvailableSpells}"
+                  SelectedItem="{Binding SelectedNewSpell}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Spell Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Page">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <Hyperlink Command="{Binding DataContext.OpenPageCommand, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}">
+                                        <TextBlock Text="{Binding Book}" /><TextBlock Text=" " /><TextBlock Text="{Binding Page}"/>
+                                    </Hyperlink>
+                                </TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Range" DisplayMemberBinding="{Binding Range}" />
+                    <GridViewColumn Header="Drain" DisplayMemberBinding="{Binding Drain}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" 
+                    Command="{Binding AddSpellCommand}">Add</Button>
+            <Button Grid.Row="1"
+                    Command="{Binding AddSpellCommand}">Remove</Button>
+        </Grid>
+        <ListView Grid.Row="1" Grid.Column="2"
+                  ItemsSource="{Binding SpellList}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Value.Name}" />
+                    <GridViewColumn Header="Page">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <Hyperlink Command="{Binding DataContext.OpenPageCommand, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}">
+                                        <TextBlock Text="{Binding Value.Book}" /><TextBlock Text=" " /><TextBlock Text="{Binding Value.Page}"/>
+                                    </Hyperlink>
+                                </TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Range" DisplayMemberBinding="{Binding Value.Range}" />
+                    <GridViewColumn Header="Drain" DisplayMemberBinding="{Binding Value.Drain}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

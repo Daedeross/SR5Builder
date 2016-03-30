@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearLoader>
+    <Name>AR Gloves</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>0</Availability>
+    <Cost>150</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Biometric reader</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>4</Availability>
+    <Cost>200</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Electronic Paper</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>1</Rating>
+    <Availability>0</Availability>
+    <Cost>5</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Printer</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>0</Availability>
+    <Cost>25</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Satellite link</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>4</Rating>
+    <Availability>6</Availability>
+    <Cost>500</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Simrig</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>12</Availability>
+    <Cost>1000</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Subvocal mic</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>0</Availability>
+    <Cost>50</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Trid projector</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>0</Availability>
+    <Cost>200</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Trodes</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>0</Availability>
+    <Cost>70</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+</ArrayOfGearLoader>

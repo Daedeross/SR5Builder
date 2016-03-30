@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearLoader>
+    <Name>Standard Tags</Name>
+    <Book>SR5</Book>
+    <Page>440</Page>
+    <HasRating>true</HasRating>
+    <Rating>1</Rating>
+    <Availability>0</Availability>
+    <Cost>1</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Datachip</Name>
+    <Book>SR5</Book>
+    <Page>440</Page>
+    <HasRating>true</HasRating>
+    <Rating>1</Rating>
+    <Availability>0</Availability>
+    <Cost>5</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Security Tags</Name>
+    <Book>SR5</Book>
+    <Page>440</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>3</Availability>
+    <Cost>5</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Sensor Tags</Name>
+    <Book>SR5</Book>
+    <Page>440</Page>
+    <HasRating>true</HasRating>
+    <Rating>2</Rating>
+    <Availability>5</Availability>
+    <Cost>40</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+  <GearLoader>
+    <Name>Stealth Tags</Name>
+    <Book>SR5</Book>
+    <Page>440</Page>
+    <HasRating>true</HasRating>
+    <Rating>3</Rating>
+    <Availability>7R</Availability>
+    <Cost>10</Cost>
+    <Capacity>0</Capacity>
+    <Mods></Mods>
+  </GearLoader>
+</ArrayOfGearLoader>

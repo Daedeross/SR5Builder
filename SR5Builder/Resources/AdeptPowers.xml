@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfAdeptPowerLoader 
+  xmlns="SR5Builder/AdeptPowers.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AdeptPowerLoader>
+    <Name>Adrenaline Boost</Name>
+    <Book>SR5</Book>
+    <Page>308</Page>
+    <Min>1</Min>
+    <Max>12</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Astral Perception</Name>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Attribute Boost</Name>
+    <ExtLabel>Attribute</ExtLabel>
+    <ExtKind>Attribute</ExtKind>
+    <ExtArray>
+      <string>Body</string>
+      <string>Agility</string>
+      <string>Reaction</string>
+      <string>Strength</string>
+    </ExtArray>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>12</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Combat Sense</Name>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>8</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments>
+      <AugmentLoader>
+        <Kind>None</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+          <float>2</float>
+          <float>3</float>
+          <float>4</float>
+          <float>5</float>
+          <float>6</float>
+          <float>7</float>
+          <float>8</float>
+        </Bonus>
+        <Target>All</Target>
+      </AugmentLoader>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Critical Strike</Name>
+    <ExtLabel>Attribute</ExtLabel>
+    <ExtKind>Skill</ExtKind>
+    <ExtArray>
+      <string>Blades</string>
+      <string>Clubs</string>
+      <string>Astral Combat</string>
+      <string>Unarmed Combat</string>
+      <string>Exotic Melee Weapon</string>
+    </ExtArray>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments>
+      <AugmentLoader>
+        <Kind>DamageValue</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+        </Bonus>
+        <Target>%ext%</Target>
+      </AugmentLoader>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Danger Sense</Name>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>8</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Enhanced Perception</Name>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>4</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments>
+      <AugmentLoader>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+          <float>2</float>
+          <float>3</float>
+          <float>4</float>
+        </Bonus>
+        <Target>Perception</Target>
+      </AugmentLoader>
+      <AugmentLoader>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+          <float>2</float>
+          <float>3</float>
+          <float>4</float>
+        </Bonus>
+        <Target>Assensing</Target>
+      </AugmentLoader>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Enhanced Accuracy</Name>
+    <ExtLabel>Skill</ExtLabel>
+    <ExtKind>Combat Skill</ExtKind>
+    <ExtArray>
+      <string>Archery</string>
+      <string>Automatics</string>
+      <string>Blades</string>
+      <string>Clubs</string>
+      <string>Exotic Melee Weapon</string>
+      <string>Exotic Ranged Weapon</string>
+      <string>Heavy Weapons</string>
+      <string>Longarms</string>
+      <string>Pistols</string>
+      <string>Throwing Weapons</string>
+    </ExtArray>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments>
+      <AugmentLoader>
+        <Kind>Accuracy</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+        </Bonus>
+        <Target>%ext%</Target>
+      </AugmentLoader>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Improved Ability</Name>
+    <ExtLabel>Skill</ExtLabel>
+    <ExtKind>Skill</ExtKind>
+    <ExtArray>
+    </ExtArray>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>6</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments>
+      <AugmentLoader>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+          <float>2</float>
+          <float>3</float>
+          <float>4</float>
+          <float>5</float>
+          <float>6</float>
+        </Bonus>
+        <Target>%ext%</Target>
+      </AugmentLoader>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Improved</Name>
+    <ExtLabel>Attribute</ExtLabel>
+    <ExtKind>Attribute</ExtKind>
+    <ExtArray>
+      <string>Body</string>
+      <string>Agility</string>
+      <string>Reaction</string>
+      <string>Strength</string>
+    </ExtArray>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>4</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments>
+      <AugmentLoader>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+          <float>2</float>
+          <float>3</float>
+          <float>4</float>
+        </Bonus>
+        <Target>%ext%</Target>
+      </AugmentLoader>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Improved Potential</Name>
+    <ExtLabel>Limit</ExtLabel>
+    <ExtKind>Limit</ExtKind>
+    <ExtArray>
+      <string>Physical</string>
+      <string>Mental</string>
+      <string>Social</string>
+    </ExtArray>
+    <Book>SR5</Book>
+    <Page>309</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Improved Reflexes</Name>
+    <Book>SR5</Book>
+    <Page>310</Page>
+    <Min>1</Min>
+    <Max>3</Max>
+    <FlatPoints>0.5</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments>
+      <AugmentLoader>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+          <float>2</float>
+          <float>3</float>
+        </Bonus>
+        <Target>Physical Initiative Dice</Target>
+      </AugmentLoader>
+      <AugmentLoader>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+          <float>2</float>
+          <float>3</float>
+        </Bonus>
+        <Target>Reaction</Target>
+      </AugmentLoader>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Improved Sense</Name>
+    <ExtLabel>Choose</ExtLabel>
+    <ExtKind>Sense</ExtKind>
+    <ExtArray>
+      <string>Low-light Vision</string>
+      <string>Thermographic Vision</string>
+      <string>Flare Compensation</string>
+      <string>Vision Magnification</string>
+      <string>Select Sound Filter</string>
+      <string>Damper (Hearing)</string>
+      <string>Direction Sense</string>
+      <string>Tactile</string>
+      <string>Perfect Pitch</string>
+      <string>Human Scale</string>
+    </ExtArray>
+    <Book>SR5</Book>
+    <Page>310</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments>
+    </Augments>
+  </AdeptPowerLoader>
+  <AdeptPowerLoader>
+    <Name>Killing Hands</Name>
+    <Book>SR5</Book>
+    <Page>310</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments>
+      <AugmentLoader>
+        <Kind>DamageType</Kind>
+        <Bonus>
+          <float>0</float>
+          <float>1</float>
+        </Bonus>
+        <Target>Unarmed Combat</Target>
+      </AugmentLoader>
+    </Augments>
+  </AdeptPowerLoader>
+</ArrayOfAdeptPowerLoader>

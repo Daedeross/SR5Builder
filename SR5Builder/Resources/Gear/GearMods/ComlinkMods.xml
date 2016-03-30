@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGearModLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearModLoader>
+    <Name>Sim module</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <FlatCost>100</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Hot-sim module</string>
+    </Taboo>
+    <Augments />
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Hot-sim module</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <FlatCost>350</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Sim module</string>
+    </Taboo>
+    <Augments />
+  </GearModLoader>
+</ArrayOfGearModLoader>

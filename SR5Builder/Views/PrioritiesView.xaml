@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="SR5Builder.Views.PrioritiesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="ToggleButton"
+               BasedOn="{StaticResource PriorityToggleButton}">
+            <Setter Property="Padding" Value="3" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Background" Value="Aqua" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <ListView ItemsSource="{Binding PrioritiesList}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem"
+                       BasedOn="{StaticResource myListViewItemStyle}">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="Padding" Value="4,0" />
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="Priority" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PriorityLevel}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Metatype">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ToggleButton IsChecked="{Binding Metatype, Mode=TwoWay}">
+                                    <TextBlock Text="{Binding MetatypeText}" />
+                                </ToggleButton>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Attributes">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ToggleButton IsChecked="{Binding Attributes, Mode=TwoWay}">
+                                    <TextBlock Text="{Binding AttributesText}" />
+                                </ToggleButton>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Mag/Res">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ToggleButton IsChecked="{Binding Special, Mode=TwoWay}"
+                                              HorizontalContentAlignment="Left"
+                                              HorizontalAlignment="Stretch">
+                                    <TextBlock Text="{Binding SpecialText}"
+                                               ToolTip="{Binding SpecialText}"
+                                               HorizontalAlignment="Left"
+                                               TextAlignment="Left">
+                                    </TextBlock>
+                                </ToggleButton>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Skills">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ToggleButton IsChecked="{Binding Skills, Mode=TwoWay}">
+                                    <TextBlock Text="{Binding SkillsText}" />
+                                </ToggleButton>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Money">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ToggleButton IsChecked="{Binding Resources, Mode=TwoWay}">
+                                    <TextBlock Text="{Binding ResourcesText}" />
+                                </ToggleButton>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

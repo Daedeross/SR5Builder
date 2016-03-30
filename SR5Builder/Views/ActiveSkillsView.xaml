@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="SR5Builder.Views.ActiveSkillsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xtk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="3" />
+            </Style>
+            <Style TargetType="ListViewItem" BasedOn="{StaticResource plainListViewItemStyle}">
+                <Setter Property="Height" Value="22" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <!--<Setter Property="Padding" Value="4,5,4,1"/>-->
+
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ComboBox Grid.Column="0" Grid.Row="0"
+                  Grid.ColumnSpan="1" MinWidth="300"
+                  ItemsSource="{Binding CategoryList, Mode=OneWay}"
+                  SelectedItem="{Binding SelectedCategory, Mode=TwoWay}"
+                  
+                  />
+        <ListView Name="newSkillsListView"
+                  Grid.Column="0" Grid.Row="2"
+                  VerticalAlignment="Stretch"                 
+                  DataContext="{Binding AvailableSkills}"
+                  ItemsSource="{Binding}" DataContextChanged="newSkillsListView_DataContextChanged"
+                  SelectedItem="{Binding Path=DataContext.SelectedNewSkill,
+                                         RelativeSource={RelativeSource AncestorType=UserControl}
+                                 }">
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <!--<GridViewColumn Header="Name">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>-->
+                    <GridViewColumn Header="Attribute" DisplayMemberBinding="{Binding LinkedAttribute}" />
+                    <GridViewColumn Header="Group" DisplayMemberBinding="{Binding GroupName}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0"
+                    Command="{Binding AddSkillCommand}">Add</Button>
+            <Button Grid.Row="1" Padding="2,1"
+                    Command="{Binding RemoveSkillCommand}" >Remove</Button>
+            <StackPanel Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button Width="18" Height="18"
+                        Command="{Binding IncreaseSkillCommand}"
+                        ContentTemplate="{StaticResource IncreaseGlyphNormalKey}" />
+                <Button Width="18" Height="18"
+                        Command="{Binding DecreaseSkillCommand}"
+                        ContentTemplate="{StaticResource DecreaseGlyphNormalKey}"/>
+            </StackPanel>
+        </Grid>
+        <ListView Grid.Column="2" Grid.Row="1"
+                  MinWidth="300"
+                  ItemsSource="{Binding SkillsList}"
+                  SelectedValue="{Binding SelectedSkill}"
+                  SelectedValuePath="Value">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Value.Name}" />
+                    <GridViewColumn Header="Attribute" DisplayMemberBinding="{Binding Value.LinkedAttribute}" />
+                    <GridViewColumn Header="Rating">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <xtk:IntegerUpDown Value="{Binding Value.BaseRating, Mode=TwoWay}"
+                                                   AllowSpin="False"
+                                                   ShowButtonSpinner="False"
+                                                   Minimum="0"
+                                                   Maximum="6"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Total" DisplayMemberBinding="{Binding Value.AugmentedPool, Mode=OneWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

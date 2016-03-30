@@ -1,0 +1,28 @@
+﻿<Application x:Class="SR5Builder.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:h ="clr-namespace:SR5Builder.Helpers"
+             StartupUri="MainWindow.xaml"
+             Exit="Application_Exit" Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source=".\ControlTemplates\BrushPaletts.xaml" />
+                <ResourceDictionary Source=".\ControlTemplates\ListStyles.xaml" />
+                <ResourceDictionary Source=".\ControlTemplates\PriorityRadioButton.xaml" />
+                <ResourceDictionary Source=".\ControlTemplates\Glyphs.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="ExpanderHeader" TargetType="{x:Type Grid}">
+                <Setter Property="Height" Value="22" />
+                <Setter Property="Margin" Value="21,0,0,0" />
+                <!--<Setter Property="Padding" Value="9,3,0,0" />-->
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                <Setter Property="VerticalAlignment" Value="Top" />
+            </Style>
+            <h:BoolToVisibilityConverter x:Key="boolToVisConverter" />
+            <h:IntToMoneyConverter x:Key="intToMoneyConverter" />
+            <h:IntToStringConverter x:Key="intToStringConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

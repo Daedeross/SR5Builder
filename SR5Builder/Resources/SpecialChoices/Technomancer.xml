@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSpecialChoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SpecialChoice>
+    <Name>Technomancer</Name>
+    <Priority>A</Priority>
+    <Kind>Resonance</Kind>
+    <Attribute>0</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Resonance</SkillType>
+    <SkillRating>5</SkillRating>
+    <SkillCount>2</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>5</ComplexForms>
+	<PowerPoints>0</PowerPoints>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Technomancer</Name>
+    <Priority>B</Priority>
+    <Kind>Resonance</Kind>
+    <Attribute>4</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Resonance</SkillType>
+    <SkillRating>4</SkillRating>
+    <SkillCount>2</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>2</ComplexForms>
+	<PowerPoints>0</PowerPoints>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Technomancer</Name>
+    <Priority>C</Priority>
+    <Kind>Resonance</Kind>
+    <Attribute>3</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Resonance</SkillType>
+    <SkillRating>0</SkillRating>
+    <SkillCount>0</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>1</ComplexForms>
+	<PowerPoints>0</PowerPoints>
+  </SpecialChoice>
+</ArrayOfSpecialChoice>
