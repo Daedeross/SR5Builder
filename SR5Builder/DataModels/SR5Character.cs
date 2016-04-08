@@ -803,7 +803,7 @@ namespace SR5Builder.DataModels
 
         //public ObservableDictionary<string, RangedWeapon> ProjectileWeapons { get; set; }
 
-            #endregion // Weapons
+        #endregion // Weapons
 
         #endregion // Properties
 
@@ -946,7 +946,7 @@ namespace SR5Builder.DataModels
 
                     mSpecialAttribute.Name = SpecialKind.ToString();
 
-                    OnPropertyChanged("SpecialAttriute");
+                    OnPropertyChanged("SpecialAttribute");
                     break;
             }
         }

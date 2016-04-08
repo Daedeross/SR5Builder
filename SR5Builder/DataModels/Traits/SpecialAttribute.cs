@@ -12,6 +12,10 @@ namespace SR5Builder.DataModels
         {
             get
             {
+                if (mOwner.SpecialChoice == null)
+                {
+                    return 0;
+                }
                 return (int)mMin.GetValue(mOwner.SpecialChoice, null);
             }
         }
@@ -20,6 +24,10 @@ namespace SR5Builder.DataModels
         {
             get
             {
+                if (mOwner.SpecialChoice == null)
+                {
+                    return 0;
+                }
                 return 6;
             }
         }

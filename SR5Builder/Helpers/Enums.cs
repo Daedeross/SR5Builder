@@ -2,7 +2,31 @@
 {
     public enum Priority
     {
-        U = 0, A = 1, B = 2, C = 3, D = 4, E = 5
+        U = 0, E = 1, D = 2, C = 3, B = 4, A = 5
+    }
+
+    static class PriorityMethods
+    {
+        public static uint Mask(this Priority p)
+        {
+            switch (p)
+            {
+                case Priority.U:
+                    return 0x1;
+                case Priority.E:
+                    return 0x2;
+                case Priority.D:
+                    return 0x4;
+                case Priority.C:
+                    return 0x8;
+                case Priority.B:
+                    return 0x10;
+                case Priority.A:
+                    return 0x20;
+                default:
+                    return 0x0;
+            }
+        }
     }
 
     public enum SpecialKind

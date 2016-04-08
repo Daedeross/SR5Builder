@@ -88,7 +88,7 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        private int intLevel() { return (int)mPriorityLevel - 1; }
+        private int intLevel() { return 5 - (int)mPriorityLevel; }
 
         public string MetatypeText { get { return Priorities.MetatypeText[intLevel()]; } }
 

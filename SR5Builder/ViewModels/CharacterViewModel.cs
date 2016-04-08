@@ -287,18 +287,20 @@ namespace SR5Builder.ViewModels
 
             #region OtherAttributeStuff
 
+        /// <summary>
+        /// How many points available for the selected priority
+        /// </summary>
         public int AttributePoints
         {
             get
             {
-                //if (character.Priorities.Attributes == Priority.U)
-                //    return 0;
-
-                return GlobalData.PriorityLevels[character.Priorities.Attributes].AttributePoints;
-                
+                return GlobalData.PriorityLevels[character.Priorities.Attributes].AttributePoints;                
             }
         }
 
+        /// <summary>
+        /// How many points have been assigned to attributes
+        /// </summary>
         public int AttributePointsSpent
         {
             get { return character.AttributePointsSpent; }
@@ -312,10 +314,15 @@ namespace SR5Builder.ViewModels
             }
         }
 
-            #endregion // OtherAttributeStuff
+        #endregion // OtherAttributeStuff
 
-            #region Specials
+        #region Specials
 
+        /// <summary>
+        /// <b>true</b> if the character can select a Magic (Adept, mMagician, mystic Adept)
+        /// or Resonance trait.
+        /// In other words, a priority of D or higher 
+        /// </summary>
         public bool SpecialEnabled
         {
             get
@@ -332,8 +339,14 @@ namespace SR5Builder.ViewModels
             get { return character.SpecialChoice; }
             set
             {
-                character.SpecialChoice = value;
-
+                if (value == null)
+                {
+                    character.SpecialChoice = SpecialChoice.None(character.Priorities.Special);
+                }
+                else
+                {
+                    character.SpecialChoice = value;
+                }
             }
         }
 
@@ -385,6 +398,32 @@ namespace SR5Builder.ViewModels
         public GearViewModel GearVM { get; set; }
 
         public WeaponsViewModel WeaponsVM { get; set; }
+
+        #endregion
+
+            #region Validation
+
+        public bool PrioritiesValid
+        {
+            get
+            {
+                Priorities p = character.Priorities;
+                // bitwize OR each priority, if the result  is 0x3E (0b111110) then
+                // no priorities are the same and none are U (unassigned)
+                return (p.Attributes.Mask() | p.Metatype.Mask() | p.Resources.Mask() |
+                        p.Skills.Mask() | p.Special.Mask()) == 0x3e;
+            }
+        }
+
+        public bool AttributesPointsValid
+        {
+            get { return AttributePointsRemaining == 0; }
+        }
+
+        public bool SpecialPointsValid
+        {
+            get { return SpecialAttributePointsRemaining == 0; }
+        }
 
             #endregion
 
@@ -467,6 +506,7 @@ namespace SR5Builder.ViewModels
                                      where s.Priority == character.Priorities.Special
                                      select s
                                      );
+                    HandleSpecialChanged();
                     OnPropertyChanged("SpecialChoices");
                     OnPropertyChanged("SpecialEnabled");
                     OnPropertyChanged("SpecialKind");
@@ -528,6 +568,25 @@ namespace SR5Builder.ViewModels
                 string name = e.PropertyName.Replace("Rating", "");
                 OnPropertyChanged(name + a.Name);
                 OnPropertyChanged(a.Name + "Text");
+            }
+        }
+
+        private void HandleSpecialChanged()
+        {
+            string s_name = SpecialChoice.Name;
+            bool found = false;
+            foreach (SpecialChoice sc in SpecialChoices)
+            {
+                if (s_name == sc.Name)
+                {
+                    SpecialChoice = sc;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+            {
+                SpecialChoice = SpecialChoice.None(PrioritiesVM.Priorities.Special);
             }
         }
 

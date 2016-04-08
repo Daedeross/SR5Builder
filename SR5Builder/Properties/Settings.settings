@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="pdfReaderPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\Program Files (x86)\Adobe\Reader 11.0\Reader\AcroRd32.exe</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe</Value>
     </Setting>
     <Setting Name="CoreBookPDF" Type="System.String" Scope="User">
       <Value Profile="(Default)">E:\Users\Jones\Dropbox\Dropbox\docs\Shadowrun 5th ed Core Rulebook\Shadowrun 5th ed. Core Rulebook.pdf</Value>
