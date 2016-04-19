@@ -39,16 +39,16 @@ namespace SR5Builder.ViewModels
                 if (mSelectedCategory != value)
                 {
                     mSelectedCategory = value;
-                    AvailableSpells = new ObservableCollection<Spell>(GlobalData.PreLoadedSpells[mSelectedCategory]);
+                    AvailableSpells = new ObservableCollection<SpellLoader>(GlobalData.PreLoadedSpells[mSelectedCategory]);
                     OnPropertyChanged("AvailableSpells");
                     OnPropertyChanged("SelectedCategory");
                 }
             }
         }
         
-        public ObservableCollection<Spell> AvailableSpells { get; set; }
+        public ObservableCollection<SpellLoader> AvailableSpells { get; set; }
 
-        public Spell SelectedNewSpell { get; set; }
+        public SpellLoader SelectedNewSpell { get; set; }
 
         public ObservableDictionary<string, Spell> SpellList
         {
@@ -115,8 +115,29 @@ namespace SR5Builder.ViewModels
 
         private void AddSpellExecute()
         {
-            SpellList.Add(SelectedNewSpell.Name, SelectedNewSpell.Clone(character));
-            SelectedSpell = SpellList[SelectedNewSpell.Name];
+            if (SelectedNewSpell.ExtKind == null || SelectedNewSpell.ExtKind.Length == 0)
+            {
+                Spell sp = SelectedNewSpell.ToSpell(character);
+                SpellList.Add(sp.Name, sp);
+                SelectedSpell = SpellList[sp.Name];
+            }
+            else
+            {
+                // Open dialog
+                SelectionViewModel vm = SelectionViewModel.CreateSelection(character, SelectedNewSpell);
+                SelectionDialog dlg = new SelectionDialog();
+                dlg.DataContext = vm;
+
+                bool? result = dlg.ShowDialog();
+                //vm.Selection = "foo";
+                System.Diagnostics.Debug.WriteLine(vm.Selection);
+                if (result == true)
+                {
+                    Spell sp = SelectedNewSpell.ToSpell(character, vm.Selection);
+                    SpellList.Add(sp.Name, sp);
+                    SelectedSpell = SpellList[sp.Name];
+                }
+            }
         }
 
         private bool AddSpellCanExecute()
@@ -145,8 +166,7 @@ namespace SR5Builder.ViewModels
         private void RemoveSpellExecute()
         {
             SpellList.Remove(SelectedSpell.Name);
-            SelectedSpell = SpellList.Last().Value;
-            
+            SelectedSpell = SpellList.Count > 0 ? SpellList.Last().Value : null;
         }
 
         private bool RemoveSpellCanExecute()
@@ -227,7 +247,7 @@ namespace SR5Builder.ViewModels
             else
             {
                 // Open dialog
-                SelectionViewModel vm = CreateSelection(SelectedNewPower);
+                SelectionViewModel vm = SelectionViewModel.CreateSelection(character, SelectedNewPower);
                 SelectionDialog dlg = new SelectionDialog();
                 dlg.DataContext = vm;
 
@@ -342,45 +362,6 @@ namespace SR5Builder.ViewModels
         #endregion // Commands
 
         #region Private Methods
-
-        private SelectionViewModel CreateSelection(AdeptPowerLoader loader)
-        {
-            SelectionViewModel vm = new SelectionViewModel("");
-
-            if (loader.ExtArray != null && loader.ExtArray.Count > 0)
-            {
-                vm.SelectionList = loader.ExtArray;
-                switch (loader.ExtKind)
-                {
-                    case "Skill":
-                        vm.SetMessage("Select the skill to review the bonus:");
-                        break;
-                    default:
-                        break;
-                }
-            }
-            else
-            {
-                switch (loader.ExtKind)
-                {
-                    case "Free":
-                    case "free":
-                        vm.SelectionList = null;
-                        vm.SetMessage("Enter the name extention for the trait:");
-                        break;
-                    case "Skill":
-                        vm.SelectionList = character.SkillList.Values.Select(v => v.Name).ToList();
-                        foreach (SkillGroup sg in character.SkillGroupsList.Values)
-                            vm.SelectionList = vm.SelectionList.Concat(sg.Skills.Keys).ToList();
-                        vm.SetMessage("Enter the name of the skill to recieve the Bonus:");
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-            return vm;
-        }
 
         #endregion // Private Methods
 

@@ -84,6 +84,8 @@ namespace SR5Builder.DataModels
             }
         }
 
+        public string TargetName {  get { return targetName; } }
+
         #endregion // Properties
 
         #region Constructors

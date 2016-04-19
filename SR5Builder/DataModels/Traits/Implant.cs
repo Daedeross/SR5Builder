@@ -61,9 +61,12 @@ namespace SR5Builder.DataModels
 
         public void ClearAugments()
         {
-            foreach (Augment a in GivenAugments)
+            if (GivenAugments != null)
             {
-                a.Target = null;
+                foreach (Augment a in GivenAugments)
+                {
+                    a.Target = null;
+                } 
             }
         }
 

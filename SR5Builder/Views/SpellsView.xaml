@@ -34,7 +34,7 @@
                   SelectedItem="{Binding SelectedNewSpell}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Spell Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Spell Name" DisplayMemberBinding="{Binding DisplayName}" />
                     <GridViewColumn Header="Page">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -63,10 +63,11 @@
             <Button Grid.Row="0" 
                     Command="{Binding AddSpellCommand}">Add</Button>
             <Button Grid.Row="1"
-                    Command="{Binding AddSpellCommand}">Remove</Button>
+                    Command="{Binding RemoveSpellCommand}">Remove</Button>
         </Grid>
         <ListView Grid.Row="1" Grid.Column="2"
-                  ItemsSource="{Binding SpellList}">
+                  ItemsSource="{Binding SpellList}"
+                  SelectedItem="{Binding SelectedSpell}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Value.Name}" />

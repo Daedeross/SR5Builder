@@ -36,7 +36,7 @@ namespace SR5Builder
 
             #region Magic
 
-        public static Dictionary<string, List<Spell>> PreLoadedSpells { get; private set; }
+        public static Dictionary<string, List<SpellLoader>> PreLoadedSpells { get; private set; }
 
         public static List<AdeptPowerLoader> PreLoadedPowers { get; private set; }
 
@@ -237,18 +237,18 @@ namespace SR5Builder
             DirectoryInfo info = new DirectoryInfo(".\\Resources\\Spells");
             FileInfo[] files = info.GetFiles("*.xml");
 
-            PreLoadedSpells = new Dictionary<string, List<Spell>>();
+            PreLoadedSpells = new Dictionary<string, List<SpellLoader>>();
 
             foreach (FileInfo file in files)
             {
                 string name = Path.GetFileNameWithoutExtension(file.Name);
                 name = name.Replace("Spells", "");
-                PreLoadedSpells.Add(name, Spell.LoadFromFile(file.FullName));
+                PreLoadedSpells.Add(name, SpellLoader.LoadFromFile(file.FullName));
             }
 
             // Create "All" category
-            List<Spell> allSpells = new List<Spell>();
-            foreach (List<Spell> item in PreLoadedSpells.Values)
+            List<SpellLoader> allSpells = new List<SpellLoader>();
+            foreach (List<SpellLoader> item in PreLoadedSpells.Values)
             {
                 allSpells = allSpells.Concat(item).ToList();
             }

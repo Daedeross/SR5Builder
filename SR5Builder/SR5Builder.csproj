@@ -114,6 +114,8 @@
     <Compile Include="Loaders\ImplantLoader.cs" />
     <Compile Include="Loaders\MeleeWeaponLoader.cs" />
     <Compile Include="Loaders\RangedWeaponLoader.cs" />
+    <Compile Include="Loaders\SpellLoader.cs" />
+    <Compile Include="Loaders\TraitExtLoader.cs" />
     <Compile Include="Loaders\TraitLoader.cs" />
     <Compile Include="DataModels\Traits\MeleeWeapon.cs" />
     <Compile Include="DataModels\Traits\Weapon.cs" />
@@ -459,6 +461,7 @@
     </Content>
     <Content Include="Resources\Spells\CombatSpells.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Resources\Spells\DetectionSpells.xml">
       <SubType>Designer</SubType>

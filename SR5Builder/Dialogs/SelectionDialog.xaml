@@ -4,7 +4,7 @@
         xmlns:helpers="clr-namespace:Helpers"
         SizeToContent="WidthAndHeight"
         ResizeMode="NoResize" WindowStyle="ToolWindow"
-        MinWidth="200" MinHeight="100"
+        MinWidth="300" MinHeight="100"
         helpers:DialogCloser.DialogResult="{Binding Result}">
     <Window.Resources>
         <Style TargetType="Button">
@@ -12,7 +12,7 @@
             <Setter Property="Padding" Value="5,0" />
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="5" />
+            <Setter Property="Margin" Value="8" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
     </Window.Resources>
@@ -28,17 +28,20 @@
                       SelectedItem="{Binding Selection}">
                 <ComboBox.Style>
                     <Style TargetType="ComboBox">
+                        <Setter Property="Visibility" Value="Visible" />
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding Fillable}" Value="true">
                                 <Setter Property="Visibility" Value="Collapsed" />
+                                <Setter Property="SelectedItem" Value="Null" />
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </ComboBox.Style>
             </ComboBox>
-            <TextBox Text="{Binding Selection}" Visibility="Collapsed">
+            <TextBox Text="{Binding Selection}" MinHeight="24">
                 <TextBox.Style>
                     <Style TargetType="TextBox">
+                        <Setter Property="Visibility" Value="Collapsed" />
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding Fillable}" Value="true">
                                 <Setter Property="Visibility" Value="Visible" />

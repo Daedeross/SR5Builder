@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfSpell xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Spell>
+<ArrayOfSpellLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SpellLoader>
     <Name>Analyze Device</Name>
     <Category>Detection Spells</Category>
     <Type>P</Type>
@@ -14,8 +14,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>285</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Analyze Magic</Name>
     <Category>Detection Spells</Category>
     <Type>P</Type>
@@ -29,8 +29,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>285</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Analyze Truth</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -44,8 +44,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Clairaudience</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -59,8 +59,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Clairvoyance</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -74,8 +74,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Combat Sense</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -89,8 +89,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Detect Enemies</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -104,8 +104,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Detect Enemies, Extended</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -119,8 +119,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Detect Life</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -134,8 +134,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Detect Life, Extended</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -145,13 +145,97 @@
     <Drain>F - 1</Drain>
     <Tags>
       <string>Active</string>
-      <string>Area</string>
+      <string>Extended Area</string>
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </Spell>
-  <Spell>
-    <Name>Detect [Life Form]</Name>
+  </SpellLoader>
+  <SpellLoader>
+    <Name>Detect {0}</Name>
+    <ExtLabel>Life Form</ExtLabel>
+    <ExtKind>Free</ExtKind>
+    <ExtPrompt>Please fill in the name of the life form to be detected.</ExtPrompt>
+    <Category>Detection Spells</Category>
+    <Type>M</Type>
+    <Range>T</Range>
+    <Damage></Damage>
+    <Duration>S</Duration>
+    <Drain>F - 2</Drain>
+    <Tags>
+      <string>Active</string>
+      <string>Area</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>287</Page>
+  </SpellLoader>
+  <SpellLoader>
+    <Name>Detect {0}, Extended</Name>
+    <ExtLabel>Life Form</ExtLabel>
+    <ExtKind>Free</ExtKind>
+    <ExtPrompt>Please fill in the name of the life form to be detected.</ExtPrompt>
+    <Category>Detection Spells</Category>
+    <Type>M</Type>
+    <Range>T</Range>
+    <Damage></Damage>
+    <Duration>S</Duration>
+    <Drain>F</Drain>
+    <Tags>
+      <string>Active</string>
+      <string>Extended Area</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>287</Page>
+  </SpellLoader>
+  <SpellLoader>
+    <Name>Detect Magic</Name>
+    <Category>Detection Spells</Category>
+    <Type>M</Type>
+    <Range>T</Range>
+    <Damage></Damage>
+    <Duration>S</Duration>
+    <Drain>F - 2</Drain>
+    <Tags>
+      <string>Active</string>
+      <string>Area</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>287</Page>
+  </SpellLoader>
+  <SpellLoader>
+    <Name>Detect Magic, Extended</Name>
+    <Category>Detection Spells</Category>
+    <Type>M</Type>
+    <Range>T</Range>
+    <Damage></Damage>
+    <Duration>S</Duration>
+    <Drain>F</Drain>
+    <Tags>
+      <string>Active</string>
+      <string>Extended Area</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>287</Page>
+  </SpellLoader>
+  <SpellLoader>
+    <Name>Detect {0}</Name>
+    <ExtLabel>Object</ExtLabel>
+    <ExtKind>Free</ExtKind>
+    <ExtPrompt>Please fill in the type of object to be detected.</ExtPrompt>
+    <Category>Detection Spells</Category>
+    <Type>M</Type>
+    <Range>T</Range>
+    <Damage></Damage>
+    <Duration>S</Duration>
+    <Drain>F - 2</Drain>
+    <Tags>
+      <string>Active</string>
+      <string>Area</string>
+    </Tags>
+    <Book>SR5</Book>
+    <Page>287</Page>
+  </SpellLoader>
+  <SpellLoader>
+    <Name>Mind Link</Name>
     <Category></Category>
     <Type></Type>
     <Range></Range>
@@ -159,10 +243,13 @@
     <Duration>I</Duration>
     <Drain>F</Drain>
     <Tags>
-      <string></string>
+      <string>Active</string>
+      <string>Psychic</string>
     </Tags>
-  </Spell>
-  <Spell>
+    <Book>SR5</Book>
+    <Page>287</Page>
+  </SpellLoader>
+  <SpellLoader>
     <Name></Name>
     <Category></Category>
     <Type></Type>
@@ -173,17 +260,7 @@
     <Tags>
       <string></string>
     </Tags>
-  </Spell>
-  <Spell>
-    <Name></Name>
-    <Category></Category>
-    <Type></Type>
-    <Range></Range>
-    <Damage></Damage>
-    <Duration>I</Duration>
-    <Drain>F</Drain>
-    <Tags>
-      <string></string>
-    </Tags>
-  </Spell>
-</ArrayOfSpell>
+  </SpellLoader>
+  <Book>SR5</Book>
+  <Page>287</Page>
+</ArrayOfSpellLoader>

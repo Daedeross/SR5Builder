@@ -2,33 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Xml.Serialization;
 
 
 namespace SR5Builder.Loaders
 {
     [XmlRoot(Namespace="SR5Builder/AdeptPowers.xsd")]
-    public class AdeptPowerLoader: TraitLoader
+    public class AdeptPowerLoader: TraitExtLoader
     {
-        [XmlIgnore]
-        public string DisplayName
-        {
-            get
-            {
-                if (ExtLabel != null && ExtLabel.Length > 0)
-                    return Name + " [" + ExtLabel + "]";
-                else return Name;
-            }
-        }
-
-        public List<string> ExtArray { get; set; }
-
-        public string ExtKind { get; set; }
-
-        public string ExtLabel { get; set; }
-
         public int Min { get; set; }
 
         public int Max { get; set; }
@@ -72,6 +53,7 @@ namespace SR5Builder.Loaders
             {
                 p.Name += " [" + ext + "]";
             }
+            p.FlatPoints = FlatPoints;
             p.PointPerLevel = PointsPerLevel;
             p.Book = Book;
             p.Page = Page;

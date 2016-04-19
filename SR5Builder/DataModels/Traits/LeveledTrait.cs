@@ -115,11 +115,12 @@ namespace SR5Builder.DataModels
 
         public void OnAugmentCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            //HashSet<string> propNames = new HashSet<string>();
+            HashSet<string> propNames = new HashSet<string>();
             if (e.OldItems != null)
             {
                 foreach (Augment a in e.OldItems)
                 {
+                    propNames.Add(a.TargetName);
                     a.PropertyChanged -= this.OnAugmentChanged;
                 }
             }
@@ -138,7 +139,7 @@ namespace SR5Builder.DataModels
             //    OnPropertyChanged(name);
             //}
 
-            RecalcBonus();
+            RecalcBonus(propNames);
         }
 
         protected virtual void RecalcBonus(HashSet<string> propNames = null)

@@ -24,7 +24,5 @@ namespace SR5Builder
             InitializeComponent();
             //GlobalData.SaveData();
         }
-
-
     }
 }

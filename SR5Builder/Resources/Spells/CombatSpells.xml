@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfSpell xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Spell>
+<ArrayOfSpellLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SpellLoader>
     <Name>Acid Stream</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -14,8 +14,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>283</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Toxic Wave</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -29,8 +29,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>283</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Punch</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -43,8 +43,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>283</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Clout</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -57,8 +57,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Blast</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -71,8 +71,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Death Touch</Name>
     <Category>Combat Spells</Category>
     <Type>M</Type>
@@ -85,8 +85,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Manabolt</Name>
     <Category>Combat Spells</Category>
     <Type>M</Type>
@@ -99,8 +99,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Manaball</Name>
     <Category>Combat Spells</Category>
     <Type>M</Type>
@@ -113,8 +113,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Flamethrower</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -128,8 +128,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Fireball</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -143,8 +143,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Lightning Bolt</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -158,8 +158,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Ball Lightning</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -173,8 +173,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Shatter</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -187,8 +187,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Powerbolt</Name>
     <Category>Combat Spells</Category>
     <Type>P</Type>
@@ -201,8 +201,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Powerball</Name>
     <Category>Combat Spells</Category>
     <Type>M</Type>
@@ -215,8 +215,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Knockout</Name>
     <Category>Combat Spells</Category>
     <Type>M</Type>
@@ -229,8 +229,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Stunbolt</Name>
     <Category>Combat Spells</Category>
     <Type>M</Type>
@@ -243,8 +243,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>284</Page>
-  </Spell>
-  <Spell>
+  </SpellLoader>
+  <SpellLoader>
     <Name>Stunball</Name>
     <Category>Combat Spells</Category>
     <Type>M</Type>
@@ -257,5 +257,5 @@
     </Tags>
     <Book>SR5</Book>
     <Page>285</Page>
-  </Spell>
-</ArrayOfSpell>
+  </SpellLoader>
+</ArrayOfSpellLoader>

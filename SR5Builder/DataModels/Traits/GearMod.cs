@@ -51,7 +51,10 @@ namespace SR5Builder.DataModels
             {
                 if (CostMult != 1)
                 {
-                    return "×" + CostMult + " +" + FlatCost + "¥";
+                    if (FlatCost != 0)
+                        return "×" + CostMult + " +" + FlatCost + "¥";
+                    else
+                        return "×" + CostMult;
                 }
                 else return "+" + FlatCost + "¥";
             }

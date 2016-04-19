@@ -92,7 +92,9 @@ namespace SR5Builder.DataModels
         {
             foreach (Augment a in GivenAugments)
             {
+                //IAugmentable t = a.Target;
                 a.Target = null;
+                //t.OnAugmentCollectionChanged(null, )
             }
         }
     }
