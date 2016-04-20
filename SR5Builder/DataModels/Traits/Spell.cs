@@ -23,6 +23,12 @@ namespace SR5Builder.DataModels
 
         public string[] Tags { get; set; }
 
+        public override int Karma
+        {
+            get { return 5; }
+            set { }
+        }
+
         public Spell()
             : base(null)
         {

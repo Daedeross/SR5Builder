@@ -44,12 +44,35 @@ namespace SR5Builder.DataModels
             }
         }
 
+        private int mImprovement;
+        public int ImprovedRating
+        {
+            get { return mImprovement + BaseRating; }
+            set
+            {
+                if (value <= Max && value >= Min)
+                {
+                    mImprovement = value - BaseRating;
+                }
+            }
+        }
+
+
         public override int AugmentedRating
         {
             get
             {
-                return BaseRating + BonusRating;
+                return ImprovedRating + BonusRating;
             }
+        }
+
+        public override int Karma
+        {
+            get
+            {
+                return (ImprovedRating - BaseRating);
+            }
+            set { }
         }
 
         public Attribute(SR5Character owner, string name)

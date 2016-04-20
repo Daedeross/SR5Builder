@@ -39,12 +39,17 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public int Cost
+        public decimal Cost
         {
             get
             {
                 return gear.Cost;
             }
+        }
+
+        public string DisplayCost
+        {
+            get { return Cost.ToString("C", GlobalData.CostFormat); }
         }
 
         public ObservableCollection<GearModLoader> AvailableMods { get; set; }

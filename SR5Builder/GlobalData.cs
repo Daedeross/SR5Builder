@@ -16,6 +16,12 @@ namespace SR5Builder
     {
         #region Static Properties
 
+            #region General Settings
+
+        public static Dictionary<string, GenSettings> GenSettingsList { get; set; }
+
+            #endregion // General Settings
+
             #region Priorities / Metatype / Special Choice
 
         public static Dictionary<string, MetatypeStats> Metatypes { get; set; }
@@ -58,12 +64,12 @@ namespace SR5Builder
 
         #region Static Methods
 
-            #region Initialize
-
         public static void Initialize()
         {
             // Initialize Static Properties
             // Function name are self-explanitory
+            LoadSettings();
+
             LoadMetatpyes();
             
             LoadSpecials();
@@ -83,20 +89,36 @@ namespace SR5Builder
             // Load Implants (cyber/bio-ware)
             LoadImplants();
 
-            // Gear Mods
+            // Gear Mods (Includes capacity costing 'ware)
             LoadGearMods();
 
             // set NumberFormat for nuyen
             CostFormat = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
-            CostFormat.NumberDecimalDigits = 0;
-
+            CostFormat.NumberDecimalDigits = Properties.Settings.Default.NumberDecimalDigits;
+            CostFormat.CurrencyDecimalDigits = Properties.Settings.Default.CurrencyDecimalDigits;
+            CostFormat.CurrencySymbol = Properties.Settings.Default.CurrencySymbol;
+            CostFormat.CurrencyPositivePattern = Properties.Settings.Default.CurrencyPositivePattern;
+            CostFormat.CurrencyNegativePattern = Properties.Settings.Default.CurrencyNegativePattern;
+#if DEBUG
             // Use for generating intitial Xml Serialization templates
             //WriteFile();
+#endif
         }
 
-            #endregion Initialize
+        private static void LoadSettings()
+        {
+            DirectoryInfo info = new DirectoryInfo(".\\Resources\\GenSettings");
+            FileInfo[] files = info.GetFiles("*.xml");
 
-            #region LoadMetatypes
+            GenSettingsList = new Dictionary<string, DataModels.GenSettings>(files.Length);
+
+            foreach (FileInfo file in files)
+            {
+                string name = Path.GetFileNameWithoutExtension(file.Name).Replace("Settings","");
+                GenSettings gs = GenSettings.LoadFromfile(file.FullName);
+                GenSettingsList.Add(name, gs);
+            }
+        }
 
         private static void LoadMetatpyes()
         {
@@ -112,10 +134,6 @@ namespace SR5Builder
                 Metatypes.Add(m.Name, m);
             }
         }
-
-            #endregion // Load Metatypes
-
-            #region LoadSpecials
         
         private static void LoadSpecials()
         {
@@ -139,10 +157,6 @@ namespace SR5Builder
             }
         }
 
-            #endregion //LoadSpecials
-
-            #region LoadPriorities
-
         private static void LoadPriorities()
         {
             XmlSerializer ser = new XmlSerializer(typeof(SerializableDictionary<Priority, PriorityLevel>));
@@ -150,11 +164,7 @@ namespace SR5Builder
             PriorityLevels = (SerializableDictionary<Priority, PriorityLevel>)ser.Deserialize(reader);
         }
 
-            #endregion // LoadPriorities
-
             #region Skills
-
-                #region LoadSkills
 
         private static void LoadSkills()
         {
@@ -188,12 +198,7 @@ namespace SR5Builder
 
             // Autoconstruct Skill Groups from the 'All' category
             MakeSkillGroups();
-
         }
-
-                #endregion // LoadSkills
-
-                #region MakeSkillGroups
 
         private static void MakeSkillGroups()
         {
@@ -224,12 +229,8 @@ namespace SR5Builder
             PreLoadedSkillGroups.Sort();
         }
 
-                #endregion // MakeSkillGroups
-
             #endregion // Skills
 
-            #region LoadSpells
-        
         private static void LoadSpells()
         {
             // find all .xml files in req. directory
@@ -255,10 +256,6 @@ namespace SR5Builder
             allSpells.Sort();
             PreLoadedSpells.Add("All", allSpells);
         }
-
-            #endregion // LoadSpells
-
-            #region LoadGear
 
         private static void LoadGear()
         {
@@ -304,10 +301,6 @@ namespace SR5Builder
             }
         }
         
-            #endregion // LoadGear
-
-            #region LoadImplants
-
         private static void LoadImplants()
         {
             List<ImplantLoader> list;
@@ -338,10 +331,6 @@ namespace SR5Builder
                 }
             }
         }
-
-            #endregion LoadImplants
-
-            #region LoadGearMods
 
         private static void LoadGearMods()
         {
@@ -381,14 +370,10 @@ namespace SR5Builder
             }
         }
 
-            #endregion // LoadGearMods
-
-        #region Debug and Stuff
+            #region Debug and Stuff
 
         public static void WriteFile()
         {
-            
-
             XmlSerializer ser = new XmlSerializer(typeof(List<WeaponLoader>));
             StreamWriter writer = new StreamWriter("RangedWeapons.xml");
 
@@ -422,10 +407,7 @@ namespace SR5Builder
             list.Add(rwl);
 
             ser.Serialize(writer, list);
-
-
             
-
             writer.Close();
         }
 

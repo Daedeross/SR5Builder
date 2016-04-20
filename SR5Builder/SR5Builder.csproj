@@ -82,6 +82,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataModels\Availability.cs" />
+    <Compile Include="DataModels\GenSettings.cs" />
     <Compile Include="DataModels\IAugmentable.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,6 +108,7 @@
     <Compile Include="Helpers\BoolToVisiblilityConverter.cs" />
     <Compile Include="Helpers\IntoToStringConverter.cs" />
     <Compile Include="Helpers\IntToMoneyConverter.cs" />
+    <Compile Include="Helpers\Karma.cs" />
     <Compile Include="Helpers\Log.cs" />
     <Compile Include="Helpers\TraitGroupStyleSelector.cs" />
     <Compile Include="Loaders\GearLoader.cs" />
@@ -407,6 +409,9 @@
     <Resource Include="Resources\Gear\Weapons\MeleeWeapons - Clubs.xml">
       <SubType>Designer</SubType>
     </Resource>
+    <Content Include="Resources\GenSettings\Default.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Metatypes\Human.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

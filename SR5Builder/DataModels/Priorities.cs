@@ -8,7 +8,6 @@ using DrWPF.Windows.Data;
 
 namespace SR5Builder.DataModels
 {
-
     public struct PriorityLevel
     {
         public Priority Priority;
@@ -26,6 +25,8 @@ namespace SR5Builder.DataModels
 
     public class Priorities : DataModelBase
     {
+        public CharGenMethod Method { get; protected set; }
+
         private Priority mMetatype = Priority.U;
         public Priority Metatype
         {
@@ -251,8 +252,29 @@ namespace SR5Builder.DataModels
 
         public static string[] ResourcesText;
 
+        /// <summary>
+        /// Verifies that the Priorities have been selected appropriately.
+        /// </summary>
+        /// <returns>True if the selected priorities are valid.</returns>
         public bool Verify()
         {
+            switch (Method)
+            {
+                case CharGenMethod.NPC:
+                    return true;
+                case CharGenMethod.Priority:
+                    break;
+                case CharGenMethod.SumToTen:
+                    break;
+                case CharGenMethod.KarmaGen:
+                    break;
+                case CharGenMethod.LifeModules:
+                    break;
+                case CharGenMethod.BuildPoints:
+                    break;
+                default:
+                    break;
+            }
             return (mMetatype != Priority.U &&
                     mAttributes != Priority.U &&
                     mSpecial != Priority.U &&

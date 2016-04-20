@@ -26,6 +26,12 @@ namespace SR5Builder.Loaders
             }
         }
 
+        [XmlIgnore]
+        public string DisplayCost
+        {
+            get { return Cost.ToString("C", GlobalData.CostFormat); }
+        }
+
         public List<string> ExtArray { get; set; }
 
         public string ExtKind { get; set; }

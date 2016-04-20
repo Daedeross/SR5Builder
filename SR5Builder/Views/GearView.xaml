@@ -50,7 +50,7 @@
                                     Binding="{Binding Value.Rating, Converter={StaticResource intToStringConverter}}" />
                 <DataGridTextColumn Header="Avail"
                                     Binding="{Binding Value.Availability}" />
-                <DataGridTextColumn Header="Cost" Binding="{Binding Value.Cost, Converter={StaticResource intToMoneyConverter}}" />
+                <DataGridTextColumn Header="Cost" Binding="{Binding Value.DisplayCost}" />
             </DataGrid.Columns>
             <DataGrid.GroupStyle>
                 <GroupStyle>
