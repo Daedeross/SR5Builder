@@ -62,6 +62,11 @@ namespace SR5Builder.ViewModels
                 character.Name = value;
             }
         }
+		
+		public CharGenMethod Method 
+		{
+			get { return character.Priorities.Method; }
+		}
 
         public bool IsValid
         {
