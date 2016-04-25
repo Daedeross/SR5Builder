@@ -65,7 +65,6 @@ namespace SR5Builder.DataModels
                 {
                     if (value == Priority.U)
                     {
-
                         mAttributes = value;
                         OnPropertyChanged("Attributes");
                     }
@@ -230,6 +229,15 @@ namespace SR5Builder.DataModels
 			mSkills = Priority.U;
 			mResources = Priority.U;
 		}
+
+        /// <summary>
+        /// TODO: Error checking, maybe fold into property
+        /// </summary>
+        /// <param name="m"></param>
+        public void ChangeMethod(CharGenMethod m)
+        {
+            Method = m;
+        }
 
         /// <summary>
         /// Hard coded initially. Later will generate text from loaded PriorityLevel list.

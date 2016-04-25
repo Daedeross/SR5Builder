@@ -197,7 +197,7 @@ namespace SR5Builder.DataModels
         public Attribute Essence
         {
             get { return mEssence; }
-            set
+            protected set
             {
                 if (value != mEssence)
                 {
@@ -452,6 +452,8 @@ namespace SR5Builder.DataModels
         }
 
         public ObservableDictionary<string, AdeptPower> PowerList { get; set; }
+
+        public LeveledTrait PowerPoints { get; set; }
 
         public int PowerKarma
         {

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GenSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Method>Priority</Method>
-  <AttributeKarmaMult>5</AttributeKarmaMult>
-  <SkillGroupKarmaMult>5</SkillGroupKarmaMult>
-  <ActiveSkillKarmaMult>2</ActiveSkillKarmaMult>
-  <MagicSkillKarmaMult>2</MagicSkillKarmaMult>
-  <ResonanceSkillKarmaMult>2</ResonanceSkillKarmaMult>
-  <KnowledgeSkillKarmaMult>1</KnowledgeSkillKarmaMult>
-  <LanguageSkillKarmaMult>1</LanguageSkillKarmaMult>
-  <InitiationKarmaBase>10</InitiationKarmaBase>
-  <InitiationKarmaMult>3</InitiationKarmaMult>
-  <SubmersionKarmaBase>10</SubmersionKarmaBase>
-  <SubmersionKarmaMult>3</SubmersionKarmaMult>
-  <ComplexFormKarma>4</ComplexFormKarma>
-  <SpellKarma>5</SpellKarma>
-  <SpecializationKarma>7</SpecializationKarma>
-  <MartialArtsStyleKarma>7</MartialArtsStyleKarma>
-  <MartialArtsTechniqueKarma>5</MartialArtsTechniqueKarma>
-  <InPlayQualityMult>2</InPlayQualityMult>
+  <Method type="CharGenMethod">Priority</Method>
+  <AttributeKarmaMult type="int">5</AttributeKarmaMult>
+  <SkillGroupKarmaMult type="int">5</SkillGroupKarmaMult>
+  <ActiveSkillKarmaMult type="int">2</ActiveSkillKarmaMult>
+  <MagicSkillKarmaMult type="int">2</MagicSkillKarmaMult>
+  <ResonanceSkillKarmaMult type="int">2</ResonanceSkillKarmaMult>
+  <KnowledgeSkillKarmaMult type="int">1</KnowledgeSkillKarmaMult>
+  <LanguageSkillKarmaMult type="int">1</LanguageSkillKarmaMult>
+  <InitiationKarmaBase type="int">10</InitiationKarmaBase>
+  <InitiationKarmaMult type="int">3</InitiationKarmaMult>
+  <SubmersionKarmaBase type="int">10</SubmersionKarmaBase>
+  <SubmersionKarmaMult type="int">3</SubmersionKarmaMult>
+  <ComplexFormKarma type="int">4</ComplexFormKarma>
+  <SpellKarma type="int">5</SpellKarma>
+  <PowerPointKarma type="int">5</PowerPointKarma>
+  <SpecializationKarma type="int">7</SpecializationKarma>
+  <MartialArtsStyleKarma type="int">7</MartialArtsStyleKarma>
+  <MartialArtsTechniqueKarma type="int">5</MartialArtsTechniqueKarma>
+  <InPlayQualityMult type="int">2</InPlayQualityMult>
 </GenSettings>

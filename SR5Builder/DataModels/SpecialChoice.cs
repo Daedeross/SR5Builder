@@ -7,8 +7,6 @@ using System.Xml.Serialization;
 
 namespace SR5Builder.DataModels
 {
-
-
     public class SpecialChoice : DataModelBase
     {
         public Priority Priority { get;  set; }
@@ -37,6 +35,12 @@ namespace SR5Builder.DataModels
 
         public int ComplexForms { get;  set; }
 
+        public int PowerPoints { get; set; }
+
+        public bool CanBuyPowerPoints { get; set; }
+
+        public string[] AllowedGroups { get; set; }
+
         #region Factory Methods
 
         public static SpecialChoice None(Priority priority)
@@ -62,18 +66,6 @@ namespace SR5Builder.DataModels
 
             writer.Close();
         }
-
-        //public static SpecialChoice LoadFromFile(string filename)
-        //{
-        //    XmlSerializer ser = new XmlSerializer(typeof(SpecialChoice));
-        //    StreamReader reader = new StreamReader(filename);
-
-        //    SpecialChoice value = (SpecialChoice)ser.Deserialize(reader);
-
-        //    reader.Close();
-
-        //    return value;
-        //}
 
         public static List<SpecialChoice> LoadFromFile(string filename)
         {

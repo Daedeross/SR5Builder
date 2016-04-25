@@ -12,7 +12,11 @@
     <SkillCount>2</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>5</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+    <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Tasking</string>
+    </AllowedGroups>
   </SpecialChoice>
   <SpecialChoice>
     <Name>Technomancer</Name>
@@ -26,7 +30,11 @@
     <SkillCount>2</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>2</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Tasking</string>
+    </AllowedGroups>
   </SpecialChoice>
   <SpecialChoice>
     <Name>Technomancer</Name>
@@ -40,6 +48,10 @@
     <SkillCount>0</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>1</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Tasking</string>
+    </AllowedGroups>
   </SpecialChoice>
 </ArrayOfSpecialChoice>
