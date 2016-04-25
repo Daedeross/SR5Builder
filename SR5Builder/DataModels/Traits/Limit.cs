@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Attribute = SR5Builder.DataModels.Attribute;
+//using Attribute = SR5Builder.DataModels.Attribute;
 
 namespace SR5Builder.DataModels
 {

@@ -29,6 +29,8 @@ namespace SR5Builder.DataModels
 
         public ObservableCollection<IAugmentContainer> AugmentContainers { get; set; }
 
+        public GenSettings Settings { get; set; }
+
             #region Metatype
 
         private string mMetatype;
@@ -435,7 +437,38 @@ namespace SR5Builder.DataModels
 
         public ObservableDictionary<string, Spell> SpellList { get; set; }
 
+        public int SpellKarma
+        {
+            get
+            {
+                if (SpecialChoice.Name == "Magician" || SpecialChoice.Name == "Mystic Adept")
+                {
+                    int count = SpellList.Count - SpecialChoice.Spells;
+                    return count > 0 ? count * Settings.SpellKarma : 0;
+                }
+                else
+                    return 0;
+            }
+        }
+
         public ObservableDictionary<string, AdeptPower> PowerList { get; set; }
+
+        public int PowerKarma
+        {
+            get
+            {
+                if (SpecialChoice.Name == "Mystic Adept")
+                {
+                    float pp = 0;
+                    foreach (AdeptPower power in PowerList)
+                    {
+                        pp += power.PowerPoints;
+                    }
+                    return (int)Math.Ceiling( pp * Settings.PowerPointKarma);
+                }
+                return 0;
+            }
+        }
 
             #endregion // Spells / Powers
 
@@ -455,7 +488,7 @@ namespace SR5Builder.DataModels
 
         //public ObservableDictionary<string, RangedWeapon> ProjectileWeapons { get; set; }
 
-        #endregion // Weapons
+            #endregion // Weapons
 
         #endregion // Properties
 

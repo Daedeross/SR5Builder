@@ -116,6 +116,8 @@ namespace SR5Builder.DataModels
 
         public int SpellKarma { get; set; }
 
+        public int PowerPointKarma { get; set; }
+
         public int SpecializationKarma { get; set; }
 
         public int MartialArtsStyleKarma { get; set; }

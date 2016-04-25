@@ -70,7 +70,7 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                return (ImprovedRating - BaseRating);
+                return mOwner.Settings.AttributeKarma(ImprovedRating, BaseRating);
             }
             set { }
         }
@@ -95,19 +95,19 @@ namespace SR5Builder.DataModels
                 mOwner.PropertyChanged += this.OnOwnerChanged;
         }
 
-        public Attribute(SR5Character owner, AttributeLoader loader)
-            : base(owner)
-        {
-            Name = loader.Name;
-            mMin = (typeof(MetatypeStats)).GetProperty(Name + "Min");
-            mMax = (typeof(MetatypeStats)).GetProperty(Name + "Max");
+        //public Attribute(SR5Character owner, AttributeLoader loader)
+        //    : base(owner)
+        //{
+        //    Name = loader.Name;
+        //    mMin = (typeof(MetatypeStats)).GetProperty(Name + "Min");
+        //    mMax = (typeof(MetatypeStats)).GetProperty(Name + "Max");
 
-            mBaseRating = loader.BaseImp;
-            mImprovement = loader.KarmaImp;
+        //    mBaseRating = loader.BaseImp;
+        //    mImprovement = loader.KarmaImp;
 
-            if (mOwner != null)
-                mOwner.PropertyChanged += this.OnOwnerChanged;
-        }
+        //    if (mOwner != null)
+        //        mOwner.PropertyChanged += this.OnOwnerChanged;
+        //}
 
         private void OnOwnerChanged(object sender, PropertyChangedEventArgs e)
         {
