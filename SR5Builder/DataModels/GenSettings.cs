@@ -186,7 +186,7 @@ namespace SR5Builder.DataModels
         {
             object tmp; // temp pointer to hold value pulled from settings dict
 
-            if (!loader.Properties.TryGetValue("Method", out tmp) && tmp is CharGenMethod)
+            if (loader.Properties.TryGetValue("Method", out tmp) && tmp is CharGenMethod)
             {
                 Method = (CharGenMethod)tmp;
             }

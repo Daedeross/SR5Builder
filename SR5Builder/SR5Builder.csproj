@@ -85,7 +85,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Converters\SettingConverter.cs" />
     <Compile Include="DataModels\Availability.cs" />
     <Compile Include="DataModels\GenSettings.cs" />
     <Compile Include="DataModels\IAugmentable.cs">

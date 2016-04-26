@@ -26,6 +26,10 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -76,5 +80,6 @@
                    Grid.Row="7" Grid.Column="1"
                    Text="{Binding CharismaText}"
                    />
+        <TextBlock Grid.Row="9" Text="{Binding Method}" />
     </Grid>
 </UserControl>
