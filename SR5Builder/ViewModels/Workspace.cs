@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Helpers;
 using SR5Builder.DataModels;
+using SR5Builder.Dialogs;
 
 namespace SR5Builder.ViewModels
 {
@@ -68,10 +69,14 @@ namespace SR5Builder.ViewModels
 
         private void AddNewCharacterExecute()
         {
-            CharacterViewModel vm = new CharacterViewModel();
-            vm.DisplayName = "Character " + (CharacterVMs.Count + 1).ToString();
-            CharacterVMs.Add(vm);
-            SelectedCharacter = CharacterVMs.Last();
+            //CharacterViewModel vm = new CharacterViewModel();
+            //vm.DisplayName = "Character " + (CharacterVMs.Count + 1).ToString();
+            //CharacterVMs.Add(vm);
+            //SelectedCharacter = CharacterVMs.Last();
+            NewCharacterViewModel vm = new NewCharacterViewModel();
+            NewCharacterDialog dlg = new NewCharacterDialog();
+            dlg.DataContext = vm;
+            dlg.ShowDialog();
         }
 
         private bool AddNewCharacterCanExecute()
@@ -81,7 +86,7 @@ namespace SR5Builder.ViewModels
 
             #endregion // AddNewCharacter
 
-        #region ExamineCharacter
+            #region ExamineCharacter
 
         private RelayCommand mExamineCharacterCommand;
         public ICommand ExamineCharacterCommand

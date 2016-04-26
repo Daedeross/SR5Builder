@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using SR5Builder.Loaders;
+using System;
+using System.IO;
 using System.Xml.Serialization;
 
 namespace SR5Builder.DataModels
@@ -10,6 +12,8 @@ namespace SR5Builder.DataModels
     public class GenSettings
     {
         public CharGenMethod Method { get; set; }
+
+        public int StartingKarma { get; set; }
 
         #region Scaling Karma Costs
 
@@ -98,14 +102,42 @@ namespace SR5Builder.DataModels
 
         public int SubmersionKarmaMult { get; set; }
 
-        public int InitationKarma(int value, int min = 0)
+        /// <summary>
+        /// Calulates the Karma cost to Initiate from <para>min</para> to <para>value</para>.
+        /// </summary>
+        /// <param name="value">The end Initiation level.</param>
+        /// <param name="min">The base Initiation level (default 0).</param>
+        /// <param name="discounts">The number of discounts to initiation (i.e. Group, Ordeal, and Schooling).</param>
+        /// <returns>The total Karma cost to Initiate from <para>min</para> to <para>value</para>.</returns>
+        public int InitiationKarma(int value, int min = 0, int discounts = 0)
         {
-            return InitiationKarmaBase * (value - min) + (ValueAt(value) - ValueAt(min)) * InitiationKarmaMult;
+            int val = 0;
+            discounts = Math.Min(discounts, 3);
+            discounts = Math.Max(discounts, 0);
+            for (int i = min + 1; i <= value; i++)
+            {
+                val += (int)Math.Ceiling((1 - 0.3 * discounts) * (InitiationKarmaBase + InitiationKarmaMult * i));
+            }
+            return val;
         }
 
-        public int SubmersionKarma(int value, int min = 0)
+        /// <summary>
+        /// Calulates the Karma cost to Submerge from <para>min</para> to <para>value</para>.
+        /// </summary>
+        /// <param name="value">The end Submersion level.</param>
+        /// <param name="min">The base Submersion level (default 0).</param>
+        /// <param name="discounts">The number of discounts to initiation (i.e. Group, Ordeal, and Schooling).</param>
+        /// <returns>The total Karma cost to Submerge from <para>min</para> to <para>value</para>.</returns>
+        public int SubmersionKarma(int value, int min = 0, int discounts = 0)
         {
-            return SubmersionKarmaBase * (value - min) + (ValueAt(value) - ValueAt(min)) * SubmersionKarmaMult;
+            int val = 0;
+            discounts = Math.Min(discounts, 3);
+            discounts = Math.Max(discounts, 0);
+            for (int i = min + 1; i <= value; i++)
+            {
+                val += (int)Math.Ceiling((1 - 0.3 * discounts) * (SubmersionKarmaBase + SubmersionKarmaMult * i));
+            }
+            return val;
         }
 
         #endregion Scaling Karma Costs
@@ -147,6 +179,192 @@ namespace SR5Builder.DataModels
 
             reader.Close();
             return value;
+        }
+        
+        
+        public GenSettings(SettingsLoader loader)
+        {
+            object tmp; // temp pointer to hold value pulled from settings dict
+
+            if (!loader.Properties.TryGetValue("Method", out tmp) && tmp is CharGenMethod)
+            {
+                Method = (CharGenMethod)tmp;
+            }
+            else
+            {
+                Method = CharGenMethod.Priority;
+            }
+
+            if (!loader.Properties.TryGetValue("StartingKarma", out tmp) && tmp is int)
+            {
+                StartingKarma = (int)tmp;
+            }
+            else
+            {
+                StartingKarma = 25;
+            }
+
+            if (!loader.Properties.TryGetValue("AttributeKarmaMult", out tmp) && tmp is int)
+            {
+                AttributeKarmaMult = (int)tmp;
+            }
+            else
+            {
+                AttributeKarmaMult = 5;
+            }
+
+            if (!loader.Properties.TryGetValue("SkillGroupKarmaMult", out tmp) && tmp is int)
+            {
+                SkillGroupKarmaMult = (int)tmp;
+            }
+            else
+            {
+                SkillGroupKarmaMult = 5;
+            }
+
+            if (!loader.Properties.TryGetValue("ActiveSkillKarmaMult", out tmp) && tmp is int)
+            {
+                ActiveSkillKarmaMult = (int)tmp;
+            }
+            else
+            {
+                ActiveSkillKarmaMult = 2;
+            }
+
+            if (!loader.Properties.TryGetValue("MagicSkillKarmaMult", out tmp) && tmp is int)
+            {
+                MagicSkillKarmaMult = (int)tmp;
+            }
+            else
+            {
+                MagicSkillKarmaMult = 2;
+            }
+
+            if (!loader.Properties.TryGetValue("ResonanceSkillKarmaMult", out tmp) && tmp is int)
+            {
+                ResonanceSkillKarmaMult = (int)tmp;
+            }
+            else
+            {
+                ResonanceSkillKarmaMult = 2;
+            }
+
+            if (!loader.Properties.TryGetValue("KnowledgeSkillKarmaMult", out tmp) && tmp is int)
+            {
+                KnowledgeSkillKarmaMult = (int)tmp;
+            }
+            else
+            {
+                KnowledgeSkillKarmaMult = 1;
+            }
+
+            if (!loader.Properties.TryGetValue("LanguageSkillKarmaMult", out tmp) && tmp is int)
+            {
+                LanguageSkillKarmaMult = (int)tmp;
+            }
+            else
+            {
+                LanguageSkillKarmaMult = 1;
+            }
+
+            if (!loader.Properties.TryGetValue("InitiationKarmaBase", out tmp) && tmp is int)
+            {
+                InitiationKarmaBase = (int)tmp;
+            }
+            else
+            {
+                InitiationKarmaBase = 10;
+            }
+
+            if (!loader.Properties.TryGetValue("InitiationKarmaMult", out tmp) && tmp is int)
+            {
+                InitiationKarmaMult = (int)tmp;
+            }
+            else
+            {
+                InitiationKarmaMult = 3;
+            }
+
+            if (!loader.Properties.TryGetValue("SubmersionKarmaBase", out tmp) && tmp is int)
+            {
+                SubmersionKarmaBase = (int)tmp;
+            }
+            else
+            {
+                SubmersionKarmaBase = 10;
+            }
+
+            if (!loader.Properties.TryGetValue("SubmersionKarmaMult", out tmp) && tmp is int)
+            {
+                SubmersionKarmaMult = (int)tmp;
+            }
+            else
+            {
+                SubmersionKarmaMult = 3;
+            }
+
+            if (!loader.Properties.TryGetValue("ComplexFormKarma", out tmp) && tmp is int)
+            {
+                ComplexFormKarma = (int)tmp;
+            }
+            else
+            {
+                ComplexFormKarma = 4;
+            }
+
+            if (!loader.Properties.TryGetValue("SpellKarma", out tmp) && tmp is int)
+            {
+                SpellKarma = (int)tmp;
+            }
+            else
+            {
+                SpellKarma = 5;
+            }
+
+            if (!loader.Properties.TryGetValue("PowerPointKarma", out tmp) && tmp is int)
+            {
+                PowerPointKarma = (int)tmp;
+            }
+            else
+            {
+                PowerPointKarma = 5;
+            }
+
+            if (!loader.Properties.TryGetValue("SpecializationKarma", out tmp) && tmp is int)
+            {
+                SpecializationKarma = (int)tmp;
+            }
+            else
+            {
+                SpecializationKarma = 7;
+            }
+
+            if (!loader.Properties.TryGetValue("MartialArtsStyleKarma", out tmp) && tmp is int)
+            {
+                MartialArtsStyleKarma = (int)tmp;
+            }
+            else
+            {
+                MartialArtsStyleKarma = 7;
+            }
+
+            if (!loader.Properties.TryGetValue("MartialArtsTechniqueKarma", out tmp) && tmp is int)
+            {
+                MartialArtsTechniqueKarma = (int)tmp;
+            }
+            else
+            {
+                MartialArtsTechniqueKarma = 5;
+            }
+
+            if (!loader.Properties.TryGetValue("InPlayQualityMult", out tmp) && tmp is int)
+            {
+                InPlayQualityMult = (int)tmp;
+            }
+            else
+            {
+                InPlayQualityMult = 2;
+            }
         }
     }
 }

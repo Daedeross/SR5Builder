@@ -11,7 +11,6 @@ namespace SR5Builder.ViewModels
 {
     public abstract class DialogViewModel : ViewModelBase
     {
-
         private bool? mResult;
 
         public bool? Result

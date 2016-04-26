@@ -374,15 +374,7 @@ namespace SR5Builder
 
         public static void WriteFile()
         {
-            XmlSerializer ser = new XmlSerializer(typeof(GenSettings));
-            StreamWriter writer = new StreamWriter("Resources/GenSettings/Default.xml");
-
-            GenSettings gs = new GenSettings();
-            gs.Method = CharGenMethod.Priority;
-
-            ser.Serialize(writer, gs);
             
-            writer.Close();
         }
 
             #endregion // Debug and Stuff

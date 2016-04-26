@@ -16,6 +16,11 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public GenSettings CurrentSettings { get; protected set; }
+        public SettingsViewModel Settings { get; set; }
+
+        public NewCharacterViewModel()
+        {
+            Settings = new SettingsViewModel();
+        }
     }
 }

@@ -50,17 +50,22 @@ namespace SR5Builder.Loaders
 
         public static SettingsLoader LoadFromFile(string filename)
         {
+            
             XDocument doc = XDocument.Load(filename);
             SettingsLoader loader = new SettingsLoader();
-
+            
             // pull data from file
-            loader.Properties = new ObservableDictionary<string, object>((
-                from el in doc.Descendants("GenSettings")
-                select new KeyValuePair<string, object>
-                    (el.Name.ToString(), ParseProperty(el.Attribute("type").Value,
-                                                                el.Value))
-                ).ToDictionary(e => e.Key, e => e.Value));
-
+            List<KeyValuePair<string, object>> tmpDict = new List<KeyValuePair<string, object>>();
+            var settingsList = (from sett in doc.Descendants("GenSettings")
+                           select sett.Nodes()).First();
+            Dictionary<string, object> settings =
+                (from sett in settingsList
+                 where sett is XElement
+                 select new KeyValuePair<string, object>(
+                     (sett as XElement).Name.ToString(),
+                     ParseProperty((sett as XElement).Attribute("type").Value, (sett as XElement).Value)
+                     ) ).ToDictionary(e => e.Key, e => e.Value);
+            loader.Properties = new ObservableDictionary<string, object>(settings);
             return loader;
         }
 

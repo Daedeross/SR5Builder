@@ -52,6 +52,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -81,6 +85,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\SettingConverter.cs" />
     <Compile Include="DataModels\Availability.cs" />
     <Compile Include="DataModels\GenSettings.cs" />
     <Compile Include="DataModels\IAugmentable.cs">
@@ -110,11 +115,12 @@
       <DependentUpon>NewCharacterDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\ViewModels\NewCharacterViewModel.cs" />
-    <Compile Include="Helpers\BoolToVisiblilityConverter.cs" />
-    <Compile Include="Helpers\IntoToStringConverter.cs" />
-    <Compile Include="Helpers\IntToMoneyConverter.cs" />
+    <Compile Include="Converters\BoolToVisiblilityConverter.cs" />
+    <Compile Include="Converters\IntoToStringConverter.cs" />
+    <Compile Include="Converters\IntToMoneyConverter.cs" />
     <Compile Include="Helpers\Karma.cs" />
     <Compile Include="Helpers\Log.cs" />
+    <Compile Include="Helpers\SettingCellSelector.cs" />
     <Compile Include="Loaders\AttributeLoader.cs" />
     <Compile Include="Loaders\CharacterLoader.cs" />
     <Compile Include="Loaders\GearLoader.cs" />
@@ -140,7 +146,7 @@
     <Compile Include="Loaders\AdeptPowerLoader.cs" />
     <Compile Include="Loaders\AugmentLoader.cs" />
     <Compile Include="Helpers\BlankClass.cs" />
-    <Compile Include="Helpers\BookPageConverter.cs" />
+    <Compile Include="Converters\BookPageConverter.cs" />
     <Compile Include="Helpers\Commands.cs" />
     <Compile Include="Helpers\DialogCloser.cs" />
     <Compile Include="Helpers\Enums.cs" />
@@ -388,7 +394,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Converters\" />
     <Folder Include="Loaders\CharacterTraits\" />
     <Folder Include="Resources\Priorities\" />
   </ItemGroup>
