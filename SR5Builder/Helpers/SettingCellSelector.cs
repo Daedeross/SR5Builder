@@ -18,9 +18,10 @@ namespace SR5Builder.Helpers
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
             object val;
-            if (item != null && item is KeyValuePair<string, object>?)
+            if (item != null && item is SR5Builder.ViewModels.Setting)
             {
-                val = (item as KeyValuePair<string, object>?).Value;
+                SR5Builder.ViewModels.Setting set = (SR5Builder.ViewModels.Setting)item;
+                val = set.Value;
             }
             else
             {

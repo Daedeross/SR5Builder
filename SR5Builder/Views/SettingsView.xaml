@@ -9,7 +9,7 @@
              xmlns:h="clr-namespace:SR5Builder.Helpers"
              xmlns:proj="clr-namespace:SR5Builder"
              mc:Ignorable="d" 
-             MinHeight="400" MinWidth="600">
+             MinHeight="400" MinWidth="400">
     <UserControl.Resources>
         <cnv:SettingToIntConverter x:Key="setToIntConverter" />
         <h:SettingCellSelector x:Key="settingCellSelector" />
@@ -20,69 +20,51 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <DataTemplate x:Key="intCell">
-            <xtk:IntegerUpDown Value="{Binding Value}" />
+            <xtk:IntegerUpDown Value="{Binding Value}" ShowButtonSpinner="False"/>
         </DataTemplate>
         <DataTemplate x:Key="floatCell">
-            <TextBlock Text="{Binding}" />
+            <xtk:SingleUpDown Text="{Binding Value}" ShowButtonSpinner="False"
+                              />
         </DataTemplate>
         <DataTemplate x:Key="methodCell">
-            <TextBlock Text="{Binding}" />
+            <ComboBox ItemsSource="{Binding Source={StaticResource methodList}}"
+                                                      SelectedItem="{Binding Value}">
+            </ComboBox>
         </DataTemplate>
         <DataTemplate x:Key="stringCell">
-            <TextBlock Text="{Binding}" />
+            <TextBox Text="{Binding Value}" />
         </DataTemplate>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="auto" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <ListBox ItemsSource="{Binding SavedSettings}"
-                 SelectedItem="{Binding CurrentSettings}">
+        <ListBox MinWidth="200"
+                 ItemsSource="{Binding SavedSettings.Keys}"
+                 SelectedItem="{Binding SelectedSettings}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Key}" />
+                    <TextBlock Text="{Binding}" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListView Grid.Column="2"
-                  ItemsSource="{Binding CurrentSettings.Properties}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Setting" DisplayMemberBinding="{Binding Key}" Width="200" />
-                    <GridViewColumn Header="Value">
-                        <GridViewColumn.CellTemplateSelector>
-                            <h:SettingCellSelector IntTemplate="{StaticResource intCell}"
-                                                   FloatTemplate="{StaticResource floatCell}"
-                                                   MethodTemplate="{StaticResource methodCell}"
-                                                   StringTemplate="{StaticResource stringCell}"/>
-                        </GridViewColumn.CellTemplateSelector>
-                        <!--<GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <ContentControl Content="{Binding Value}">
-                                    <ContentControl.Resources>
-                                        <DataTemplate DataType="{x:Type sys:Int32}">
-                                            <xtk:MaskedTextBox Value="{Binding}" Mask="00" ValueDataType="{x:Type sys:Object}" />
-                                            --><!--<xtk:IntegerUpDown Value="{Binding Path=/, Converter={StaticResource setToIntConverter}}" />--><!--
-                                        </DataTemplate>
-                                        <DataTemplate DataType="{x:Type sys:Single}">
-                                            <TextBlock Text="float" />
-                                            --><!--<xtk:SingleUpDown Value="{Binding}" />--><!--
-                                        </DataTemplate>
-                                        <DataTemplate DataType="{x:Type proj:CharGenMethod}">
-                                            <TextBlock Text="Method" />
-                                            --><!--<ComboBox ItemsSource="{Binding Source={StaticResource methodList}}"
-                                                      SelectedItem="{Binding Value}">                                                
-                                            </ComboBox>--><!--
-                                        </DataTemplate>
-                                    </ContentControl.Resources>
-                                </ContentControl>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>-->
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid Grid.Column="2"
+                  ItemsSource="{Binding CurrentSettings}"
+                  AutoGenerateColumns="False" IsReadOnly="False"
+                  SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Setting" Width="*" Binding="{Binding Key}" />
+                <DataGridTemplateColumn Header="Value">
+                    <DataGridTemplateColumn.CellTemplateSelector>
+                        <h:SettingCellSelector FloatTemplate="{StaticResource floatCell}"
+                                               IntTemplate="{StaticResource intCell}"
+                                               MethodTemplate="{StaticResource methodCell}"
+                                               StringTemplate="{StaticResource stringCell}" />
+                    </DataGridTemplateColumn.CellTemplateSelector>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

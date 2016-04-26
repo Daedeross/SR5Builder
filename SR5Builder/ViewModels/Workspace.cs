@@ -76,7 +76,15 @@ namespace SR5Builder.ViewModels
             NewCharacterViewModel vm = new NewCharacterViewModel();
             NewCharacterDialog dlg = new NewCharacterDialog();
             dlg.DataContext = vm;
-            dlg.ShowDialog();
+            bool? result = dlg.ShowDialog();
+            if (result == true)
+            {
+                SR5Character c = new SR5Character(vm.Settings.CurrentSettings.AsQueryable());
+                CharacterViewModel cvm = new CharacterViewModel(c);
+                vm.DisplayName = "Character " + (CharacterVMs.Count + 1).ToString();
+                CharacterVMs.Add(cvm);
+                SelectedCharacter = CharacterVMs.Last();
+            }
         }
 
         private bool AddNewCharacterCanExecute()

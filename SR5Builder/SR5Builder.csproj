@@ -437,7 +437,9 @@
     <Content Include="Resources\GenSettings\Default.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\GenSettings\SumToTen.xml" />
+    <Content Include="Resources\GenSettings\SumToTen.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Metatypes\Human.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
