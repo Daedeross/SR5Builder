@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="SR5Builder.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:xtk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:h="clr-namespace:SR5Builder.Helpers"
+             xmlns:proj="clr-namespace:SR5Builder"
+             mc:Ignorable="d" 
+             MinHeight="400" MinWidth="400">
+    <UserControl.Resources>
+        <!--<cnv:SettingToIntConverter x:Key="setToIntConverter" />-->
+        <h:SettingCellSelector x:Key="settingCellSelector" />
+        <ObjectDataProvider x:Key="methodList" MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="proj:CharGenMethod"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <DataTemplate x:Key="intCell">
+            <xtk:IntegerUpDown Value="{Binding Value}" ShowButtonSpinner="False"/>
+        </DataTemplate>
+        <DataTemplate x:Key="floatCell">
+            <xtk:SingleUpDown Text="{Binding Value}" ShowButtonSpinner="False"
+                              />
+        </DataTemplate>
+        <DataTemplate x:Key="methodCell">
+            <ComboBox ItemsSource="{Binding Source={StaticResource methodList}}"
+                                                      SelectedItem="{Binding Value}">
+            </ComboBox>
+        </DataTemplate>
+        <DataTemplate x:Key="stringCell">
+            <TextBox Text="{Binding Value}" />
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListBox MinWidth="200"
+                 ItemsSource="{Binding SavedSettings.Keys}"
+                 SelectedItem="{Binding SelectedSettings}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <DataGrid Grid.Column="2" MaxWidth="300"
+                  ItemsSource="{Binding CurrentSettings}"
+                  AutoGenerateColumns="False" IsReadOnly="False"
+                  SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Setting" Width="*" Binding="{Binding Key}" />
+                <DataGridTemplateColumn Header="Value">
+                    <DataGridTemplateColumn.CellTemplateSelector>
+                        <h:SettingCellSelector FloatTemplate="{StaticResource floatCell}"
+                                               IntTemplate="{StaticResource intCell}"
+                                               MethodTemplate="{StaticResource methodCell}"
+                                               StringTemplate="{StaticResource stringCell}" />
+                    </DataGridTemplateColumn.CellTemplateSelector>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -8,7 +8,6 @@ using DrWPF.Windows.Data;
 
 namespace SR5Builder.DataModels
 {
-
     public struct PriorityLevel
     {
         public Priority Priority;
@@ -26,6 +25,8 @@ namespace SR5Builder.DataModels
 
     public class Priorities : DataModelBase
     {
+        public CharGenMethod Method { get; protected set; }
+
         private Priority mMetatype = Priority.U;
         public Priority Metatype
         {
@@ -39,28 +40,14 @@ namespace SR5Builder.DataModels
                         mMetatype = value;
                         OnPropertyChanged("Metatype");
                     }
-                    else
+                    else if (mMetatype == Priority.U || Method == CharGenMethod.SumToTen)
+					{
+						mMetatype = value;
+                        OnPropertyChanged("Metatype");
+					}
+					else
                     {
-                        if (mAttributes == value)
-                        {
-                            mAttributes = mMetatype;
-                            OnPropertyChanged("Attributes");
-                        }
-                        else if (mSpecial == value)
-                        {
-                            mSpecial = mMetatype;
-                            OnPropertyChanged("Special");
-                        }
-                        else if (mSkills == value)
-                        {
-                            mSkills = mMetatype;
-                            OnPropertyChanged("Skills");
-                        }
-                        else if (mResources == value)
-                        {
-                            mResources = mMetatype;
-                            OnPropertyChanged("Resources");
-                        }
+						SwapPriorities(mMetatype, value);
                         mMetatype = value;
                         OnPropertyChanged("Metatype");
                     }
@@ -78,32 +65,17 @@ namespace SR5Builder.DataModels
                 {
                     if (value == Priority.U)
                     {
-
                         mAttributes = value;
                         OnPropertyChanged("Attributes");
                     }
-                    else
+                    else if (mAttributes == Priority.U || Method == CharGenMethod.SumToTen)
+					{
+						mAttributes = value;
+                        OnPropertyChanged("Attributes");
+					}
+					else
                     {
-                        if (mMetatype == value)
-                        {
-                            mMetatype = mAttributes;
-                            OnPropertyChanged("Metatype");
-                        }
-                        else if (mSpecial == value)
-                        {
-                            mSpecial = mAttributes;
-                            OnPropertyChanged("Special");
-                        }
-                        else if (mSkills == value)
-                        {
-                            mSkills = mAttributes;
-                            OnPropertyChanged("Skills");
-                        }
-                        else if (mResources == value)
-                        {
-                            mResources = mAttributes;
-                            OnPropertyChanged("Resources");
-                        }
+						SwapPriorities(mAttributes, value);
                         mAttributes = value;
                         OnPropertyChanged("Attributes");
                     }
@@ -125,32 +97,17 @@ namespace SR5Builder.DataModels
                         mSpecial = value;
                         OnPropertyChanged("Special");
                     }
-                    else
+                    else if (mSpecial == Priority.U || Method == CharGenMethod.SumToTen)
+					{
+						mSpecial = value;
+                        OnPropertyChanged("Special");
+					}
+					else
                     {
-                        if (mMetatype == value)
-                        {
-                            mMetatype = mSpecial;
-                            OnPropertyChanged("Metatype");
-                        }
-                        else if (mAttributes == value)
-                        {
-                            mAttributes = mSpecial;
-                            OnPropertyChanged("Attributes");
-                        }
-                        else if (mSkills == value)
-                        {
-                            mSkills = mSpecial;
-                            OnPropertyChanged("Skills");
-                        }
-                        else if (mResources == value)
-                        {
-                            mResources = mSpecial;
-                            OnPropertyChanged("Resources");
-                        }
+						SwapPriorities(mSpecial, value);
                         mSpecial = value;
                         OnPropertyChanged("Special");
                     }
-                    
                 }
             }
         }
@@ -165,32 +122,17 @@ namespace SR5Builder.DataModels
                 {
                     if (value == Priority.U)
                     {
-
                         mSkills = value;
                         OnPropertyChanged("Skills");
                     }
-                    else
+                    else if (mSkills == Priority.U || Method == CharGenMethod.SumToTen)
+					{
+						mSkills = value;
+                        OnPropertyChanged("Skills");
+					}
+					else
                     {
-                        if (mMetatype == value)
-                        {
-                            mMetatype = mSkills;
-                            OnPropertyChanged("Metatype");
-                        }
-                        else if (mAttributes == value)
-                        {
-                            mAttributes = mSkills;
-                            OnPropertyChanged("Attributes");
-                        }
-                        else if (mSpecial == value)
-                        {
-                            mSpecial = mSkills;
-                            OnPropertyChanged("Special");
-                        }
-                        else if (mResources == value)
-                        {
-                            mResources = mSkills;
-                            OnPropertyChanged("Resources");
-                        }
+						SwapPriorities(mSkills, value);
                         mSkills = value;
                         OnPropertyChanged("Skills");
                     }
@@ -208,32 +150,17 @@ namespace SR5Builder.DataModels
                 {
                     if (value == Priority.U)
                     {
-
                         mResources = value;
                         OnPropertyChanged("Resources");
                     }
-                    else
+                    else if (mResources == Priority.U || Method == CharGenMethod.SumToTen)
+					{
+						mResources = value;
+                        OnPropertyChanged("Resources");
+					}
+					else
                     {
-                        if (mMetatype == value)
-                        {
-                            mMetatype = mResources;
-                            OnPropertyChanged("Metatype");
-                        }
-                        else if (mAttributes == value)
-                        {
-                            mAttributes = mResources;
-                            OnPropertyChanged("Attributes");
-                        }
-                        else if (mSkills == value)
-                        {
-                            mSkills = mResources;
-                            OnPropertyChanged("Skills");
-                        }
-                        else if (mSpecial == value)
-                        {
-                            mSpecial = mResources;
-                            OnPropertyChanged("Special");
-                        }
+						SwapPriorities(mResources, value);
                         mResources = value;
                         OnPropertyChanged("Resources");
                     }
@@ -251,20 +178,70 @@ namespace SR5Builder.DataModels
 
         public static string[] ResourcesText;
 
+        /// <summary>
+        /// Verifies that the Priorities have been selected appropriately.
+        /// </summary>
+        /// <returns>True if the selected priorities are valid.</returns>
         public bool Verify()
         {
-            return (mMetatype != Priority.U &&
-                    mAttributes != Priority.U &&
-                    mSpecial != Priority.U &&
-                    mSkills != Priority.U &&
-                    mResources != Priority.U);
+            switch (Method)
+            {
+                case CharGenMethod.NPC:				
+                case CharGenMethod.KarmaGen:
+                case CharGenMethod.LifeModules:
+                case CharGenMethod.BuildPoints:
+                    return true;
+                case CharGenMethod.Priority:
+					return (mAttributes.Mask() |
+							mMetatype.Mask() |
+							mResources.Mask() |
+							mSkills.Mask() |
+							mSpecial.Mask()
+							) == 0x3e;
+                case CharGenMethod.SumToTen:
+					int sum = (int)mMetatype + (int)mAttributes + (int)mSpecial +
+							  (int)mSkills + (int)mResources;		  
+					sum -= 5; // compensate for E=1 in code while E=0 in rules (accross 5 columns)
+					
+					// return true is sum is ten and all priorities are at least E
+                    return (sum == 10) &&
+						   (mAttributes.Mask() |
+							mMetatype.Mask() |
+							mResources.Mask() |
+							mSkills.Mask() |
+							mSpecial.Mask()
+							) != 0x0;
+                default:
+                    return false;
+            }
         }
 
         public Priorities()
         {
             Initialize();
         }
+		
+		public void Reset()
+		{
+			mAttributes = Priority.U;
+			mMetatype = Priority.U;
+			mSpecial = Priority.U;
+			mSkills = Priority.U;
+			mResources = Priority.U;
+		}
 
+        /// <summary>
+        /// TODO: Error checking, maybe fold into property
+        /// </summary>
+        /// <param name="m"></param>
+        public void ChangeMethod(CharGenMethod m)
+        {
+            Method = m;
+        }
+
+        /// <summary>
+        /// Hard coded initially. Later will generate text from loaded PriorityLevel list.
+        /// </summary>
         private void Initialize()
         {
             if(MetatypeText == null)
@@ -301,5 +278,34 @@ namespace SR5Builder.DataModels
                     };
             }
         }
+		
+		private void SwapPriorities(Priority oldP, Priority newP)
+		{
+			if (mMetatype == newP)
+			{
+				mMetatype = oldP;
+				OnPropertyChanged("Metatype");
+			}
+			else if (mAttributes == newP)
+			{
+				mAttributes = oldP;
+				OnPropertyChanged("Attributes");
+			}
+			else if (mSkills == newP)
+			{
+				mSkills = oldP;
+				OnPropertyChanged("Skills");
+			}
+			else if (mSpecial == newP)
+			{
+				mSpecial = oldP;
+				OnPropertyChanged("Special");
+			}
+			else if (mResources == newP)
+			{
+				mResources = oldP;
+				OnPropertyChanged("Resources");
+			}
+		}
     }
 }

@@ -132,9 +132,6 @@ namespace SR5Builder.DataModels
             MetatypeStats value = (MetatypeStats)ser.Deserialize(reader);
 
             reader.Close();
-
-
-
             return value;
         }
 

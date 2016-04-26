@@ -59,8 +59,8 @@ namespace SR5Builder.DataModels
             }
         }
 
-        protected int mBaseCost;
-        public int BaseCost
+        protected decimal mBaseCost;
+        public decimal BaseCost
         {
             get { return mBaseCost; }
             set
@@ -75,13 +75,13 @@ namespace SR5Builder.DataModels
             }
         }
 
-        private int mExtraCost;
-        public int Cost
+        private decimal mExtraCost;
+        public decimal Cost
         {
             get { return (mBaseCost + mExtraCost) * Count; }
         }
 
-        public string DisplayCost { get { return Cost + "¥"; } }
+        public string DisplayCost { get { return Cost.ToString("C", GlobalData.CostFormat); } }
 
         protected int mCapacity;
         public int Capacity
@@ -134,6 +134,12 @@ namespace SR5Builder.DataModels
         public List<string> AvailableMods { get; set; }
 
         public ObservableDictionary<string, GearMod> Mods { get; set; }
+
+        public override int Karma
+        {
+            get { return 0; }
+            set { }
+        }
 
         #endregion // Properties
 

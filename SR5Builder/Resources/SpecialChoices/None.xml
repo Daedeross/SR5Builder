@@ -12,7 +12,8 @@
     <SkillCount>0</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>0</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
   </SpecialChoice>
   <SpecialChoice>
     <Name>None</Name>
@@ -26,6 +27,7 @@
     <SkillCount>0</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>0</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
   </SpecialChoice>
 </ArrayOfSpecialChoice>

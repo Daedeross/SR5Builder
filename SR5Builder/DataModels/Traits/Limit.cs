@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Attribute = SR5Builder.DataModels.Attribute;
+//using Attribute = SR5Builder.DataModels.Attribute;
 
 namespace SR5Builder.DataModels
 {
@@ -98,6 +98,12 @@ namespace SR5Builder.DataModels
             {
                 return BonusRating + (int)Math.Ceiling((double)(PrimaryAttribute.AugmentedRating * 2 + SecondaryAttribute.AugmentedRating + TertiaryAttribute.AugmentedRating) / 3);
             }
+        }
+
+        public override int Karma
+        {
+            get { return 0; }
+            set { }
         }
 
         #endregion // Properties

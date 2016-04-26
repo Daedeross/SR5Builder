@@ -12,7 +12,13 @@
     <SkillCount>2</SkillCount>
     <Spells>10</Spells>
     <ComplexForms>0</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Sorcery</string>
+      <string>Conjuring</string>
+      <string>Enchanting</string>
+    </AllowedGroups>
   </SpecialChoice>
   <SpecialChoice>
     <Name>Magician</Name>
@@ -26,7 +32,13 @@
     <SkillCount>2</SkillCount>
     <Spells>7</Spells>
     <ComplexForms>0</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+    <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Sorcery</string>
+      <string>Conjuring</string>
+      <string>Enchanting</string>
+    </AllowedGroups>
   </SpecialChoice>
   <SpecialChoice>
     <Name>Magician</Name>
@@ -40,6 +52,12 @@
     <SkillCount>0</SkillCount>
     <Spells>5</Spells>
     <ComplexForms>0</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Sorcery</string>
+      <string>Conjuring</string>
+      <string>Enchanting</string>
+    </AllowedGroups>
   </SpecialChoice>
 </ArrayOfSpecialChoice>

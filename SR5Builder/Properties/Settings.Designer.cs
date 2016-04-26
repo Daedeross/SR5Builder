@@ -32,7 +32,7 @@ namespace SR5Builder.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("E:\\Users\\Jones\\Dropbox\\Dropbox\\docs\\Shadowrun 5th ed Core Rulebook\\Shadowrun 5th " +
             "ed. Core Rulebook.pdf")]
@@ -40,20 +40,14 @@ namespace SR5Builder.Properties {
             get {
                 return ((string)(this["CoreBookPDF"]));
             }
-            set {
-                this["CoreBookPDF"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int CoreBookPageOffset {
             get {
                 return ((int)(this["CoreBookPageOffset"]));
-            }
-            set {
-                this["CoreBookPageOffset"] = value;
             }
         }
         
@@ -66,6 +60,66 @@ namespace SR5Builder.Properties {
             }
             set {
                 this["ErrorLogPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("¥")]
+        public string CurrencySymbol {
+            get {
+                return ((string)(this["CurrencySymbol"]));
+            }
+            set {
+                this["CurrencySymbol"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NumberDecimalDigits {
+            get {
+                return ((int)(this["NumberDecimalDigits"]));
+            }
+            set {
+                this["NumberDecimalDigits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int CurrencyDecimalDigits {
+            get {
+                return ((int)(this["CurrencyDecimalDigits"]));
+            }
+            set {
+                this["CurrencyDecimalDigits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int CurrencyPositivePattern {
+            get {
+                return ((int)(this["CurrencyPositivePattern"]));
+            }
+            set {
+                this["CurrencyPositivePattern"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int CurrencyNegativePattern {
+            get {
+                return ((int)(this["CurrencyNegativePattern"]));
+            }
+            set {
+                this["CurrencyNegativePattern"] = value;
             }
         }
     }

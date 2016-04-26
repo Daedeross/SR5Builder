@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using DrWPF.Windows.Data;
+using SR5Builder.Loaders;
 
 namespace SR5Builder.DataModels
 {
@@ -28,6 +29,8 @@ namespace SR5Builder.DataModels
         public ObservableDictionary<string, IAugmentable> Augmentables { get; set; }
 
         public ObservableCollection<IAugmentContainer> AugmentContainers { get; set; }
+
+        public GenSettings Settings { get; set; }
 
             #region Metatype
 
@@ -195,7 +198,7 @@ namespace SR5Builder.DataModels
         public Attribute Essence
         {
             get { return mEssence; }
-            set
+            protected set
             {
                 if (value != mEssence)
                 {
@@ -435,7 +438,40 @@ namespace SR5Builder.DataModels
 
         public ObservableDictionary<string, Spell> SpellList { get; set; }
 
+        public int SpellKarma
+        {
+            get
+            {
+                if (SpecialChoice.Name == "Magician" || SpecialChoice.Name == "Mystic Adept")
+                {
+                    int count = SpellList.Count - SpecialChoice.Spells;
+                    return count > 0 ? count * Settings.SpellKarma : 0;
+                }
+                else
+                    return 0;
+            }
+        }
+
         public ObservableDictionary<string, AdeptPower> PowerList { get; set; }
+
+        public LeveledTrait PowerPoints { get; set; }
+
+        public int PowerKarma
+        {
+            get
+            {
+                if (SpecialChoice.Name == "Mystic Adept")
+                {
+                    float pp = 0;
+                    foreach (AdeptPower power in PowerList)
+                    {
+                        pp += power.PowerPoints;
+                    }
+                    return (int)Math.Ceiling( pp * Settings.PowerPointKarma);
+                }
+                return 0;
+            }
+        }
 
             #endregion // Spells / Powers
 
@@ -455,7 +491,7 @@ namespace SR5Builder.DataModels
 
         //public ObservableDictionary<string, RangedWeapon> ProjectileWeapons { get; set; }
 
-        #endregion // Weapons
+            #endregion // Weapons
 
         #endregion // Properties
 
@@ -463,7 +499,28 @@ namespace SR5Builder.DataModels
 
         public SR5Character()
         {
+            Initialize(GlobalData.GenSettingsList["Default"]);
+        }
+
+        public SR5Character(SettingsLoader settings)
+        {
+            Initialize(settings);
+        }
+
+        public SR5Character(IQueryable<ViewModels.Setting> settings)
+        {
+            SettingsLoader loader = new SettingsLoader();
+            loader.Properties = (from set in settings
+                                 select set).ToDictionary(s => s.Key, s => s.Value);
+            Initialize(loader);
+        }
+
+        private void Initialize(SettingsLoader settings)
+        {
+            Settings = new GenSettings(settings);
+
             Priorities = new Priorities();
+            Priorities.ChangeMethod(Settings.Method);
             MetatypeStats = new MetatypeStats();
             Metatype = "Human";
 

@@ -70,7 +70,16 @@ namespace SR5Builder.DataModels
             get { return mAttributeOne.AugmentedRating + mAttributeTwo.AugmentedRating + BonusRating; }
         }
 
-            #endregion // Overrrides
+        public override int Karma
+        {
+            get
+            {
+                return 0;
+            }
+            set { }
+        }
+
+        #endregion // Overrrides
 
         #endregion // Properties
 

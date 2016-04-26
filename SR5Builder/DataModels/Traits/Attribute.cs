@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.ComponentModel;
+using SR5Builder.Loaders;
 
 namespace SR5Builder.DataModels
 {
@@ -44,12 +45,34 @@ namespace SR5Builder.DataModels
             }
         }
 
+        protected int mImprovement;
+        public int ImprovedRating
+        {
+            get { return mImprovement + BaseRating; }
+            set
+            {
+                if (value <= Max && value >= Min)
+                {
+                    mImprovement = value - BaseRating;
+                }
+            }
+        }
+
         public override int AugmentedRating
         {
             get
             {
-                return BaseRating + BonusRating;
+                return ImprovedRating + BonusRating;
             }
+        }
+
+        public override int Karma
+        {
+            get
+            {
+                return mOwner.Settings.AttributeKarma(ImprovedRating, BaseRating);
+            }
+            set { }
         }
 
         public Attribute(SR5Character owner, string name)
@@ -71,6 +94,20 @@ namespace SR5Builder.DataModels
             if (mOwner != null)
                 mOwner.PropertyChanged += this.OnOwnerChanged;
         }
+
+        //public Attribute(SR5Character owner, AttributeLoader loader)
+        //    : base(owner)
+        //{
+        //    Name = loader.Name;
+        //    mMin = (typeof(MetatypeStats)).GetProperty(Name + "Min");
+        //    mMax = (typeof(MetatypeStats)).GetProperty(Name + "Max");
+
+        //    mBaseRating = loader.BaseImp;
+        //    mImprovement = loader.KarmaImp;
+
+        //    if (mOwner != null)
+        //        mOwner.PropertyChanged += this.OnOwnerChanged;
+        //}
 
         private void OnOwnerChanged(object sender, PropertyChangedEventArgs e)
         {

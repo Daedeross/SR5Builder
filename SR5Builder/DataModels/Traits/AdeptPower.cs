@@ -64,6 +64,12 @@ namespace SR5Builder.DataModels
             get { return mFlatPoints + mBaseRating * mPointsPerLevel; }
         }
 
+        public override int Karma
+        {
+            get { return 0; }
+            set { }
+        }
+
         #endregion // Properties
 
         #region Constructors
@@ -92,9 +98,7 @@ namespace SR5Builder.DataModels
         {
             foreach (Augment a in GivenAugments)
             {
-                //IAugmentable t = a.Target;
                 a.Target = null;
-                //t.OnAugmentCollectionChanged(null, )
             }
         }
     }

@@ -1,0 +1,36 @@
+﻿<Window x:Class="SR5Builder.Dialogs.NewCharacterDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:SR5Builder.Views"
+        xmlns:helpers="clr-namespace:Helpers"
+        SizeToContent="WidthAndHeight"
+        WindowStyle="ToolWindow"
+        Height="400" Width="400"
+        helpers:DialogCloser.DialogResult="{Binding Result}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="14" Grid.ColumnSpan="3" Text="{Binding Message, Mode=OneWay}" HorizontalAlignment="Center" />
+        <views:SettingsView Grid.Row="1" Grid.ColumnSpan="3" DataContext="{Binding Settings}" />
+        <TextBlock Grid.Column="0" Grid.Row="2"
+                   Margin="10,2" FontSize="14"
+                   HorizontalAlignment="Right" VerticalAlignment="Center"
+                   Text="Create character with selected settings?" />
+        <Button Grid.Column="1" Grid.Row="2"
+                Margin="3"
+                Command="{Binding OkCommand}">Yes</Button>
+        <Button Grid.Column="2" Grid.Row="2"
+                Margin="3"
+                Command="{Binding CancelCommand}">Cancel</Button>
+    </Grid>
+</Window>

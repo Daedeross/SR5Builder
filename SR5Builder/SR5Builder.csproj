@@ -52,6 +52,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -82,6 +86,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataModels\Availability.cs" />
+    <Compile Include="DataModels\GenSettings.cs" />
     <Compile Include="DataModels\IAugmentable.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -98,22 +103,31 @@
     <Compile Include="DataModels\Traits\Initiative.cs" />
     <Compile Include="DataModels\Traits\LeveledTrait.cs" />
     <Compile Include="DataModels\Traits\Limit.cs" />
+    <Compile Include="DataModels\Traits\PowerPoints.cs" />
     <Compile Include="DataModels\Traits\RangedWeapon.cs" />
     <Compile Include="DataModels\Traits\Skill.cs" />
     <Compile Include="DataModels\Traits\SkillGroup.cs" />
     <Compile Include="DataModels\Traits\SpecialAttribute.cs" />
     <Compile Include="DataModels\Traits\Spell.cs" />
     <Compile Include="DataModels\Traits\UnarmedAttack.cs" />
-    <Compile Include="Helpers\BoolToVisiblilityConverter.cs" />
-    <Compile Include="Helpers\IntoToStringConverter.cs" />
-    <Compile Include="Helpers\IntToMoneyConverter.cs" />
+    <Compile Include="Dialogs\NewCharacterDialog.xaml.cs">
+      <DependentUpon>NewCharacterDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ViewModels\NewCharacterViewModel.cs" />
+    <Compile Include="Converters\BoolToVisiblilityConverter.cs" />
+    <Compile Include="Converters\IntoToStringConverter.cs" />
+    <Compile Include="Converters\IntToMoneyConverter.cs" />
+    <Compile Include="Helpers\Karma.cs" />
     <Compile Include="Helpers\Log.cs" />
-    <Compile Include="Helpers\TraitGroupStyleSelector.cs" />
+    <Compile Include="Helpers\SettingCellSelector.cs" />
+    <Compile Include="Loaders\AttributeLoader.cs" />
+    <Compile Include="Loaders\CharacterLoader.cs" />
     <Compile Include="Loaders\GearLoader.cs" />
     <Compile Include="Loaders\GearModLoader.cs" />
     <Compile Include="Loaders\ImplantLoader.cs" />
     <Compile Include="Loaders\MeleeWeaponLoader.cs" />
     <Compile Include="Loaders\RangedWeaponLoader.cs" />
+    <Compile Include="Loaders\SettingsLoader.cs" />
     <Compile Include="Loaders\SpellLoader.cs" />
     <Compile Include="Loaders\TraitExtLoader.cs" />
     <Compile Include="Loaders\TraitLoader.cs" />
@@ -131,7 +145,7 @@
     <Compile Include="Loaders\AdeptPowerLoader.cs" />
     <Compile Include="Loaders\AugmentLoader.cs" />
     <Compile Include="Helpers\BlankClass.cs" />
-    <Compile Include="Helpers\BookPageConverter.cs" />
+    <Compile Include="Converters\BookPageConverter.cs" />
     <Compile Include="Helpers\Commands.cs" />
     <Compile Include="Helpers\DialogCloser.cs" />
     <Compile Include="Helpers\Enums.cs" />
@@ -156,6 +170,7 @@
     <Compile Include="ViewModels\PrioritiesViewModel.cs" />
     <Compile Include="ViewModels\PriorityLevelViewModel.cs" />
     <Compile Include="Dialogs\ViewModels\SkillGroupAddViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\SkillsViewModel.cs" />
     <Compile Include="ViewModels\MagicViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -188,6 +203,9 @@
     <Compile Include="Views\PowersView.xaml.cs">
       <DependentUpon>PowersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SpecialsView.xaml.cs">
       <DependentUpon>SpecialsView.xaml</DependentUpon>
     </Compile>
@@ -218,6 +236,14 @@
     <Compile Include="Views\WeaponsView.xaml.cs">
       <DependentUpon>WeaponsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dialogs\NewCharacterDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\WeaponsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -367,7 +393,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Converters\" />
+    <Folder Include="Loaders\CharacterTraits\" />
     <Folder Include="Resources\Priorities\" />
   </ItemGroup>
   <ItemGroup>
@@ -407,6 +433,12 @@
     <Resource Include="Resources\Gear\Weapons\MeleeWeapons - Clubs.xml">
       <SubType>Designer</SubType>
     </Resource>
+    <Content Include="Resources\GenSettings\Default.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\GenSettings\SumToTen.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Metatypes\Human.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

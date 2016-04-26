@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfSpecialChoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SpecialChoice>
-    <Name>Aspected Magician</Name>
+    <Name>Aspected Magician (Sorcery)</Name>
     <Priority>B</Priority>
     <Kind>Magic</Kind>
     <Attribute>5</Attribute>
@@ -13,9 +13,49 @@
     <Spells>0</Spells>
     <ComplexForms>0</ComplexForms>
     <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Sorcery</string>
+    </AllowedGroups>
   </SpecialChoice>
   <SpecialChoice>
-    <Name>Aspected Magician</Name>
+    <Name>Aspected Magician (Conjuring)</Name>
+    <Priority>B</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>5</Attribute>
+    <SkillGroupRating>4</SkillGroupRating>
+    <SkillGroupCount>1</SkillGroupCount>
+    <SkillType>Magical</SkillType>
+    <SkillRating>0</SkillRating>
+    <SkillCount>0</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>0</ComplexForms>
+    <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Conjuring</string>
+    </AllowedGroups>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Aspected Magician (Enchanting)</Name>
+    <Priority>B</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>5</Attribute>
+    <SkillGroupRating>4</SkillGroupRating>
+    <SkillGroupCount>1</SkillGroupCount>
+    <SkillType>Magical</SkillType>
+    <SkillRating>0</SkillRating>
+    <SkillCount>0</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>0</ComplexForms>
+    <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Enchanting</string>
+    </AllowedGroups>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Aspected Magician (Sorcery)</Name>
     <Priority>C</Priority>
     <Kind>Magic</Kind>
     <Attribute>4</Attribute>
@@ -26,10 +66,50 @@
     <SkillCount>0</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>0</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Sorcery</string>
+    </AllowedGroups>
   </SpecialChoice>
   <SpecialChoice>
-    <Name>Aspected Magician</Name>
+    <Name>Aspected Magician (Conjuring)</Name>
+    <Priority>C</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>4</Attribute>
+    <SkillGroupRating>2</SkillGroupRating>
+    <SkillGroupCount>1</SkillGroupCount>
+    <SkillType>Magical</SkillType>
+    <SkillRating>0</SkillRating>
+    <SkillCount>0</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>0</ComplexForms>
+    <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Conjuring</string>
+    </AllowedGroups>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Aspected Magician (Enchanting)</Name>
+    <Priority>C</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>4</Attribute>
+    <SkillGroupRating>2</SkillGroupRating>
+    <SkillGroupCount>1</SkillGroupCount>
+    <SkillType>Magical</SkillType>
+    <SkillRating>0</SkillRating>
+    <SkillCount>0</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>0</ComplexForms>
+    <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Enchanting</string>
+    </AllowedGroups>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Aspected Magician (Sorcery)</Name>
     <Priority>D</Priority>
     <Kind>Magic</Kind>
     <Attribute>2</Attribute>
@@ -40,6 +120,46 @@
     <SkillCount>0</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>0</ComplexForms>
-	<PowerPoints>0</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Sorcery</string>
+    </AllowedGroups>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Aspected Magician (Conjuring)</Name>
+    <Priority>D</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>2</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Magical</SkillType>
+    <SkillRating>0</SkillRating>
+    <SkillCount>0</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>0</ComplexForms>
+    <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Conjuring</string>
+    </AllowedGroups>
+  </SpecialChoice>
+  <SpecialChoice>
+    <Name>Aspected Magician (Enchanting)</Name>
+    <Priority>D</Priority>
+    <Kind>Magic</Kind>
+    <Attribute>2</Attribute>
+    <SkillGroupRating>0</SkillGroupRating>
+    <SkillGroupCount>0</SkillGroupCount>
+    <SkillType>Magical</SkillType>
+    <SkillRating>0</SkillRating>
+    <SkillCount>0</SkillCount>
+    <Spells>0</Spells>
+    <ComplexForms>0</ComplexForms>
+	  <PowerPoints>0</PowerPoints>
+    <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups>
+      <string>Enchanting</string>
+    </AllowedGroups>
   </SpecialChoice>
 </ArrayOfSpecialChoice>
