@@ -23,7 +23,7 @@ namespace SR5Builder.Views
         {
             InitializeComponent();
 
-            typeTab.SelectedIndex = 1;
+            typeTab.SelectedIndex = 0;
         }
     }
 }

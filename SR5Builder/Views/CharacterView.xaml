@@ -29,7 +29,30 @@
             <TabItem Header="Overview">
                 <views:CharacterOverview DataContext="{Binding}" />
             </TabItem>
-            <TabItem Header="Priorities">
+            <TabItem>
+                <TabItem.Style>
+                    <Style TargetType="TabItem">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding PrioritiesHidden}" Value="True">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TabItem.Style>
+                <TabItem.Header>
+                    <TextBlock Text="Priorities" Name="priHeadText">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding PrioritiesValid}" Value="False">
+                                        <Setter Property="FontStyle" Value="Italic" />
+                                        <Setter Property="ToolTip" Value="Priorities are invalid!" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </TabItem.Header>
                 <views:PrioritiesView DataContext="{Binding PrioritiesVM}" />
             </TabItem>
             <TabItem Header="Attributes" IsEnabled="{Binding AttributesEnabled}">

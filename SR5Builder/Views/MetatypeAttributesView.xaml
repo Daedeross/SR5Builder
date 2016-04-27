@@ -82,7 +82,7 @@
                             Orientation="Horizontal">
                     <TextBlock FontWeight="Bold" Text="Attribute Points:"
                            Margin="4,2"/>
-                    <TextBlock Margin="1" Text="{Binding AttributePointsRemaining}" />
+                    <TextBlock Margin="1" Text="{Binding AttributePointsSpent}" />
                     <TextBlock Margin="1" FontWeight="Black" Text="/" />
                     <TextBlock Margin="1" Text="{Binding AttributePoints}" />
                 </StackPanel>
@@ -226,7 +226,7 @@
                             Orientation="Horizontal">
                     <TextBlock FontWeight="Bold" Text="Special Points:"
                            Margin="4,2"/>
-                    <TextBlock Margin="1" Text="{Binding SpecialAttributePointsRemaining}" />
+                    <TextBlock Margin="1" Text="{Binding SpecialAttributePointsSpent}" />
                     <TextBlock Margin="1" FontWeight="Black" Text="/" />
                     <TextBlock Margin="1" Text="{Binding SpecialAttributePoints}" />
                 </StackPanel>

@@ -19,7 +19,8 @@
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <DataTemplate x:Key="intCell">
-            <xtk:IntegerUpDown Value="{Binding Value}" ShowButtonSpinner="False"/>
+            <xtk:IntegerUpDown Value="{Binding Value, Mode=TwoWay}" HorizontalContentAlignment="Stretch"
+                               HorizontalAlignment="Stretch" ShowButtonSpinner="False" />
         </DataTemplate>
         <DataTemplate x:Key="floatCell">
             <xtk:SingleUpDown Text="{Binding Value}" ShowButtonSpinner="False"
@@ -27,7 +28,7 @@
         </DataTemplate>
         <DataTemplate x:Key="methodCell">
             <ComboBox ItemsSource="{Binding Source={StaticResource methodList}}"
-                                                      SelectedItem="{Binding Value}">
+                      SelectedItem="{Binding Value}">
             </ComboBox>
         </DataTemplate>
         <DataTemplate x:Key="stringCell">
@@ -49,12 +50,31 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <DataGrid Grid.Column="2" MaxWidth="300"
+        <ListView Grid.Column="2"
+                  ItemsSource="{Binding CurrentSettings}"
+                  ItemContainerStyle="{StaticResource plainListViewItemStyle}"
+                  HorizontalContentAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Setting" DisplayMemberBinding="{Binding Key, Mode=OneWay}" />
+                    <GridViewColumn Header="Value">
+                        <GridViewColumn.CellTemplateSelector>
+                            <h:SettingCellSelector FloatTemplate="{StaticResource floatCell}"
+                                                   IntTemplate="{StaticResource intCell}"
+                                                   MethodTemplate="{StaticResource methodCell}"
+                                                   StringTemplate="{StaticResource stringCell}" />
+                        </GridViewColumn.CellTemplateSelector>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--<DataGrid Name="settingsGrid"
+                  Grid.Column="2" MaxWidth="300"
                   ItemsSource="{Binding CurrentSettings}"
                   AutoGenerateColumns="False" IsReadOnly="False"
-                  SelectionMode="Single">
+                  SelectionMode="Single" SelectionUnit="FullRow">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Setting" Width="*" Binding="{Binding Key}" />
+                <DataGridTextColumn Header="Setting" Width="*" Binding="{Binding Key, Mode=OneWay}" />
                 <DataGridTemplateColumn Header="Value">
                     <DataGridTemplateColumn.CellTemplateSelector>
                         <h:SettingCellSelector FloatTemplate="{StaticResource floatCell}"
@@ -62,8 +82,14 @@
                                                MethodTemplate="{StaticResource methodCell}"
                                                StringTemplate="{StaticResource stringCell}" />
                     </DataGridTemplateColumn.CellTemplateSelector>
+                    <DataGridTemplateColumn.CellEditingTemplateSelector>
+                        <h:SettingCellSelector FloatTemplate="{StaticResource floatCell}"
+                                               IntTemplate="{StaticResource intCell}"
+                                               MethodTemplate="{StaticResource methodCell}"
+                                               StringTemplate="{StaticResource stringCell}" />
+                    </DataGridTemplateColumn.CellEditingTemplateSelector>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid>-->
     </Grid>
 </UserControl>

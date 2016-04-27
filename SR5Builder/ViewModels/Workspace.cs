@@ -80,8 +80,9 @@ namespace SR5Builder.ViewModels
             if (result == true)
             {
                 SR5Character c = new SR5Character(vm.Settings.CurrentSettings.AsQueryable());
+                c.Name = "Character " + (CharacterVMs.Count + 1).ToString();
                 CharacterViewModel cvm = new CharacterViewModel(c);
-                vm.DisplayName = "Character " + (CharacterVMs.Count + 1).ToString();
+                //cvm.DisplayName = 
                 CharacterVMs.Add(cvm);
                 SelectedCharacter = CharacterVMs.Last();
             }

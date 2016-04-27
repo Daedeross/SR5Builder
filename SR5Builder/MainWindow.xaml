@@ -32,7 +32,7 @@
                     >
             <TabControl.ItemTemplate >
                 <DataTemplate>
-                    <TextBlock Text="{Binding DisplayName}" />
+                    <TextBox Text="{Binding DisplayName}" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>

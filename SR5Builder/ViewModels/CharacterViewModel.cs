@@ -106,6 +106,8 @@ namespace SR5Builder.ViewModels
 
         public int ActiveSpecialTab { get; set; }
 
+        public bool PrioritiesHidden { get { return !(Method == CharGenMethod.Priority || Method == CharGenMethod.SumToTen); } }
+
             #endregion Display Propertoes
 
             #region Priorities
@@ -321,7 +323,7 @@ namespace SR5Builder.ViewModels
 
         #endregion // OtherAttributeStuff
 
-        #region Specials
+            #region Specials
 
         /// <summary>
         /// <b>true</b> if the character can select a Magic (Adept, mMagician, mystic Adept)
@@ -412,11 +414,7 @@ namespace SR5Builder.ViewModels
         {
             get
             {
-                Priorities p = character.Priorities;
-                // bitwize OR each priority, if the result  is 0x3E (0b111110) then
-                // no priorities are the same and none are U (unassigned)
-                return (p.Attributes.Mask() | p.Metatype.Mask() | p.Resources.Mask() |
-                        p.Skills.Mask() | p.Special.Mask()) == 0x3e;
+                return character.Priorities.Verify();
             }
         }
 
@@ -504,6 +502,7 @@ namespace SR5Builder.ViewModels
                 case "Attributes":
                     OnPropertyChanged("AttributePoints");
                     OnPropertyChanged("AttributePointsRemaining");
+                    OnPropertyChanged("PrioritiesValid");
                     break;
                 case "Special":
                     SpecialChoices = new ObservableCollection<SpecialChoice>(
@@ -516,6 +515,7 @@ namespace SR5Builder.ViewModels
                     OnPropertyChanged("SpecialEnabled");
                     OnPropertyChanged("SpecialKind");
                     OnPropertyChanged("SpecialAttribute");
+                    OnPropertyChanged("PrioritiesValid");
                     break;
                 case "Metatype":
                     AvailableMetatypes = new ObservableCollection<NamePoints>(
@@ -525,15 +525,17 @@ namespace SR5Builder.ViewModels
                     OnPropertyChanged("AvailableMetatypes");
                     OnPropertyChanged("AttributesEnabled");
                     OnPropertyChanged("Metatype");
+                    OnPropertyChanged("PrioritiesValid");
                     //character.Metatype = character.Metatype;
                     break;
                 case "Skills":
                     OnPropertyChanged("SkillsEnabled");
+                    OnPropertyChanged("PrioritiesValid");
                     break;
                 default:
+                    OnPropertyChanged("PrioritiesValid");
                     break;
-            }
-            
+            }      
         }
 
         private void OnCharacterChanged(object sender, PropertyChangedEventArgs e)

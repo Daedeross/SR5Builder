@@ -237,6 +237,10 @@ namespace SR5Builder.DataModels
         public void ChangeMethod(CharGenMethod m)
         {
             Method = m;
+            if (Method != CharGenMethod.Priority || Method != CharGenMethod.SumToTen)
+            {
+                Reset();
+            }
         }
 
         /// <summary>

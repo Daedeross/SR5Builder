@@ -181,7 +181,6 @@ namespace SR5Builder.DataModels
             return value;
         }
         
-        
         public GenSettings(SettingsLoader loader)
         {
             object tmp; // temp pointer to hold value pulled from settings dict

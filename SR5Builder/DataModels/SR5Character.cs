@@ -662,7 +662,6 @@ namespace SR5Builder.DataModels
 
         private void OnSkillListChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-
             if (e.OldItems != null)
                 foreach (KeyValuePair<string, Skill> skill in e.OldItems)
                     skill.Value.PropertyChanged -= this.OnSkillChanged;
@@ -675,6 +674,7 @@ namespace SR5Builder.DataModels
         private void OnSkillChanged(object sender, PropertyChangedEventArgs e)
         {
             OnPropertyChanged("SkillPointsSpent");
+            OnPropertyChanged("SkillPointsRemaining");
         }
 
         private void OnSkillGroupListChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -690,6 +690,7 @@ namespace SR5Builder.DataModels
         private void OnSkillGroupChanged(object sender, PropertyChangedEventArgs e)
         {
             OnPropertyChanged("SkillGroupPointsSpent");
+            OnPropertyChanged("SkillGroupPointsRemaining");
         }
 
         private void OnAttributeChanged(object sender, PropertyChangedEventArgs e)
@@ -697,9 +698,15 @@ namespace SR5Builder.DataModels
             if (e.PropertyName == "Points")
             {
                 if (sender == mSpecialAttribute || sender == mEdge)
+                {
                     OnPropertyChanged("SpecialAttributePointsSpent");
+                    OnPropertyChanged("SpecialAttributePointsRemaining");
+                }
                 else
+                {
                     OnPropertyChanged("AttributePointsSpent");
+                    OnPropertyChanged("AttributePointsRemaining");
+                }
             }
         }
 
@@ -716,7 +723,7 @@ namespace SR5Builder.DataModels
         /// <param name="e"></param>
         private void OnAugmentablesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            HashSet<string> propNames = new HashSet<string>();
+            HashSet<string> propNames = new HashSet<string>();  // I don't remember what this was to be for exactly...
             if (e.OldItems != null)
             {
                 List<object> oldItems = e.OldItems.OfType<object>().ToList();

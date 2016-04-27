@@ -236,6 +236,10 @@
     <Compile Include="Views\WeaponsView.xaml.cs">
       <DependentUpon>WeaponsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="ControlTemplates\ListViewTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Dialogs\NewCharacterDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

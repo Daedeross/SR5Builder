@@ -44,7 +44,6 @@ namespace SR5Builder.DataModels
             }
         }
 
-
         public SpecialAttribute(SR5Character owner)
             :base (owner)
         {

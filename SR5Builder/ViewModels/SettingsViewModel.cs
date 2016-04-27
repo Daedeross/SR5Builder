@@ -3,20 +3,44 @@ using SR5Builder.Loaders;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
 namespace SR5Builder.ViewModels
 {
-    public struct Setting
+    public class Setting//: IEditableObject
     {
+        private string oldKey;
         public string Key { get; private set; }
-        public object Value { get; set; }
+        private object oldValue;
+        public object Value {
+            get;
+            set;
+        }
+
         public Setting(string key, object value)
         {
             Key = key;
             Value = value;
         }
+
+        //public void BeginEdit()
+        //{
+        //    oldKey = Key;
+        //    oldValue = Value;
+        //}
+
+        //public void EndEdit()
+        //{
+            
+        //}
+
+        //public void CancelEdit()
+        //{
+        //    Key = oldKey;
+        //    Value = oldValue;
+        //}
     }
 
     public class SettingsViewModel: ViewModelBase
