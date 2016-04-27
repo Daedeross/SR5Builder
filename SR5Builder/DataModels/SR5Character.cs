@@ -236,18 +236,20 @@ namespace SR5Builder.DataModels
                 #region Initiatives
 
         public Initiative PhysicalInitiative { get; set; }
-
         public Initiative ARInititative { get; set; }
+        public Initiative ColdSimInitiative { get; set; }
+        public Initiative HotSimInitiative { get; set; }
+        public Initiative AstralInitiative { get; set; }
 
-        public Initiative ColdSimInititative { get; set; }
+        public InitiativeDice PhysicalInitiativeDice { get; set; }
+        public InitiativeDice ARInitiativeDice { get; set; }
+        public InitiativeDice ColdSimInitiativeDice { get; set; }
+        public InitiativeDice HotSimInitiativeDice { get; set; }
+        public InitiativeDice AstralInitiativeDice { get; set; }
 
-        public Initiative HotSimInititative { get; set; }
+        #endregion // Initiatives
 
-        public Initiative AstralInititative { get; set; }
-
-                #endregion // Initiatives
-
-                #region Limits
+        #region Limits
 
         public Limit MentalLimit { get; private set; }
 
@@ -527,8 +529,8 @@ namespace SR5Builder.DataModels
             Augmentables = new ObservableDictionary<string, IAugmentable>();
 
             InitializeAttributes();
-
             InitializeCollections();
+
             SpecialChoice = SpecialChoice.None(Priority.U);
         }
 
@@ -603,6 +605,26 @@ namespace SR5Builder.DataModels
                 a.PropertyChanged += this.OnAttributeChanged;
                 Augmentables.Add(a.Name, a);
             }
+            
+            // Initiatives
+            PhysicalInitiative = new Initiative(mReaction, mIntuition);
+            PhysicalInitiative.Name = "Initiative";
+            ARInititative = PhysicalInitiative;
+            ColdSimInitiative = new Initiative(mIntuition, mLogic);
+            ColdSimInitiative.Name = "Cold Sim Initiative";
+            HotSimInitiative = new Initiative(mIntuition, mLogic);
+            HotSimInitiative.Name = "Hot Sim Initiative";
+            AstralInitiative = new Initiative(mIntuition, mIntuition);
+            AstralInitiative.Name = "Astral Initiative";
+
+            Augmentables.Add(PhysicalInitiative.Name, PhysicalInitiative);
+            Augmentables.Add(ColdSimInitiative.Name, ColdSimInitiative);
+            Augmentables.Add(HotSimInitiative.Name, HotSimInitiative);
+            Augmentables.Add(AstralInitiative.Name, AstralInitiative);
+
+            // Initiative Dice
+            PhysicalInitiativeDice = new InitiativeDice(this, "Physical Initiative Dice", 1);
+            Augmentables.Add(PhysicalInitiativeDice.Name, PhysicalInitiativeDice);
 
             // Limits
             MentalLimit = new Limit(mLogic, mIntuition, mWillpower);

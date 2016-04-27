@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -17,35 +18,35 @@ namespace SR5Builder.DataModels
         public Attribute AttributeOne
         {
             get { return mAttributeOne; }
-            set
-            {
-                if (value != mAttributeOne)
-                {
-                    mAttributeOne = value;
-                    OnPropertyChanged("AttributeOne");
-                    OnPropertyChanged("BaseRating");
-                    OnPropertyChanged("AugmentedRating");
-                }
-            }
+            //set
+            //{
+            //    if (value != mAttributeOne)
+            //    {
+            //        mAttributeOne = value;
+            //        OnPropertyChanged("AttributeOne");
+            //        OnPropertyChanged("BaseRating");
+            //        OnPropertyChanged("AugmentedRating");
+            //    }
+            //}
         }
 
         protected Attribute mAttributeTwo;
         public Attribute AttributeTwo
         {
             get { return mAttributeTwo; }
-            set
-            {
-                if (value != mAttributeTwo)
-                {
-                    mAttributeTwo = value;
-                    OnPropertyChanged("AttributeTwo");
-                    OnPropertyChanged("BaseRating");
-                    OnPropertyChanged("AugmentedRating");
-                }
-            }
+            //set
+            //{
+            //    if (value != mAttributeTwo)
+            //    {
+            //        mAttributeTwo = value;
+            //        OnPropertyChanged("AttributeTwo");
+            //        OnPropertyChanged("BaseRating");
+            //        OnPropertyChanged("AugmentedRating");
+            //    }
+            //}
         }
 
-            #region Overrides
+        #region Overrides
 
         public override int Min
         {
@@ -61,7 +62,7 @@ namespace SR5Builder.DataModels
 
         public override int BaseRating
         {
-            get { return mAttributeOne.BaseRating + mAttributeTwo.BaseRating; }
+            get { return mAttributeOne.ImprovedRating + mAttributeTwo.ImprovedRating; }
             set { } // not settable;
         }
 
@@ -85,14 +86,56 @@ namespace SR5Builder.DataModels
 
         #region Constructors
 
+        public Initiative(Attribute attribute1, Attribute attribute2)
+        {
+            mAttributeOne = attribute1;
+            mAttributeOne.PropertyChanged += this.OnAttributeChanged;
+            mAttributeTwo = attribute2;
+            mAttributeTwo.PropertyChanged += this.OnAttributeChanged;
+        }
+
         #endregion // Constructors
-
-        #region Private Methods
-
-        #endregion // Private Methods
 
         #region Public Methods
 
+        public override string ToString()
+        {
+            if (AugmentedRating != ImprovedRating)
+            {
+                return String.Format("{0}({1})", ImprovedRating, AugmentedRating);
+            }
+            else
+            {
+                return String.Format("{0}", ImprovedRating);
+            }
+        }
+
         #endregion // Public Methods
+
+        private void OnAttributeChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case "AugmentedRating":
+                    OnPropertyChanged(e.PropertyName);
+                    OnPropertyChanged("DisplayValue");
+                    break;
+                case "ImprovedRating":
+                    OnPropertyChanged(e.PropertyName);
+                    OnPropertyChanged("DisplayValue");
+                    break;
+                case "BaseRating":
+                    OnPropertyChanged(e.PropertyName);
+                    OnPropertyChanged("DisplayValue");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        protected override HashSet<string> AddAugment(Augment a, HashSet<string> propNames)
+        {
+            return base.AddAugment(a, propNames);
+        }
     }
 }

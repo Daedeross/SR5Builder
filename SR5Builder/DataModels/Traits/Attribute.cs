@@ -45,27 +45,6 @@ namespace SR5Builder.DataModels
             }
         }
 
-        protected int mImprovement;
-        public int ImprovedRating
-        {
-            get { return mImprovement + BaseRating; }
-            set
-            {
-                if (value <= Max && value >= Min)
-                {
-                    mImprovement = value - BaseRating;
-                }
-            }
-        }
-
-        public override int AugmentedRating
-        {
-            get
-            {
-                return ImprovedRating + BonusRating;
-            }
-        }
-
         public override int Karma
         {
             get

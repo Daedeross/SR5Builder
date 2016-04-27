@@ -81,8 +81,23 @@
 
         <!--<Label Grid.Column="2" Grid.Row="2"></Label>-->
 
-        
         <!-- Column 3: Values-->
+        <TextBlock Grid.Column="3" Grid.Row="0" Text="{Binding Essence, Mode=OneWay}" />
+        <TextBlock Grid.Column="3" Grid.Row="1" Text="{Binding SepcialAttribute, Mode=OneWay}">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SpecialKind}" Value="None">
+                            <Setter Property="Visibility" Value="Hidden" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBlock Grid.Column="3" Grid.Row="2" Text="{Binding PhysicalDice.DisplayValue, Mode=OneWay}" />
+        <TextBlock Grid.Column="3" Grid.Row="3" Text="{Binding ColdSimInitiative, Mode=OneWay}" />
+        <TextBlock Grid.Column="4" Grid.Row="3" Text="{Binding HotSimInitiative, Mode=OneWay}" />
+        <TextBlock Grid.Column="3" Grid.Row="3" Text="{Binding AstralInitiative, Mode=OneWay}" />
         
     </Grid>
 </UserControl>

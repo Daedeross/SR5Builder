@@ -101,6 +101,7 @@
     <Compile Include="DataModels\Traits\GearMod.cs" />
     <Compile Include="DataModels\Traits\Implant.cs" />
     <Compile Include="DataModels\Traits\Initiative.cs" />
+    <Compile Include="DataModels\Traits\InitiativeDice.cs" />
     <Compile Include="DataModels\Traits\LeveledTrait.cs" />
     <Compile Include="DataModels\Traits\Limit.cs" />
     <Compile Include="DataModels\Traits\PowerPoints.cs" />
@@ -236,10 +237,6 @@
     <Compile Include="Views\WeaponsView.xaml.cs">
       <DependentUpon>WeaponsView.xaml</DependentUpon>
     </Compile>
-    <Page Include="ControlTemplates\ListViewTemplate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Dialogs\NewCharacterDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

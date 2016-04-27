@@ -322,7 +322,18 @@ namespace SR5Builder.ViewModels
         }
 
         #endregion // OtherAttributeStuff
+        
+            #region Initiatives
 
+        public Initiative PhysicalInitiative { get { return character.PhysicalInitiative; } }
+        public LeveledTrait PhysicalDice { get { return character.PhysicalInitiativeDice; } }
+        public Initiative ARInititative      { get { return character.ARInititative; } }
+        public Initiative ColdSimInititative { get { return character.ColdSimInitiative; } }
+        public Initiative HotSimInititative  { get { return character.HotSimInitiative; } }
+        public Initiative AstralInititative  { get { return character.AstralInitiative; } }
+        
+            #endregion // Initiatives
+        
             #region Specials
 
         /// <summary>

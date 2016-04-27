@@ -101,8 +101,8 @@ namespace SR5Builder.DataModels
             get
             {
                 if (mLinkedAttribute == null)
-                    return BaseRating;
-                return BaseRating + mLinkedAttribute.BaseRating;
+                    return ImprovedRating;
+                return ImprovedRating + mLinkedAttribute.BaseRating;
             }
         }
 
@@ -148,7 +148,26 @@ namespace SR5Builder.DataModels
 
         public override int Karma
         {
-            get { return 0; }
+            get
+            {
+                switch (Kind)
+                {
+                    case SkillType.NA:
+                        return 0;
+                    case SkillType.Active:
+                        return mOwner.Settings.ActiveSkillKarma(ImprovedRating, BaseRating);
+                    case SkillType.Magical:
+                        return mOwner.Settings.MagicSkillKarma(ImprovedRating, BaseRating);
+                    case SkillType.Resonance:
+                        return mOwner.Settings.ResonanceSkillKarma(ImprovedRating, BaseRating);
+                    case SkillType.Knowledge:
+                        return mOwner.Settings.KnowledgeSkillKarma(ImprovedRating, BaseRating);
+                    case SkillType.Language:
+                        return mOwner.Settings.LanguageSkillKarma(ImprovedRating, BaseRating);
+                    default:
+                        return 0;
+                }
+            }
             set { }
         }
 

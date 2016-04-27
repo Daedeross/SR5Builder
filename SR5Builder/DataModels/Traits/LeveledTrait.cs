@@ -54,6 +54,19 @@ namespace SR5Builder.DataModels
             }
         }
 
+        protected int mImprovement;
+        public int ImprovedRating
+        {
+            get { return mImprovement + BaseRating; }
+            set
+            {
+                if (value <= Max && value >= Min)
+                {
+                    mImprovement = value - BaseRating;
+                }
+            }
+        }
+
         public override int Points
         {
             get
@@ -68,7 +81,12 @@ namespace SR5Builder.DataModels
 
         public virtual int AugmentedRating
         {
-            get { return BaseRating + BonusRating; }
+            get { return ImprovedRating + BonusRating; }
+        }
+
+        public virtual string DisplayValue
+        {
+            get { return ToString(); }
         }
 
         #endregion Properties
@@ -98,9 +116,9 @@ namespace SR5Builder.DataModels
         public override string ToString()
         {
             if (mBonusRating != 0)
-                return BaseRating + " (" + AugmentedRating + ")";
+                return ImprovedRating + " (" + AugmentedRating + ")";
             else
-                return BaseRating.ToString();
+                return ImprovedRating.ToString();
         }
 
         #region IAugmentable Implemenation
@@ -172,12 +190,12 @@ namespace SR5Builder.DataModels
                 mBonusRating += a.Bonus;
                 propNames.Add("BonusRating");
                 propNames.Add("AugmentedRating");
+                propNames.Add("DisplayValue");
             }
 
             return propNames;
         }
 
         #endregion IAugmentable Implemenation
-
     }
 }
