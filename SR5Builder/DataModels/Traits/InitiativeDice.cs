@@ -18,8 +18,17 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                return base.DisplayValue + "d6";
+                return ToString();
             }
+        }
+
+        public override string ToString()
+        {
+            if (ImprovedRating != AugmentedRating)
+            {
+                return String.Format("{0}({1})d6", ImprovedRating, AugmentedRating);
+            }
+            else return string.Format("{0}d6", ImprovedRating);
         }
 
         public InitiativeDice(SR5Character owner, string name, int baseRating)

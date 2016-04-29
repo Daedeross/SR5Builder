@@ -624,7 +624,16 @@ namespace SR5Builder.DataModels
 
             // Initiative Dice
             PhysicalInitiativeDice = new InitiativeDice(this, "Physical Initiative Dice", 1);
+            ARInitiativeDice = new InitiativeDice(this, "AR Initiative Dice", 1);
+            ColdSimInitiativeDice = new InitiativeDice(this, "ColdSim Initiative Dice", 3);
+            HotSimInitiativeDice = new InitiativeDice(this, "HotSim Initiative Dice", 4);
+            AstralInitiativeDice = new InitiativeDice(this, "Astral Initiative Dice", 2);
+
             Augmentables.Add(PhysicalInitiativeDice.Name, PhysicalInitiativeDice);
+            Augmentables.Add(ARInitiativeDice.Name, ARInitiativeDice);
+            Augmentables.Add(ColdSimInitiativeDice.Name, ColdSimInitiativeDice);
+            Augmentables.Add(HotSimInitiativeDice.Name, HotSimInitiativeDice);
+            Augmentables.Add(AstralInitiativeDice.Name, AstralInitiativeDice);
 
             // Limits
             MentalLimit = new Limit(mLogic, mIntuition, mWillpower);

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cnv="clr-namespace:SR5Builder.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
@@ -12,6 +13,7 @@
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="Margin" Value="4" />
             </Style>
+            <cnv:InitiativePlusDiceConverter x:Key="initConverter" />
         </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
@@ -94,7 +96,14 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        <TextBlock Grid.Column="3" Grid.Row="2" Text="{Binding PhysicalDice.DisplayValue, Mode=OneWay}" />
+        <TextBlock Grid.Column="3" Grid.Row="2">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource initConverter}" Mode="OneWay">
+                    <Binding Path="PhysicalInitiative.DisplayValue" />
+                    <Binding Path="PhysicalDice.DisplayValue" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
         <TextBlock Grid.Column="3" Grid.Row="3" Text="{Binding ColdSimInitiative, Mode=OneWay}" />
         <TextBlock Grid.Column="4" Grid.Row="3" Text="{Binding HotSimInitiative, Mode=OneWay}" />
         <TextBlock Grid.Column="3" Grid.Row="3" Text="{Binding AstralInitiative, Mode=OneWay}" />
