@@ -2,6 +2,7 @@
 <ArrayOfGearModLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <GearModLoader>
     <Name>Sim module</Name>
+    <SubCategory>Comlink</SubCategory>
     <Book>SR5</Book>
     <Page>439</Page>
     <FlatCost>100</FlatCost>
@@ -14,6 +15,7 @@
   </GearModLoader>
   <GearModLoader>
     <Name>Hot-sim module</Name>
+    <SubCategory>Comlink</SubCategory>
     <Book>SR5</Book>
     <Page>439</Page>
     <FlatCost>350</FlatCost>

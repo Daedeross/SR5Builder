@@ -52,6 +52,8 @@ namespace SR5Builder
 
         public static Dictionary<string, GearModLoader> GearMods { get; set; }
 
+        public static Dictionary<string, Dictionary<string, GearModLoader>> GearModCategories { get; set; }
+
         public static Dictionary<string, Dictionary<string, GearLoader>> Gear { get; set; }
 
         public static Dictionary<string, Dictionary<string, ImplantLoader>> Implants { get; set; }
@@ -264,7 +266,7 @@ namespace SR5Builder
             // find all .xml files in req. directory
             // Each file is a category w/ key = filename (w/o extention)
             XmlSerializer ser = new XmlSerializer(typeof(List<GearLoader>));
-            StreamReader reader;
+            
 
                 // Misc Gear
             DirectoryInfo info = new DirectoryInfo(".\\Resources\\Gear\\Misc");
@@ -285,9 +287,10 @@ namespace SR5Builder
 
             foreach (FileInfo file in files)
             {
-                reader = new StreamReader(file.FullName);
-                list = (List<GearLoader>)ser.Deserialize(reader);
-                reader.Close();
+                using (StreamReader reader = new StreamReader(file.FullName))
+                {
+                    list = (List<GearLoader>)ser.Deserialize(reader);
+                }
 
                 string name = Path.GetFileNameWithoutExtension(file.Name);
                 Gear.Add(name, new Dictionary<string, GearLoader>(list.Count));
@@ -339,16 +342,13 @@ namespace SR5Builder
             FileInfo[] files = info.GetFiles("*.xml");
 
             XmlSerializer ser = new XmlSerializer(typeof(List<GearModLoader>));
-
-            StreamReader reader;
-
+            
             GearMods = new Dictionary<string, GearModLoader>();
+            GearModCategories = new Dictionary<string, Dictionary<string, GearModLoader>>();
 
             foreach (FileInfo file in files)
             {
-                reader = new StreamReader(file.FullName);
-
-                try
+                using (StreamReader reader = new StreamReader(file.FullName))
                 {
                     List<GearModLoader> list = (List<GearModLoader>)ser.Deserialize(reader);
                     string cat = Path.GetFileNameWithoutExtension(file.Name);
@@ -356,15 +356,27 @@ namespace SR5Builder
                     foreach (GearModLoader loader in list)
                     {
                         loader.Category = cat;
+                        loader.SubCategory = loader.SubCategory ?? "None";
                         GearMods.Add(loader.Name, loader);
-                    }
+                        if (GearModCategories.ContainsKey(cat))
+                        {
+                            GearModCategories[cat].Add(loader.Name, loader);
+                        }
+                        else
+                        {
+                            GearModCategories.Add(cat, new Dictionary<string, GearModLoader>());
+                            GearModCategories[cat].Add(loader.Name, loader);
+                        }
 
-                }
-                finally
-                {
-                    if (reader != null)
-                    {
-                        reader.Close();
+                        if (GearModCategories.ContainsKey(loader.SubCategory))
+                        {
+                            GearModCategories[loader.SubCategory].Add(loader.Name, loader);
+                        }
+                        else
+                        {
+                            GearModCategories.Add(loader.SubCategory, new Dictionary<string, GearModLoader>());
+                            GearModCategories[loader.SubCategory].Add(loader.Name, loader);
+                        }
                     }
                 }
             }

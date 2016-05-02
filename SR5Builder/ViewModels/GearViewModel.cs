@@ -99,7 +99,7 @@ namespace SR5Builder.ViewModels
 
             #endregion // Implants
 
-        #region ViewModels
+            #region ViewModels
 
         public string SelectedTab { get; set; }
 
@@ -323,12 +323,14 @@ namespace SR5Builder.ViewModels
 
         private void LaunchEditExecute()
         {
+            GearEditVM = new GearEditViewModel(this.SelectedGear);
             Editing = true;
         }
 
         private bool LaunchEditCanExecute()
         {
-            if (SelectedTab == "Gear" && SelectedGear != null && SelectedGear.AvailableMods.Count != 0)
+            if (SelectedTab == "Gear" && SelectedGear != null && (SelectedGear.AvailableMods.Count != 0
+                                                                  || SelectedGear.ModCategories.Count != 0))
                 return true;
 
             if (SelectedTab == "Augmentations" && SelectedImplant != null && SelectedImplant.AvailableMods.Count != 0)

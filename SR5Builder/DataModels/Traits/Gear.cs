@@ -133,6 +133,8 @@ namespace SR5Builder.DataModels
 
         public List<string> AvailableMods { get; set; }
 
+        public List<string> ModCategories { get; set; }
+
         public ObservableDictionary<string, GearMod> Mods { get; set; }
 
         public override int Karma
@@ -162,9 +164,10 @@ namespace SR5Builder.DataModels
         private void Initialize()
         {
             BaseMods = new Dictionary<string, GearMod>();
+            AvailableMods = new List<string>();
+            ModCategories = new List<string>();
             Mods = new ObservableDictionary<string, GearMod>();
             Mods.CollectionChanged += this.OnModsChanged;
-            AvailableMods = new List<string>();
         }
 
         #endregion // Constructors
@@ -287,6 +290,7 @@ namespace SR5Builder.DataModels
                     AvailableMods.Add((string)mod.Clone());
                 }
             }
+            ModCategories = (loader.ModCategories ?? new string[0]).ToList();
         }
 
         #endregion // Public Methods

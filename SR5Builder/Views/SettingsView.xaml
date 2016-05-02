@@ -10,7 +10,6 @@
              mc:Ignorable="d" 
              MinHeight="400" MinWidth="400">
     <UserControl.Resources>
-        <!--<cnv:SettingToIntConverter x:Key="setToIntConverter" />-->
         <h:SettingCellSelector x:Key="settingCellSelector" />
         <ObjectDataProvider x:Key="methodList" MethodName="GetValues"
                             ObjectType="{x:Type sys:Enum}">
@@ -28,7 +27,7 @@
         </DataTemplate>
         <DataTemplate x:Key="methodCell">
             <ComboBox ItemsSource="{Binding Source={StaticResource methodList}}"
-                      SelectedItem="{Binding Value}">
+                      SelectedItem="{Binding Value}" MinWidth="100">
             </ComboBox>
         </DataTemplate>
         <DataTemplate x:Key="stringCell">
@@ -68,28 +67,5 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <!--<DataGrid Name="settingsGrid"
-                  Grid.Column="2" MaxWidth="300"
-                  ItemsSource="{Binding CurrentSettings}"
-                  AutoGenerateColumns="False" IsReadOnly="False"
-                  SelectionMode="Single" SelectionUnit="FullRow">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Setting" Width="*" Binding="{Binding Key, Mode=OneWay}" />
-                <DataGridTemplateColumn Header="Value">
-                    <DataGridTemplateColumn.CellTemplateSelector>
-                        <h:SettingCellSelector FloatTemplate="{StaticResource floatCell}"
-                                               IntTemplate="{StaticResource intCell}"
-                                               MethodTemplate="{StaticResource methodCell}"
-                                               StringTemplate="{StaticResource stringCell}" />
-                    </DataGridTemplateColumn.CellTemplateSelector>
-                    <DataGridTemplateColumn.CellEditingTemplateSelector>
-                        <h:SettingCellSelector FloatTemplate="{StaticResource floatCell}"
-                                               IntTemplate="{StaticResource intCell}"
-                                               MethodTemplate="{StaticResource methodCell}"
-                                               StringTemplate="{StaticResource stringCell}" />
-                    </DataGridTemplateColumn.CellEditingTemplateSelector>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>-->
     </Grid>
 </UserControl>

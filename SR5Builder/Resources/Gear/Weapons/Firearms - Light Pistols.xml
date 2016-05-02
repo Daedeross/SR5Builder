@@ -17,6 +17,11 @@
       <string>Silencer ALF</string>
       <string>Smartgun</string>
     </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+    </ModCategories>
     <Mods />
     <DV>6</DV>
     <DamageType>P</DamageType>
@@ -43,17 +48,14 @@
     <Cost>200</Cost>
     <Capacity>0</Capacity>
     <BaseMods>
-    </BaseMods>
-    <Mods>
       <string>Silencer ALF</string>
-      <string>Hidden arm slide</string>
-      <string>Imaging scope</string>
-      <string>Laser sight</string>
-      <string>Periscope</string>
-      <string>Quick-draw holster</string>
-      <string></string>
-      <string>Smartgun</string>
-    </Mods>
+    </BaseMods>
+    <Mods />
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+    </ModCategories>
     <DV>6</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
@@ -81,9 +83,13 @@
     <BaseMods>
       <string>Detatchable shoulder stock</string>
     </BaseMods>
-    <Mods>
-      
-    </Mods>
+    <Mods />
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Barrel Mount</string>
+      <string>Top Mount</string>
+    </ModCategories>
     <DV>6</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
@@ -111,9 +117,13 @@
     <Capacity>0</Capacity>
     <BaseMods>
     </BaseMods>
-    <Mods>
-      <string>Silencer ALF</string>
-    </Mods>
+    <Mods />
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Barrel Mount</string>
+      <string>Top Mount</string>
+    </ModCategories>
     <DV>7</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
@@ -140,9 +150,13 @@
     <Capacity>0</Capacity>
     <BaseMods>
     </BaseMods>
-    <Mods>
-      <string>Silencer ALF</string>
-    </Mods>
+    <Mods />
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Barrel Mount</string>
+      <string>Top Mount</string>
+    </ModCategories>
     <DV>7</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>

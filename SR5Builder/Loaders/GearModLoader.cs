@@ -11,6 +11,8 @@ namespace SR5Builder.Loaders
     {
         #region Properties
 
+        public string SubCategory { get; set; }
+
         public int Rating { get; set; }
 
         public int FlatCost { get; set; }

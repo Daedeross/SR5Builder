@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:dg="http://schemas.xceed.com/wpf/xaml/datagrid"
              mc:Ignorable="d" 
-             d:DesignHeight="300">
+             d:DesignHeight="300"
+             d:DesignWidth="400">
     <Grid>
         <Grid.Resources>
             <Style TargetType="Button">
@@ -81,12 +82,12 @@
                   SelectedValue="{Binding SelectedGear}"
                   SelectedValuePath="Value">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Value.Name}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Value.Name}" Width="*" />
                 <DataGridTextColumn Header="Rating"
                                     Binding="{Binding Value.BaseRating, Converter={StaticResource intToStringConverter}}" />
                 <DataGridTextColumn Header="Avail"
                                     Binding="{Binding Value.Availability}" />
-                <DataGridTextColumn Header="Cost" Binding="{Binding Value.Cost, Converter={StaticResource intToMoneyConverter}}" />
+                <DataGridTextColumn Header="Cost" Binding="{Binding Value.Cost}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

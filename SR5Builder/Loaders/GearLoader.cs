@@ -50,6 +50,8 @@ namespace SR5Builder.Loaders
 
         public string[] BaseMods { get; set; }
 
+        public string[] ModCategories { get; set; }
+
         public string[] Mods { get; set; }
 
         #endregion // Properties

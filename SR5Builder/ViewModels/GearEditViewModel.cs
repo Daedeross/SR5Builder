@@ -54,15 +54,11 @@ namespace SR5Builder.ViewModels
 
         public ObservableCollection<GearModLoader> AvailableMods { get; set; }
 
-        public ObservableDictionary<string, GearMod> ModList
-        {
-            get { return gear.Mods; }
-            set { gear.Mods = value; }
-        }
+        public ObservableDictionary<string, GearModLoader> ModList { get; set; }
 
         public GearModLoader SelectedNewMod { get; set; }
 
-        public GearMod SelectedMod { get; set; }
+        public GearModLoader SelectedMod { get; set; }
 
         #endregion // Properties
 
@@ -103,8 +99,8 @@ namespace SR5Builder.ViewModels
 
         private void AddModExecute()
         {
-            ModList.Add(SelectedNewMod.Name, new GearMod(gear, SelectedNewMod));
-            SelectedMod = ModList[SelectedNewMod.Name];
+            ModList.Add(SelectedNewMod.Name, SelectedNewMod);
+            SelectedMod = SelectedNewMod;
         }
 
         private bool AddModCanExecute()
@@ -165,18 +161,33 @@ namespace SR5Builder.ViewModels
             {
                 if (mDoneCommand == null)
                 {
-                    mDoneCommand = new RelayCommand(p => this.DoneExecute(), p => this.DoneCanExecute());
+                    mDoneCommand = new RelayCommand(p => this.DoneExecute(p), p => this.DoneCanExecute());
                 }
                 return mDoneCommand;
             }
         }
 
-        private void DoneExecute()
+        private void DoneExecute(object p)
         {
-            if (EditingDone != null)
+            if (p.ToString() == "submit")
             {
-                EditingDone(this, EventArgs.Empty);
+                var oldMods = from mod in gear.Mods.Keys
+                              where !ModList.ContainsKey(mod)
+                              select mod;
+                var newMods = from mod in ModList.Keys
+                              where !gear.Mods.ContainsKey(mod)
+                              select mod;
+                foreach (var oldMod in oldMods)
+                {
+                    gear.Mods.Remove(oldMod);
+                }
+                foreach (var newMod in newMods)
+                {
+                    gear.Mods.Add(newMod, new GearMod(gear, ModList[newMod]));
+                }
             }
+            gear = null;
+            EditingDone?.Invoke(this, EventArgs.Empty);
         }
 
         private bool DoneCanExecute()
@@ -192,16 +203,41 @@ namespace SR5Builder.ViewModels
 
         private void CreateModList()
         {
+            // add existing mods to tmp collection
+            ModList = new ObservableDictionary<string, GearModLoader>(
+                                    (from mod in gear.Mods.Keys
+                                     select mod).ToDictionary(x => x, x => GlobalData.GearMods[x]));
+
+            // add available mods
             AvailableMods = new ObservableCollection<GearModLoader>();
+            // add specific allowed mods
             foreach(string key in gear.AvailableMods)
             {
-                GearModLoader gml;
-                if (GlobalData.GearMods.TryGetValue(key, out gml))
+                if (!ModList.ContainsKey(key))
                 {
-
+                    GearModLoader gml;
+                    if (GlobalData.GearMods.TryGetValue(key, out gml))
+                    {
+                        AvailableMods.Add(gml);
+                    }
+                    else
+                        SR5Builder.Helpers.Log.LogMessage("Failed to add GearMod: '" + key + ".' item not found in resources.");
                 }
-                else
-                    SR5Builder.Helpers.Log.LogMessage("Failed to add GearMod: '" + key + ".' item not found in resources.");
+            }
+            // add mods by sub-category
+            foreach (string cat in gear.ModCategories)
+            {
+                Dictionary<string, GearModLoader> modCat;
+                if (GlobalData.GearModCategories.TryGetValue(cat, out modCat))
+                {
+                    foreach (var key in modCat.Keys)
+                    {
+                        if (!ModList.ContainsKey(key))
+                        {
+                            AvailableMods.Add(modCat[key]);
+                        }
+                    }
+                }
             }
         }
 
