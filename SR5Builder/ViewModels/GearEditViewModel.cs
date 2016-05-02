@@ -77,6 +77,11 @@ namespace SR5Builder.ViewModels
             CreateModList();
         }
 
+        ~GearEditViewModel()
+        {
+            Detatch();
+        }
+
         #endregion // Constructors
 
         #region Commands
@@ -244,6 +249,15 @@ namespace SR5Builder.ViewModels
         #endregion // Private Methods
 
         #region Public Methods
+
+        public void Detatch()
+        {
+            if (gear != null)
+            {
+                gear.PropertyChanged -= this.BubblePropertyChanged;
+                gear = null;
+            }
+        }
 
         #endregion // Public Methods
     }

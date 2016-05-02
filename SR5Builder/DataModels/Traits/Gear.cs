@@ -17,10 +17,6 @@ namespace SR5Builder.DataModels
 
     public class Gear: LeveledTrait
     {
-        #region Private Fields
-
-        #endregion // Private fields
-
         #region Properties
 
         public bool HasRating { get; set; }
@@ -59,15 +55,16 @@ namespace SR5Builder.DataModels
             }
         }
 
-        protected decimal mBaseCost;
-        public decimal BaseCost
+        private decimal mFlatCost;
+        public decimal FlatCost
         {
-            get { return mBaseCost; }
+            get { return mFlatCost; }
             set
             {
-                if (value != mBaseCost)
+                if (value != mFlatCost)
                 {
-                    mBaseCost = value;
+                    mFlatCost = value;
+                    OnPropertyChanged("FlatCost");
                     OnPropertyChanged("BaseCost");
                     OnPropertyChanged("Cost");
                     OnPropertyChanged("DisplayCost");
@@ -75,13 +72,36 @@ namespace SR5Builder.DataModels
             }
         }
 
-        private decimal mExtraCost;
-        public decimal Cost
+        protected decimal mRatingCost;
+        public decimal RatingCost
         {
-            get { return (mBaseCost + mExtraCost) * Count; }
+            get { return mRatingCost; }
+            set
+            {
+                if (value != mRatingCost)
+                {
+                    mRatingCost = value;
+                    OnPropertyChanged("RatingCost");
+                    OnPropertyChanged("BaseCost");
+                    OnPropertyChanged("Cost");
+                    OnPropertyChanged("DisplayCost");
+                }
+            }
         }
 
-        public string DisplayCost { get { return Cost.ToString("C", GlobalData.CostFormat); } }
+        public decimal BaseCost
+        {
+            get { return mFlatCost + (HasRating ? mRatingCost * BaseRating : 0); }
+        }
+
+        private decimal mExtraCost;
+        private decimal mCostMult = 1;
+        public decimal Cost
+        {
+            get { return ((BaseCost * mCostMult) + mExtraCost) * Count; }
+        }
+
+        //public string DisplayCost { get { return Cost.ToString("C", GlobalData.CostFormat); } }
 
         protected int mCapacity;
         public int Capacity
@@ -181,6 +201,8 @@ namespace SR5Builder.DataModels
                 foreach (KeyValuePair<string, GearMod> kvp in e.OldItems)
                 {
                     mExtraCost -= kvp.Value.FlatCost;
+                    decimal mult = kvp.Value.CostMult;
+                    mCostMult /= mult > 0 ? mult : 1;
                     mCapacityUsed -= kvp.Value.Capacity;
                 }
             }
@@ -190,6 +212,8 @@ namespace SR5Builder.DataModels
                 foreach (KeyValuePair<string, GearMod> kvp in e.NewItems)
                 {
                     mExtraCost += kvp.Value.FlatCost;
+                    decimal mult = kvp.Value.CostMult;
+                    mCostMult *= mult > 0 ? mult : 1;
                     mCapacityUsed += kvp.Value.Capacity;
                 }
             }
@@ -276,10 +300,12 @@ namespace SR5Builder.DataModels
             Book = loader.Book;
             Page = loader.Page;
             mBaseRating = loader.Rating;
+            HasRating = true;           // I think technically all gear has a rating of at least 1
             Min = loader.Rating;
             Max = loader.Rating;
             mBaseAvailability = loader.Availability;
-            mBaseCost = loader.Cost;
+            mFlatCost = loader.FlatCost;
+            mRatingCost = loader.RatingCost;
             mCapacity = loader.Capacity;
             Count = 1;
             LoadBaseMods(loader.BaseMods);

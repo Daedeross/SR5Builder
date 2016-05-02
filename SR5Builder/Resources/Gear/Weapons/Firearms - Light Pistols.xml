@@ -11,7 +11,8 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>3R</Availability>
-    <Cost>200</Cost>
+    <FlatCost>200</FlatCost>
+    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
       <string>Silencer ALF</string>
@@ -45,7 +46,8 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>3R</Availability>
-    <Cost>200</Cost>
+    <FlatCost>200</FlatCost>
+    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
       <string>Silencer ALF</string>
@@ -78,7 +80,8 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>7R</Availability>
-    <Cost>210</Cost>
+    <FlatCost>210</FlatCost>
+    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
       <string>Detatchable shoulder stock</string>
@@ -113,7 +116,8 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>4R</Availability>
-    <Cost>320</Cost>
+    <FlatCost>320</FlatCost>
+    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
     </BaseMods>
@@ -146,7 +150,8 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>6R</Availability>
-    <Cost>350</Cost>
+    <FlatCost>350</FlatCost>
+    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
     </BaseMods>

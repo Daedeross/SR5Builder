@@ -7,13 +7,14 @@
     <HasRating>true</HasRating>
     <Rating>1</Rating>
     <Availability>3</Availability>
-    <Cost>4000</Cost>
+    <FlatCost>4000</FlatCost>
+    <RatingCost>0</RatingCost>
     <Capacity>4</Capacity>
     <Mods>
       <string>Flare compensation</string>
       <string>Image link</string>
     </Mods>
-    <EssenceCost>0.2</EssenceCost>
+    <EssenceFlatCost>0.2</EssenceFlatCost>
     <Augments></Augments>
   </ImplantLoader>
   <ImplantLoader>
@@ -23,13 +24,14 @@
     <HasRating>true</HasRating>
     <Rating>2</Rating>
     <Availability>6</Availability>
-    <Cost>6000</Cost>
+    <FlatCost>6000</FlatCost>
+    <RatingCost>0</RatingCost>
     <Capacity>8</Capacity>
     <Mods>
       <string>Flare compensation</string>
       <string>Image link</string>
     </Mods>
-    <EssenceCost>0.3</EssenceCost>
+    <EssenceFlatCost>0.3</EssenceFlatCost>
     <Augments></Augments>
   </ImplantLoader>
   <ImplantLoader>
@@ -39,9 +41,10 @@
     <HasRating>false</HasRating>
     <Rating>1</Rating>
     <Availability>2</Availability>
-    <Cost>1000</Cost>
+    <FlatCost>1000</FlatCost>
+    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
-    <EssenceCost>0.2</EssenceCost>
+    <EssenceFlatCost>0.2</EssenceFlatCost>
     <Augments></Augments>
   </ImplantLoader>
 </ArrayOfImplantLoader>

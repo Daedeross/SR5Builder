@@ -12,6 +12,10 @@ using SR5Builder.Loaders;
 
 namespace SR5Builder.DataModels
 {
+    /// <summary>
+    /// This class holds all the in-memory data, including it's own instance of Settings.
+    /// Serialization is handled by CharacterLoader.
+    /// </summary>
     public class SR5Character : DataModelBase
     {
         public static readonly int MaxAugment = 4;
@@ -519,7 +523,7 @@ namespace SR5Builder.DataModels
 
         private void Initialize(SettingsLoader settings)
         {
-            Settings = new GenSettings(settings);
+            Settings = new GenSettings(settings.Properties);
 
             Priorities = new Priorities();
             Priorities.ChangeMethod(Settings.Method);
@@ -624,13 +628,13 @@ namespace SR5Builder.DataModels
 
             // Initiative Dice
             PhysicalInitiativeDice = new InitiativeDice(this, "Physical Initiative Dice", 1);
-            ARInitiativeDice = new InitiativeDice(this, "AR Initiative Dice", 1);
+            ARInitiativeDice = PhysicalInitiativeDice;// new InitiativeDice(this, "AR Initiative Dice", 1);
             ColdSimInitiativeDice = new InitiativeDice(this, "ColdSim Initiative Dice", 3);
             HotSimInitiativeDice = new InitiativeDice(this, "HotSim Initiative Dice", 4);
             AstralInitiativeDice = new InitiativeDice(this, "Astral Initiative Dice", 2);
 
             Augmentables.Add(PhysicalInitiativeDice.Name, PhysicalInitiativeDice);
-            Augmentables.Add(ARInitiativeDice.Name, ARInitiativeDice);
+            //Augmentables.Add(ARInitiativeDice.Name, ARInitiativeDice);
             Augmentables.Add(ColdSimInitiativeDice.Name, ColdSimInitiativeDice);
             Augmentables.Add(HotSimInitiativeDice.Name, HotSimInitiativeDice);
             Augmentables.Add(AstralInitiativeDice.Name, AstralInitiativeDice);

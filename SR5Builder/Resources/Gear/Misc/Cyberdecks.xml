@@ -7,7 +7,7 @@
     <HasRating>true</HasRating>
     <Rating>1</Rating>
     <Availability>3R</Availability>
-    <Cost>49500</Cost>
+    <FlatCost>49500</FlatCost>\n\t\t<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods></Mods>
   </GearLoader>
@@ -18,7 +18,7 @@
     <HasRating>true</HasRating>
     <Rating>1</Rating>
     <Availability>4R</Availability>
-    <Cost>58000</Cost>
+    <FlatCost>58000</FlatCost>\n\t\t<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods></Mods>
   </GearLoader>
@@ -29,7 +29,7 @@
     <HasRating>true</HasRating>
     <Rating>2</Rating>
     <Availability>6R</Availability>
-    <Cost>110250</Cost>
+    <FlatCost>110250</FlatCost>\n\t\t<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods></Mods>
   </GearLoader>
@@ -40,7 +40,7 @@
     <HasRating>true</HasRating>
     <Rating>2</Rating>
     <Availability>6R</Availability>
-    <Cost>123000</Cost>
+    <FlatCost>123000</FlatCost>\n\t\t<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods></Mods>
   </GearLoader>
@@ -51,7 +51,7 @@
     <HasRating>true</HasRating>
     <Rating>3</Rating>
     <Availability>9R</Availability>
-    <Cost>205750</Cost>
+    <FlatCost>205750</FlatCost>\n\t\t<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods></Mods>
   </GearLoader>
@@ -62,7 +62,7 @@
     <HasRating>true</HasRating>
     <Rating>3</Rating>
     <Availability>9R</Availability>
-    <Cost>214125</Cost>
+    <FlatCost>214125</FlatCost>\n\t\t<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods></Mods>
   </GearLoader>
@@ -73,7 +73,7 @@
     <HasRating>true</HasRating>
     <Rating>4</Rating>
     <Availability>12R</Availability>
-    <Cost>345000</Cost>
+    <FlatCost>345000</FlatCost>\n\t\t<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods></Mods>
   </GearLoader>
@@ -84,7 +84,7 @@
     <HasRating>true</HasRating>
     <Rating>5</Rating>
     <Availability>15R</Availability>
-    <Cost>549375</Cost>
+    <FlatCost>549375</FlatCost>\n\t\t<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods></Mods>
   </GearLoader>
@@ -95,7 +95,7 @@
     <HasRating>true</HasRating>
     <Rating>6</Rating>
     <Availability>18R</Availability>
-    <Cost>823250</Cost>
+    <FlatCost>823250</FlatCost>\n\t\t<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods></Mods>
   </GearLoader>

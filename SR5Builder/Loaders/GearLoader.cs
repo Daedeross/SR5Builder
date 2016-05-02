@@ -29,7 +29,18 @@ namespace SR5Builder.Loaders
         [XmlIgnore]
         public string DisplayCost
         {
-            get { return Cost.ToString("C", GlobalData.CostFormat); }
+            get
+            {
+                if (RatingCost != 0)
+                {
+                    if (FlatCost != 0)
+                    {
+                        return FlatCost + " + Rating ×" + RatingCost.ToString("C", GlobalData.CostFormat);
+                    }
+                    return "Rating ×" + RatingCost.ToString("C", GlobalData.CostFormat);
+                }
+                return FlatCost.ToString("C", GlobalData.CostFormat);
+            }
         }
 
         public List<string> ExtArray { get; set; }
@@ -44,7 +55,9 @@ namespace SR5Builder.Loaders
 
         public Availability Availability { get; set; }
 
-        public int Cost { get; set; }
+        public decimal FlatCost { get; set; }
+
+        public decimal RatingCost { get; set; }
 
         public int Capacity { get; set; }
 

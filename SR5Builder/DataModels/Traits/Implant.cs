@@ -49,8 +49,6 @@ namespace SR5Builder.DataModels
 
         #region Private Methods
 
-
-
         #endregion // Private Methods
 
         #region Public Methods

@@ -14,6 +14,8 @@ namespace SR5Builder.DataModels
 
         public string Category { get; set; }
 
+        public string UserNotes { get; set; }
+
         protected SR5Character mOwner;
         [XmlIgnore]
         public virtual SR5Character Owner
@@ -39,11 +41,13 @@ namespace SR5Builder.DataModels
 
         public BaseTrait(SR5Character c)
         {
+            UserNotes = "";
             mOwner = c;
         }
 
         public BaseTrait()
         {
+            UserNotes = "";
             mOwner = null;
         }
 

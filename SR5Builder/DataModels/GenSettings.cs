@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 
 namespace SR5Builder.DataModels
 {
@@ -13,7 +14,9 @@ namespace SR5Builder.DataModels
     {
         public CharGenMethod Method { get; set; }
 
-        public int StartingKarma { get; set; }
+        public int StartingKarma { get; set; } = 25;
+
+        public int MaxAugment { get; set; } = 4;
 
         #region Scaling Karma Costs
 
@@ -21,43 +24,43 @@ namespace SR5Builder.DataModels
         /// For Karma advancement of Attributes.
         /// Karma cost is [New Rating] x AttributeKarmaMult (default 5 in base rules).
         /// </summary>
-        public int AttributeKarmaMult { get; set; }
+        public int AttributeKarmaMult { get; set; } = 5;
 
         /// <summary>
         /// For Karma advancement of Skill Groups.
         /// Karma cost is [New Rating] x SkillGroupKarmaMult (default 5 in base rules).
         /// </summary>
-        public int SkillGroupKarmaMult { get; set; }
+        public int SkillGroupKarmaMult { get; set; } = 5;
 
         /// <summary>
         /// For Karma advancement of Active Skills (including social).
         /// Karma cost is [New Rating] x ActiveSkillKarmaMult (default 2 in base rules).
         /// </summary>
-        public int ActiveSkillKarmaMult { get; set; }
+        public int ActiveSkillKarmaMult { get; set; } = 2;
 
         /// <summary>
         /// For Karma advancement of Magic Skills.
         /// Karma cost is [New Rating] x MagicSkillKarmaMult (default 2 in base rules).
         /// </summary>
-        public int MagicSkillKarmaMult { get; set; }
+        public int MagicSkillKarmaMult { get; set; } = 2;
 
         /// <summary>
         /// For Karma advancement of Resonance Skills.
         /// Karma cost is [New Rating] x ResonanceSkillKarmaMult (default 2 in base rules).
         /// </summary>
-        public int ResonanceSkillKarmaMult { get; set; }
+        public int ResonanceSkillKarmaMult { get; set; } = 2;
 
         /// <summary>
         /// For Karma advancement of Knowledge Skills.
         /// Karma cost is [New Rating] x KnowledgeSkillKarmaMult (default 1 in base rules).
         /// </summary>
-        public int KnowledgeSkillKarmaMult { get; set; }
+        public int KnowledgeSkillKarmaMult { get; set; } = 1;
 
         /// <summary>MagicSkill
         /// For Karma advancement of Language Skills (including social).
         /// Karma cost is [New Rating] x LanguageSkillKarmaMult (default 1 in base rules).
         /// </summary>
-        public int LanguageSkillKarmaMult { get; set; }
+        public int LanguageSkillKarmaMult { get; set; } = 1;
 
         public int AttributeKarma(int value, int min = 1)
         {
@@ -94,13 +97,13 @@ namespace SR5Builder.DataModels
             return LanguageSkillKarmaMult * (ValueAt(value) - ValueAt(min));
         }
 
-        public int InitiationKarmaBase { get; set; }
+        public int InitiationKarmaBase { get; set; } = 10;
 
-        public int InitiationKarmaMult { get; set; }
+        public int InitiationKarmaMult { get; set; } = 3;
 
-        public int SubmersionKarmaBase { get; set; }
+        public int SubmersionKarmaBase { get; set; } = 10;
 
-        public int SubmersionKarmaMult { get; set; }
+        public int SubmersionKarmaMult { get; set; } = 3;
 
         /// <summary>
         /// Calulates the Karma cost to Initiate from <para>min</para> to <para>value</para>.
@@ -144,19 +147,19 @@ namespace SR5Builder.DataModels
 
         #region Flat Karma Costs
 
-        public int ComplexFormKarma { get; set; }
+        public int ComplexFormKarma { get; set; } = 4;
 
-        public int SpellKarma { get; set; }
+        public int SpellKarma { get; set; } = 5;
 
-        public int PowerPointKarma { get; set; }
+        public int PowerPointKarma { get; set; } = 5;
 
-        public int SpecializationKarma { get; set; }
+        public int SpecializationKarma { get; set; } = 7;
 
-        public int MartialArtsStyleKarma { get; set; }
+        public int MartialArtsStyleKarma { get; set; } = 7;
 
-        public int MartialArtsTechniqueKarma { get; set; }
+        public int MartialArtsTechniqueKarma { get; set; } = 5;
 
-        public int InPlayQualityMult { get; set; }
+        public int InPlayQualityMult { get; set; } = 2;
 
         #endregion // Flat Karma Costs
 
@@ -173,19 +176,19 @@ namespace SR5Builder.DataModels
         public static GenSettings LoadFromfile(string filename)
         {
             XmlSerializer ser = new XmlSerializer(typeof(GenSettings));
-            StreamReader reader = new StreamReader(filename);
-
-            GenSettings value = (GenSettings)ser.Deserialize(reader);
-
-            reader.Close();
+            GenSettings value = new GenSettings();
+            using (StreamReader reader = new StreamReader(filename))
+            {
+                value = (GenSettings)ser.Deserialize(reader);
+            }
             return value;
         }
         
-        public GenSettings(SettingsLoader loader)
+        public GenSettings(Dictionary<string, object> loader)
         {
             object tmp; // temp pointer to hold value pulled from settings dict
 
-            if (loader.Properties.TryGetValue("Method", out tmp) && tmp is CharGenMethod)
+            if (loader.TryGetValue("Method", out tmp) && tmp is CharGenMethod)
             {
                 Method = (CharGenMethod)tmp;
             }
@@ -194,7 +197,7 @@ namespace SR5Builder.DataModels
                 Method = CharGenMethod.Priority;
             }
 
-            if (!loader.Properties.TryGetValue("StartingKarma", out tmp) && tmp is int)
+            if (!loader.TryGetValue("StartingKarma", out tmp) && tmp is int)
             {
                 StartingKarma = (int)tmp;
             }
@@ -203,7 +206,7 @@ namespace SR5Builder.DataModels
                 StartingKarma = 25;
             }
 
-            if (!loader.Properties.TryGetValue("AttributeKarmaMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("AttributeKarmaMult", out tmp) && tmp is int)
             {
                 AttributeKarmaMult = (int)tmp;
             }
@@ -212,7 +215,7 @@ namespace SR5Builder.DataModels
                 AttributeKarmaMult = 5;
             }
 
-            if (!loader.Properties.TryGetValue("SkillGroupKarmaMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("SkillGroupKarmaMult", out tmp) && tmp is int)
             {
                 SkillGroupKarmaMult = (int)tmp;
             }
@@ -221,7 +224,7 @@ namespace SR5Builder.DataModels
                 SkillGroupKarmaMult = 5;
             }
 
-            if (!loader.Properties.TryGetValue("ActiveSkillKarmaMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("ActiveSkillKarmaMult", out tmp) && tmp is int)
             {
                 ActiveSkillKarmaMult = (int)tmp;
             }
@@ -230,7 +233,7 @@ namespace SR5Builder.DataModels
                 ActiveSkillKarmaMult = 2;
             }
 
-            if (!loader.Properties.TryGetValue("MagicSkillKarmaMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("MagicSkillKarmaMult", out tmp) && tmp is int)
             {
                 MagicSkillKarmaMult = (int)tmp;
             }
@@ -239,7 +242,7 @@ namespace SR5Builder.DataModels
                 MagicSkillKarmaMult = 2;
             }
 
-            if (!loader.Properties.TryGetValue("ResonanceSkillKarmaMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("ResonanceSkillKarmaMult", out tmp) && tmp is int)
             {
                 ResonanceSkillKarmaMult = (int)tmp;
             }
@@ -248,7 +251,7 @@ namespace SR5Builder.DataModels
                 ResonanceSkillKarmaMult = 2;
             }
 
-            if (!loader.Properties.TryGetValue("KnowledgeSkillKarmaMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("KnowledgeSkillKarmaMult", out tmp) && tmp is int)
             {
                 KnowledgeSkillKarmaMult = (int)tmp;
             }
@@ -257,7 +260,7 @@ namespace SR5Builder.DataModels
                 KnowledgeSkillKarmaMult = 1;
             }
 
-            if (!loader.Properties.TryGetValue("LanguageSkillKarmaMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("LanguageSkillKarmaMult", out tmp) && tmp is int)
             {
                 LanguageSkillKarmaMult = (int)tmp;
             }
@@ -266,7 +269,7 @@ namespace SR5Builder.DataModels
                 LanguageSkillKarmaMult = 1;
             }
 
-            if (!loader.Properties.TryGetValue("InitiationKarmaBase", out tmp) && tmp is int)
+            if (!loader.TryGetValue("InitiationKarmaBase", out tmp) && tmp is int)
             {
                 InitiationKarmaBase = (int)tmp;
             }
@@ -275,7 +278,7 @@ namespace SR5Builder.DataModels
                 InitiationKarmaBase = 10;
             }
 
-            if (!loader.Properties.TryGetValue("InitiationKarmaMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("InitiationKarmaMult", out tmp) && tmp is int)
             {
                 InitiationKarmaMult = (int)tmp;
             }
@@ -284,7 +287,7 @@ namespace SR5Builder.DataModels
                 InitiationKarmaMult = 3;
             }
 
-            if (!loader.Properties.TryGetValue("SubmersionKarmaBase", out tmp) && tmp is int)
+            if (!loader.TryGetValue("SubmersionKarmaBase", out tmp) && tmp is int)
             {
                 SubmersionKarmaBase = (int)tmp;
             }
@@ -293,7 +296,7 @@ namespace SR5Builder.DataModels
                 SubmersionKarmaBase = 10;
             }
 
-            if (!loader.Properties.TryGetValue("SubmersionKarmaMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("SubmersionKarmaMult", out tmp) && tmp is int)
             {
                 SubmersionKarmaMult = (int)tmp;
             }
@@ -302,7 +305,7 @@ namespace SR5Builder.DataModels
                 SubmersionKarmaMult = 3;
             }
 
-            if (!loader.Properties.TryGetValue("ComplexFormKarma", out tmp) && tmp is int)
+            if (!loader.TryGetValue("ComplexFormKarma", out tmp) && tmp is int)
             {
                 ComplexFormKarma = (int)tmp;
             }
@@ -311,7 +314,7 @@ namespace SR5Builder.DataModels
                 ComplexFormKarma = 4;
             }
 
-            if (!loader.Properties.TryGetValue("SpellKarma", out tmp) && tmp is int)
+            if (!loader.TryGetValue("SpellKarma", out tmp) && tmp is int)
             {
                 SpellKarma = (int)tmp;
             }
@@ -320,7 +323,7 @@ namespace SR5Builder.DataModels
                 SpellKarma = 5;
             }
 
-            if (!loader.Properties.TryGetValue("PowerPointKarma", out tmp) && tmp is int)
+            if (!loader.TryGetValue("PowerPointKarma", out tmp) && tmp is int)
             {
                 PowerPointKarma = (int)tmp;
             }
@@ -329,7 +332,7 @@ namespace SR5Builder.DataModels
                 PowerPointKarma = 5;
             }
 
-            if (!loader.Properties.TryGetValue("SpecializationKarma", out tmp) && tmp is int)
+            if (!loader.TryGetValue("SpecializationKarma", out tmp) && tmp is int)
             {
                 SpecializationKarma = (int)tmp;
             }
@@ -338,7 +341,7 @@ namespace SR5Builder.DataModels
                 SpecializationKarma = 7;
             }
 
-            if (!loader.Properties.TryGetValue("MartialArtsStyleKarma", out tmp) && tmp is int)
+            if (!loader.TryGetValue("MartialArtsStyleKarma", out tmp) && tmp is int)
             {
                 MartialArtsStyleKarma = (int)tmp;
             }
@@ -347,7 +350,7 @@ namespace SR5Builder.DataModels
                 MartialArtsStyleKarma = 7;
             }
 
-            if (!loader.Properties.TryGetValue("MartialArtsTechniqueKarma", out tmp) && tmp is int)
+            if (!loader.TryGetValue("MartialArtsTechniqueKarma", out tmp) && tmp is int)
             {
                 MartialArtsTechniqueKarma = (int)tmp;
             }
@@ -356,7 +359,7 @@ namespace SR5Builder.DataModels
                 MartialArtsTechniqueKarma = 5;
             }
 
-            if (!loader.Properties.TryGetValue("InPlayQualityMult", out tmp) && tmp is int)
+            if (!loader.TryGetValue("InPlayQualityMult", out tmp) && tmp is int)
             {
                 InPlayQualityMult = (int)tmp;
             }
@@ -364,6 +367,10 @@ namespace SR5Builder.DataModels
             {
                 InPlayQualityMult = 2;
             }
+        }
+
+        public GenSettings()
+        {
         }
     }
 }

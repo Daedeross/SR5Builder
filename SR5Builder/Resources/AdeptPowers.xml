@@ -56,15 +56,15 @@
       <AugmentLoader>
         <Kind>None</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
-          <float>2</float>
-          <float>3</float>
-          <float>4</float>
-          <float>5</float>
-          <float>6</float>
-          <float>7</float>
-          <float>8</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
+          <decimal>5</decimal>
+          <decimal>6</decimal>
+          <decimal>7</decimal>
+          <decimal>8</decimal>
         </Bonus>
         <Target>All</Target>
       </AugmentLoader>
@@ -91,8 +91,8 @@
       <AugmentLoader>
         <Kind>DamageValue</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
         </Bonus>
         <Target>%ext%</Target>
       </AugmentLoader>
@@ -121,22 +121,22 @@
       <AugmentLoader>
         <Kind>Rating</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
-          <float>2</float>
-          <float>3</float>
-          <float>4</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
         </Bonus>
         <Target>Perception</Target>
       </AugmentLoader>
       <AugmentLoader>
         <Kind>Rating</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
-          <float>2</float>
-          <float>3</float>
-          <float>4</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
         </Bonus>
         <Target>Assensing</Target>
       </AugmentLoader>
@@ -168,8 +168,8 @@
       <AugmentLoader>
         <Kind>Accuracy</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
         </Bonus>
         <Target>%ext%</Target>
       </AugmentLoader>
@@ -191,13 +191,13 @@
       <AugmentLoader>
         <Kind>Rating</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
-          <float>2</float>
-          <float>3</float>
-          <float>4</float>
-          <float>5</float>
-          <float>6</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
+          <decimal>5</decimal>
+          <decimal>6</decimal>
         </Bonus>
         <Target>%ext%</Target>
       </AugmentLoader>
@@ -223,11 +223,11 @@
       <AugmentLoader>
         <Kind>Rating</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
-          <float>2</float>
-          <float>3</float>
-          <float>4</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
         </Bonus>
         <Target>%ext%</Target>
       </AugmentLoader>
@@ -263,20 +263,20 @@
       <AugmentLoader>
         <Kind>Rating</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
-          <float>2</float>
-          <float>3</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
         </Bonus>
         <Target>Physical Initiative Dice</Target>
       </AugmentLoader>
       <AugmentLoader>
         <Kind>Rating</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
-          <float>2</float>
-          <float>3</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
         </Bonus>
         <Target>Reaction</Target>
       </AugmentLoader>
@@ -319,8 +319,8 @@
       <AugmentLoader>
         <Kind>DamageType</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
         </Bonus>
         <Target>Unarmed Combat</Target>
       </AugmentLoader>

@@ -13,11 +13,23 @@ using DrWPF.Windows.Data;
 
 namespace SR5Builder.DataModels
 {
+    /// <summary>
+    /// The class that represents all ways a trait can modify another trait.
+    /// </summary>
+    /// <remarks>
+    /// Each target trait and property must be a sepparate Augment. Example:
+    /// The <b>Improved Reflexes</b> adept power gives +1 to Reaction and +1 to
+    /// Physical Initiative Dice per level. That means that <b>Improved Reflexes</b>
+    /// needs two augmetns, one for the reaction bonus, and one for the extra dice.
+    /// 
+    /// It is up to the targeted trait (which must implement <see cref="IAugmentable"/>)
+    /// how 
+    /// </remarks>on how to handle the Augment.
     public class Augment: DataModelBase
     {
         #region Private Fields
 
-        private string targetName;
+        private string targetName;  // The name of the target trait.
         private AugmentKind kind;
 
         #endregion // Private fields
@@ -66,13 +78,21 @@ namespace SR5Builder.DataModels
             }
         }
 
+        /// <summary>
+        /// See <see cref="AugmentKind"/>. Essentialy determines what property is modified.
+        /// </summary>
         public AugmentKind Kind { get { return kind; } }
 
-        public float[] BonusArray { get; set; }
+        /// <summary>
+        /// Array indexed by the owner's Rating to determin the  bonus to give.
+        /// If owner does not have a rating or it is out of range for the array,
+        /// Index zero [0] is used.
+        /// </summary>
+        public decimal[] BonusArray { get; set; }
 
         //protected int mBonus;
         [XmlIgnore]
-        public float Bonus
+        public decimal Bonus
         {
             get
             {
@@ -80,10 +100,13 @@ namespace SR5Builder.DataModels
                 {
                     return BonusArray[mOwnerTrait.BaseRating];
                 }
-                else return 0;
+                else return BonusArray[0];
             }
         }
 
+        /// <summary>
+        /// The name of the Trait that this Augment modifies.
+        /// </summary>
         public string TargetName {  get { return targetName; } }
 
         #endregion // Properties
@@ -173,7 +196,10 @@ namespace SR5Builder.DataModels
                     select T).ToArray();
         }
 
-
+        /// <summary>
+        /// Returs an array of type names of classes which implement IAugmentable.
+        /// </summary>
+        /// <returns>Array of strings</returns>
         public static string[] GetAugmentableNames()
         {
             return (from T in Assembly.GetAssembly(typeof(IAugmentable)).GetTypes()

@@ -9,11 +9,9 @@ namespace SR5Builder.DataModels
 {
     public class GearMod: LeveledTrait, IAugmentContainer
     {
-        #region Private Fields
-
-        #endregion // Private fields
-
         #region Properties
+
+        public string SubCategory { get; set; }
 
         protected Gear mGearPiece;
         public Gear GearPiece
@@ -52,17 +50,19 @@ namespace SR5Builder.DataModels
                 if (CostMult != 1)
                 {
                     if (FlatCost != 0)
-                        return "×" + CostMult + " +" + FlatCost + "¥";
+                        return "×" + CostMult + "+" + FlatCost.ToString("C", GlobalData.CostFormat);
                     else
                         return "×" + CostMult;
                 }
-                else return "+" + FlatCost + "¥";
+                else return "+" + FlatCost.ToString("C", GlobalData.CostFormat);
             }
         }
 
         public int Capacity { get; set; }
 
         public ObservableCollection<Augment> GivenAugments { get; set; }
+
+        public string Notes { get; set; }
 
         public override int Karma
         {
@@ -90,11 +90,13 @@ namespace SR5Builder.DataModels
             Book = loader.Book;
             Page = loader.Page;
             Category = loader.Category;
+            SubCategory = loader.SubCategory ?? "None";
             Capacity = loader.Capacity;
             mBaseRating = 1;
             GearPiece = gearPiece;
             FlatCost = loader.FlatCost;
             CostMult = loader.CostMult;
+            Notes = string.Copy(Notes ?? "");
             CreateAugments(loader);
         }
 
@@ -108,10 +110,6 @@ namespace SR5Builder.DataModels
         }
 
         #endregion // Constructors
-
-        #region Private Methods
-
-        #endregion // Private Methods
 
         #region Public Methods
 

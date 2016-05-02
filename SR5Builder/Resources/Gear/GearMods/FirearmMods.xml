@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ArrayOfGearModLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <GearModLoader>
-    <SubCategory>Launcher</SubCategory>
     <Name>Airburst link</Name>
+    <SubCategory>Launcher</SubCategory>
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
@@ -10,7 +10,6 @@
     <CostMult>1</CostMult>
     <Capacity>0</Capacity>
     <Taboo>
-      <string></string>
     </Taboo>
     <Augments></Augments>
   </GearModLoader>
@@ -31,7 +30,7 @@
       <AugmentLoader>
         <Kind>RC</Kind>
         <Bonus>
-          <float>2</float>
+          <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
@@ -53,10 +52,10 @@
       <AugmentLoader>
         <Kind>RC</Kind>
         <Bonus>
-          <float>0</float>
-          <float>1</float>
-          <float>2</float>
-          <float>3</float>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
@@ -78,9 +77,9 @@
       <AugmentLoader>
         <Kind>RC</Kind>
         <Bonus>
-          <float>2</float>
-          <float>2</float>
-          <float>2</float>
+          <decimal>2</decimal>
+          <decimal>2</decimal>
+          <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
@@ -102,10 +101,10 @@
       <AugmentLoader>
         <Kind>RC</Kind>
         <Bonus>
-          <float>3</float>
-          <float>3</float>
-          <float>3</float>
-          <float>3</float>
+          <decimal>3</decimal>
+          <decimal>3</decimal>
+          <decimal>3</decimal>
+          <decimal>3</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
@@ -126,7 +125,7 @@
       <AugmentLoader>
         <Kind>RC</Kind>
         <Bonus>
-          <float>6</float>
+          <decimal>6</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
@@ -137,7 +136,7 @@
     <SubCategory>Top Mount</SubCategory>
     <Book>SR5</Book>
     <Page>432</Page>
-    <Rating></Rating>
+    <Rating>0</Rating>
     <FlatCost>125</FlatCost>
     <CostMult>1</CostMult>
     <Capacity>0</Capacity>
@@ -152,7 +151,7 @@
     <SubCategory>Top Mount</SubCategory>
     <Book>SR5</Book>
     <Page>432</Page>
-    <Rating></Rating>
+    <Rating>0</Rating>
     <FlatCost>125</FlatCost>
     <CostMult>1</CostMult>
     <Capacity>0</Capacity>
@@ -163,7 +162,7 @@
       <AugmentLoader>
         <Kind>Accuracy</Kind>
         <Bonus>
-          <float>1</float>
+          <decimal>1</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
@@ -174,7 +173,7 @@
     <SubCategory>Bottom Mount</SubCategory>
     <Book>SR5</Book>
     <Page>432</Page>
-    <Rating></Rating>
+    <Rating>0</Rating>
     <FlatCost>125</FlatCost>
     <CostMult>1</CostMult>
     <Capacity>0</Capacity>
@@ -185,7 +184,7 @@
       <AugmentLoader>
         <Kind>Accuracy</Kind>
         <Bonus>
-          <float>1</float>
+          <decimal>1</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
@@ -201,20 +200,49 @@
     <CostMult>1</CostMult>
     <Capacity>0</Capacity>
     <Taboo>
-      <string></string>
     </Taboo>
     <Augments>
       <AugmentLoader>
         <Kind>RC</Kind>
         <Bonus>
-          <float>1</float>
+          <decimal>1</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
   </GearModLoader>
   <GearModLoader>
-    <Name>Smartgun, internal</Name>
+    <Name>Silencer</Name>
+    <SubCategory>Barrel Mount</SubCategory>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCost>500</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Barrel Mount</string>
+    </Taboo>
+    <Augments>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Smart firing platform</Name>
+    <SubCategory>Bottom Mount</SubCategory>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCost>2500</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Bottom  Mount</string>
+    </Taboo>
+    <Augments>
+    </Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Smartgun - internal</Name>
     <SubCategory>Firearm</SubCategory>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -223,21 +251,22 @@
     <CostMult>2</CostMult>
     <Capacity>0</Capacity>
     <Taboo>
-      <string>Smartgun, external</string>
+      <string>Smartgun - Top</string>
+      <string>Smartgun - Bottom</string>
       <string>Laser sight</string>
     </Taboo>
     <Augments>
       <AugmentLoader>
         <Kind>Accuracy</Kind>
         <Bonus>
-          <float>2</float>
+          <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
   </GearModLoader>
   <GearModLoader>
-    <Name>Smartgun, top</Name>
+    <Name>Smartgun - Top</Name>
     <SubCategory>Top Mount</SubCategory>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -246,20 +275,21 @@
     <CostMult>1</CostMult>
     <Capacity>0</Capacity>
     <Taboo>
+      <string>Smartgun - internal</string>
       <string>Top Mount</string>
     </Taboo>
     <Augments>
       <AugmentLoader>
         <Kind>Accuracy</Kind>
         <Bonus>
-          <float>2</float>
+          <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
   </GearModLoader>
   <GearModLoader>
-    <Name>Smartgun, bottom</Name>
+    <Name>Smartgun - Bottom</Name>
     <SubCategory>Bottom Mount</SubCategory>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -268,44 +298,93 @@
     <CostMult>1</CostMult>
     <Capacity>0</Capacity>
     <Taboo>
+      <string>Smartgun - internal</string>
       <string>Bottom Mount</string>
     </Taboo>
     <Augments>
       <AugmentLoader>
         <Kind>Accuracy</Kind>
         <Bonus>
-          <float>2</float>
+          <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
   </GearModLoader>
   <GearModLoader>
-    <Name>Silencer ALF</Name>
+    <Name>Spare Clip</Name>
+    <SubCategory></SubCategory>
     <Book>SR5</Book>
-    <Page>439</Page>
+    <Page>433</Page>
     <Rating>0</Rating>
-    <FlatCost>350</FlatCost>
+    <FlatCost>5</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo></Taboo>
+    <Augments></Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Speed Loader</Name>
+    <SubCategory>Revolvers</SubCategory>
+    <Book>SR5</Book>
+    <Page>433</Page>
+    <Rating>0</Rating>
+    <FlatCost>25</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo></Taboo>
+    <Augments></Augments>
+  </GearModLoader>
+  <GearModLoader>
+    <Name>Tripod</Name>
+    <SubCategory>Bottom Mount</SubCategory>
+    <Book>SR5</Book>
+    <Page>433</Page>
+    <Rating>0</Rating>
+    <FlatCost>500</FlatCost>
     <CostMult>1</CostMult>
     <Capacity>0</Capacity>
     <Taboo>
-      <string>Sim module</string>
+      <string>Bottom Mount</string>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>RC</Kind>
+        <Bonus>
+          <decimal>6</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+  <!-- Built in Mods for various firearms -->
+  <GearModLoader>
+    <Name>Silencer ALF</Name> <!--Ares Light Fire -->
+    <Book>SR5</Book>
+    <Page>426</Page>
+    <Rating>0</Rating>
+    <FlatCost>0</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Barrel Mount</string>
     </Taboo>
     <Augments />
   </GearModLoader>
 </ArrayOfGearModLoader>
 <!--
-<GearModLoader>
+  <GearModLoader>
     <Name></Name>
+    <SubCategory></SubCategory>
     <Book>SR5</Book>
-    <Page>432</Page>
-    <Rating></Rating>
-    <FlatCost></FlatCost>
+    <Page>439</Page>
+    <Rating>0</Rating>
+    <FlatCost>0</FlatCost>
     <CostMult>1</CostMult>
     <Capacity>0</Capacity>
     <Taboo>
-      <string></string>
     </Taboo>
-    <Augments></Augments>
+    <Augments>
+    </Augments>
   </GearModLoader>
-  -->
+-->

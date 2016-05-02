@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearLoader xsi:type="RangedWeaponLoader">
+    <Name>Bow</Name>
+    <Book>SR5</Book>
+    <Page>423</Page>
+    <Category>Projectile Weapons</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>true</HasRating>
+    <Rating>0</Rating>
+    <Availability>6R</Availability>
+    <FlatCost>350</FlatCost>
+    <RatingCost></RatingCost>
+    <Capacity>0</Capacity>
+    <BaseMods>
+    </BaseMods>
+    <Mods />
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Barrel Mount</string>
+      <string>Top Mount</string>
+    </ModCategories>
+    <DV>7</DV>
+    <DamageType>P</DamageType>
+    <AP>%</AP>
+    <Acc>6</Acc>
+    <AmmoCount>11</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearLoader>
+</ArrayOfGearLoader>

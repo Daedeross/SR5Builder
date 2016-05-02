@@ -26,15 +26,20 @@ namespace SR5Builder.Loaders
             {
                 if (CostMult != 1)
                 {
-                    return "×" + CostMult + " +" + FlatCost + "¥";
+                    if (FlatCost != 0)
+                        return "×" + CostMult + "+" + FlatCost.ToString(GlobalData.CostFormat);
+                    else
+                        return "×" + CostMult;
                 }
-                else return "+" + FlatCost + "¥";
+                else return "+" + FlatCost.ToString(GlobalData.CostFormat);
             }
         }
 
         public int Capacity { get; set; }
 
         public string[] Taboo { get; set; }
+
+        public string Notes { get; set; }
 
         public List<AugmentLoader> Augments { get; set; }
 

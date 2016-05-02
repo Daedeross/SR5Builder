@@ -59,7 +59,7 @@
                           <xs:element name="Bonus">
                             <xs:complexType>
                               <xs:sequence>
-                                <xs:element maxOccurs="unbounded" name="float" type="xs:float" />
+                                <xs:element maxOccurs="unbounded" name="decimal" type="xs:decimal" />
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>

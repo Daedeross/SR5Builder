@@ -87,7 +87,7 @@
                                     Binding="{Binding Value.BaseRating, Converter={StaticResource intToStringConverter}}" />
                 <DataGridTextColumn Header="Avail"
                                     Binding="{Binding Value.Availability}" />
-                <DataGridTextColumn Header="Cost" Binding="{Binding Value.Cost}" />
+                <DataGridTextColumn Header="Cost" Binding="{Binding Value.DisplayCost}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

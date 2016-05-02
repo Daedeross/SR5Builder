@@ -348,6 +348,7 @@ namespace SR5Builder.ViewModels
         private void EditingDone(object sender, EventArgs e)
         {
             Editing = false;
+            GearEditVM = null;
         }
 
         #endregion // Private Methods

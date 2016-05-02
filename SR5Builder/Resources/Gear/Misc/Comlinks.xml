@@ -8,7 +8,8 @@
     <HasRating>true</HasRating>
     <Rating>1</Rating>
     <Availability>2</Availability>
-    <Cost>100</Cost>
+    <FlatCost>100</FlatCost>
+		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -23,7 +24,8 @@
     <HasRating>true</HasRating>
     <Rating>2</Rating>
     <Availability>4</Availability>
-    <Cost>700</Cost>
+    <FlatCost>700</FlatCost>
+		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -38,7 +40,8 @@
     <HasRating>true</HasRating>
     <Rating>3</Rating>
     <Availability>6</Availability>
-    <Cost>1000</Cost>
+    <FlatCost>1000</FlatCost>
+		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -53,7 +56,8 @@
     <HasRating>true</HasRating>
     <Rating>4</Rating>
     <Availability>8</Availability>
-    <Cost>2500</Cost>
+    <FlatCost>2500</FlatCost>
+		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -68,7 +72,8 @@
     <HasRating>true</HasRating>
     <Rating>5</Rating>
     <Availability>10</Availability>
-    <Cost>3000</Cost>
+    <FlatCost>3000</FlatCost>
+		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -83,7 +88,8 @@
     <HasRating>true</HasRating>
     <Rating>6</Rating>
     <Availability>12</Availability>
-    <Cost>5000</Cost>
+    <FlatCost>5000</FlatCost>
+		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -98,7 +104,8 @@
     <HasRating>true</HasRating>
     <Rating>7</Rating>
     <Availability>14</Availability>
-    <Cost>8000</Cost>
+    <FlatCost>8000</FlatCost>
+		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace SR5Builder.DataModels
 {
-    public abstract class LeveledTrait: BaseTrait, IAugmentable
+    public abstract class LeveledTrait: BaseTrait, IAugmentable, IComparable<LeveledTrait>
     {
         #region Properties
 
@@ -32,7 +32,7 @@ namespace SR5Builder.DataModels
             }
         }
 
-        protected float mBonusRating;
+        protected decimal mBonusRating;
         public virtual int BonusRating
         {
             get
@@ -192,10 +192,14 @@ namespace SR5Builder.DataModels
                 propNames.Add("AugmentedRating");
                 propNames.Add("DisplayValue");
             }
-
             return propNames;
         }
 
         #endregion IAugmentable Implemenation
+        
+        public int CompareTo(LeveledTrait other)
+        {
+            return (this.mName + mBaseRating).CompareTo(other.Name + mBaseRating);
+        }
     }
 }

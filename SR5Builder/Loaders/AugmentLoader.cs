@@ -13,7 +13,7 @@ namespace SR5Builder.Loaders
 
         public string Target { get; set; }
 
-        public float[] Bonus { get; set; }
+        public decimal[] Bonus { get; set; }
 
         public Augment ToAugment(IAugmentContainer owner)
         {
