@@ -8,8 +8,6 @@ namespace SR5Builder.Loaders
 {
     public class MeleeWeaponLoader: WeaponLoader
     {
-        public bool UseStrength { get; set; }
-
         public int Reach { get; set; }
 
         public override Gear ToGear(SR5Character owner)

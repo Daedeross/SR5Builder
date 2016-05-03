@@ -76,7 +76,7 @@
         DamageValue,
         /// <summary>Augment alters the target trait's <b>Damage Type</b> (i.e. Stun ↔ Physical).</summary>
         DamageType,
-        /// <summary>Augment alters the target trait's <b>Accuracy</b>.</summary>
+        /// <summary>Augment alters the target trait's <b>Accuracy</b> (or Limit).</summary>
         Accuracy,
         /// <summary>Augment alters the target trait's <b>Availability</b> rating</summary>
         Availability,
@@ -126,7 +126,9 @@
     /// How ammo is fed into the gun. See SR5 - Core rulebook p.417 "Ammo" §.
     /// </summary>
     public enum ReloadMethod
-    {
+    {   
+        /// <summary>special</summary>
+        s,
         /// <summary>break</summary>
         b,
         /// <summary>clip</summary>

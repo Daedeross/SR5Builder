@@ -11,13 +11,14 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>0</Availability>
-    <Cost>30</Cost>
+    <FlatCost>30</FlatCost>
     <Capacity>0</Capacity>
     <BaseMods />
     <Mods />
     <DV>3</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>4</Acc>
     <UseStrength>true</UseStrength>
     <Reach>1</Reach>
@@ -33,13 +34,14 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>4</Availability>
-    <Cost>100</Cost>
+    <FlatCost>100</FlatCost>
     <Capacity>0</Capacity>
     <BaseMods />
     <Mods />
     <DV>2</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>5</Acc>
     <UseStrength>true</UseStrength>
     <Reach>1</Reach>
@@ -55,13 +57,14 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>2</Availability>
-    <Cost>30</Cost>
+    <FlatCost>30</FlatCost>
     <Capacity>0</Capacity>
     <BaseMods />
     <Mods />
     <DV>2</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>5</Acc>
     <UseStrength>true</UseStrength>
     <Reach>0</Reach>
@@ -77,13 +80,14 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>3</Availability>
-    <Cost>100</Cost>
+    <FlatCost>100</FlatCost>
     <Capacity>0</Capacity>
     <BaseMods />
     <Mods />
     <DV>3</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>6</Acc>
     <UseStrength>true</UseStrength>
     <Reach>2</Reach>
@@ -99,13 +103,14 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>6R</Availability>
-    <Cost>750</Cost>
+    <FlatCost>750</FlatCost>
     <Capacity>0</Capacity>
     <BaseMods />
     <Mods />
     <DV>9</DV>
     <DamageType>S</DamageType>
     <AP>-5</AP>
+		<RatingAP>0</RatingAP>
     <Acc>4</Acc>
     <UseStrength>false</UseStrength>
     <Reach>1</Reach>
@@ -121,13 +126,14 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>4</Availability>
-    <Cost>350</Cost>
+    <FlatCost>350</FlatCost>
     <Capacity>0</Capacity>
     <BaseMods />
     <Mods />
     <DV>2</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>4</Acc>
     <UseStrength>true</UseStrength>
     <Reach>2</Reach>

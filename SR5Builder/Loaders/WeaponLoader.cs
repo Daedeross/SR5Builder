@@ -8,6 +8,8 @@ namespace SR5Builder.Loaders
 {
     public class WeaponLoader: GearLoader
     {
+        public bool UseStrength { get; set; }
+
         public string Skill { get; set; }
 
         public int DV { get; set; }
@@ -15,6 +17,8 @@ namespace SR5Builder.Loaders
         public DamageType DamageType { get; set; }
 
         public int AP { get; set; }
+
+        public decimal RatingAP { get; set; }
 
         public int Acc { get; set; }
 

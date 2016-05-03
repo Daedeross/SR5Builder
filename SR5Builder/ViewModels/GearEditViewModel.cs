@@ -17,6 +17,7 @@ namespace SR5Builder.ViewModels
         #region Private Fields
 
         private Gear gear;
+        HashSet<string> tabooCheck;
 
         #endregion // Private fields
 
@@ -74,6 +75,7 @@ namespace SR5Builder.ViewModels
         {
             this.gear = gear;
             gear.PropertyChanged += this.BubblePropertyChanged;
+            tabooCheck = new HashSet<string>();
             CreateModList();
         }
 
@@ -105,7 +107,11 @@ namespace SR5Builder.ViewModels
         private void AddModExecute()
         {
             ModList.Add(SelectedNewMod.Name, SelectedNewMod);
+            tabooCheck.Add(SelectedNewMod.Name);
+            tabooCheck.Add(SelectedNewMod.Category);
+            tabooCheck.Add(SelectedNewMod.SubCategory);
             SelectedMod = SelectedNewMod;
+            OnPropertyChanged("SelectedMod");
         }
 
         private bool AddModCanExecute()
@@ -116,7 +122,7 @@ namespace SR5Builder.ViewModels
                 return false;
 
             foreach (string taboo in SelectedNewMod.Taboo)
-                if (ModList.ContainsKey(taboo))
+                if (tabooCheck.Contains(taboo))
                     return false;
 
             return true;
@@ -143,6 +149,7 @@ namespace SR5Builder.ViewModels
         private void RemoveModExecute()
         {
             ModList.Remove(SelectedMod.Name);
+            RefreshTabooCheck();
             if (ModList.Count == 0)
                 SelectedMod = null;
             else
@@ -208,10 +215,16 @@ namespace SR5Builder.ViewModels
 
         private void CreateModList()
         {
-            // add existing mods to tmp collection
-            ModList = new ObservableDictionary<string, GearModLoader>(
-                                    (from mod in gear.Mods.Keys
-                                     select mod).ToDictionary(x => x, x => GlobalData.GearMods[x]));
+            // add existing mods to tmp collection and add tabooCheck
+            ModList = new ObservableDictionary<string, GearModLoader>();
+            foreach (var modName in gear.Mods.Keys)
+            {
+                GearModLoader l = GlobalData.GearMods[modName];
+                tabooCheck.Add(modName);
+                tabooCheck.Add(l.Category);
+                tabooCheck.Add(l.SubCategory);
+                ModList.Add(modName, l);
+            }
 
             // add available mods
             AvailableMods = new ObservableCollection<GearModLoader>();
@@ -243,6 +256,22 @@ namespace SR5Builder.ViewModels
                         }
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Clears and re-adds names and cats for taboos to check.
+        /// Can't just remove stuff when mods are removed because ther may be overlap
+        /// that wasn't tabooed
+        /// </summary>
+        private void RefreshTabooCheck ()
+        {
+            tabooCheck.Clear();
+            foreach (var mod in ModList.Values)
+            {
+                tabooCheck.Add(mod.Name);
+                tabooCheck.Add(mod.Category);
+                tabooCheck.Add(mod.SubCategory);
             }
         }
 

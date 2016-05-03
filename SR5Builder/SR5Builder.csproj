@@ -434,10 +434,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Resource Include="Resources\Gear\Weapons\MeleeWeapons - Clubs.xml">
+    <Content Include="Resources\Gear\Weapons\MeleeWeapons - Clubs.xml">
       <SubType>Designer</SubType>
-    </Resource>
-    <Resource Include="Resources\Gear\Weapons\Projectile Weapons.xml" />
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Gear\Weapons\Projectile Weapons.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\GenSettings\Default.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

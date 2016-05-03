@@ -43,6 +43,10 @@ namespace SR5Builder.Loaders
             }
         }
 
+        public int Min { get; set; }
+
+        public int Max { get; set; }
+
         public List<string> ExtArray { get; set; }
 
         public string ExtKind { get; set; }
@@ -66,6 +70,8 @@ namespace SR5Builder.Loaders
         public string[] ModCategories { get; set; }
 
         public string[] Mods { get; set; }
+
+        public string Notes { get; set; }
 
         #endregion // Properties
 

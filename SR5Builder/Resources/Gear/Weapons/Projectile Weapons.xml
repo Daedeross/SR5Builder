@@ -11,8 +11,8 @@
     <HasRating>true</HasRating>
     <Rating>0</Rating>
     <Availability>6R</Availability>
-    <FlatCost>350</FlatCost>
-    <RatingCost></RatingCost>
+    <FlatCost>0</FlatCost>
+    <RatingCost>100</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
     </BaseMods>
@@ -23,15 +23,52 @@
       <string>Barrel Mount</string>
       <string>Top Mount</string>
     </ModCategories>
-    <DV>7</DV>
+    <DV>2</DV>
     <DamageType>P</DamageType>
-    <AP>%</AP>
+    <AP>0</AP>
+		<RatingAP>-0.25</RatingAP>
     <Acc>6</Acc>
-    <AmmoCount>11</AmmoCount>
+    <AmmoCount>1</AmmoCount>
     <FireModes>
-      <FireMode>SA</FireMode>
+      <FireMode>Other</FireMode>
     </FireModes>
-    <ReloadMethod>c</ReloadMethod>
+    <ReloadMethod>s</ReloadMethod>
     <RC>0</RC>
+    <UseStrength>true</UseStrength>
+  </GearLoader>
+  <GearLoader xsi:type="RangedWeaponLoader">
+    <Name>Light Crossbow</Name>
+    <Book>SR5</Book>
+    <Page>424</Page>
+    <Category>Projectile Weapons</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <Availability>6R</Availability>
+    <FlatCost>300</FlatCost>
+    <Capacity>0</Capacity>
+    <BaseMods>
+    </BaseMods>
+    <Mods />
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Barrel Mount</string>
+      <string>Top Mount</string>
+    </ModCategories>
+    <DV>5</DV>
+    <DamageType>P</DamageType>
+    <AP>-1</AP>
+    <RatingAP></RatingAP>
+    <Acc>6</Acc>
+    <AmmoCount>4</AmmoCount>
+    <FireModes>
+      <FireMode>SS</FireMode>
+    </FireModes>
+    <ReloadMethod>m</ReloadMethod>
+    <RC>0</RC>
+    <UseStrength>false</UseStrength>
   </GearLoader>
 </ArrayOfGearLoader>

@@ -9,7 +9,6 @@
     <Rating>1</Rating>
     <Availability>2</Availability>
     <FlatCost>100</FlatCost>
-		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -25,7 +24,6 @@
     <Rating>2</Rating>
     <Availability>4</Availability>
     <FlatCost>700</FlatCost>
-		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -41,7 +39,6 @@
     <Rating>3</Rating>
     <Availability>6</Availability>
     <FlatCost>1000</FlatCost>
-		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -57,7 +54,6 @@
     <Rating>4</Rating>
     <Availability>8</Availability>
     <FlatCost>2500</FlatCost>
-		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -73,7 +69,6 @@
     <Rating>5</Rating>
     <Availability>10</Availability>
     <FlatCost>3000</FlatCost>
-		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -89,7 +84,6 @@
     <Rating>6</Rating>
     <Availability>12</Availability>
     <FlatCost>5000</FlatCost>
-		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>
@@ -105,7 +99,6 @@
     <Rating>7</Rating>
     <Availability>14</Availability>
     <FlatCost>8000</FlatCost>
-		<RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <Mods />
     <ModCategories>

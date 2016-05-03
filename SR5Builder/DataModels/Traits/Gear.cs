@@ -157,6 +157,8 @@ namespace SR5Builder.DataModels
 
         public ObservableDictionary<string, GearMod> Mods { get; set; }
 
+        public string Notes { get; set; }
+
         public override int Karma
         {
             get { return 0; }
@@ -171,6 +173,7 @@ namespace SR5Builder.DataModels
             : base(owner)
         {
             Initialize();
+            Notes = "";
         }
 
         public Gear(SR5Character owner, GearLoader loader)
@@ -301,8 +304,9 @@ namespace SR5Builder.DataModels
             Page = loader.Page;
             mBaseRating = loader.Rating;
             HasRating = true;           // I think technically all gear has a rating of at least 1
-            Min = loader.Rating;
-            Max = loader.Rating;
+            // load max and min rating if applicable
+            Min = loader.Min != 0 ? loader.Min : loader.Rating;
+            Max = loader.Max != 0 ? loader.Max : loader.Rating;
             mBaseAvailability = loader.Availability;
             mFlatCost = loader.FlatCost;
             mRatingCost = loader.RatingCost;
@@ -317,6 +321,7 @@ namespace SR5Builder.DataModels
                 }
             }
             ModCategories = (loader.ModCategories ?? new string[0]).ToList();
+            Notes = loader.Notes ?? "";
         }
 
         #endregion // Public Methods

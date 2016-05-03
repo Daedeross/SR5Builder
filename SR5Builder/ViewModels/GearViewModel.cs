@@ -261,7 +261,7 @@ namespace SR5Builder.ViewModels
         {
             ImplantList.Add(SelectedNewImplant.Name, new Implant(character, SelectedNewImplant));
             SelectedImplant = ImplantList[SelectedNewImplant.Name];
-            OnPropertyChanged("SelectedGear");
+            OnPropertyChanged("SelectedImplant");
         }
 
         private bool AddImplantCanExecute()
@@ -295,7 +295,7 @@ namespace SR5Builder.ViewModels
             else
                 SelectedImplant = ImplantList.Last().Value;
 
-            OnPropertyChanged("SelectedGear");
+            OnPropertyChanged("SelectedImplant");
         }
 
         private bool RemoveImplantCanExecute()
@@ -323,7 +323,11 @@ namespace SR5Builder.ViewModels
 
         private void LaunchEditExecute()
         {
-            GearEditVM = new GearEditViewModel(this.SelectedGear);
+            if (SelectedTab == "Gear")
+                GearEditVM = new GearEditViewModel(this.SelectedGear);
+            else // if (SelectedTab == "Augmentations")
+                GearEditVM = new GearEditViewModel(this.SelectedImplant);
+
             Editing = true;
         }
 

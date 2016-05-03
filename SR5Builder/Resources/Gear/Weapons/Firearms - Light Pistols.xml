@@ -11,8 +11,7 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>3R</Availability>
-    <FlatCost>200</FlatCost>
-    <RatingCost>0</RatingCost>
+    <FlatCost>200</FlatCost>
     <Capacity>0</Capacity>
     <BaseMods>
       <string>Silencer ALF</string>
@@ -27,6 +26,7 @@
     <DV>6</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>7</Acc>
     <AmmoCount>16</AmmoCount>
     <FireModes>
@@ -47,7 +47,6 @@
     <Rating>0</Rating>
     <Availability>3R</Availability>
     <FlatCost>200</FlatCost>
-    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
       <string>Silencer ALF</string>
@@ -61,6 +60,7 @@
     <DV>6</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>7</Acc>
     <AmmoCount>16</AmmoCount>
     <FireModes>
@@ -81,7 +81,6 @@
     <Rating>0</Rating>
     <Availability>7R</Availability>
     <FlatCost>210</FlatCost>
-    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
       <string>Detatchable shoulder stock</string>
@@ -96,6 +95,7 @@
     <DV>6</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>6</Acc>
     <AmmoCount>21</AmmoCount>
     <FireModes>
@@ -117,7 +117,6 @@
     <Rating>0</Rating>
     <Availability>4R</Availability>
     <FlatCost>320</FlatCost>
-    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
     </BaseMods>
@@ -131,6 +130,7 @@
     <DV>7</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>7</Acc>
     <AmmoCount>11</AmmoCount>
     <FireModes>
@@ -151,7 +151,6 @@
     <Rating>0</Rating>
     <Availability>6R</Availability>
     <FlatCost>350</FlatCost>
-    <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
     <BaseMods>
     </BaseMods>
@@ -165,6 +164,7 @@
     <DV>7</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
+		<RatingAP>0</RatingAP>
     <Acc>7</Acc>
     <AmmoCount>11</AmmoCount>
     <FireModes>

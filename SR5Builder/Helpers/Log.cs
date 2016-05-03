@@ -46,6 +46,11 @@ namespace SR5Builder.Helpers
             System.Diagnostics.Debug.WriteLine(message);
         }
 
+        public static void LogMessage(string message, params object[] list)
+        {
+            LogMessage(string.Format(message, list));
+        }
+
         public static string Timestamp()
         {
             return DateTime.Now.ToString("HH':'mm':'ss");

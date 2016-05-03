@@ -289,7 +289,18 @@ namespace SR5Builder
             {
                 using (StreamReader reader = new StreamReader(file.FullName))
                 {
-                    list = (List<GearLoader>)ser.Deserialize(reader);
+                    try
+                    {
+                        list = (List<GearLoader>)ser.Deserialize(reader);
+                        System.Diagnostics.Debug.WriteLine("Succesfully loaded file: {0}", (object)file.Name);
+                    }
+                    catch (InvalidOperationException e) // catch parse errors
+                    {
+                        System.Diagnostics.Debug.WriteLine("Error Loading file: {0}.", (object)file.Name);   // log error
+                        System.Diagnostics.Debug.WriteLine("• {0}.", (object)e.Message);
+                        System.Diagnostics.Debug.WriteLine("• {0}", e.InnerException.Message);
+                        continue; // skip loading of file and go to next
+                    }
                 }
 
                 string name = Path.GetFileNameWithoutExtension(file.Name);
