@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfSkillLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ArrayOfSkillLoader xmlns="SR5Builder/Skills.xsd"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SkillLoader>
     <Name>Compiling</Name>
     <LinkedAttribute>Resonance</LinkedAttribute>

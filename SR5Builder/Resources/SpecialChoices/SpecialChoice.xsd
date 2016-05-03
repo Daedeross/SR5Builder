@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xsd:element name="ArrayOfSpecialChoice">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" name="SpecialChoice">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Name" type="xsd:string" />
+              <xsd:element name="Priority" type="xsd:string" />
+              <xsd:element name="Kind" type="xsd:string" />
+              <xsd:element name="Attribute" type="xsd:unsignedByte" />
+              <xsd:element name="SkillGroupRating" type="xsd:unsignedByte" />
+              <xsd:element name="SkillGroupCount" type="xsd:unsignedByte" />
+              <xsd:element name="SkillType" type="xsd:string" />
+              <xsd:element name="SkillRating" type="xsd:unsignedByte" />
+              <xsd:element name="SkillCount" type="xsd:unsignedByte" />
+              <xsd:element name="Spells" type="xsd:unsignedByte" />
+              <xsd:element name="ComplexForms" type="xsd:unsignedByte" />
+              <xsd:element name="PowerPoints" type="xsd:unsignedByte" />
+              <xsd:element name="CanBuyPowerPoints" type="xsd:boolean" />
+              <xsd:element name="AllowedGroups" minOccurs="0">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="string" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xs:schema>
