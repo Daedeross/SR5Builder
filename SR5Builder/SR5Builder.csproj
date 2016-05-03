@@ -393,6 +393,12 @@
     <None Include="Resources\Metatypes\Metatypes.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Resources\Skills\Skills.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\SpecialChoices\SpecialChoice.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Loaders\CharacterTraits\" />
