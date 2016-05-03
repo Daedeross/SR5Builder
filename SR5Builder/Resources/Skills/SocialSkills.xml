@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfSkillLoader>
+<ArrayOfSkillLoader xmlns="SR5Builder/Skills.xsd">
   <SkillLoader>
     <Name>Con</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>

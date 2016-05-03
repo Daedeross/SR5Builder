@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="SR5Builder/Skills.xsd"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified">
+  <xsd:element name="ArrayOfSkillLoader">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" name="SkillLoader">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Name" type="xsd:string" />
+              <xsd:element name="LinkedAttribute" type="xsd:string" />
+              <xsd:element name="Limit" type="xsd:string" />
+              <xsd:element name="GroupName" type="xsd:string" />
+              <xsd:element name="Kind" >
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Active" />
+                    <xs:enumeration value="Magical" />
+                    <xs:enumeration value="Resonance"/>
+                    <xs:enumeration value="Knowledge"/>
+                    <xs:enumeration value="Language"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xs:schema>

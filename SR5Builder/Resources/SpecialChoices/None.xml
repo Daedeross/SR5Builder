@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfSpecialChoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<ArrayOfSpecialChoice xmlns="SR5Builder/SpecialChoice.xsd">
   <SpecialChoice>
     <Name>None</Name>
     <Priority>U</Priority>
@@ -14,6 +14,7 @@
     <ComplexForms>0</ComplexForms>
 	  <PowerPoints>0</PowerPoints>
     <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups></AllowedGroups>
   </SpecialChoice>
   <SpecialChoice>
     <Name>None</Name>
@@ -29,5 +30,6 @@
     <ComplexForms>0</ComplexForms>
 	  <PowerPoints>0</PowerPoints>
     <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <AllowedGroups />
   </SpecialChoice>
 </ArrayOfSpecialChoice>
