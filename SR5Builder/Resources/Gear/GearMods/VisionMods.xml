@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfGearModLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearModLoader>
+    <Name></Name>
+    <SubCategory></SubCategory>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCost></FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>1</Capacity>
+    <Taboo>
+    </Taboo>
+    <Augments>
+      <AugmentLoader>
+        <Kind>Availability</Kind>
+        <Bonus>
+          <decimal>4</decimal>
+        </Bonus>
+        <Target>Perception</Target>
+      </AugmentLoader>
+    </Augments>
+  </GearModLoader>
+</ArrayOfGearModLoader>
+
