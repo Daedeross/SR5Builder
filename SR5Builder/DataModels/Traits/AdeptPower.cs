@@ -29,8 +29,8 @@ namespace SR5Builder.DataModels
             }
         }
 
-        private float mFlatPoints;
-        public float FlatPoints
+        private decimal mFlatPoints;
+        public decimal FlatPoints
         {
             get { return mFlatPoints; }
             set
@@ -44,8 +44,8 @@ namespace SR5Builder.DataModels
             }
         }
 
-        private float mPointsPerLevel;
-        public float PointPerLevel
+        private decimal mPointsPerLevel;
+        public  decimal PointPerLevel
         {
             get { return mPointsPerLevel; }
             set
@@ -59,7 +59,7 @@ namespace SR5Builder.DataModels
             }
         }
 
-        public float PowerPoints
+        public decimal PowerPoints
         {
             get { return mFlatPoints + mBaseRating * mPointsPerLevel; }
         }

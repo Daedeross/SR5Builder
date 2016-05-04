@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfSpecialChoice xmlns="SR5Builder/SpecialChoice.xsd">
+<ArrayOfSpecialChoice>
   <SpecialChoice>
     <Name>Aspected Magician (Sorcery)</Name>
     <Priority>B</Priority>

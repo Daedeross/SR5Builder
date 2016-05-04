@@ -80,7 +80,11 @@ namespace SR5Builder.ViewModels
 
         public AdeptPower SelectedPower { get; set; }
 
-            #endregion // Powers
+        public decimal PowerPointsSpent { get { return character.PowerPointsSpent; } }
+
+        public decimal PowerPoints { get { return 5; } }
+
+        #endregion // Powers
 
         #endregion // Properties
 
@@ -91,6 +95,7 @@ namespace SR5Builder.ViewModels
             character = c;
             SpellCategories = GlobalData.PreLoadedSpells.Keys.ToList();
             AvailablePowers = new ObservableCollection<AdeptPowerLoader>(GlobalData.PreLoadedPowers);
+            character.PropertyChanged += this.BubblePropertyChanged;
         } 
 
         #endregion // Constructors

@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cnv="clr-namespace:SR5Builder.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="500">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="3" />
         </Style>
+        <cnv:ValueRemainingConverter x:Key="ppConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.Resources>
@@ -42,6 +44,9 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Button Grid.Row="0"
@@ -58,6 +63,17 @@
                         Command="{Binding IncreasePowerCommand}"
                         ContentTemplate="{StaticResource IncreaseGlyphNormalKey}" />
             </StackPanel>
+            <TextBlock Grid.Row="4" TextWrapping="Wrap" TextAlignment="Center"
+                       Width="50">Power Points</TextBlock>
+            <TextBlock Grid.Row="5"
+                       HorizontalAlignment="Center">
+                <TextBlock.Text>
+                    <MultiBinding Converter="{StaticResource ppConverter}">
+                        <Binding Path="PowerPointsSpent" />
+                        <Binding Path="PowerPoints" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
         </Grid>
         <ListView Grid.Column="2" Grid.Row="1"
                   ItemsSource="{Binding PowerList}"

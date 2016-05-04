@@ -14,9 +14,9 @@ namespace SR5Builder.Loaders
 
         public int Max { get; set; }
 
-        public float FlatPoints { get; set; }
+        public decimal FlatPoints { get; set; }
 
-        public float PointsPerLevel { get; set; }
+        public decimal PointsPerLevel { get; set; }
 
         [XmlIgnore]
         public string DisplayPoints

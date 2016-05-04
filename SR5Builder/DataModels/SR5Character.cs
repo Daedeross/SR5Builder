@@ -13,7 +13,7 @@ using SR5Builder.Loaders;
 namespace SR5Builder.DataModels
 {
     /// <summary>
-    /// This class holds all the in-memory data, including it's own instance of Settings.
+    /// This class holds all the in-memory data, including its own instance of Settings.
     /// Serialization is handled by CharacterLoader.
     /// </summary>
     public class SR5Character : DataModelBase
@@ -461,6 +461,19 @@ namespace SR5Builder.DataModels
         public ObservableDictionary<string, AdeptPower> PowerList { get; set; }
 
         public LeveledTrait PowerPoints { get; set; }
+        
+        public decimal PowerPointsSpent
+        {
+            get
+            {
+                decimal pp = 0;
+                foreach (var power in PowerList.Values)
+                {
+                    pp += power.PowerPoints;
+                }
+                return pp;
+            }
+        }
 
         public int PowerKarma
         {
@@ -468,7 +481,7 @@ namespace SR5Builder.DataModels
             {
                 if (SpecialChoice.Name == "Mystic Adept")
                 {
-                    float pp = 0;
+                    decimal pp = 0;
                     foreach (AdeptPower power in PowerList)
                     {
                         pp += power.PowerPoints;
@@ -758,7 +771,7 @@ namespace SR5Builder.DataModels
         /// <param name="e"></param>
         private void OnAugmentablesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            HashSet<string> propNames = new HashSet<string>();  // I don't remember what this was to be for exactly...
+            HashSet<string> propNames = new HashSet<string>();  // used to store property names that are changed via augmentables update
             if (e.OldItems != null)
             {
                 List<object> oldItems = e.OldItems.OfType<object>().ToList();
@@ -783,6 +796,12 @@ namespace SR5Builder.DataModels
                             if (a is SkillGroup)
                                 foreach(KeyValuePair<string, Skill> kvp in (a as SkillGroup).Skills)
                                     Augmentables.Remove(kvp.Key);
+
+                            if (a is AdeptPower)
+                            {
+                                (a as INotifyPropertyChanged).PropertyChanged -= this.OnPowerChanged;
+                                propNames.Add("PowerPointsSpent");
+                            }
 
                             //if (a is MeleeWeapon)
                             //{
@@ -822,6 +841,12 @@ namespace SR5Builder.DataModels
                                 foreach(KeyValuePair<string, Skill> kvp in (a as SkillGroup).Skills)
                                     Augmentables.Add(kvp.Key, kvp.Value);
 
+                            if (a is AdeptPower)
+                            {
+                                (a as AdeptPower).PropertyChanged += this.OnPowerChanged;
+                                propNames.Add("PowerPointsSpent");
+                            }
+
                             // Upadate weapons lists
                             //if (a is MeleeWeapon)
                             //{
@@ -843,6 +868,14 @@ namespace SR5Builder.DataModels
             foreach (string name in propNames)
             {
                 OnPropertyChanged(name);
+            }
+        }
+
+        private void OnPowerChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "PowerPoints")
+            {
+                OnPropertyChanged("PowerPointsSpent");
             }
         }
 
