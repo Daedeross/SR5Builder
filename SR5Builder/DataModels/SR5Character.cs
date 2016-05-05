@@ -460,7 +460,7 @@ namespace SR5Builder.DataModels
 
         public ObservableDictionary<string, AdeptPower> PowerList { get; set; }
 
-        public LeveledTrait PowerPoints { get; set; }
+        public PowerPoints PowerPoints { get; set; }
         
         public decimal PowerPointsSpent
         {
@@ -487,6 +487,40 @@ namespace SR5Builder.DataModels
                         pp += power.PowerPoints;
                     }
                     return (int)Math.Ceiling( pp * Settings.PowerPointKarma);
+                }
+                return 0;
+            }
+        }
+
+        private int mAdvancedGrade;
+        public int AdvancedGrade
+        {
+            get
+            {
+                return mAdvancedGrade;
+            }
+            set
+            {
+                if (mAdvancedGrade != value)
+                {
+                    mAdvancedGrade = value;
+                    OnPropertyChanged("AdvancedGrade");
+                    OnPropertyChanged("AdvancedGradeKarma");
+                }
+            }
+        }
+
+        public int AdvancedGradeKarma
+        {
+            get
+            {
+                if (SpecialKind == SpecialKind.Magic)
+                {
+                    return Settings.InitiationKarma(mAdvancedGrade);
+                }
+                else if (SpecialKind == SpecialKind.Resonance)
+                {
+                    return Settings.SubmersionKarma(mAdvancedGrade);
                 }
                 return 0;
             }
@@ -622,6 +656,10 @@ namespace SR5Builder.DataModels
                 a.PropertyChanged += this.OnAttributeChanged;
                 Augmentables.Add(a.Name, a);
             }
+
+            // Power Points
+            PowerPoints = new PowerPoints(this, "PowerPoints");
+            Augmentables.Add(PowerPoints.Name, PowerPoints);
             
             // Initiatives
             PhysicalInitiative = new Initiative(mReaction, mIntuition);

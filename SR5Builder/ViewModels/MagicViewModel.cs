@@ -82,7 +82,7 @@ namespace SR5Builder.ViewModels
 
         public decimal PowerPointsSpent { get { return character.PowerPointsSpent; } }
 
-        public decimal PowerPoints { get { return 5; } }
+        public decimal PowerPoints { get { return character.PowerPoints.AugmentedRating; } }
 
         #endregion // Powers
 
