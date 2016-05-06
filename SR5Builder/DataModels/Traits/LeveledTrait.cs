@@ -55,7 +55,7 @@ namespace SR5Builder.DataModels
         }
 
         protected int mImprovement;
-        public int ImprovedRating
+        public virtual int ImprovedRating
         {
             get { return mImprovement + BaseRating; }
             set

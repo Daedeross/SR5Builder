@@ -86,10 +86,17 @@ namespace SR5Builder.DataModels
             {
                 return (int)Math.Ceiling((double)(PrimaryAttribute.BaseRating * 2 + SecondaryAttribute.BaseRating + TertiaryAttribute.BaseRating) / 3);
             }
-            set
+            set { }
+        }
+
+        public override int ImprovedRating
+        {
+            get
             {
-                //base.BaseRating = value;
+                return (int)Math.Ceiling((double)(PrimaryAttribute.ImprovedRating * 2 + SecondaryAttribute.ImprovedRating + TertiaryAttribute.ImprovedRating) / 3);
             }
+
+            set { }
         }
 
         public override int AugmentedRating
@@ -129,10 +136,26 @@ namespace SR5Builder.DataModels
 
         private void OnAttributeChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
+            bool changed = false;
             if (e.PropertyName.Contains("Base"))
+            {
                 OnPropertyChanged("BaseRating");
-            if (e.PropertyName.Contains("Augmented"))
+                changed = true;
+            }
+            else if (e.PropertyName.Contains("Improved"))
+            {
+                OnPropertyChanged("ImprovedRating");
+                changed = true;
+            }
+            else if (e.PropertyName.Contains("Augmented"))
+            { 
                 OnPropertyChanged("AugmentedRating");
+                changed = true;
+            }
+            if (changed)
+            {
+                OnPropertyChanged("DisplayValue");
+            }
         }
 
         #endregion // Private Methods

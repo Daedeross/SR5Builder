@@ -94,7 +94,7 @@ namespace SR5Builder.ViewModels
 
             #endregion Misc
 
-            #region Display Propertoes
+            #region Display Properties
 
         public bool AttributesEnabled { get { return character.Priorities.Metatype != Priority.U; } }
 
@@ -326,10 +326,10 @@ namespace SR5Builder.ViewModels
             #region Initiatives
 
         public Initiative PhysicalInitiative { get { return character.PhysicalInitiative; } }
-        public Initiative ARInititative      { get { return character.ARInititative; } }
-        public Initiative ColdSimInititative { get { return character.ColdSimInitiative; } }
-        public Initiative HotSimInititative  { get { return character.HotSimInitiative; } }
-        public Initiative AstralInititative  { get { return character.AstralInitiative; } }
+        public Initiative ARInitiative      { get { return character.ARInititative; } }
+        public Initiative ColdSimInitiative { get { return character.ColdSimInitiative; } }
+        public Initiative HotSimInitiative  { get { return character.HotSimInitiative; } }
+        public Initiative AstralInitiative  { get { return character.AstralInitiative; } }
 
         public LeveledTrait PhysicalDice { get { return character.PhysicalInitiativeDice; } }
         public LeveledTrait ARDice { get { return character.ARInitiativeDice; } }
@@ -338,6 +338,15 @@ namespace SR5Builder.ViewModels
         public LeveledTrait AstralDice { get { return character.AstralInitiativeDice; } }
 
             #endregion // Initiatives
+
+            #region Limits
+
+        public LeveledTrait PhysicalLimit { get { return character.PhysicalLimit; } }
+        public LeveledTrait MentalLimit { get { return character.MentalLimit; } }
+        public LeveledTrait SocialLimit { get { return character.SocialLimit; } }
+        public LeveledTrait AstralLimit { get { return character.AstralLimit; } }
+
+            #endregion
 
             #region Specials
 

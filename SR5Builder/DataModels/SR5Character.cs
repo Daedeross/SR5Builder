@@ -251,9 +251,9 @@ namespace SR5Builder.DataModels
         public InitiativeDice HotSimInitiativeDice { get; set; }
         public InitiativeDice AstralInitiativeDice { get; set; }
 
-        #endregion // Initiatives
+            #endregion // Initiatives
 
-        #region Limits
+            #region Limits
 
         public Limit MentalLimit { get; private set; }
 
@@ -261,7 +261,7 @@ namespace SR5Builder.DataModels
 
         public Limit SocialLimit { get; private set; }
 
-        public Limit AstraLimit
+        public Limit AstralLimit
         {
             get
             {
@@ -629,7 +629,7 @@ namespace SR5Builder.DataModels
 
             mEdge = new Attribute(this, "Edge");
 
-            mEssence = new Attribute(this, "Essence");
+            mEssence = new Essence(this, "Essence");
 
             mSpecialAttribute = new SpecialAttribute(this);
 
@@ -793,6 +793,12 @@ namespace SR5Builder.DataModels
                     OnPropertyChanged("AttributePointsSpent");
                     OnPropertyChanged("AttributePointsRemaining");
                 }
+            }
+            else if (e.PropertyName == "AugmentedRating" &&
+                     (sender == MentalLimit || sender == SocialLimit)
+                     )
+            {
+                OnPropertyChanged("AstralLimit");
             }
         }
 

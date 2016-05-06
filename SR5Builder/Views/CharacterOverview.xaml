@@ -75,10 +75,10 @@
         <Label Grid.Column="2" Grid.Row="2">Initiative</Label>
         <Label Grid.Column="2" Grid.Row="3">Matrix Initiative</Label>
         <Label Grid.Column="2" Grid.Row="4">Astral Initiative</Label>
-        <Label Grid.Column="2" Grid.Row="5">Composure</Label>
-        <Label Grid.Column="2" Grid.Row="6">Judge Intentions</Label>
-        <Label Grid.Column="2" Grid.Row="7">Memory</Label>
-        <Label Grid.Column="2" Grid.Row="8">Lift/Carry</Label>
+        <Label Grid.Column="2" Grid.Row="5">Physical Limit</Label>
+        <Label Grid.Column="2" Grid.Row="6">Mental Limit</Label>
+        <Label Grid.Column="2" Grid.Row="7">Social Limit</Label>
+        <Label Grid.Column="2" Grid.Row="8">Astral Limit</Label>
         <Label Grid.Column="2" Grid.Row="9">Movement</Label>
 
         <!--<Label Grid.Column="2" Grid.Row="2"></Label>-->
@@ -104,9 +104,33 @@
                 </MultiBinding>
             </TextBlock.Text>
         </TextBlock>
-        <TextBlock Grid.Column="3" Grid.Row="3" Text="{Binding ColdSimInitiative, Mode=OneWay}" />
-        <TextBlock Grid.Column="4" Grid.Row="3" Text="{Binding HotSimInitiative, Mode=OneWay}" />
-        <TextBlock Grid.Column="3" Grid.Row="3" Text="{Binding AstralInitiative, Mode=OneWay}" />
-        
+        <!--<TextBlock Grid.Column="3" Grid.Row="3">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource initConverter}" Mode="OneWay">
+                    <Binding Path="ColdSimInitiative.DisplayValue" />
+                    <Binding Path="ColdSimDice.DisplayValue" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <TextBlock Grid.Column="4" Grid.Row="3">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource initConverter}" Mode="OneWay">
+                    <Binding Path="HotSimInitiative.DisplayValue" />
+                    <Binding Path="HotSimDice.DisplayValue" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>-->
+        <TextBlock Grid.Column="3" Grid.Row="4">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource initConverter}" Mode="OneWay">
+                    <Binding Path="AstralInitiative.DisplayValue" />
+                    <Binding Path="AstralDice.DisplayValue" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+        <TextBlock Grid.Column="3" Grid.Row="5" Text="{Binding PhysicalLimit.DisplayValue}" />
+        <TextBlock Grid.Column="3" Grid.Row="6" Text="{Binding MentalLimit.DisplayValue}" />
+        <TextBlock Grid.Column="3" Grid.Row="7" Text="{Binding SocialLimit.DisplayValue}" />
+        <TextBlock Grid.Column="3" Grid.Row="8" Text="{Binding AstralLimit.DisplayValue}" />
     </Grid>
 </UserControl>

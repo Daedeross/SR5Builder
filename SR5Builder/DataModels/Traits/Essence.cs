@@ -5,34 +5,40 @@ using System.Text;
 
 namespace SR5Builder.DataModels
 {
-    public class Essence: BaseTrait, IAugmentable
+    public class Essence : Attribute
     {
-        public System.Collections.ObjectModel.ObservableCollection<Augment> Augments
+        public override int Karma
         {
             get
             {
-                throw new NotImplementedException();
+                return 0;
             }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public void OnAugmentChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnAugmentCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override int Karma
-        {
-            get { return 0; }
             set { }
+        }
+
+        public override int Min
+        {
+            get
+            {
+                return 0;
+            }
+
+            set { }
+        }
+
+        public override int Max
+        {
+            get
+            {
+                return 6;
+            }
+            set { }
+        }
+
+        public Essence(SR5Character owner, string name)
+            : base(owner, name)
+        {
+            mBaseRating = 6;
         }
     }
 }

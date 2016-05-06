@@ -15,7 +15,7 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                if (mOwner.MetatypeStats != null)
+                if (mOwner?.MetatypeStats != null)
                     return (int)mMin.GetValue(mOwner.MetatypeStats, null);
                 else
                     return 0;
