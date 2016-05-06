@@ -70,7 +70,7 @@
                 <TextBlock.Text>
                     <MultiBinding Converter="{StaticResource ppConverter}">
                         <Binding Path="PowerPointsSpent" />
-                        <Binding Path="PowerPoints" />
+                        <Binding Path="PowerPoints.AugmentedRating" />
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>

@@ -81,6 +81,26 @@ namespace SR5Builder.ViewModels
 
         public SkillGroup SelectedSkillGroup { get; set; }
 
+        public int SkillPoints
+        {
+            get
+            {
+                return GlobalData.PriorityLevels[character.Priorities.Skills].SkillPoints;
+            }
+        }
+
+        public int SkillPointsSpent { get { return character.SkillPointsSpent; } }
+
+        public int SkillGroupPoints
+        {
+            get
+            {
+                return GlobalData.PriorityLevels[character.Priorities.Skills].SkillGroupPoints;
+            }
+        }
+
+        public int SkillPointsGroupSpent { get { return character.SkillGroupPointsSpent; } }
+
         #endregion // Properties
 
         #region Constructors
@@ -400,6 +420,13 @@ namespace SR5Builder.ViewModels
                         mCategoryList.Remove("Resonance");
                     CreateAvailableGroups();
                     OnPropertyChanged("CategoryList");
+                    break;
+                case "Priorities":
+                case "SkillPoints":
+                case "SkillPointsSpent":
+                case "SkillGroupPoints":
+                case "SkillGroupPointsspent":
+                    OnPropertyChanged(e.PropertyName);
                     break;
                 default:
                     break;

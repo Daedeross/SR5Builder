@@ -1,16 +1,19 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace SR5Builder.DataModels
 {
-    public class PowerPoints : LeveledTrait
+    public class PowerPoints : Attribute
     {
         public override int Min
         {
             get
             {
-                int? v;
-                v = mOwner.SpecialChoice?.PowerPoints;
-                return v ?? 0;
+                if (mOwner.SpecialChoice.Name == "Adept")
+                {
+                    return mOwner.SpecialAttribute;
+                }
+                return 0;
             }
             set
             {
@@ -39,7 +42,7 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                return (BaseRating - Min) * mOwner.Settings.PowerPointKarma;
+                return Math.Min(0, (BaseRating - Min) * mOwner.Settings.PowerPointKarma);
             }
             set { }
         }
@@ -48,15 +51,16 @@ namespace SR5Builder.DataModels
             :base (owner)
         {
             mName = name;
+            mOwner.PropertyChanged += OnOwnerChanged;
         }
 
         public void OnOwnerChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName.Contains("Special"))
             {
-                OnPropertyChanged("InprovedValue");
-                OnPropertyChanged("BaseValue");
-                OnPropertyChanged("AugmentedValue");
+                OnPropertyChanged("ImprovedRating");
+                OnPropertyChanged("BaseRating");
+                OnPropertyChanged("AugmentedRating");
             }
         }
     }

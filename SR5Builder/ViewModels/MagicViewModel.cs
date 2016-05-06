@@ -82,9 +82,9 @@ namespace SR5Builder.ViewModels
 
         public decimal PowerPointsSpent { get { return character.PowerPointsSpent; } }
 
-        public decimal PowerPoints { get { return character.PowerPoints.AugmentedRating; } }
+        public LeveledTrait PowerPoints { get { return character.PowerPoints; } }
 
-        #endregion // Powers
+            #endregion // Powers
 
         #endregion // Properties
 
