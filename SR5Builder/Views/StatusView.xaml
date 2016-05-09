@@ -91,6 +91,29 @@
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>
+                    <Rectangle Width="1" VerticalAlignment="Stretch" Fill="Black"
+                               Margin="3">
+                    </Rectangle>
+                    <TextBlock MinWidth="32" TextAlignment="Center" Margin="3,0">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding  SpecialPointsDone}" Value="-1">
+                                        <Setter Property="Foreground" Value="Red" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding  SpecialPointsDone}" Value="0">
+                                        <Setter Property="Foreground" Value="Green" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource valueRemainingConverter}">
+                                <Binding Path="SpecialAttributePointsSpent" />
+                                <Binding Path="SpecialAttributePoints" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
                 </StackPanel>
             </Border>
         </StatusBarItem>

@@ -571,6 +571,8 @@ namespace SR5Builder.ViewModels
                     OnPropertyChanged("SpecialKind");
                     OnPropertyChanged("SpecialAttribute");
                     OnPropertyChanged("PrioritiesValid");
+                    OnPropertyChanged("SpecialPointsDone");
+                    OnPropertyChanged("SpecialAttributePointsRemaining");
                     break;
                 case "Metatype":
                     AvailableMetatypes = new ObservableCollection<NamePoints>(
@@ -582,6 +584,9 @@ namespace SR5Builder.ViewModels
                     OnPropertyChanged("Metatype");
                     OnPropertyChanged("PrioritiesValid");
                     OnPropertyChanged("AttributePointsDone");
+                    OnPropertyChanged("SpecialPointsDone");
+                    OnPropertyChanged("SpecialAttributePoints");
+                    OnPropertyChanged("SpecialAttributePointsRemaining");
                     //character.Metatype = character.Metatype;
                     break;
                 case "Skills":
