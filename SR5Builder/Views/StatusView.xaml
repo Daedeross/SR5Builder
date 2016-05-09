@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="SR5Builder.Views.StatusView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:views="clr-namespace:SR5Builder.Views"
+             xmlns:cnv="clr-namespace:SR5Builder.Converters"
+             mc:Ignorable="d" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Border">
+            <Setter Property="Padding" Value="2" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="LightGray" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="3,0" />
+        </Style>
+        <cnv:ValueRemainingConverter x:Key="valueRemainingConverter" />
+    </UserControl.Resources>
+    <StatusBar Name="statusBar" Grid.Row="2" >
+        <StatusBarItem>
+            <Ellipse Height="20" Width="20" Stroke="Black">
+                <Ellipse.Style>
+                    <Style TargetType="Ellipse">
+                        <Setter Property="Fill">
+                            <Setter.Value>
+                                <RadialGradientBrush GradientOrigin=".9 .1">
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="Green" Offset=".6" />
+                                    <GradientStop Color="Black" Offset="1" />
+                                </RadialGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsDone}" Value="-1">
+                                <Setter Property="Fill">
+                                    <Setter.Value>
+                                        <RadialGradientBrush GradientOrigin=".9 .1">
+                                            <GradientStop Color="White" Offset="0" />
+                                            <GradientStop Color="Red" Offset=".6" />
+                                            <GradientStop Color="Black" Offset="1" />
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsDone}" Value="1">
+                                <Setter Property="Fill">
+                                    <Setter.Value>
+                                        <RadialGradientBrush GradientOrigin=".9 .1">
+                                            <GradientStop Color="White" Offset="0" />
+                                            <GradientStop Color="Yellow" Offset=".6" />
+                                            <GradientStop Color="Black" Offset="1" />
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Ellipse.Style>
+                <!--<Ellipse.Fill>
+                </Ellipse.Fill>-->
+            </Ellipse>
+            <!--<TextBlock Text="{Binding IsValid}" />-->
+        </StatusBarItem>
+        <StatusBarItem>
+            <Border>
+                <TextBlock MinWidth="50" Text="{Binding DisplayName}" />
+            </Border>
+        </StatusBarItem>
+        <StatusBarItem>
+            <Border>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Attributes:</TextBlock>
+                    <TextBlock MinWidth="32" TextAlignment="Center" Margin="3,0">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding  AttributePointsDone}" Value="-1">
+                                        <Setter Property="Foreground" Value="Red" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding  AttributePointsDone}" Value="0">
+                                        <Setter Property="Foreground" Value="Green" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource valueRemainingConverter}">
+                                <Binding Path="AttributePointsSpent" />
+                                <Binding Path="AttributePoints" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+        </StatusBarItem>
+        <StatusBarItem>
+            <Border>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Skills:</TextBlock>
+                    <TextBlock MinWidth="32" TextAlignment="Center" Margin="3,0">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding  SkillPointsDone}" Value="-1">
+                                        <Setter Property="Foreground" Value="Red" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding  SkillPointsDone}" Value="0">
+                                        <Setter Property="Foreground" Value="Green" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource valueRemainingConverter}">
+                                <Binding Path="SkillsVM.SkillPointsSpent" />
+                                <Binding Path="SkillsVM.SkillPoints" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <Rectangle Width="1" VerticalAlignment="Stretch" Fill="Black"
+                               Margin="3">
+                    </Rectangle>
+                    <TextBlock MinWidth="32" TextAlignment="Center" Margin="3,0">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding  SkillGroupPointsDone}" Value="-1">
+                                        <Setter Property="Foreground" Value="Red" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding  SkillGroupPointsDone}" Value="0">
+                                        <Setter Property="Foreground" Value="Green" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource valueRemainingConverter}">
+                                <Binding Path="SkillsVM.SkillGroupPointsSpent" />
+                                <Binding Path="SkillsVM.SkillGroupPoints" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+        </StatusBarItem>
+    </StatusBar>
+</UserControl>

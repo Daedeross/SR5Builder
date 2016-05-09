@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:SR5Builder.ViewModels"
         xmlns:views="clr-namespace:SR5Builder.Views"
-        Title="MainWindow" Height="500" Width="830" Icon=".\Resources\SR5 Logo Sigil.png">
+        Title="MainWindow" Height="600" Width="850" Icon=".\Resources\SR5 Logo Sigil.png">
     <Window.Resources>
         <vm:Workspace x:Key="workspace" />
     </Window.Resources>
@@ -32,7 +32,7 @@
                     >
             <TabControl.ItemTemplate >
                 <DataTemplate>
-                    <TextBox Text="{Binding DisplayName}" />
+                    <TextBlock Text="{Binding DisplayName}" />
                 </DataTemplate>
             </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>
@@ -41,13 +41,6 @@
                 </DataTemplate>
             </TabControl.ContentTemplate>
         </TabControl>
-        <StatusBar Name="statusBar" Grid.Row="2" DataContext="{Binding SelectedCharacter}">
-            <StatusBarItem>
-                <TextBlock Text="{Binding DisplayName}" />
-            </StatusBarItem>
-            <StatusBarItem>
-                <TextBlock Text="{Binding IsValid}" />
-            </StatusBarItem>
-        </StatusBar>
+        <views:StatusView Grid.Row="2" DataContext="{Binding SelectedCharacter}" />
     </Grid>
 </Window>

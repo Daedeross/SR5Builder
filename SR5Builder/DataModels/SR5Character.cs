@@ -417,7 +417,7 @@ namespace SR5Builder.DataModels
             get
             {
                 int points = 0;
-                foreach (Skill skill in SkillList)
+                foreach (Skill skill in SkillList.Values)
                 {
                     points += skill.Points;
                 }
@@ -425,17 +425,27 @@ namespace SR5Builder.DataModels
             }
         }
 
+        public int SkillPointsRemaining
+        {
+            get { return GlobalData.PriorityLevels[Priorities.Skills].SkillPoints - SkillPointsSpent; }
+        }
+
         public int SkillGroupPointsSpent
         {
             get
             {
                 int points = 0;
-                foreach (SkillGroup skillGroup in SkillGroupsList)
+                foreach (SkillGroup skillGroup in SkillGroupsList.Values)
                 {
                     points += skillGroup.Points;
                 }
                 return points;
             }
+        }
+
+        public int SkillGroupPointsRemaining
+        {
+            get { return GlobalData.PriorityLevels[Priorities.Skills].SkillGroupPoints - SkillGroupPointsSpent; }
         }
 
             #endregion // Skills
@@ -743,6 +753,10 @@ namespace SR5Builder.DataModels
 
                     OnPropertyChanged("SpecialAttribute");
                     break;
+                case "Skills":
+                    OnPropertyChanged("SkillPoints");
+                    OnPropertyChanged("SkillGroupPoints");
+                    break;
             }
         }
 
@@ -755,6 +769,8 @@ namespace SR5Builder.DataModels
             if (e.NewItems != null)
                 foreach (KeyValuePair<string, Skill> skill in e.NewItems)
                     skill.Value.PropertyChanged += this.OnSkillChanged;
+
+            OnPropertyChanged("SkillPointsSpent");
         }
 
         private void OnSkillChanged(object sender, PropertyChangedEventArgs e)
@@ -771,6 +787,8 @@ namespace SR5Builder.DataModels
             if (e.NewItems != null)
                 foreach (KeyValuePair<string, SkillGroup> kvp in e.NewItems)
                     kvp.Value.PropertyChanged += this.OnSkillGroupChanged;
+
+            OnPropertyChanged("SkillGroupPointsSpent");
         }
 
         private void OnSkillGroupChanged(object sender, PropertyChangedEventArgs e)

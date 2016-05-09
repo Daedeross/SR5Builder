@@ -232,6 +232,9 @@
     <Compile Include="Views\SpecialAttributeView.xaml.cs">
       <DependentUpon>SpecialAttributeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\StatusView.xaml.cs">
+      <DependentUpon>StatusView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TestView.xaml.cs">
       <DependentUpon>TestView.xaml</DependentUpon>
     </Compile>
@@ -243,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StatusView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -402,6 +409,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Loaders\CharacterTraits\" />
+    <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Priorities\" />
   </ItemGroup>
   <ItemGroup>

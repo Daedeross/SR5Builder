@@ -99,7 +99,16 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public int SkillPointsGroupSpent { get { return character.SkillGroupPointsSpent; } }
+        public int SkillGroupPointsSpent { get { return character.SkillGroupPointsSpent; } }
+
+        public bool PointsVisible
+        {
+            get
+            {
+                return character.Settings.Method == CharGenMethod.Priority
+                    || character.Settings.Method == CharGenMethod.SumToTen;
+            }
+        }
 
         #endregion // Properties
 
@@ -359,7 +368,7 @@ namespace SR5Builder.ViewModels
 
         private void IncreaseSkillGroupExecute()
         {
-            SelectedSkillGroup.Rating++;
+            SelectedSkillGroup.BaseRating++;
         }
 
         private bool IncreaseSkillGroupCanExecute()
@@ -367,7 +376,7 @@ namespace SR5Builder.ViewModels
             return (SkillGroupsList != null &&
                     SkillGroupsList.Count > 0 &&
                     SelectedSkillGroup != null &&
-                    SelectedSkillGroup.Rating < 6);
+                    SelectedSkillGroup.BaseRating < 6);
         }
 
             #endregion // IncreaseSkillGroup
@@ -391,7 +400,7 @@ namespace SR5Builder.ViewModels
 
         private void DecreaseSkillGroupExecute()
         {
-            SelectedSkillGroup.Rating--;
+            SelectedSkillGroup.BaseRating--;
         }
 
         private bool DecreaseSkillGroupCanExecute()
@@ -399,7 +408,7 @@ namespace SR5Builder.ViewModels
             return (SkillGroupsList != null &&
                     SkillGroupsList.Count > 0 &&
                     SelectedSkillGroup != null &&
-                    SelectedSkillGroup.Rating > 0);
+                    SelectedSkillGroup.BaseRating > 0);
         }
 
             #endregion // DecreaseSkillGroup
@@ -422,10 +431,13 @@ namespace SR5Builder.ViewModels
                     OnPropertyChanged("CategoryList");
                     break;
                 case "Priorities":
+                    OnPropertyChanged("SkillPoints");
+                    OnPropertyChanged("SkillGroupPoints");
+                    break;
                 case "SkillPoints":
                 case "SkillPointsSpent":
                 case "SkillGroupPoints":
-                case "SkillGroupPointsspent":
+                case "SkillGroupPointsSpent":
                     OnPropertyChanged(e.PropertyName);
                     break;
                 default:

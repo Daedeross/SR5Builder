@@ -25,7 +25,7 @@ namespace SR5Builder.Loaders
             grp.Skills = (from skill in GlobalData.PreLoadedSkills["All"]
                           where skill.GroupName == this.Name
                           select skill.NewSkill(character)).ToDictionary(skill => skill.Name);
-            grp.Rating = 1;
+            grp.BaseRating = 1;
 
             return grp;
         }

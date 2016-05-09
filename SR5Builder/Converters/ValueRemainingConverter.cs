@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Windows.Data;
 
 namespace SR5Builder.Converters
@@ -19,7 +20,16 @@ namespace SR5Builder.Converters
             string v1, v2;
             v1 = values[0].ToString() ?? "0";
             v2 = values[1].ToString() ?? "0";
-            return string.Format("{0} / {1}", v1, v2);
+
+            if (values[0] == DependencyProperty.UnsetValue)
+            {
+                v1 = "0";
+            }
+            if (values[1] == DependencyProperty.UnsetValue)
+            {
+                v2 = "0";
+            }
+           return string.Format("{0} / {1}", v1, v2);
         }
 
         private static char[] delims = new char[] { '/' };

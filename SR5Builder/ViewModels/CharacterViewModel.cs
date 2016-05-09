@@ -68,30 +68,6 @@ namespace SR5Builder.ViewModels
 			get { return character.Priorities.Method; }
 		}
 
-        public bool IsValid
-        {
-            get
-            {
-                bool valid = true;
-                valid &= (AttributePointsRemaining >= 0);
-                valid &= (SpecialAttributePointsRemaining >= 0);
-
-                return valid;
-            }
-        }
-
-        public bool IsDone
-        {
-            get
-            {
-                bool done = true;
-                done &= (AttributePointsRemaining == 0);
-                done &= (SpecialAttributePointsRemaining == 0);
-
-                return done;
-            }
-        }
-
             #endregion Misc
 
             #region Display Properties
@@ -435,6 +411,41 @@ namespace SR5Builder.ViewModels
 
             #region Validation
 
+        public int IsDone
+        {
+            get
+            {
+                if (!PrioritiesValid)
+                    return -1;
+
+                bool isDone;
+
+                isDone = AttributePointsDone == 0;
+                if (AttributePointsDone < 0)
+                    return -1;
+
+                isDone &= SpecialPointsDone == 0;
+                if (SpecialPointsDone < 0)
+                    return -1;
+
+                isDone &= SkillPointsDone == 0;
+                if (SkillPointsDone < 0)
+                    return -1;
+
+                isDone &= SkillGroupPointsDone == 0;
+                if (SkillGroupPointsDone < 0)
+                    return -1;
+
+                isDone &= PowerPointsDone == 0;
+                if (PowerPointsDone < 0)
+                    return -1;
+
+                if (isDone)
+                    return 0;
+                else return 1;
+            }
+        }
+
         public bool PrioritiesValid
         {
             get
@@ -443,17 +454,35 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public bool AttributesPointsValid
+        public int AttributePointsDone
         {
-            get { return AttributePointsRemaining == 0; }
+            get { return AttributePointsRemaining.CompareTo(0); }
         }
 
-        public bool SpecialPointsValid
+        public int SpecialPointsDone
         {
-            get { return SpecialAttributePointsRemaining == 0; }
+            get
+            {
+                return SpecialAttributePointsRemaining.CompareTo(0);
+            }
         }
 
-            #endregion
+        public int SkillPointsDone
+        {
+            get { return character.SkillPointsRemaining.CompareTo(0); }
+        }
+
+        public int SkillGroupPointsDone
+        {
+            get { return character.SkillGroupPointsRemaining.CompareTo(0); }
+        }
+
+        public int PowerPointsDone
+        {
+            get { return ((decimal)character.PowerPoints.AugmentedRating - character.PowerPointsSpent).CompareTo(0); }
+        }
+
+        #endregion
 
         #endregion // Properties
 
@@ -528,6 +557,7 @@ namespace SR5Builder.ViewModels
                     OnPropertyChanged("AttributePoints");
                     OnPropertyChanged("AttributePointsRemaining");
                     OnPropertyChanged("PrioritiesValid");
+                    OnPropertyChanged("AttributesPointsDone");
                     break;
                 case "Special":
                     SpecialChoices = new ObservableCollection<SpecialChoice>(
@@ -551,27 +581,24 @@ namespace SR5Builder.ViewModels
                     OnPropertyChanged("AttributesEnabled");
                     OnPropertyChanged("Metatype");
                     OnPropertyChanged("PrioritiesValid");
+                    OnPropertyChanged("AttributePointsDone");
                     //character.Metatype = character.Metatype;
                     break;
                 case "Skills":
                     OnPropertyChanged("SkillsEnabled");
                     OnPropertyChanged("PrioritiesValid");
+                    OnPropertyChanged("SkillPointsDone");
                     break;
                 default:
                     OnPropertyChanged("PrioritiesValid");
                     break;
-            }      
+            }
+            OnPropertyChanged("IsDone");
         }
 
         private void OnCharacterChanged(object sender, PropertyChangedEventArgs e)
         {
             string p = e.PropertyName;
-            //if (p.Contains("Augmented"))
-            //{
-            //    OnPropertyChanged(p.Replace("Augmented", "") + "Text");
-            //    OnPropertyChanged("AttributePointsSpent");
-            //    OnPropertyChanged("AttributePointsRemaining");
-            //}
             if (e.PropertyName == "SpecialChoice")
             {
                 switch (SpecialChoice.Name)
@@ -588,12 +615,34 @@ namespace SR5Builder.ViewModels
                 }
                 OnPropertyChanged("ActiveSpecialTab");
             }
+            else if (e.PropertyName.Contains("AttributePoint"))
+            {
+                OnPropertyChanged("AttributePointsDone");
+                OnPropertyChanged("IsDone");
+            }
+            else if (e.PropertyName.Contains("Skill") && e.PropertyName.Contains("Point"))
+            {
+                if (e.PropertyName.Contains("Group"))
+                {
+                    OnPropertyChanged("SkillGroupPointsDone");
+                }
+                else
+                {
+                    OnPropertyChanged("SkillPointsDone");
+                }
+                OnPropertyChanged("IsDone");
+            }
+            else if (e.PropertyName == "PowerPointsSpent")
+            {
+                OnPropertyChanged("IsDone");
+            }
+
             OnPropertyChanged(p);
         }
 
         private void OnAttributeChanged(object sender, PropertyChangedEventArgs e)
         {
-            SR5Builder.DataModels.Attribute a = sender as SR5Builder.DataModels.Attribute;
+            DataModels.Attribute a = sender as DataModels.Attribute;
 
             if (a != null)
             {

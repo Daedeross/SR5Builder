@@ -28,20 +28,19 @@ namespace SR5Builder.DataModels
         }
 
         public Dictionary<string, Skill> Skills { get; set; }
-
-        private int mRating;
-        public int Rating
+        
+        public override int BaseRating
         {
-            get { return mRating; }
+            get { return mBaseRating; }
             set
             {
-                if (mRating != value)
+                if (mBaseRating != value)
                 {
-                    mRating = value;
+                    mBaseRating = value;
                     foreach (KeyValuePair<string, Skill> kvp in Skills)
                     {
-                        kvp.Value.BaseRating = mRating;
-                        OnPropertyChanged("Rating");
+                        kvp.Value.BaseRating = mBaseRating;
+                        OnPropertyChanged("BaseRating");
                     }
                 }
             }
