@@ -387,8 +387,10 @@ namespace SR5Builder.ViewModels
             get { return character.SpecialAttributePoints - character.SpecialAttributePointsSpent; }
         }
 
+        public bool HasPowerPoints {  get { return character.PowerPoints.AugmentedRating > 0; } }
+
             #endregion // Specials
-            
+
             #region Skills
 
         public SkillsViewModel SkillsVM { get; private set; }
@@ -573,6 +575,7 @@ namespace SR5Builder.ViewModels
                     OnPropertyChanged("PrioritiesValid");
                     OnPropertyChanged("SpecialPointsDone");
                     OnPropertyChanged("SpecialAttributePointsRemaining");
+                    OnPropertyChanged("HasPowerPoints");
                     break;
                 case "Metatype":
                     AvailableMetatypes = new ObservableCollection<NamePoints>(
@@ -619,6 +622,7 @@ namespace SR5Builder.ViewModels
                         break;
                 }
                 OnPropertyChanged("ActiveSpecialTab");
+                OnPropertyChanged("HasPowerPoints");
             }
             else if (e.PropertyName.Contains("AttributePoint"))
             {

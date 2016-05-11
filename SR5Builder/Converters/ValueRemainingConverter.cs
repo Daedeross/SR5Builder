@@ -18,8 +18,8 @@ namespace SR5Builder.Converters
             }
             // get text for value 1 and 2
             string v1, v2;
-            v1 = values[0].ToString() ?? "0";
-            v2 = values[1].ToString() ?? "0";
+            v1 = values[0]?.ToString() ?? "0";
+            v2 = values[1]?.ToString() ?? "0";
 
             if (values[0] == DependencyProperty.UnsetValue)
             {

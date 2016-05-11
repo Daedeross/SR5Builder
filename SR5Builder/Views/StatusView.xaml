@@ -70,6 +70,33 @@
         <StatusBarItem>
             <Border>
                 <StackPanel Orientation="Horizontal">
+                    <TextBlock>Karma:</TextBlock>
+                    <TextBlock MinWidth="32" TextAlignment="Center" Margin="3,0">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding  SkillPointsDone}" Value="-1">
+                                        <Setter Property="Foreground" Value="Red" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding  SkillPointsDone}" Value="0">
+                                        <Setter Property="Foreground" Value="Green" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource valueRemainingConverter}">
+                                <Binding Path="MagicVM.PowerPointsSpent" />
+                                <Binding Path="MagicVM.PowerPoints.AugmentedRating" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+        </StatusBarItem>
+        <StatusBarItem>
+            <Border>
+                <StackPanel Orientation="Horizontal">
                     <TextBlock>Attributes:</TextBlock>
                     <TextBlock MinWidth="32" TextAlignment="Center" Margin="3,0">
                         <TextBlock.Style>
@@ -161,6 +188,43 @@
                             <MultiBinding Converter="{StaticResource valueRemainingConverter}">
                                 <Binding Path="SkillsVM.SkillGroupPointsSpent" />
                                 <Binding Path="SkillsVM.SkillGroupPoints" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+        </StatusBarItem>
+        <StatusBarItem>
+            <StatusBarItem.Style>
+                <Style TargetType="StatusBarItem">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding HasPowerPoints}" Value="True">
+                            <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StatusBarItem.Style>
+            <Border>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock>Power Points:</TextBlock>
+                    <TextBlock MinWidth="32" TextAlignment="Center" Margin="3,0">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding  SkillPointsDone}" Value="-1">
+                                        <Setter Property="Foreground" Value="Red" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding  SkillPointsDone}" Value="0">
+                                        <Setter Property="Foreground" Value="Green" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource valueRemainingConverter}">
+                                <Binding Path="MagicVM.PowerPointsSpent" />
+                                <Binding Path="MagicVM.PowerPoints.AugmentedRating" />
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>
