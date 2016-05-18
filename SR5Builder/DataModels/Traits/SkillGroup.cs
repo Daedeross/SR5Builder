@@ -20,9 +20,9 @@ namespace SR5Builder.DataModels
                     foreach (KeyValuePair<string, Skill> kvp in Skills)
                     {
                         kvp.Value.Owner = mOwner;
+                        OnPropertyChanged(nameof(kvp.Value.Owner));
+                        OnPropertyChanged(nameof(kvp.Value.TotalPool));
                     }
-                    OnPropertyChanged("Owner");
-                    OnPropertyChanged("TotalPool");
                 }
             }
         }
@@ -40,7 +40,7 @@ namespace SR5Builder.DataModels
                     foreach (KeyValuePair<string, Skill> kvp in Skills)
                     {
                         kvp.Value.BaseRating = mBaseRating;
-                        OnPropertyChanged("BaseRating");
+                        OnPropertyChanged(nameof(BaseRating));
                     }
                 }
             }

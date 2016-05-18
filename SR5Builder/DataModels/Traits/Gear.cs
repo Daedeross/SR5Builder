@@ -15,7 +15,7 @@ namespace SR5Builder.DataModels
     //    F = 2,
     //}
 
-    public class Gear: LeveledTrait
+    public class Gear: LeveledTrait, IEssenceCost
     {
         #region Properties
 
@@ -28,8 +28,8 @@ namespace SR5Builder.DataModels
             set
             {
                 mBaseAvailability = value;
-                OnPropertyChanged("BaseAvailability");
-                OnPropertyChanged("Availability");
+                OnPropertyChanged(nameof(BaseAvailability));
+                OnPropertyChanged(nameof(Availability));
             }
         }
 
@@ -48,9 +48,8 @@ namespace SR5Builder.DataModels
                 if (value != mCount)
                 {
                     mCount = value;
-                    OnPropertyChanged("Count");
-                    OnPropertyChanged("Cost");
-                    OnPropertyChanged("DisplayCost");
+                    OnPropertyChanged(nameof(Count));
+                    OnPropertyChanged(nameof(Cost));
                 }
             }
         }
@@ -64,10 +63,9 @@ namespace SR5Builder.DataModels
                 if (value != mFlatCost)
                 {
                     mFlatCost = value;
-                    OnPropertyChanged("FlatCost");
-                    OnPropertyChanged("BaseCost");
-                    OnPropertyChanged("Cost");
-                    OnPropertyChanged("DisplayCost");
+                    OnPropertyChanged(nameof(FlatCost));
+                    OnPropertyChanged(nameof(BaseCost));
+                    OnPropertyChanged(nameof(Cost));
                 }
             }
         }
@@ -81,10 +79,9 @@ namespace SR5Builder.DataModels
                 if (value != mRatingCost)
                 {
                     mRatingCost = value;
-                    OnPropertyChanged("RatingCost");
-                    OnPropertyChanged("BaseCost");
-                    OnPropertyChanged("Cost");
-                    OnPropertyChanged("DisplayCost");
+                    OnPropertyChanged(nameof(RatingCost));
+                    OnPropertyChanged(nameof(BaseCost));
+                    OnPropertyChanged(nameof(Cost));
                 }
             }
         }
@@ -101,6 +98,33 @@ namespace SR5Builder.DataModels
             get { return ((BaseCost * mCostMult) + mExtraCost) * Count; }
         }
 
+        private decimal mFlatEssence;
+        public decimal FlatEssence
+        {
+            get { return mFlatEssence; }
+            set
+            {
+                if (value != mFlatEssence)
+                {
+                    mFlatEssence = value;
+                    OnPropertyChanged(nameof(FlatEssence));
+                    OnPropertyChanged(nameof(TotalEssence));
+                }
+            }
+        }
+
+        private decimal mRatingEssence;
+        public decimal RatingEssence
+        {
+            get { return mRatingEssence; }
+            set { mRatingEssence = value; }
+        }
+
+        public decimal TotalEssence
+        {
+            get { return mFlatEssence + mRatingEssence * mBaseRating; }
+        }
+
         //public string DisplayCost { get { return Cost.ToString("C", GlobalData.CostFormat); } }
 
         protected int mCapacity;
@@ -112,8 +136,8 @@ namespace SR5Builder.DataModels
                 if (mCapacity != value)
                 {
                     mCapacity = value;
-                    OnPropertyChanged("Capacity");
-                    OnPropertyChanged("CapacityUsed");
+                    OnPropertyChanged(nameof(Capacity));
+                    OnPropertyChanged(nameof(CapacityUsed));
                 }
             }
         }
@@ -127,7 +151,7 @@ namespace SR5Builder.DataModels
                 if (mCapacityUsed != value)
                 {
                     mCapacityUsed = value;
-                    OnPropertyChanged("CapacityUsed");
+                    OnPropertyChanged(nameof(CapacityUsed));
                 }
             }
         }
@@ -221,9 +245,8 @@ namespace SR5Builder.DataModels
                 }
             }
 
-            OnPropertyChanged("Cost");
-            OnPropertyChanged("DisplayCost");
-            OnPropertyChanged("CapacityUsed");
+            OnPropertyChanged(nameof(Cost));
+            OnPropertyChanged(nameof(CapacityUsed));
         }
 
         private void LoadBaseMods(string[] modNames)

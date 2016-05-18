@@ -351,10 +351,10 @@ namespace DrWPF.Windows.Data
             if (Count != _countCache)
             {
                 _countCache = Count;
-                OnPropertyChanged("Count");
+                OnPropertyChanged(nameof(Count));
                 OnPropertyChanged("Item[]");
-                OnPropertyChanged("Keys");
-                OnPropertyChanged("Values");
+                OnPropertyChanged(nameof(Keys));
+                OnPropertyChanged(nameof(Values));
             }
         }
 

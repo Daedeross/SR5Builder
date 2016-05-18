@@ -24,7 +24,7 @@ namespace SR5Builder.DataModels
                 if (mEssenceCost != value)
                 {
                     mEssenceCost = value;
-                    OnPropertyChanged("EssenceCost");
+                    OnPropertyChanged(nameof(EssenceCost));
                 }
             }
         }

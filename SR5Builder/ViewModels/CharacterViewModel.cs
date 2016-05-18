@@ -102,7 +102,7 @@ namespace SR5Builder.ViewModels
             set
             {
                 character.Metatype = value;
-                OnPropertyChanged("MetatypeStats");
+                OnPropertyChanged(nameof(MetatypeStats));
             }
         }
 
@@ -368,8 +368,8 @@ namespace SR5Builder.ViewModels
 
         public int SpecialAttribute
         {
-            get { return character.SpecialAttribute; }
-            set { character.SpecialAttribute = value; }
+            get { return character.SpecialAttribute.BaseRating; }
+            set { character.SpecialAttribute.BaseRating = value; }
         }
 
         public int SpecialAttributePoints
@@ -556,10 +556,10 @@ namespace SR5Builder.ViewModels
             switch (e.PropertyName)
             {
                 case "Attributes":
-                    OnPropertyChanged("AttributePoints");
-                    OnPropertyChanged("AttributePointsRemaining");
-                    OnPropertyChanged("PrioritiesValid");
-                    OnPropertyChanged("AttributesPointsDone");
+                    OnPropertyChanged(nameof(AttributePoints));
+                    OnPropertyChanged(nameof(AttributePointsRemaining));
+                    OnPropertyChanged(nameof(PrioritiesValid));
+                    OnPropertyChanged(nameof(AttributePointsDone));
                     break;
                 case "Special":
                     SpecialChoices = new ObservableCollection<SpecialChoice>(
@@ -568,40 +568,40 @@ namespace SR5Builder.ViewModels
                                      select s
                                      );
                     HandleSpecialChanged();
-                    OnPropertyChanged("SpecialChoices");
-                    OnPropertyChanged("SpecialEnabled");
-                    OnPropertyChanged("SpecialKind");
-                    OnPropertyChanged("SpecialAttribute");
-                    OnPropertyChanged("PrioritiesValid");
-                    OnPropertyChanged("SpecialPointsDone");
-                    OnPropertyChanged("SpecialAttributePointsRemaining");
-                    OnPropertyChanged("HasPowerPoints");
+                    OnPropertyChanged(nameof(SpecialChoices));
+                    OnPropertyChanged(nameof(SpecialEnabled));
+                    OnPropertyChanged(nameof(SpecialKind));
+                    OnPropertyChanged(nameof(SpecialAttribute));
+                    OnPropertyChanged(nameof(PrioritiesValid));
+                    OnPropertyChanged(nameof(SpecialPointsDone));
+                    OnPropertyChanged(nameof(SpecialAttributePointsRemaining));
+                    OnPropertyChanged(nameof(HasPowerPoints));
                     break;
                 case "Metatype":
                     AvailableMetatypes = new ObservableCollection<NamePoints>(
                                          from s in GlobalData.Metatypes.Values
                                          where s.SpecialPoints.ContainsKey(character.Priorities.Metatype)
                                          select new NamePoints(s.Name, s.SpecialPoints[character.Priorities.Metatype]));
-                    OnPropertyChanged("AvailableMetatypes");
-                    OnPropertyChanged("AttributesEnabled");
-                    OnPropertyChanged("Metatype");
-                    OnPropertyChanged("PrioritiesValid");
-                    OnPropertyChanged("AttributePointsDone");
-                    OnPropertyChanged("SpecialPointsDone");
-                    OnPropertyChanged("SpecialAttributePoints");
-                    OnPropertyChanged("SpecialAttributePointsRemaining");
+                    OnPropertyChanged(nameof(AvailableMetatypes));
+                    OnPropertyChanged(nameof(AttributesEnabled));
+                    OnPropertyChanged(nameof(Metatype));
+                    OnPropertyChanged(nameof(PrioritiesValid));
+                    OnPropertyChanged(nameof(AttributePointsDone));
+                    OnPropertyChanged(nameof(SpecialPointsDone));
+                    OnPropertyChanged(nameof(SpecialAttributePoints));
+                    OnPropertyChanged(nameof(SpecialAttributePointsRemaining));
                     //character.Metatype = character.Metatype;
                     break;
                 case "Skills":
-                    OnPropertyChanged("SkillsEnabled");
-                    OnPropertyChanged("PrioritiesValid");
-                    OnPropertyChanged("SkillPointsDone");
+                    OnPropertyChanged(nameof(SkillsEnabled));
+                    OnPropertyChanged(nameof(PrioritiesValid));
+                    OnPropertyChanged(nameof(SkillPointsDone));
                     break;
                 default:
-                    OnPropertyChanged("PrioritiesValid");
+                    OnPropertyChanged(nameof(PrioritiesValid));
                     break;
             }
-            OnPropertyChanged("IsDone");
+            OnPropertyChanged(nameof(IsDone));
         }
 
         private void OnCharacterChanged(object sender, PropertyChangedEventArgs e)
@@ -621,29 +621,29 @@ namespace SR5Builder.ViewModels
                         ActiveSpecialTab = 0;
                         break;
                 }
-                OnPropertyChanged("ActiveSpecialTab");
-                OnPropertyChanged("HasPowerPoints");
+                OnPropertyChanged(nameof(ActiveSpecialTab));
+                OnPropertyChanged(nameof(HasPowerPoints));
             }
             else if (e.PropertyName.Contains("AttributePoint"))
             {
-                OnPropertyChanged("AttributePointsDone");
-                OnPropertyChanged("IsDone");
+                OnPropertyChanged(nameof(AttributePointsDone));
+                OnPropertyChanged(nameof(IsDone));
             }
             else if (e.PropertyName.Contains("Skill") && e.PropertyName.Contains("Point"))
             {
                 if (e.PropertyName.Contains("Group"))
                 {
-                    OnPropertyChanged("SkillGroupPointsDone");
+                    OnPropertyChanged(nameof(SkillGroupPointsDone));
                 }
                 else
                 {
-                    OnPropertyChanged("SkillPointsDone");
+                    OnPropertyChanged(nameof(SkillPointsDone));
                 }
-                OnPropertyChanged("IsDone");
+                OnPropertyChanged(nameof(IsDone));
             }
             else if (e.PropertyName == "PowerPointsSpent")
             {
-                OnPropertyChanged("IsDone");
+                OnPropertyChanged(nameof(IsDone));
             }
 
             OnPropertyChanged(p);

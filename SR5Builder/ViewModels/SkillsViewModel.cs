@@ -52,7 +52,7 @@ namespace SR5Builder.ViewModels
                 {
                     mSelectedCategory = value;
                     CreateAvailableSkills();
-                    OnPropertyChanged("SelectedCategory");
+                    OnPropertyChanged(nameof(SelectedCategory));
                 }
             }
         }
@@ -428,11 +428,11 @@ namespace SR5Builder.ViewModels
                     if (character.SpecialKind != SpecialKind.Resonance)
                         mCategoryList.Remove("Resonance");
                     CreateAvailableGroups();
-                    OnPropertyChanged("CategoryList");
+                    OnPropertyChanged(nameof(CategoryList));
                     break;
                 case "Priorities":
-                    OnPropertyChanged("SkillPoints");
-                    OnPropertyChanged("SkillGroupPoints");
+                    OnPropertyChanged(nameof(SkillPoints));
+                    OnPropertyChanged(nameof(SkillGroupPoints));
                     break;
                 case "SkillPoints":
                 case "SkillPointsSpent":
@@ -464,7 +464,7 @@ namespace SR5Builder.ViewModels
             else
                 AvailableSkills = new ObservableCollection<SkillLoader>(
                     GlobalData.PreLoadedSkills[SelectedCategory]);
-            OnPropertyChanged("AvailableSkills");
+            OnPropertyChanged(nameof(AvailableSkills));
         }
 
         private void CreateAvailableGroups()
@@ -483,7 +483,7 @@ namespace SR5Builder.ViewModels
                         select sg).ToList();
             }
             AvailableSkillGroups = new ObservableCollection<SkillGroupLoader>(list);
-            OnPropertyChanged("AvailableSkillGroups");
+            OnPropertyChanged(nameof(AvailableSkillGroups));
         }
 
         #endregion // Private Methods

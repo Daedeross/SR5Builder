@@ -9,11 +9,7 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                if (mOwner.SpecialChoice.Name == "Adept")
-                {
-                    return mOwner.SpecialAttribute;
-                }
-                return 0;
+                return mOwner.SpecialChoice.PowerPoints;
             }
             set
             {
@@ -25,7 +21,11 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                return mOwner.SpecialAttribute;
+                if (mOwner.SpecialChoice.CanBuyPowerPoints)
+                {
+                    return mOwner.SpecialAttribute.AugmentedRating;
+                }
+                return mOwner.SpecialChoice.PowerPoints;
             }
             set { }
         }
@@ -58,9 +58,10 @@ namespace SR5Builder.DataModels
         {
             if (e.PropertyName.Contains("Special"))
             {
-                OnPropertyChanged("ImprovedRating");
-                OnPropertyChanged("BaseRating");
-                OnPropertyChanged("AugmentedRating");
+                OnPropertyChanged(nameof(Max));
+                OnPropertyChanged(nameof(ImprovedRating));
+                OnPropertyChanged(nameof(BaseRating));
+                OnPropertyChanged(nameof(AugmentedRating));
             }
         }
     }

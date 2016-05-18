@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using DrWPF.Windows.Data;
 
 namespace SR5Builder.DataModels
 {
-    public class Essence : Attribute
+    public class Essence :  BaseTrait
     {
         public override int Karma
         {
@@ -16,29 +19,110 @@ namespace SR5Builder.DataModels
             set { }
         }
 
-        public override int Min
+        private decimal mBaseRating;
+        public decimal BaseRating
         {
-            get
+            get { return mBaseRating; }
+            set
             {
-                return 0;
+                mBaseRating = value;
+                OnPropertyChanged(nameof(BaseRating));
             }
-
-            set { }
         }
 
-        public override int Max
+        private decimal mAdditionalLoss;
+        public decimal AdditionalLoss
         {
-            get
+            get { return mAdditionalLoss; }
+            set
             {
-                return 6;
+                if (mAdditionalLoss != value)
+                {
+                    mAdditionalLoss = value;
+                    OnPropertyChanged(nameof(AdditionalLoss));
+                    OnPropertyChanged(nameof(Loss));
+                }
             }
-            set { }
         }
+
+        private decimal mLoss;
+        public decimal Loss
+        {
+            get { return mLoss + mAdditionalLoss; }
+        }
+
+        public int LossFloor
+        {
+            get { return (int)Math.Floor(Loss); }
+        }
+
+        public int LossCeiling
+        {
+            get { return (int)Math.Ceiling(Loss); }
+        }
+
+        public decimal Remaining
+        {
+            get { return mBaseRating - Loss; }
+        }
+
+        public int Floor
+        {
+            get { return (int)Math.Floor(Remaining); }
+        }
+
+        public int Ceiling
+        {
+            get { return (int)Math.Ceiling(Remaining); }
+        }
+
+        private ObservableDictionary<IEssenceCost> EssenceCosts;
 
         public Essence(SR5Character owner, string name)
-            : base(owner, name)
+            : base(owner)
         {
-            mBaseRating = 6;
+            mName = name;
+            owner.GearList.CollectionChanged += OnGearCollectionChanged;
+        }
+
+        private void OnGearChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(IEssenceCost.TotalEssence))
+            {
+                RecalcEssenceLoss();
+            }
+        }
+
+        private void OnGearCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            HashSet<string> propNames = new HashSet<string>();
+
+            if (e.OldItems != null)
+            {
+                foreach (var item in e.OldItems)
+                {
+                    Type valueType = item.GetType();
+                    if (valueType.IsGenericType)
+                    {
+                        Type baseType = valueType.GetGenericTypeDefinition();
+                        if (baseType == typeof(KeyValuePair<,>))
+                        {
+                            object a = valueType.GetProperty("Value").GetValue(item, null);
+
+                            if (a is IEssenceCost)
+                            {
+                                (a as IEssenceCost).PropertyChanged -= OnGearChanged;
+                                propNames.Add(nameof(Loss));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void RecalcEssenceLoss()
+        {
+            
         }
     }
 }

@@ -23,9 +23,9 @@ namespace SR5Builder.DataModels
             //    if (value != mAttributeOne)
             //    {
             //        mAttributeOne = value;
-            //        OnPropertyChanged("AttributeOne");
-            //        OnPropertyChanged("BaseRating");
-            //        OnPropertyChanged("AugmentedRating");
+            //        OnPropertyChanged(nameof(AttributeOne));
+            //        OnPropertyChanged(nameof(BaseRating));
+            //        OnPropertyChanged(nameof(AugmentedRating));
             //    }
             //}
         }
@@ -39,9 +39,9 @@ namespace SR5Builder.DataModels
             //    if (value != mAttributeTwo)
             //    {
             //        mAttributeTwo = value;
-            //        OnPropertyChanged("AttributeTwo");
-            //        OnPropertyChanged("BaseRating");
-            //        OnPropertyChanged("AugmentedRating");
+            //        OnPropertyChanged(nameof(AttributeTwo));
+            //        OnPropertyChanged(nameof(BaseRating));
+            //        OnPropertyChanged(nameof(AugmentedRating));
             //    }
             //}
         }
@@ -118,15 +118,15 @@ namespace SR5Builder.DataModels
             {
                 case "AugmentedRating":
                     OnPropertyChanged(e.PropertyName);
-                    OnPropertyChanged("DisplayValue");
+                    OnPropertyChanged(nameof(DisplayValue));
                     break;
                 case "ImprovedRating":
                     OnPropertyChanged(e.PropertyName);
-                    OnPropertyChanged("DisplayValue");
+                    OnPropertyChanged(nameof(DisplayValue));
                     break;
                 case "BaseRating":
                     OnPropertyChanged(e.PropertyName);
-                    OnPropertyChanged("DisplayValue");
+                    OnPropertyChanged(nameof(DisplayValue));
                     break;
                 default:
                     break;

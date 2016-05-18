@@ -101,6 +101,7 @@
     <Compile Include="DataModels\Traits\Essence.cs" />
     <Compile Include="DataModels\Traits\Gear.cs" />
     <Compile Include="DataModels\Traits\GearMod.cs" />
+    <Compile Include="DataModels\Traits\IEssenceCost.cs" />
     <Compile Include="DataModels\Traits\Implant.cs" />
     <Compile Include="DataModels\Traits\Initiative.cs" />
     <Compile Include="DataModels\Traits\InitiativeDice.cs" />

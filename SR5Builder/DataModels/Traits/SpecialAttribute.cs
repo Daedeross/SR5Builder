@@ -24,11 +24,11 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                if (mOwner.SpecialChoice == null)
+                if (mOwner.SpecialChoice == null || mOwner.SpecialChoice.Attribute == 0)
                 {
                     return 0;
                 }
-                return 6;
+                return 6 + mOwner.AdvancedGrade;
             }
         }
 
@@ -57,8 +57,8 @@ namespace SR5Builder.DataModels
 
         private void OnEssenceChanged(object sender, PropertyChangedEventArgs e)
         {
-            OnPropertyChanged("BonusRating");
-            OnPropertyChanged("AugmentedRating");
+            OnPropertyChanged(nameof(BonusRating));
+            OnPropertyChanged(nameof(AugmentedRating));
         }
     }
 }

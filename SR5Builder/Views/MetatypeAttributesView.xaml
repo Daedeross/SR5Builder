@@ -245,6 +245,44 @@
                                Maximum="{Binding MetatypeStats.EdgeMax, Mode=OneWay}"
                                Value="{Binding BaseEdge, Mode=TwoWay}" />
 
+            <Label Grid.Column="7" Grid.Row="3"
+                   Content="Power Points">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SpecialChoice.CanBuyPowerPoints}" Value="false">
+                                <Setter Property="Visibility" Value="Hidden" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+            <StackPanel Grid.Column="8" Grid.Row="3"
+                        Orientation="Horizontal">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SpecialChoice.CanBuyPowerPoints}" Value="false">
+                                <Setter Property="Visibility" Value="Hidden" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+                <TextBlock Text="{Binding SpecialChoice.PowerPoints.}" />
+                <TextBlock Text="/" />
+                <TextBlock Text="{Binding PowerPoints.Max}" />
+            </StackPanel>
+            <xtk:IntegerUpDown Grid.Column="9" Grid.Row="3">
+                <xtk:IntegerUpDown.Style>
+                    <Style TargetType="xtk:IntegerUpDown">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SpecialChoice.CanBuyPowerPoints}" Value="false">
+                                <Setter Property="Visibility" Value="Hidden" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </xtk:IntegerUpDown.Style>
+            </xtk:IntegerUpDown>
             <Label Grid.Row="4" Grid.Column="7"
                    Target="{Binding ElementName=SpecialSpin}"
                    Content="{Binding SpecialKind}"
