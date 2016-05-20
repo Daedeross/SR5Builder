@@ -297,8 +297,10 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        #endregion // OtherAttributeStuff
-        
+        public Essence Essence { get { return character.Essence; } }
+
+            #endregion // OtherAttributeStuff
+
             #region Initiatives
 
         public Initiative PhysicalInitiative { get { return character.PhysicalInitiative; } }
@@ -366,10 +368,10 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public int SpecialAttribute
+        public SR5Builder.DataModels.Attribute SpecialAttribute
         {
-            get { return character.SpecialAttribute.BaseRating; }
-            set { character.SpecialAttribute.BaseRating = value; }
+            get { return character.SpecialAttribute; }
+            set {  }
         }
 
         public int SpecialAttributePoints
@@ -658,6 +660,12 @@ namespace SR5Builder.ViewModels
                 string name = e.PropertyName.Replace("Rating", "");
                 OnPropertyChanged(name + a.Name);
                 OnPropertyChanged(a.Name + "Text");
+
+                if (a == character.PowerPoints &&
+                    e.PropertyName == nameof(DataModels.Attribute.AugmentedRating))
+                {
+                    OnPropertyChanged(nameof(HasPowerPoints));
+                }
             }
         }
 

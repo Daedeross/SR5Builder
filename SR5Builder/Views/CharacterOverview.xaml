@@ -85,7 +85,7 @@
 
         <!-- Column 3: Values-->
         <TextBlock Grid.Column="3" Grid.Row="0" Text="{Binding Essence, Mode=OneWay}" />
-        <TextBlock Grid.Column="3" Grid.Row="1" Text="{Binding SepcialAttribute, Mode=OneWay}">
+        <TextBlock Grid.Column="3" Grid.Row="1" Text="{Binding SpecialAttribute, Mode=OneWay}">
             <TextBlock.Style>
                 <Style TargetType="TextBlock">
                     <Style.Triggers>

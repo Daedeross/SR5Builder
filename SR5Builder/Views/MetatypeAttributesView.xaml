@@ -268,11 +268,14 @@
                         </Style.Triggers>
                     </Style>
                 </StackPanel.Style>
-                <TextBlock Text="{Binding SpecialChoice.PowerPoints.}" />
+                <TextBlock Text="{Binding MagicVM.PowerPoints.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding PowerPoints.Max}" />
+                <TextBlock Text="{Binding MagicVM.PowerPoints.Max}" />
             </StackPanel>
-            <xtk:IntegerUpDown Grid.Column="9" Grid.Row="3">
+            <xtk:IntegerUpDown Grid.Column="9" Grid.Row="3"
+                               Value="{Binding MagicVM.PowerPoints.BaseRating}"
+                               Minimum="{Binding MagicVM.PowerPoints.Min}"
+                               Maximum="{Binding MagicVM.PowerPoints.Max}">
                 <xtk:IntegerUpDown.Style>
                     <Style TargetType="xtk:IntegerUpDown">
                         <Style.Triggers>
@@ -313,9 +316,9 @@
             </StackPanel>
             <xtk:IntegerUpDown Name="SpecialSpin"
                                Grid.Row="4" Grid.Column="9"
-                               Minimum="{Binding SpecialChoice.Attribute, Mode=OneWay}"
-                               Maximum="6"
-                               Value="{Binding SpecialAttribute, Mode=TwoWay}">
+                               Minimum="{Binding SpecialAttribute.Min, Mode=OneWay}"
+                               Maximum="{Binding SpecialAttribute.Max, Mode=OneWay}"
+                               Value="{Binding SpecialAttribute.BaseRating, Mode=TwoWay}">
                 <xtk:IntegerUpDown.Style>
                     <Style TargetType="xtk:IntegerUpDown">
                         <Style.Triggers>

@@ -14,7 +14,7 @@ namespace SR5Builder.DataModels
 {
     /// <summary>
     /// This class holds all the in-memory data, including its own instance of Settings.
-    /// Serialization is handled by CharacterLoader.
+    /// (De)Serialization is handled by CharacterLoader.
     /// </summary>
     public class SR5Character : DataModelBase
     {
@@ -198,8 +198,8 @@ namespace SR5Builder.DataModels
             }
         }
 
-        private Attribute mEssence;
-        public Attribute Essence
+        private Essence mEssence;
+        public Essence Essence
         {
             get { return mEssence; }
             protected set
@@ -609,6 +609,7 @@ namespace SR5Builder.DataModels
             ImplantList.CollectionChanged += this.OnAugmentablesChanged;
             ImplantList.CollectionChanged += this.OnImplantsChanged;
 
+            mEssence.Subscribe();
         }
 
         private void InitializeAttributes()
@@ -627,6 +628,7 @@ namespace SR5Builder.DataModels
             mEdge = new Attribute(this, "Edge");
 
             mEssence = new Essence(this, "Essence");
+            mEssence.BaseRating = 6;    // may get pulled from settings later
 
             mSpecialAttribute = new SpecialAttribute(this);
 
@@ -647,16 +649,16 @@ namespace SR5Builder.DataModels
 
             Attributes.Add("Special", mSpecialAttribute);
 
+            // Power Points
+            PowerPoints = new PowerPoints(this, "PowerPoints");
+            Attributes.Add(PowerPoints.Name, PowerPoints);
+
             // Add to Augmentables and PropertyChanged listener
             foreach (Attribute a in Attributes.Values)
             {
                 a.PropertyChanged += this.OnAttributeChanged;
                 Augmentables.Add(a.Name, a);
             }
-
-            // Power Points
-            PowerPoints = new PowerPoints(this, "PowerPoints");
-            Augmentables.Add(PowerPoints.Name, PowerPoints);
             
             // Initiatives
             PhysicalInitiative = new Initiative(mReaction, mIntuition);
@@ -741,8 +743,6 @@ namespace SR5Builder.DataModels
                     OnPropertyChanged(nameof(SpecialAttribute));
                     break;
                 case "Skills":
-                    //OnPropertyChanged(nameof(SkillPoints));
-                    //OnPropertyChanged(nameof(SkillGroupPoints));
                     OnPropertyChanged(nameof(SkillPointsRemaining));
                     OnPropertyChanged(nameof(SkillGroupPointsRemaining));
                     break;

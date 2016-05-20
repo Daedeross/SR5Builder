@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using DrWPF.Windows.Data;
 
 namespace SR5Builder.DataModels
 {
-    public class Essence :  BaseTrait
+    public class Essence :  Attribute
     {
         public override int Karma
         {
@@ -19,15 +17,14 @@ namespace SR5Builder.DataModels
             set { }
         }
 
-        private decimal mBaseRating;
-        public decimal BaseRating
+        public override int Max
         {
-            get { return mBaseRating; }
-            set
-            {
-                mBaseRating = value;
-                OnPropertyChanged(nameof(BaseRating));
-            }
+            get { return int.MaxValue; }
+        }
+
+        public override int Min
+        {
+            get { return 0; }
         }
 
         private decimal mAdditionalLoss;
@@ -75,17 +72,23 @@ namespace SR5Builder.DataModels
         {
             get { return (int)Math.Ceiling(Remaining); }
         }
-
-        private ObservableDictionary<IEssenceCost> EssenceCosts;
+        
+        private ObservableCollection<IEssenceCost> EssenceCosts;
 
         public Essence(SR5Character owner, string name)
             : base(owner)
         {
             mName = name;
-            owner.GearList.CollectionChanged += OnGearCollectionChanged;
+            EssenceCosts = new ObservableCollection<IEssenceCost>();
         }
 
-        private void OnGearChanged(object sender, PropertyChangedEventArgs e)
+        public void Subscribe()
+        {
+            mOwner.GearList.CollectionChanged += OnGearCollectionChanged;
+            mOwner.ImplantList.CollectionChanged += OnGearCollectionChanged;
+        }
+
+        private void OnSubscribedChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(IEssenceCost.TotalEssence))
             {
@@ -93,9 +96,65 @@ namespace SR5Builder.DataModels
             }
         }
 
+        private void OnGearModsChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            bool recalc = false;
+
+            if (e.OldItems != null)
+            {
+                foreach (var item in e.OldItems)
+                {
+                    Type valueType = item.GetType();
+                    if (valueType.IsGenericType)
+                    {
+                        Type baseType = valueType.GetGenericTypeDefinition();
+                        if (baseType == typeof(KeyValuePair<,>))
+                        {
+                            object a = valueType.GetProperty("Value").GetValue(item, null);
+                            IEssenceCost mod = a as IEssenceCost;
+                            if (mod != null)
+                            {
+                                EssenceCosts.Remove(mod);
+                                mod.PropertyChanged -= OnSubscribedChanged;
+                                recalc |= mod.TotalEssence != 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (e.NewItems != null)
+            {
+                foreach (var item in e.OldItems)
+                {
+                    Type valueType = item.GetType();
+                    if (valueType.IsGenericType)
+                    {
+                        Type baseType = valueType.GetGenericTypeDefinition();
+                        if (baseType == typeof(KeyValuePair<,>))
+                        {
+                            object a = valueType.GetProperty("Value").GetValue(item, null);
+                            IEssenceCost mod = a as IEssenceCost;
+                            if (mod != null)
+                            {
+                                EssenceCosts.Remove(mod);
+                                mod.PropertyChanged += OnSubscribedChanged;
+                                recalc |= mod.TotalEssence != 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (recalc)
+            {
+                RecalcEssenceLoss();
+            }
+        }
+
         private void OnGearCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            HashSet<string> propNames = new HashSet<string>();
+            bool recalc = false;
 
             if (e.OldItems != null)
             {
@@ -109,20 +168,105 @@ namespace SR5Builder.DataModels
                         {
                             object a = valueType.GetProperty("Value").GetValue(item, null);
 
-                            if (a is IEssenceCost)
-                            {
-                                (a as IEssenceCost).PropertyChanged -= OnGearChanged;
-                                propNames.Add(nameof(Loss));
+                            Gear gear = a as Gear;
+
+                            if (gear != null)
+                            {   
+                                (gear).PropertyChanged -= OnSubscribedChanged;
+                                (gear).Mods.CollectionChanged -= OnGearModsChanged;
+
+                                // it had essence cost then we must recalc values
+                                recalc |= gear.TotalEssence != 0;
+
+                                // remove mods from local collection
+                                foreach (GearMod mod in (gear).Mods)
+                                {
+                                    EssenceCosts.Remove(mod);
+                                    mod.PropertyChanged -= OnSubscribedChanged;
+                                    recalc |= mod.TotalEssence != 0;
+                                }
+
+                                EssenceCosts.Remove(gear);
                             }
                         }
                     }
                 }
             }
+
+            if (e.NewItems != null)
+            {
+                foreach (var item in e.NewItems)
+                {
+                    Type valueType = item.GetType();
+                    if (valueType.IsGenericType)
+                    {
+                        Type baseType = valueType.GetGenericTypeDefinition();
+                        if (baseType == typeof(KeyValuePair<,>))
+                        {
+                            object a = valueType.GetProperty("Value").GetValue(item, null);
+
+                            Gear gear = a as Gear;
+
+                            if (gear != null)
+                            {
+                                gear.PropertyChanged += OnSubscribedChanged;
+                                gear.Mods.CollectionChanged += OnGearModsChanged;
+
+                                // it had essence cost then we must recalc values
+                                recalc |= gear.TotalEssence != 0;
+
+                                // add mods to local collection
+                                //updating = true;
+                                foreach (GearMod mod in (gear).Mods)
+                                {
+                                    EssenceCosts.Add(mod);
+                                    mod.PropertyChanged += OnSubscribedChanged;
+                                    recalc |= mod.TotalEssence != 0;
+                                }
+                                //updating = true;
+
+                                EssenceCosts.Add(gear);
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (recalc)
+            {
+                RecalcEssenceLoss();
+            }
         }
 
         private void RecalcEssenceLoss()
         {
-            
+            decimal oldFloor = Floor;
+            decimal oldLossCeiling = LossCeiling;
+            decimal oldLoss = mLoss;
+            mLoss = 0;
+            foreach (IEssenceCost item in EssenceCosts)
+            {
+                mLoss += item.TotalEssence;
+            }
+
+            // This <em>should</em> be always true.
+            if (mLoss != oldLoss)
+            {
+                OnPropertyChanged(nameof(Loss));
+                OnPropertyChanged(nameof(Remaining));
+                
+                if (LossCeiling != oldLossCeiling)
+                {
+                    OnPropertyChanged(nameof(LossCeiling));
+                    OnPropertyChanged(nameof(LossFloor));
+                }
+
+                if (Floor != oldFloor)
+                {
+                    OnPropertyChanged(nameof(Ceiling));
+                    OnPropertyChanged(nameof(Floor));
+                }
+            }
         }
     }
 }

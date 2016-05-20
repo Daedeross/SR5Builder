@@ -15,20 +15,6 @@ namespace SR5Builder.DataModels
 
         #region Properties
 
-        private decimal mEssenceCost;
-        public decimal EssenceCost
-        {
-            get { return mEssenceCost; }
-            set
-            {
-                if (mEssenceCost != value)
-                {
-                    mEssenceCost = value;
-                    OnPropertyChanged(nameof(EssenceCost));
-                }
-            }
-        }
-
         public ObservableCollection<Augment> GivenAugments { get; set; }
 
         #endregion // Properties

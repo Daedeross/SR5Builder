@@ -9,12 +9,13 @@ namespace SR5Builder.DataModels
         {
             get
             {
+                if (mOwner.SpecialChoice.FreePowerPoints)
+                {
+                    return mOwner.SpecialAttribute.AugmentedRating;
+                }
                 return mOwner.SpecialChoice.PowerPoints;
             }
-            set
-            {
-                base.Min = value;
-            }
+            set { } // noop
         }
 
         public override int Max
@@ -52,12 +53,26 @@ namespace SR5Builder.DataModels
         {
             mName = name;
             mOwner.PropertyChanged += OnOwnerChanged;
+            mOwner.SpecialAttribute.PropertyChanged += OnMagicChanged;
         }
 
-        public void OnOwnerChanged(object sender, PropertyChangedEventArgs e)
+        private void OnMagicChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Contains("Special"))
+            if (   mOwner.SpecialChoice.CanBuyPowerPoints
+                && e.PropertyName == nameof(SpecialAttribute.AugmentedRating))
             {
+                OnPropertyChanged(nameof(Max));
+            }
+        }
+
+        private void OnOwnerChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName.Contains("Special") || e.PropertyName.Contains("Rating"))
+            {
+                if (Max < BaseRating)
+                {
+                    BaseRating = Max;
+                }
                 OnPropertyChanged(nameof(Max));
                 OnPropertyChanged(nameof(ImprovedRating));
                 OnPropertyChanged(nameof(BaseRating));

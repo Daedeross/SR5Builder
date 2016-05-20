@@ -334,6 +334,8 @@ namespace SR5Builder.DataModels
             mFlatCost = loader.FlatCost;
             mRatingCost = loader.RatingCost;
             mCapacity = loader.Capacity;
+            mFlatEssence = loader.FlatEssence;
+            mRatingEssence = loader.RatingEssence;
             Count = 1;
             LoadBaseMods(loader.BaseMods);
             if (loader.Mods != null)

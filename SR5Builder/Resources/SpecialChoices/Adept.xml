@@ -12,8 +12,9 @@
     <SkillCount>1</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>0</ComplexForms>
-	  <PowerPoints>6</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
     <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <FreePowerPoints>true</FreePowerPoints>
     <AllowedGroups></AllowedGroups>
   </SpecialChoice>
   <SpecialChoice>
@@ -28,8 +29,9 @@
     <SkillCount>1</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>0</ComplexForms>
-	  <PowerPoints>4</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
     <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <FreePowerPoints>true</FreePowerPoints>
     <AllowedGroups>
     </AllowedGroups>
   </SpecialChoice>
@@ -45,8 +47,9 @@
     <SkillCount>0</SkillCount>
     <Spells>0</Spells>
     <ComplexForms>0</ComplexForms>
-	  <PowerPoints>2</PowerPoints>
+	  <PowerPoints>0</PowerPoints>
     <CanBuyPowerPoints>false</CanBuyPowerPoints>
+    <FreePowerPoints>true</FreePowerPoints>
     <AllowedGroups>
     </AllowedGroups>
   </SpecialChoice>

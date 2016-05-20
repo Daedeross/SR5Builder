@@ -7,8 +7,6 @@ namespace SR5Builder.Loaders
 {
     public class ImplantLoader: GearLoader
     {
-        public decimal EssenceCost { get; set; }
-
         public AugmentLoader[] Augments { get; set; }
     }
 }
