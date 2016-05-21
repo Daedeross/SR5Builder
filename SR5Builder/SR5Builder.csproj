@@ -101,6 +101,7 @@
     <Compile Include="DataModels\Traits\Essence.cs" />
     <Compile Include="DataModels\Traits\Gear.cs" />
     <Compile Include="DataModels\Traits\GearMod.cs" />
+    <Compile Include="DataModels\Traits\IEssenceCost.cs" />
     <Compile Include="DataModels\Traits\Implant.cs" />
     <Compile Include="DataModels\Traits\Initiative.cs" />
     <Compile Include="DataModels\Traits\InitiativeDice.cs" />
@@ -113,9 +114,13 @@
     <Compile Include="DataModels\Traits\SpecialAttribute.cs" />
     <Compile Include="DataModels\Traits\Spell.cs" />
     <Compile Include="DataModels\Traits\UnarmedAttack.cs" />
+    <Compile Include="Dialogs\MesssageDialog.xaml.cs">
+      <DependentUpon>MesssageDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\NewCharacterDialog.xaml.cs">
       <DependentUpon>NewCharacterDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\ViewModels\MessageViewModel.cs" />
     <Compile Include="Dialogs\ViewModels\NewCharacterViewModel.cs" />
     <Compile Include="Converters\BoolToVisiblilityConverter.cs" />
     <Compile Include="Converters\IntoToStringConverter.cs" />
@@ -241,6 +246,10 @@
     <Compile Include="Views\WeaponsView.xaml.cs">
       <DependentUpon>WeaponsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dialogs\MesssageDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\NewCharacterDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

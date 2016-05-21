@@ -25,7 +25,7 @@ namespace SR5Builder.DataModels
             set
             {
                 base.BaseRating = value;
-                OnPropertyChanged("PowerPoints");
+                OnPropertyChanged(nameof(PowerPoints));
             }
         }
 
@@ -38,8 +38,8 @@ namespace SR5Builder.DataModels
                 if (value != mFlatPoints)
                 {
                     mFlatPoints = value;
-                    OnPropertyChanged("FlatPoints");
-                    OnPropertyChanged("PowerPoints");
+                    OnPropertyChanged(nameof(FlatPoints));
+                    OnPropertyChanged(nameof(PowerPoints));
                 }
             }
         }
@@ -53,8 +53,8 @@ namespace SR5Builder.DataModels
                 if (value != mPointsPerLevel)
                 {
                     mPointsPerLevel = value;
-                    OnPropertyChanged("PointPerLevel");
-                    OnPropertyChanged("PowerPoints");
+                    OnPropertyChanged(nameof(PointPerLevel));
+                    OnPropertyChanged(nameof(PowerPoints));
                 }
             }
         }

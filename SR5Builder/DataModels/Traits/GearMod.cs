@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 
 namespace SR5Builder.DataModels
 {
-    public class GearMod: LeveledTrait, IAugmentContainer
+    public class GearMod: LeveledTrait, IAugmentContainer, IEssenceCost
     {
         #region Properties
 
@@ -22,7 +22,7 @@ namespace SR5Builder.DataModels
                 if (value != mGearPiece)
                 {
                     mGearPiece = value;
-                    OnPropertyChanged("GearPiece");
+                    OnPropertyChanged(nameof(GearPiece));
                 }
             }
         }
@@ -36,7 +36,7 @@ namespace SR5Builder.DataModels
                 if (value != mFlatCost)
                 {
                     mFlatCost = value;
-                    OnPropertyChanged("FlatCost");
+                    OnPropertyChanged(nameof(FlatCost));
                 }
             }
         }
@@ -56,6 +56,33 @@ namespace SR5Builder.DataModels
                 }
                 else return "+" + FlatCost.ToString("C", GlobalData.CostFormat);
             }
+        }
+
+        private decimal mFlatEssence;
+        public decimal FlatEssence
+        {
+            get { return mFlatEssence; }
+            set
+            {
+                if (value != mFlatEssence)
+                {
+                    mFlatEssence = value;
+                    OnPropertyChanged(nameof(FlatEssence));
+                    OnPropertyChanged(nameof(TotalEssence));
+                }
+            }
+        }
+
+        private decimal mRatingEssence;
+        public decimal RatingEssence
+        {
+            get { return mRatingEssence; }
+            set { mRatingEssence = value; }
+        }
+
+        public decimal TotalEssence
+        {
+            get { return mFlatEssence + mRatingEssence * mBaseRating; }
         }
 
         public int Capacity { get; set; }

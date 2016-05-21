@@ -43,8 +43,8 @@ namespace SR5Builder.DataModels
                 if (value != mUseStrength)
                 {
                     mUseStrength = value;
-                    OnPropertyChanged("UseStrength");
-                    OnPropertyChanged("DV");
+                    OnPropertyChanged(nameof(UseStrength));
+                    OnPropertyChanged(nameof(DV));
                 }
             }
         }
@@ -68,8 +68,8 @@ namespace SR5Builder.DataModels
                 if (value != mBaseReach)
                 {
                     mBaseReach = value;
-                    OnPropertyChanged("BaseReach");
-                    OnPropertyChanged("Reach");
+                    OnPropertyChanged(nameof(BaseReach));
+                    OnPropertyChanged(nameof(Reach));
                 }
             }
         }
@@ -111,8 +111,8 @@ namespace SR5Builder.DataModels
 
         private void OnStrengthChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            OnPropertyChanged("DV");
-            OnPropertyChanged("DisplayDamage");
+            OnPropertyChanged(nameof(DV));
+            OnPropertyChanged(nameof(DisplayDamage));
         }
 
         #endregion // Private Methods

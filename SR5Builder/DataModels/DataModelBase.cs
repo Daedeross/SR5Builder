@@ -15,7 +15,7 @@ namespace SR5Builder.DataModels
             set
             {
                 mName = value;
-                OnPropertyChanged("Name");
+                OnPropertyChanged(nameof(Name));
             }
         }
 

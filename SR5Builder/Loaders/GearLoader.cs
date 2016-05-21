@@ -65,6 +65,10 @@ namespace SR5Builder.Loaders
 
         public int Capacity { get; set; }
 
+        public decimal FlatEssence { get; set; }
+
+        public decimal RatingEssence { get; set; }
+
         public string[] BaseMods { get; set; }
 
         public string[] ModCategories { get; set; }

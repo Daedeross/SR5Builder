@@ -16,7 +16,7 @@ namespace SR5Builder.DataModels
                 {
                     return 0;
                 }
-                return (int)mMin.GetValue(mOwner.SpecialChoice, null);
+                return (int)mMin.GetValue(mOwner.SpecialChoice, null) - mOwner.Essence.LossCeiling;
             }
         }
 
@@ -24,23 +24,36 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                if (mOwner.SpecialChoice == null)
+                if (mOwner.SpecialChoice == null || mOwner.SpecialChoice.Attribute == 0)
                 {
                     return 0;
                 }
-                return 6;
+                return mOwner.AdvancedGrade + mOwner.Essence.Floor;
             }
         }
 
-        public override int BonusRating
+        private int loss;
+        public override int BaseRating
         {
             get
             {
-                return mOwner.Essence.AugmentedRating - 6;
+                return mBaseRating - loss + Min; 
             }
             set
             {
-                //base.BonusRating = value;
+                if (value != BaseRating)
+                {
+                    int oldRating = mBaseRating;
+                    mBaseRating = value + loss - Min;
+                    OnPropertyChanged(nameof(BaseRating));
+                    OnPropertyChanged(nameof(ImprovedRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
+                    if (oldRating != mBaseRating)
+                    {
+
+                        OnPropertyChanged(nameof(Points));
+                    } 
+                }
             }
         }
 
@@ -52,13 +65,47 @@ namespace SR5Builder.DataModels
 
             mMin = (typeof(SpecialChoice)).GetProperty("Attribute");
 
-            mOwner.Essence.PropertyChanged += this.OnEssenceChanged;
+            mOwner.Essence.PropertyChanged += this.OnSubscribedChanged;
+            mOwner.PropertyChanged += this.OnSubscribedChanged;
+            mOwner.Priorities.PropertyChanged += this.OnSubscribedChanged;
         }
 
-        private void OnEssenceChanged(object sender, PropertyChangedEventArgs e)
+        private void OnSubscribedChanged(object sender, PropertyChangedEventArgs e)
         {
-            OnPropertyChanged("BonusRating");
-            OnPropertyChanged("AugmentedRating");
+            if (   (sender == mOwner.Essence && e.PropertyName == nameof(Essence.Floor))
+                || (sender == mOwner.Priorities && e.PropertyName == nameof(Priorities.Special))
+                || (sender == mOwner && e.PropertyName == nameof(SR5Character.SpecialChoice))
+               )
+            {
+                int oldLoss = loss;
+                int oldRating = BaseRating;
+                loss = mOwner.Essence.LossCeiling;
+                int oldBase = mBaseRating;
+
+                if (BaseRating > Max)
+                {
+                    BaseRating = Max;
+                }
+                if (BaseRating < Min)
+                {
+                    BaseRating = Min;
+                }
+                if (oldRating != BaseRating)
+                {
+                    OnPropertyChanged(nameof(BaseRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
+                }
+                if (loss != oldLoss)
+                {
+                    OnPropertyChanged(nameof(Max));
+                }
+                if (oldBase != mBaseRating)
+                {
+                    OnPropertyChanged(nameof(Points));
+                }
+                
+                OnPropertyChanged(nameof(Min));
+            }
         }
     }
 }

@@ -14,7 +14,7 @@
       <string>Flare compensation</string>
       <string>Image link</string>
     </Mods>
-    <EssenceFlatCost>0.2</EssenceFlatCost>
+    <FlatEssence>0.2</FlatEssence>
     <Augments></Augments>
   </ImplantLoader>
   <ImplantLoader>
@@ -31,7 +31,7 @@
       <string>Flare compensation</string>
       <string>Image link</string>
     </Mods>
-    <EssenceFlatCost>0.3</EssenceFlatCost>
+    <FlatEssence>0.3</FlatEssence>
     <Augments></Augments>
   </ImplantLoader>
   <ImplantLoader>
@@ -44,7 +44,7 @@
     <FlatCost>1000</FlatCost>
     <RatingCost>0</RatingCost>
     <Capacity>0</Capacity>
-    <EssenceFlatCost>0.2</EssenceFlatCost>
+    <FlatEssence>0.2</FlatEssence>
     <Augments></Augments>
   </ImplantLoader>
 </ArrayOfImplantLoader>

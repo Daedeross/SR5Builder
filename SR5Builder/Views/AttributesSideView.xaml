@@ -45,7 +45,8 @@
         <TextBlock Grid.Row="5"><Bold>LOG</Bold></TextBlock>
         <TextBlock Grid.Row="6"><Bold>INT</Bold></TextBlock>
         <TextBlock Grid.Row="7"><Bold>CHA</Bold></TextBlock>
-        <Button Grid.Row="8" Command="{Binding ExamineCommand}">Test</Button>
+        <TextBlock Grid.Row="8"><Bold>ESS</Bold></TextBlock>
+        <Button Grid.Row="10" Command="{Binding ExamineCommand}">Test</Button>
         
         <TextBlock Name="bodBox"
                    Grid.Row="0" Grid.Column="1"
@@ -79,6 +80,10 @@
         <TextBlock Name="chaBox"
                    Grid.Row="7" Grid.Column="1"
                    Text="{Binding CharismaText}"
+                   />
+        <TextBlock Name="essBox"
+                   Grid.Row="8" Grid.Column="1"
+                   Text="{Binding Essence.Remaining}"
                    />
         <TextBlock Grid.Row="9" Text="{Binding Method}" />
     </Grid>

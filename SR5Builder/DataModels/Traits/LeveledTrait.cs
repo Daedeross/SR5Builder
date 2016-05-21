@@ -25,9 +25,9 @@ namespace SR5Builder.DataModels
                 if (mBaseRating != value)
                 {
                     mBaseRating = value;
-                    OnPropertyChanged("BaseRating");
-                    OnPropertyChanged("AugmentdRating");
-                    OnPropertyChanged("Points");
+                    OnPropertyChanged(nameof(BaseRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
+                    OnPropertyChanged(nameof(Points));
                 }
             }
         }
@@ -48,8 +48,8 @@ namespace SR5Builder.DataModels
                 if ((int)mBonusRating != value)
                 {
                     mBonusRating = value;
-                    OnPropertyChanged("BonusRating");
-                    OnPropertyChanged("AugmentedRating");
+                    OnPropertyChanged(nameof(BonusRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
                 }
             }
         }

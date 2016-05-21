@@ -40,8 +40,8 @@ namespace SR5Builder.ViewModels
                 {
                     mSelectedCategory = value;
                     AvailableSpells = new ObservableCollection<SpellLoader>(GlobalData.PreLoadedSpells[mSelectedCategory]);
-                    OnPropertyChanged("AvailableSpells");
-                    OnPropertyChanged("SelectedCategory");
+                    OnPropertyChanged(nameof(AvailableSpells));
+                    OnPropertyChanged(nameof(SelectedCategory));
                 }
             }
         }
@@ -261,9 +261,21 @@ namespace SR5Builder.ViewModels
                 if (result == true)
                 {
                     AdeptPower p = SelectedNewPower.ToPower(character, vm.Selection);
-                    PowerList.Add(p.Name, p);
-
-                    SelectedPower = PowerList[p.Name];
+                    if (PowerList.ContainsKey(p.Name))
+                    {
+                        MessageViewModel messVM
+                            = new MessageViewModel(String.Format("The power \"{0}\" already exists on the character",
+                                                                  p.Name));
+                        MesssageDialog messDlg = new MesssageDialog();
+                        messDlg.DataContext = messVM;
+                        messDlg.ShowInTaskbar = false;
+                        messDlg.ShowDialog();
+                    }
+                    else
+                    {
+                        PowerList.Add(p.Name, p);
+                        SelectedPower = PowerList[p.Name];
+                    }
                 }
             }
         }

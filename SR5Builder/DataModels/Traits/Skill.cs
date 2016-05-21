@@ -41,9 +41,9 @@ namespace SR5Builder.DataModels
 
                     mOwner = value;
                     //mOwner.PropertyChanged += this.OnCharacterChanged;
-                    OnPropertyChanged("Owner");
-                    OnPropertyChanged("TotalPool");
-                    OnPropertyChanged("AugmentedPool");
+                    OnPropertyChanged(nameof(Owner));
+                    OnPropertyChanged(nameof(TotalPool));
+                    OnPropertyChanged(nameof(AugmentedPool));
                 }
             }
         }
@@ -75,8 +75,8 @@ namespace SR5Builder.DataModels
 
                         mLinkedAttribute.PropertyChanged += this.OnAttributeChanged;
 
-                        OnPropertyChanged("TotalPool");
-                        OnPropertyChanged("AugmentedPool");
+                        OnPropertyChanged(nameof(TotalPool));
+                        OnPropertyChanged(nameof(AugmentedPool));
                     }
                 }
             }
@@ -91,8 +91,8 @@ namespace SR5Builder.DataModels
             set
             {
                 base.BaseRating = value;
-                OnPropertyChanged("TotalPool");
-                OnPropertyChanged("AugmentedPool");
+                OnPropertyChanged(nameof(TotalPool));
+                OnPropertyChanged(nameof(AugmentedPool));
             }
         }
 
@@ -127,7 +127,7 @@ namespace SR5Builder.DataModels
                 if (value != mAccuracyBonus)
                 {
                     mAccuracyBonus = value;
-                    OnPropertyChanged("AccuracyBonus");
+                    OnPropertyChanged(nameof(AccuracyBonus));
                 }
             }
         }
@@ -141,7 +141,7 @@ namespace SR5Builder.DataModels
                 if (value != mDamageBonus)
                 {
                     mDamageBonus = value;
-                    OnPropertyChanged("DamageBonus");
+                    OnPropertyChanged(nameof(DamageBonus));
                 }
             }
         }
@@ -193,8 +193,8 @@ namespace SR5Builder.DataModels
 
         private void OnAttributeChanged(object sender, PropertyChangedEventArgs e)
         {
-            OnPropertyChanged("TotalPool");
-            OnPropertyChanged("AugmentedPool");
+            OnPropertyChanged(nameof(TotalPool));
+            OnPropertyChanged(nameof(AugmentedPool));
         }
 
         protected override void RecalcBonus(HashSet<string> propNames = null)

@@ -18,7 +18,7 @@ namespace SR5Builder.ViewModels
                 if (mPriorityLevel != value)
                 {
                     mPriorityLevel = value;
-                    OnPropertyChanged("Priority");
+                    OnPropertyChanged(nameof(Priority));
                 }
             }
         }
@@ -38,7 +38,7 @@ namespace SR5Builder.ViewModels
                     }
                     mPriorities = value;
                     mPriorities.PropertyChanged += this.BubblePropertyChanged;
-                    OnPropertyChanged("Priorities");
+                    OnPropertyChanged(nameof(Priorities));
                 }
             }
         }

@@ -37,6 +37,8 @@ namespace SR5Builder.DataModels
 
         public int PowerPoints { get; set; }
 
+        public bool FreePowerPoints { get; set; }
+
         public bool CanBuyPowerPoints { get; set; }
 
         public string[] AllowedGroups { get; set; }
