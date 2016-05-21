@@ -34,6 +34,8 @@ namespace SR5Builder.DataModels
 
         public ObservableCollection<IAugmentContainer> AugmentContainers { get; set; }
 
+        public List<IKarmaCost> KarmaCosts { get; set; }
+
         public GenSettings Settings { get; set; }
 
             #region Metatype
@@ -536,7 +538,37 @@ namespace SR5Builder.DataModels
             }
         }
 
-            #endregion // Spells / Powers
+        #endregion // Spells / Powers
+        
+        private int mKarmaEarned;
+        public int KarmaEarned
+        {
+            get { return mKarmaEarned; }
+            set
+            {
+                if (value != mKarmaEarned)
+                {
+                    mKarmaEarned = value;
+                    OnPropertyChanged("KarmaEarned");
+                }
+            }
+        }
+
+        public int TotalKarma
+        {
+            get { return KarmaEarned + Settings.StartingKarma; }
+        }
+
+        private int mKarmaSpent;
+        public int KarmaSpent
+        {
+            get { return mKarmaSpent; }
+        }
+    
+        public int KarmaAvailable
+        {
+            get { return mKarmaEarned - mKarmaSpent; }
+        }
 
             #region Gear
 
@@ -865,6 +897,12 @@ namespace SR5Builder.DataModels
                                 propNames.Add("PowerPointsSpent");
                             }
 
+                            if (a is IKarmaCost)
+                            {
+                                KarmaCosts.Remove(a as IKarmaCost);
+                                propNames.Add("KarmaSpent");
+                            }
+
                             //if (a is MeleeWeapon)
                             //{
                             //    MeleeWeapons.Remove((string)valueType.GetProperty("Key").GetValue(item, null));
@@ -909,7 +947,7 @@ namespace SR5Builder.DataModels
                                 propNames.Add("PowerPointsSpent");
                             }
 
-                            // Upadate weapons lists
+                            // Upadate weapon lists
                             //if (a is MeleeWeapon)
                             //{
                             //    MeleeWeapons.Add((string)valueType.GetProperty("Key").GetValue(item, null), (a as MeleeWeapon));
@@ -970,6 +1008,14 @@ namespace SR5Builder.DataModels
                 {
 
                 }
+            }
+        }
+
+        private void OnKarmaCostChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "Karma")
+            {
+                OnPropertyChanged("KarmaSpent");
             }
         }
 
