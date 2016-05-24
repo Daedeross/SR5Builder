@@ -73,7 +73,7 @@ namespace SR5Builder.DataModels
                     if (mTarget != null)
                         mTarget.Augments.Add(this);
 
-                    OnPropertyChanged(nameof(Target));
+                    RaisePropertyChanged(nameof(Target));
                 }
             }
         }
@@ -151,7 +151,7 @@ namespace SR5Builder.DataModels
 
         private void OnTraitChanged(object sender, PropertyChangedEventArgs e)
         {
-            OnPropertyChanged(nameof(Bonus));
+            RaisePropertyChanged(nameof(Bonus));
         }
 
         // Keeps watch on the Characters Augmentable Collection and

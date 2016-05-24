@@ -93,6 +93,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataModels\IAugmentContainer.cs" />
+    <Compile Include="DataModels\IKarmaCost.cs" />
     <Compile Include="DataModels\Traits\AdeptPower.cs" />
     <Compile Include="DataModels\Traits\Attribute.cs" />
     <Compile Include="DataModels\Augment.cs" />

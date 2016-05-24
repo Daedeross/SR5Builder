@@ -7,13 +7,6 @@ namespace SR5Builder.DataModels
 {
     public class InitiativeDice : LeveledTrait
     {
-        public override int Karma
-        {
-            get
-            { return 0; }
-            set { }
-        }
-
         public override string DisplayValue
         {
             get

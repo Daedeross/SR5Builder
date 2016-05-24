@@ -22,7 +22,7 @@ namespace SR5Builder.DataModels
                 if (value != mGearPiece)
                 {
                     mGearPiece = value;
-                    OnPropertyChanged(nameof(GearPiece));
+                    RaisePropertyChanged(nameof(GearPiece));
                 }
             }
         }
@@ -36,7 +36,7 @@ namespace SR5Builder.DataModels
                 if (value != mFlatCost)
                 {
                     mFlatCost = value;
-                    OnPropertyChanged(nameof(FlatCost));
+                    RaisePropertyChanged(nameof(FlatCost));
                 }
             }
         }
@@ -67,8 +67,8 @@ namespace SR5Builder.DataModels
                 if (value != mFlatEssence)
                 {
                     mFlatEssence = value;
-                    OnPropertyChanged(nameof(FlatEssence));
-                    OnPropertyChanged(nameof(TotalEssence));
+                    RaisePropertyChanged(nameof(FlatEssence));
+                    RaisePropertyChanged(nameof(TotalEssence));
                 }
             }
         }
@@ -90,12 +90,6 @@ namespace SR5Builder.DataModels
         public ObservableCollection<Augment> GivenAugments { get; set; }
 
         public string Notes { get; set; }
-
-        public override int Karma
-        {
-            get { return 0; }
-            set { }
-        }
 
         #endregion // Properties
 

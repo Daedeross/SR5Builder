@@ -86,7 +86,7 @@
                         </TextBlock.Style>
                         <TextBlock.Text>
                             <MultiBinding Converter="{StaticResource valueRemainingConverter}">
-                                <Binding Path="MagicVM.PowerPointsSpent" />
+                                <Binding Path="KarmaSpent" />
                                 <Binding Path="MagicVM.PowerPoints.AugmentedRating" />
                             </MultiBinding>
                         </TextBlock.Text>

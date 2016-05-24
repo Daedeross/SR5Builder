@@ -15,13 +15,13 @@ namespace SR5Builder.DataModels
             set
             {
                 mName = value;
-                OnPropertyChanged(nameof(Name));
+                RaisePropertyChanged(nameof(Name));
             }
         }
 
         #region Interface Implementations
 
-        protected void OnPropertyChanged(string propertyName)
+        protected void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));

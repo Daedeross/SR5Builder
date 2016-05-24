@@ -11,9 +11,11 @@ namespace SR5Builder.DataModels
     public abstract class LeveledTrait: BaseTrait, IAugmentable, IComparable<LeveledTrait>
     {
         #region Properties
-
+        
+        public virtual int ExtraMin { get; set; }
         public virtual int Min { get; set; }
 
+        public virtual int ExtraMax { get; set; }
         public virtual int Max { get; set; }
 
         protected int mBaseRating;
@@ -25,9 +27,9 @@ namespace SR5Builder.DataModels
                 if (mBaseRating != value)
                 {
                     mBaseRating = value;
-                    OnPropertyChanged(nameof(BaseRating));
-                    OnPropertyChanged(nameof(AugmentedRating));
-                    OnPropertyChanged(nameof(Points));
+                    RaisePropertyChanged(nameof(BaseRating));
+                    RaisePropertyChanged(nameof(AugmentedRating));
+                    RaisePropertyChanged(nameof(Points));
                 }
             }
         }
@@ -48,8 +50,8 @@ namespace SR5Builder.DataModels
                 if ((int)mBonusRating != value)
                 {
                     mBonusRating = value;
-                    OnPropertyChanged(nameof(BonusRating));
-                    OnPropertyChanged(nameof(AugmentedRating));
+                    RaisePropertyChanged(nameof(BonusRating));
+                    RaisePropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
@@ -148,14 +150,8 @@ namespace SR5Builder.DataModels
                 foreach (Augment a in e.NewItems)
                 {
                     a.PropertyChanged += this.OnAugmentChanged;
-                    //propNames = AddAugment(a, propNames);
                 }
             }
-
-            //foreach (string name in propNames)
-            //{
-            //    OnPropertyChanged(name);
-            //}
 
             RecalcBonus(propNames);
         }
@@ -167,7 +163,8 @@ namespace SR5Builder.DataModels
                 propNames = new HashSet<string>();
 
             //Clear Bonus
-            //float bonus = 0;
+            ExtraMax = 0;
+            ExtraMin = 0;
             mBonusRating = 0;
 
             foreach (Augment a in Augments)
@@ -179,7 +176,7 @@ namespace SR5Builder.DataModels
             // Call PropertyChanged
             foreach (string name in propNames)
             {
-                OnPropertyChanged(name);
+                RaisePropertyChanged(name);
             }
         }
 
@@ -188,9 +185,14 @@ namespace SR5Builder.DataModels
             if (a.Kind == AugmentKind.Rating)
             {
                 mBonusRating += a.Bonus;
-                propNames.Add("BonusRating");
-                propNames.Add("AugmentedRating");
-                propNames.Add("DisplayValue");
+                propNames.Add(nameof(BonusRating));
+                propNames.Add(nameof(AugmentedRating));
+                propNames.Add(nameof(DisplayValue));
+            }
+            if (a.Kind == AugmentKind.Max)
+            {
+                ExtraMax += (int)a.Bonus;
+                RaisePropertyChanged(nameof(Max));
             }
             return propNames;
         }

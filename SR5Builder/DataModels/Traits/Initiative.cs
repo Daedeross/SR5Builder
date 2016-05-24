@@ -71,15 +71,6 @@ namespace SR5Builder.DataModels
             get { return mAttributeOne.AugmentedRating + mAttributeTwo.AugmentedRating + BonusRating; }
         }
 
-        public override int Karma
-        {
-            get
-            {
-                return 0;
-            }
-            set { }
-        }
-
         #endregion // Overrrides
 
         #endregion // Properties
@@ -117,16 +108,16 @@ namespace SR5Builder.DataModels
             switch (e.PropertyName)
             {
                 case "AugmentedRating":
-                    OnPropertyChanged(e.PropertyName);
-                    OnPropertyChanged(nameof(DisplayValue));
+                    RaisePropertyChanged(e.PropertyName);
+                    RaisePropertyChanged(nameof(DisplayValue));
                     break;
                 case "ImprovedRating":
-                    OnPropertyChanged(e.PropertyName);
-                    OnPropertyChanged(nameof(DisplayValue));
+                    RaisePropertyChanged(e.PropertyName);
+                    RaisePropertyChanged(nameof(DisplayValue));
                     break;
                 case "BaseRating":
-                    OnPropertyChanged(e.PropertyName);
-                    OnPropertyChanged(nameof(DisplayValue));
+                    RaisePropertyChanged(e.PropertyName);
+                    RaisePropertyChanged(nameof(DisplayValue));
                     break;
                 default:
                     break;

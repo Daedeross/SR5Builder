@@ -25,7 +25,7 @@ namespace SR5Builder.DataModels
             set
             {
                 base.BaseRating = value;
-                OnPropertyChanged(nameof(PowerPoints));
+                RaisePropertyChanged(nameof(PowerPoints));
             }
         }
 
@@ -38,8 +38,8 @@ namespace SR5Builder.DataModels
                 if (value != mFlatPoints)
                 {
                     mFlatPoints = value;
-                    OnPropertyChanged(nameof(FlatPoints));
-                    OnPropertyChanged(nameof(PowerPoints));
+                    RaisePropertyChanged(nameof(FlatPoints));
+                    RaisePropertyChanged(nameof(PowerPoints));
                 }
             }
         }
@@ -53,8 +53,8 @@ namespace SR5Builder.DataModels
                 if (value != mPointsPerLevel)
                 {
                     mPointsPerLevel = value;
-                    OnPropertyChanged(nameof(PointPerLevel));
-                    OnPropertyChanged(nameof(PowerPoints));
+                    RaisePropertyChanged(nameof(PointPerLevel));
+                    RaisePropertyChanged(nameof(PowerPoints));
                 }
             }
         }
@@ -62,12 +62,6 @@ namespace SR5Builder.DataModels
         public decimal PowerPoints
         {
             get { return mFlatPoints + mBaseRating * mPointsPerLevel; }
-        }
-
-        public override int Karma
-        {
-            get { return 0; }
-            set { }
         }
 
         #endregion // Properties

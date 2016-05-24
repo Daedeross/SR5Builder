@@ -28,8 +28,8 @@ namespace SR5Builder.DataModels
             set
             {
                 mBaseAvailability = value;
-                OnPropertyChanged(nameof(BaseAvailability));
-                OnPropertyChanged(nameof(Availability));
+                RaisePropertyChanged(nameof(BaseAvailability));
+                RaisePropertyChanged(nameof(Availability));
             }
         }
 
@@ -48,8 +48,8 @@ namespace SR5Builder.DataModels
                 if (value != mCount)
                 {
                     mCount = value;
-                    OnPropertyChanged(nameof(Count));
-                    OnPropertyChanged(nameof(Cost));
+                    RaisePropertyChanged(nameof(Count));
+                    RaisePropertyChanged(nameof(Cost));
                 }
             }
         }
@@ -63,9 +63,9 @@ namespace SR5Builder.DataModels
                 if (value != mFlatCost)
                 {
                     mFlatCost = value;
-                    OnPropertyChanged(nameof(FlatCost));
-                    OnPropertyChanged(nameof(BaseCost));
-                    OnPropertyChanged(nameof(Cost));
+                    RaisePropertyChanged(nameof(FlatCost));
+                    RaisePropertyChanged(nameof(BaseCost));
+                    RaisePropertyChanged(nameof(Cost));
                 }
             }
         }
@@ -79,9 +79,9 @@ namespace SR5Builder.DataModels
                 if (value != mRatingCost)
                 {
                     mRatingCost = value;
-                    OnPropertyChanged(nameof(RatingCost));
-                    OnPropertyChanged(nameof(BaseCost));
-                    OnPropertyChanged(nameof(Cost));
+                    RaisePropertyChanged(nameof(RatingCost));
+                    RaisePropertyChanged(nameof(BaseCost));
+                    RaisePropertyChanged(nameof(Cost));
                 }
             }
         }
@@ -107,8 +107,8 @@ namespace SR5Builder.DataModels
                 if (value != mFlatEssence)
                 {
                     mFlatEssence = value;
-                    OnPropertyChanged(nameof(FlatEssence));
-                    OnPropertyChanged(nameof(TotalEssence));
+                    RaisePropertyChanged(nameof(FlatEssence));
+                    RaisePropertyChanged(nameof(TotalEssence));
                 }
             }
         }
@@ -136,8 +136,8 @@ namespace SR5Builder.DataModels
                 if (mCapacity != value)
                 {
                     mCapacity = value;
-                    OnPropertyChanged(nameof(Capacity));
-                    OnPropertyChanged(nameof(CapacityUsed));
+                    RaisePropertyChanged(nameof(Capacity));
+                    RaisePropertyChanged(nameof(CapacityUsed));
                 }
             }
         }
@@ -151,7 +151,7 @@ namespace SR5Builder.DataModels
                 if (mCapacityUsed != value)
                 {
                     mCapacityUsed = value;
-                    OnPropertyChanged(nameof(CapacityUsed));
+                    RaisePropertyChanged(nameof(CapacityUsed));
                 }
             }
         }
@@ -182,12 +182,6 @@ namespace SR5Builder.DataModels
         public ObservableDictionary<string, GearMod> Mods { get; set; }
 
         public string Notes { get; set; }
-
-        public override int Karma
-        {
-            get { return 0; }
-            set { }
-        }
 
         #endregion // Properties
 
@@ -245,8 +239,8 @@ namespace SR5Builder.DataModels
                 }
             }
 
-            OnPropertyChanged(nameof(Cost));
-            OnPropertyChanged(nameof(CapacityUsed));
+            RaisePropertyChanged(nameof(Cost));
+            RaisePropertyChanged(nameof(CapacityUsed));
         }
 
         private void LoadBaseMods(string[] modNames)

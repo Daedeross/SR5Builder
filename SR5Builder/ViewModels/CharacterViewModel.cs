@@ -368,7 +368,7 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public SR5Builder.DataModels.Attribute SpecialAttribute
+        public DataModels.Attribute SpecialAttribute
         {
             get { return character.SpecialAttribute; }
             set {  }
@@ -484,6 +484,11 @@ namespace SR5Builder.ViewModels
         public int PowerPointsDone
         {
             get { return ((decimal)character.PowerPoints.AugmentedRating - character.PowerPointsSpent).CompareTo(0); }
+        }
+
+        public int KarmaSpent
+        {
+            get { return character.KarmaSpent; }
         }
 
         #endregion

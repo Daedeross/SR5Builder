@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SR5Builder.DataModels
 {
-    public class SkillGroup : LeveledTrait
+    public class SkillGroup : LeveledTrait, IKarmaCost
     {
         #region Properties
 
@@ -20,8 +20,8 @@ namespace SR5Builder.DataModels
                     foreach (KeyValuePair<string, Skill> kvp in Skills)
                     {
                         kvp.Value.Owner = mOwner;
-                        OnPropertyChanged(nameof(kvp.Value.Owner));
-                        OnPropertyChanged(nameof(kvp.Value.TotalPool));
+                        RaisePropertyChanged(nameof(kvp.Value.Owner));
+                        RaisePropertyChanged(nameof(kvp.Value.TotalPool));
                     }
                 }
             }
@@ -40,16 +40,15 @@ namespace SR5Builder.DataModels
                     foreach (KeyValuePair<string, Skill> kvp in Skills)
                     {
                         kvp.Value.BaseRating = mBaseRating;
-                        OnPropertyChanged(nameof(BaseRating));
+                        RaisePropertyChanged(nameof(BaseRating));
                     }
                 }
             }
         }
 
-        public override int Karma
+        public int Karma
         {
-            get { return 0; }
-            set { }
+            get { return mOwner.Settings.SkillGroupKarma(ImprovedRating, BaseRating); }
         }
 
         #endregion // Properties

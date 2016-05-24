@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace SR5Builder.DataModels
 {
-    public class PowerPoints : Attribute
+    public class PowerPoints : Attribute, IKarmaCost
     {
         public override int Min
         {
@@ -45,7 +45,6 @@ namespace SR5Builder.DataModels
             {
                 return Math.Min(0, (BaseRating - Min) * mOwner.Settings.PowerPointKarma);
             }
-            set { }
         }
 
         public PowerPoints(SR5Character owner, string name)
@@ -61,7 +60,7 @@ namespace SR5Builder.DataModels
             if (   mOwner.SpecialChoice.CanBuyPowerPoints
                 && e.PropertyName == nameof(SpecialAttribute.AugmentedRating))
             {
-                OnPropertyChanged(nameof(Max));
+                RaisePropertyChanged(nameof(Max));
             }
         }
 
@@ -73,10 +72,10 @@ namespace SR5Builder.DataModels
                 {
                     BaseRating = Max;
                 }
-                OnPropertyChanged(nameof(Max));
-                OnPropertyChanged(nameof(ImprovedRating));
-                OnPropertyChanged(nameof(BaseRating));
-                OnPropertyChanged(nameof(AugmentedRating));
+                RaisePropertyChanged(nameof(Max));
+                RaisePropertyChanged(nameof(ImprovedRating));
+                RaisePropertyChanged(nameof(BaseRating));
+                RaisePropertyChanged(nameof(AugmentedRating));
             }
         }
     }

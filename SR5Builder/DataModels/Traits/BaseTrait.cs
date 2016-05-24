@@ -37,8 +37,6 @@ namespace SR5Builder.DataModels
             set;
         }
 
-        public abstract int Karma { get; set; }
-
         public BaseTrait(SR5Character c)
         {
             UserNotes = "";

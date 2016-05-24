@@ -38,18 +38,18 @@ namespace SR5Builder.DataModels
                     if (value == Priority.U)
                     {
                         mMetatype = value;
-                        OnPropertyChanged(nameof(Metatype));
+                        RaisePropertyChanged(nameof(Metatype));
                     }
                     else if (mMetatype == Priority.U || Method == CharGenMethod.SumToTen)
 					{
 						mMetatype = value;
-                        OnPropertyChanged(nameof(Metatype));
+                        RaisePropertyChanged(nameof(Metatype));
 					}
 					else
                     {
 						SwapPriorities(mMetatype, value);
                         mMetatype = value;
-                        OnPropertyChanged(nameof(Metatype));
+                        RaisePropertyChanged(nameof(Metatype));
                     }
                 }
             }
@@ -66,18 +66,18 @@ namespace SR5Builder.DataModels
                     if (value == Priority.U)
                     {
                         mAttributes = value;
-                        OnPropertyChanged(nameof(Attributes));
+                        RaisePropertyChanged(nameof(Attributes));
                     }
                     else if (mAttributes == Priority.U || Method == CharGenMethod.SumToTen)
 					{
 						mAttributes = value;
-                        OnPropertyChanged(nameof(Attributes));
+                        RaisePropertyChanged(nameof(Attributes));
 					}
 					else
                     {
 						SwapPriorities(mAttributes, value);
                         mAttributes = value;
-                        OnPropertyChanged(nameof(Attributes));
+                        RaisePropertyChanged(nameof(Attributes));
                     }
                 }
             }
@@ -95,18 +95,18 @@ namespace SR5Builder.DataModels
                     {
 
                         mSpecial = value;
-                        OnPropertyChanged(nameof(Special));
+                        RaisePropertyChanged(nameof(Special));
                     }
                     else if (mSpecial == Priority.U || Method == CharGenMethod.SumToTen)
 					{
 						mSpecial = value;
-                        OnPropertyChanged(nameof(Special));
+                        RaisePropertyChanged(nameof(Special));
 					}
 					else
                     {
 						SwapPriorities(mSpecial, value);
                         mSpecial = value;
-                        OnPropertyChanged(nameof(Special));
+                        RaisePropertyChanged(nameof(Special));
                     }
                 }
             }
@@ -123,18 +123,18 @@ namespace SR5Builder.DataModels
                     if (value == Priority.U)
                     {
                         mSkills = value;
-                        OnPropertyChanged(nameof(Skills));
+                        RaisePropertyChanged(nameof(Skills));
                     }
                     else if (mSkills == Priority.U || Method == CharGenMethod.SumToTen)
 					{
 						mSkills = value;
-                        OnPropertyChanged(nameof(Skills));
+                        RaisePropertyChanged(nameof(Skills));
 					}
 					else
                     {
 						SwapPriorities(mSkills, value);
                         mSkills = value;
-                        OnPropertyChanged(nameof(Skills));
+                        RaisePropertyChanged(nameof(Skills));
                     }
                 }
             }
@@ -151,18 +151,18 @@ namespace SR5Builder.DataModels
                     if (value == Priority.U)
                     {
                         mResources = value;
-                        OnPropertyChanged(nameof(Resources));
+                        RaisePropertyChanged(nameof(Resources));
                     }
                     else if (mResources == Priority.U || Method == CharGenMethod.SumToTen)
 					{
 						mResources = value;
-                        OnPropertyChanged(nameof(Resources));
+                        RaisePropertyChanged(nameof(Resources));
 					}
 					else
                     {
 						SwapPriorities(mResources, value);
                         mResources = value;
-                        OnPropertyChanged(nameof(Resources));
+                        RaisePropertyChanged(nameof(Resources));
                     }
                 }
             }
@@ -288,27 +288,27 @@ namespace SR5Builder.DataModels
 			if (mMetatype == newP)
 			{
 				mMetatype = oldP;
-				OnPropertyChanged(nameof(Metatype));
+				RaisePropertyChanged(nameof(Metatype));
 			}
 			else if (mAttributes == newP)
 			{
 				mAttributes = oldP;
-				OnPropertyChanged(nameof(Attributes));
+				RaisePropertyChanged(nameof(Attributes));
 			}
 			else if (mSkills == newP)
 			{
 				mSkills = oldP;
-				OnPropertyChanged(nameof(Skills));
+				RaisePropertyChanged(nameof(Skills));
 			}
 			else if (mSpecial == newP)
 			{
 				mSpecial = oldP;
-				OnPropertyChanged(nameof(Special));
+				RaisePropertyChanged(nameof(Special));
 			}
 			else if (mResources == newP)
 			{
 				mResources = oldP;
-				OnPropertyChanged(nameof(Resources));
+				RaisePropertyChanged(nameof(Resources));
 			}
 		}
     }

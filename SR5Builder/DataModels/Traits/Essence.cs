@@ -8,15 +8,6 @@ namespace SR5Builder.DataModels
 {
     public class Essence :  Attribute
     {
-        public override int Karma
-        {
-            get
-            {
-                return 0;
-            }
-            set { }
-        }
-
         public override int Max
         {
             get { return int.MaxValue; }
@@ -36,8 +27,8 @@ namespace SR5Builder.DataModels
                 if (mAdditionalLoss != value)
                 {
                     mAdditionalLoss = value;
-                    OnPropertyChanged(nameof(AdditionalLoss));
-                    OnPropertyChanged(nameof(Loss));
+                    RaisePropertyChanged(nameof(AdditionalLoss));
+                    RaisePropertyChanged(nameof(Loss));
                 }
             }
         }
@@ -252,19 +243,19 @@ namespace SR5Builder.DataModels
             // This <em>should</em> be always true.
             if (mLoss != oldLoss)
             {
-                OnPropertyChanged(nameof(Loss));
-                OnPropertyChanged(nameof(Remaining));
+                RaisePropertyChanged(nameof(Loss));
+                RaisePropertyChanged(nameof(Remaining));
                 
                 if (LossCeiling != oldLossCeiling)
                 {
-                    OnPropertyChanged(nameof(LossCeiling));
-                    OnPropertyChanged(nameof(LossFloor));
+                    RaisePropertyChanged(nameof(LossCeiling));
+                    RaisePropertyChanged(nameof(LossFloor));
                 }
 
                 if (Floor != oldFloor)
                 {
-                    OnPropertyChanged(nameof(Ceiling));
-                    OnPropertyChanged(nameof(Floor));
+                    RaisePropertyChanged(nameof(Ceiling));
+                    RaisePropertyChanged(nameof(Floor));
                 }
             }
         }

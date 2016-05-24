@@ -8,7 +8,7 @@ using SR5Builder.Loaders;
 
 namespace SR5Builder.DataModels
 {
-    public class Attribute: LeveledTrait
+    public class Attribute: LeveledTrait, IKarmaCost
     {       
         protected PropertyInfo mMin;
         public override int Min
@@ -16,7 +16,7 @@ namespace SR5Builder.DataModels
             get
             {
                 if (mOwner?.MetatypeStats != null)
-                    return (int)mMin.GetValue(mOwner.MetatypeStats, null);
+                    return (int)mMin.GetValue(mOwner.MetatypeStats, null) + ExtraMin;
                 else
                     return 0;
             }
@@ -28,7 +28,7 @@ namespace SR5Builder.DataModels
             get
             {
                 if (mOwner.MetatypeStats != null)
-                    return (int)mMax.GetValue(mOwner.MetatypeStats, null);
+                    return (int)mMax.GetValue(mOwner.MetatypeStats, null) + ExtraMax;
                 else
                     return 0;
             }
@@ -53,21 +53,17 @@ namespace SR5Builder.DataModels
                     {
                         mBaseRating = value - Min;
                     }
-                    OnPropertyChanged(nameof(BaseRating));
-                    OnPropertyChanged(nameof(Points));
-                    OnPropertyChanged(nameof(ImprovedRating));
-                    OnPropertyChanged(nameof(AugmentedRating));
+                    RaisePropertyChanged(nameof(BaseRating));
+                    RaisePropertyChanged(nameof(Points));
+                    RaisePropertyChanged(nameof(ImprovedRating));
+                    RaisePropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
 
-        public override int Karma
+        public virtual int Karma
         {
-            get
-            {
-                return mOwner.Settings.AttributeKarma(ImprovedRating, BaseRating);
-            }
-            set { }
+            get { return mOwner.Settings.AttributeKarma(ImprovedRating, BaseRating); }
         }
 
         public Attribute(SR5Character owner, string name)
@@ -108,10 +104,10 @@ namespace SR5Builder.DataModels
         {
             if (e.PropertyName == "MetatypeStats")
             {
-                OnPropertyChanged(nameof(Min));
-                OnPropertyChanged(nameof(Max));
-                OnPropertyChanged(nameof(BaseRating));
-                OnPropertyChanged(nameof(AugmentedRating));
+                RaisePropertyChanged(nameof(Min));
+                RaisePropertyChanged(nameof(Max));
+                RaisePropertyChanged(nameof(BaseRating));
+                RaisePropertyChanged(nameof(AugmentedRating));
             }
         }
     }

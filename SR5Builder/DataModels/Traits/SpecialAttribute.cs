@@ -45,13 +45,13 @@ namespace SR5Builder.DataModels
                 {
                     int oldRating = mBaseRating;
                     mBaseRating = value + loss - Min;
-                    OnPropertyChanged(nameof(BaseRating));
-                    OnPropertyChanged(nameof(ImprovedRating));
-                    OnPropertyChanged(nameof(AugmentedRating));
+                    RaisePropertyChanged(nameof(BaseRating));
+                    RaisePropertyChanged(nameof(ImprovedRating));
+                    RaisePropertyChanged(nameof(AugmentedRating));
                     if (oldRating != mBaseRating)
                     {
 
-                        OnPropertyChanged(nameof(Points));
+                        RaisePropertyChanged(nameof(Points));
                     } 
                 }
             }
@@ -92,19 +92,19 @@ namespace SR5Builder.DataModels
                 }
                 if (oldRating != BaseRating)
                 {
-                    OnPropertyChanged(nameof(BaseRating));
-                    OnPropertyChanged(nameof(AugmentedRating));
+                    RaisePropertyChanged(nameof(BaseRating));
+                    RaisePropertyChanged(nameof(AugmentedRating));
                 }
                 if (loss != oldLoss)
                 {
-                    OnPropertyChanged(nameof(Max));
+                    RaisePropertyChanged(nameof(Max));
                 }
                 if (oldBase != mBaseRating)
                 {
-                    OnPropertyChanged(nameof(Points));
+                    RaisePropertyChanged(nameof(Points));
                 }
                 
-                OnPropertyChanged(nameof(Min));
+                RaisePropertyChanged(nameof(Min));
             }
         }
     }

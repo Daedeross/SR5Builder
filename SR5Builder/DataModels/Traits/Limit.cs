@@ -29,9 +29,9 @@ namespace SR5Builder.DataModels
                     if (mPrimaryAttribute != null)
                         mPrimaryAttribute.PropertyChanged += this.OnAttributeChanged;
 
-                    OnPropertyChanged(nameof(PrimaryAttribute));
-                    OnPropertyChanged(nameof(BaseRating));
-                    OnPropertyChanged(nameof(AugmentedRating));
+                    RaisePropertyChanged(nameof(PrimaryAttribute));
+                    RaisePropertyChanged(nameof(BaseRating));
+                    RaisePropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
@@ -51,9 +51,9 @@ namespace SR5Builder.DataModels
                     if (mSecondaryAttribute != null)
                         mSecondaryAttribute.PropertyChanged += this.OnAttributeChanged;
 
-                    OnPropertyChanged(nameof(SecondaryAttribute));
-                    OnPropertyChanged(nameof(BaseRating));
-                    OnPropertyChanged(nameof(AugmentedRating));
+                    RaisePropertyChanged(nameof(SecondaryAttribute));
+                    RaisePropertyChanged(nameof(BaseRating));
+                    RaisePropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
@@ -73,9 +73,9 @@ namespace SR5Builder.DataModels
                     if (mTertiaryAttribute != null)
                         mTertiaryAttribute.PropertyChanged += this.OnAttributeChanged;
 
-                    OnPropertyChanged(nameof(TertiaryAttribute));
-                    OnPropertyChanged(nameof(BaseRating));
-                    OnPropertyChanged(nameof(AugmentedRating));
+                    RaisePropertyChanged(nameof(TertiaryAttribute));
+                    RaisePropertyChanged(nameof(BaseRating));
+                    RaisePropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
@@ -107,12 +107,6 @@ namespace SR5Builder.DataModels
             }
         }
 
-        public override int Karma
-        {
-            get { return 0; }
-            set { }
-        }
-
         #endregion // Properties
 
         #region Constructors
@@ -139,22 +133,22 @@ namespace SR5Builder.DataModels
             bool changed = false;
             if (e.PropertyName.Contains("Base"))
             {
-                OnPropertyChanged(nameof(BaseRating));
+                RaisePropertyChanged(nameof(BaseRating));
                 changed = true;
             }
             else if (e.PropertyName.Contains("Improved"))
             {
-                OnPropertyChanged(nameof(ImprovedRating));
+                RaisePropertyChanged(nameof(ImprovedRating));
                 changed = true;
             }
             else if (e.PropertyName.Contains("Augmented"))
             { 
-                OnPropertyChanged(nameof(AugmentedRating));
+                RaisePropertyChanged(nameof(AugmentedRating));
                 changed = true;
             }
             if (changed)
             {
-                OnPropertyChanged(nameof(DisplayValue));
+                RaisePropertyChanged(nameof(DisplayValue));
             }
         }
 

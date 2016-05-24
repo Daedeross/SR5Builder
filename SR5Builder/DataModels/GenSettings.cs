@@ -164,7 +164,7 @@ namespace SR5Builder.DataModels
         #endregion // Flat Karma Costs
 
         /// <summary>
-        /// For Use in scaling Karma calulations (Attributes, skills, Initiation, & Submersion).
+        /// For use in quadratically scaling Karma calulations (Attributes, skills, Initiation, & Submersion).
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>

@@ -72,6 +72,8 @@
         None = 0,
         /// <summary>Augment alters the target trait's <b>Rating.</b></summary>
         Rating,
+        /// <summary>Changed the trait's innate Max</summary>
+        Max,
         /// <summary>Augment alters the target trait's <b>Damage Value.</b></summary>
         DamageValue,
         /// <summary>Augment alters the target trait's <b>Damage Type</b> (i.e. Stun ↔ Physical).</summary>

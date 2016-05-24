@@ -120,9 +120,11 @@ namespace SR5Builder.ViewModels
 
         private void AddSpellExecute()
         {
+            bool free = character.SpellList.Count < character.SpecialChoice.Spells;
+
             if (SelectedNewSpell.ExtKind == null || SelectedNewSpell.ExtKind.Length == 0)
             {
-                Spell sp = SelectedNewSpell.ToSpell(character);
+                Spell sp = SelectedNewSpell.ToSpell(character, free);
                 SpellList.Add(sp.Name, sp);
                 SelectedSpell = SpellList[sp.Name];
             }
@@ -138,7 +140,7 @@ namespace SR5Builder.ViewModels
                 System.Diagnostics.Debug.WriteLine(vm.Selection);
                 if (result == true)
                 {
-                    Spell sp = SelectedNewSpell.ToSpell(character, vm.Selection);
+                    Spell sp = SelectedNewSpell.ToSpell(character, free, vm.Selection);
                     SpellList.Add(sp.Name, sp);
                     SelectedSpell = SpellList[sp.Name];
                 }

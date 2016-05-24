@@ -8,7 +8,7 @@ using Attribute = SR5Builder.DataModels.Attribute;
 
 namespace SR5Builder.DataModels
 {
-    public class Skill: LeveledTrait
+    public class Skill: LeveledTrait, IKarmaCost
     {
         #region Comparisons
 
@@ -41,9 +41,9 @@ namespace SR5Builder.DataModels
 
                     mOwner = value;
                     //mOwner.PropertyChanged += this.OnCharacterChanged;
-                    OnPropertyChanged(nameof(Owner));
-                    OnPropertyChanged(nameof(TotalPool));
-                    OnPropertyChanged(nameof(AugmentedPool));
+                    RaisePropertyChanged(nameof(Owner));
+                    RaisePropertyChanged(nameof(TotalPool));
+                    RaisePropertyChanged(nameof(AugmentedPool));
                 }
             }
         }
@@ -75,8 +75,8 @@ namespace SR5Builder.DataModels
 
                         mLinkedAttribute.PropertyChanged += this.OnAttributeChanged;
 
-                        OnPropertyChanged(nameof(TotalPool));
-                        OnPropertyChanged(nameof(AugmentedPool));
+                        RaisePropertyChanged(nameof(TotalPool));
+                        RaisePropertyChanged(nameof(AugmentedPool));
                     }
                 }
             }
@@ -91,8 +91,8 @@ namespace SR5Builder.DataModels
             set
             {
                 base.BaseRating = value;
-                OnPropertyChanged(nameof(TotalPool));
-                OnPropertyChanged(nameof(AugmentedPool));
+                RaisePropertyChanged(nameof(TotalPool));
+                RaisePropertyChanged(nameof(AugmentedPool));
             }
         }
 
@@ -127,7 +127,7 @@ namespace SR5Builder.DataModels
                 if (value != mAccuracyBonus)
                 {
                     mAccuracyBonus = value;
-                    OnPropertyChanged(nameof(AccuracyBonus));
+                    RaisePropertyChanged(nameof(AccuracyBonus));
                 }
             }
         }
@@ -141,12 +141,12 @@ namespace SR5Builder.DataModels
                 if (value != mDamageBonus)
                 {
                     mDamageBonus = value;
-                    OnPropertyChanged(nameof(DamageBonus));
+                    RaisePropertyChanged(nameof(DamageBonus));
                 }
             }
         }
 
-        public override int Karma
+        public int Karma
         {
             get
             {
@@ -168,7 +168,6 @@ namespace SR5Builder.DataModels
                         return 0;
                 }
             }
-            set { }
         }
 
         #endregion // Properties
@@ -193,8 +192,8 @@ namespace SR5Builder.DataModels
 
         private void OnAttributeChanged(object sender, PropertyChangedEventArgs e)
         {
-            OnPropertyChanged(nameof(TotalPool));
-            OnPropertyChanged(nameof(AugmentedPool));
+            RaisePropertyChanged(nameof(TotalPool));
+            RaisePropertyChanged(nameof(AugmentedPool));
         }
 
         protected override void RecalcBonus(HashSet<string> propNames = null)

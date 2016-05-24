@@ -7,9 +7,23 @@ using System.IO;
 
 namespace SR5Builder.DataModels
 {
-    public class Spell: BaseTrait
+    public class Spell: BaseTrait, IKarmaCost
     {
         //public string Category { get; set; }
+        protected bool mFree;
+        public bool Free
+        {
+            get { return mFree; }
+            set
+            {
+                if (value != mFree)
+                {
+                    mFree = value;
+                    RaisePropertyChanged(nameof(Free));
+                    RaisePropertyChanged(nameof(Karma));
+                }
+            }
+        }
 
         public string Type { get; set; }
 
@@ -23,10 +37,9 @@ namespace SR5Builder.DataModels
 
         public string[] Tags { get; set; }
 
-        public override int Karma
+        public int Karma
         {
-            get { return 5; }
-            set { }
+            get { return Free ? 0 : mOwner.Settings.SpellKarma; }
         }
 
         public Spell()
@@ -36,17 +49,17 @@ namespace SR5Builder.DataModels
         }
 
 
-        public Spell(SR5Character c)
+        public Spell(SR5Character c, bool isFree)
             :base(c)
         {
-
+            mFree = isFree;
         }
 
         #region Public Methods
 
         public Spell Clone(SR5Character c)
         {
-            Spell newSpell = new Spell(c);
+            Spell newSpell = new Spell(c, Free);
             newSpell.Name = this.Name;
             newSpell.Type = this.Type;
             newSpell.Range = this.Range;

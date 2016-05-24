@@ -28,14 +28,14 @@ namespace SR5Builder.Loaders
         /// <param name="owner">The character to attatch to.</param>
         /// <param name="ext">The name extention</param>
         /// <returns>An instance of the spell with proper name.</returns>
-        public Spell ToSpell(SR5Character owner, string ext = "")
+        public Spell ToSpell(SR5Character owner, bool isFree, string ext = "")
         {
             if ((ExtKind != null && ExtKind.Length > 0) && (ext == null || ext.Length == 0))
             {
                 throw new ArgumentException("Spell requires an name extension.", "ext");
             }
 
-            Spell sp = new Spell(owner);
+            Spell sp = new Spell(owner, isFree);
             if (ExtKind != null && ExtKind.Length > 0)
             {
                 sp.Name = String.Format(Name, ext);
