@@ -11,7 +11,7 @@ using DrWPF.Windows.Data;
 
 using SR5Builder.Helpers;
 using SR5Builder.Dialogs;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 
 namespace SR5Builder.ViewModels
 {
@@ -39,16 +39,16 @@ namespace SR5Builder.ViewModels
                 if (mSelectedCategory != value)
                 {
                     mSelectedCategory = value;
-                    AvailableSpells = new ObservableCollection<SpellLoader>(GlobalData.PreLoadedSpells[mSelectedCategory]);
+                    AvailableSpells = new ObservableCollection<SpellPrototype>(GlobalData.PreLoadedSpells[mSelectedCategory]);
                     OnPropertyChanged(nameof(AvailableSpells));
                     OnPropertyChanged(nameof(SelectedCategory));
                 }
             }
         }
         
-        public ObservableCollection<SpellLoader> AvailableSpells { get; set; }
+        public ObservableCollection<SpellPrototype> AvailableSpells { get; set; }
 
-        public SpellLoader SelectedNewSpell { get; set; }
+        public SpellPrototype SelectedNewSpell { get; set; }
 
         public ObservableDictionary<string, Spell> SpellList
         {
@@ -65,9 +65,9 @@ namespace SR5Builder.ViewModels
 
             #region Powers
 
-        public ObservableCollection<AdeptPowerLoader> AvailablePowers { get; set; }
+        public ObservableCollection<AdeptPowerPrototype> AvailablePowers { get; set; }
 
-        public AdeptPowerLoader SelectedNewPower { get; set; }
+        public AdeptPowerPrototype SelectedNewPower { get; set; }
 
         public ObservableDictionary<string, AdeptPower> PowerList
         {
@@ -94,7 +94,7 @@ namespace SR5Builder.ViewModels
         {
             character = c;
             SpellCategories = GlobalData.PreLoadedSpells.Keys.ToList();
-            AvailablePowers = new ObservableCollection<AdeptPowerLoader>(GlobalData.PreLoadedPowers);
+            AvailablePowers = new ObservableCollection<AdeptPowerPrototype>(GlobalData.PreLoadedPowers);
             character.PropertyChanged += this.BubblePropertyChanged;
         } 
 

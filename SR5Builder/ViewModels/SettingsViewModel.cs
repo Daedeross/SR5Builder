@@ -1,5 +1,5 @@
 ﻿using DrWPF.Windows.Data;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -45,7 +45,7 @@ namespace SR5Builder.ViewModels
 
     public class SettingsViewModel: ViewModelBase
     {
-        public ObservableDictionary<string, SettingsLoader> SavedSettings{ get; set; }
+        public ObservableDictionary<string, SettingsPrototype> SavedSettings{ get; set; }
 
         private string mSelectedSettings;
         public string SelectedSettings
@@ -66,7 +66,7 @@ namespace SR5Builder.ViewModels
 
         public SettingsViewModel()
         {
-            SavedSettings = new ObservableDictionary<string, SettingsLoader>(GlobalData.GenSettingsList);
+            SavedSettings = new ObservableDictionary<string, SettingsPrototype>(GlobalData.GenSettingsList);
             mSelectedSettings = GlobalData.GenSettingsList.First().Key;
             OnSelectionChanged();
         }

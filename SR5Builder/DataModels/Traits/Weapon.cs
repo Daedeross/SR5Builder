@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 
 namespace SR5Builder.DataModels
 {
@@ -172,7 +172,7 @@ namespace SR5Builder.DataModels
             mOwner.Agility.PropertyChanged += this.OnSkillChanged;
         }
 
-        public Weapon(SR5Character owner, WeaponLoader loader)
+        public Weapon(SR5Character owner, WeaponPrototype loader)
             :base(owner)
         {
             mOwner.Agility.PropertyChanged += this.OnSkillChanged;
@@ -243,7 +243,7 @@ namespace SR5Builder.DataModels
 
         #region Public Methods
 
-        public virtual void CopyFromLoader(WeaponLoader loader)
+        public virtual void CopyFromLoader(WeaponPrototype loader)
         {
             base.CopyFromLoader(loader);
 

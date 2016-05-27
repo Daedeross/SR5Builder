@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Input;
 using DrWPF.Windows.Data;
 using SR5Builder.DataModels;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 
 namespace SR5Builder.ViewModels
 {
@@ -33,12 +33,12 @@ namespace SR5Builder.ViewModels
             {
                 if (value != mSelectedGearCategory)
                 {
-                    Dictionary<string, GearLoader> dict;
+                    Dictionary<string, GearPrototype> dict;
 
                     if (GlobalData.Gear.TryGetValue(value, out dict))
                     {
                         mSelectedGearCategory = value;
-                        AvailableGear = new ObservableDictionary<string, GearLoader>(dict);
+                        AvailableGear = new ObservableDictionary<string, GearPrototype>(dict);
                     }
                     OnPropertyChanged(nameof(SelectedGearCategory));
                     OnPropertyChanged(nameof(AvailableGear));
@@ -46,9 +46,9 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public ObservableDictionary<string, GearLoader> AvailableGear { get; set; }
+        public ObservableDictionary<string, GearPrototype> AvailableGear { get; set; }
 
-        public GearLoader SelectedNewGear { get; set; }
+        public GearPrototype SelectedNewGear { get; set; }
 
         public ObservableDictionary<string, Gear> GearList
         {
@@ -72,12 +72,12 @@ namespace SR5Builder.ViewModels
             {
                 if (value != mSelectedImplantCategory)
                 {
-                    Dictionary<string, ImplantLoader> dict;
+                    Dictionary<string, ImplantPrototype> dict;
 
                     if (GlobalData.Implants.TryGetValue(value, out dict))
                     {
                         mSelectedImplantCategory = value;
-                        AvailableImplants = new ObservableDictionary<string, ImplantLoader>(dict);
+                        AvailableImplants = new ObservableDictionary<string, ImplantPrototype>(dict);
                     }
                     OnPropertyChanged(nameof(SelectedImplantCategory));
                     OnPropertyChanged(nameof(AvailableImplants));
@@ -85,9 +85,9 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public ObservableDictionary<string, ImplantLoader> AvailableImplants { get; set; }
+        public ObservableDictionary<string, ImplantPrototype> AvailableImplants { get; set; }
 
-        public ImplantLoader SelectedNewImplant { get; set; }
+        public ImplantPrototype SelectedNewImplant { get; set; }
 
         public ObservableDictionary<string, Implant> ImplantList
         {
@@ -167,9 +167,9 @@ namespace SR5Builder.ViewModels
         private void Initialize()
         {
             GearCategories = new ObservableCollection<string>(GlobalData.Gear.Keys);
-            AvailableGear = new ObservableDictionary<string, GearLoader>();
+            AvailableGear = new ObservableDictionary<string, GearPrototype>();
             ImplantCategories = new ObservableCollection<string>(GlobalData.Implants.Keys);
-            AvailableImplants = new ObservableDictionary<string, ImplantLoader>();
+            AvailableImplants = new ObservableDictionary<string, ImplantPrototype>();
             Editing = false;
         }
 

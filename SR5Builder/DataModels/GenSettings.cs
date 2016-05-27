@@ -1,4 +1,4 @@
-﻿using SR5Builder.Loaders;
+﻿using SR5Builder.Prototypes;
 using System;
 using System.IO;
 using System.Xml.Serialization;

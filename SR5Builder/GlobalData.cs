@@ -7,7 +7,7 @@ using SR5Builder.DataModels;
 using System.IO;
 using System.Xml.Serialization;
 using SR5Builder.Helpers;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 using System.Globalization;
 
 namespace SR5Builder
@@ -18,7 +18,7 @@ namespace SR5Builder
 
             #region General Settings
 
-        public static Dictionary<string, SettingsLoader> GenSettingsList { get; set; }
+        public static Dictionary<string, SettingsPrototype> GenSettingsList { get; set; }
 
             #endregion // General Settings
 
@@ -34,29 +34,29 @@ namespace SR5Builder
 
             #region Skills
 
-        public static Dictionary<string, List<SkillLoader>> PreLoadedSkills { get; private set; }
+        public static Dictionary<string, List<SkillPrototype>> PreLoadedSkills { get; private set; }
 
-        public static List<SkillGroupLoader> PreLoadedSkillGroups { get; private set; }
+        public static List<SkillGroupPrototype> PreLoadedSkillGroups { get; private set; }
 
             #endregion // Skills
 
             #region Magic
 
-        public static Dictionary<string, List<SpellLoader>> PreLoadedSpells { get; private set; }
+        public static Dictionary<string, List<SpellPrototype>> PreLoadedSpells { get; private set; }
 
-        public static List<AdeptPowerLoader> PreLoadedPowers { get; private set; }
+        public static List<AdeptPowerPrototype> PreLoadedPowers { get; private set; }
 
             #endregion // Magic
 
             #region Gear
 
-        public static Dictionary<string, GearModLoader> GearMods { get; set; }
+        public static Dictionary<string, GearModPrototype> GearMods { get; set; }
 
-        public static Dictionary<string, Dictionary<string, GearModLoader>> GearModCategories { get; set; }
+        public static Dictionary<string, Dictionary<string, GearModPrototype>> GearModCategories { get; set; }
 
-        public static Dictionary<string, Dictionary<string, GearLoader>> Gear { get; set; }
+        public static Dictionary<string, Dictionary<string, GearPrototype>> Gear { get; set; }
 
-        public static Dictionary<string, Dictionary<string, ImplantLoader>> Implants { get; set; }
+        public static Dictionary<string, Dictionary<string, ImplantPrototype>> Implants { get; set; }
 
             #endregion // Gear
 
@@ -83,7 +83,7 @@ namespace SR5Builder
             LoadSpells();
 
             // Load Adept Powers
-            PreLoadedPowers = AdeptPowerLoader.LoadFromFile("Resources\\AdeptPowers.xml");
+            PreLoadedPowers = AdeptPowerPrototype.LoadFromFile("Resources\\AdeptPowers.xml");
 
             // Load Normal Gear (non-cyber/bio-ware)
             LoadGear();
@@ -112,12 +112,12 @@ namespace SR5Builder
             DirectoryInfo info = new DirectoryInfo(".\\Resources\\GenSettings");
             FileInfo[] files = info.GetFiles("*.xml");
 
-            GenSettingsList = new Dictionary<string, SettingsLoader>(files.Length);
+            GenSettingsList = new Dictionary<string, SettingsPrototype>(files.Length);
 
             foreach (FileInfo file in files)
             {
                 string name = Path.GetFileNameWithoutExtension(file.Name).Replace("Settings","");
-                SettingsLoader sl = SettingsLoader.LoadFromFile(file.FullName);
+                SettingsPrototype sl = SettingsPrototype.LoadFromFile(file.FullName);
                 GenSettingsList.Add(name, sl);
             }
         }
@@ -172,10 +172,10 @@ namespace SR5Builder
         {
             DirectoryInfo info = new DirectoryInfo(".\\Resources\\Skills");
             FileInfo[] files = info.GetFiles("*.xml");
-            XmlSerializer ser = new XmlSerializer(typeof(List<SkillLoader>));
+            XmlSerializer ser = new XmlSerializer(typeof(List<SkillPrototype>));
             StreamReader reader;
 
-            PreLoadedSkills = new Dictionary<string, List<SkillLoader>>();
+            PreLoadedSkills = new Dictionary<string, List<SkillPrototype>>();
 
             // creata a key from each file and load the list of skills from that file
             foreach (FileInfo file in files)
@@ -184,12 +184,12 @@ namespace SR5Builder
                 name = name.Replace("Skills", "");                          // remove 'Skills' suffix
                 reader = new StreamReader(file.FullName);
 
-                PreLoadedSkills.Add(name, (List<SkillLoader>)ser.Deserialize(reader));
+                PreLoadedSkills.Add(name, (List<SkillPrototype>)ser.Deserialize(reader));
             }
 
             // create 'All' category
-            List<SkillLoader> allSkills = new List<SkillLoader>();
-            foreach (List<SkillLoader> item in GlobalData.PreLoadedSkills.Values)
+            List<SkillPrototype> allSkills = new List<SkillPrototype>();
+            foreach (List<SkillPrototype> item in GlobalData.PreLoadedSkills.Values)
             {
                 allSkills = allSkills.Concat(item).ToList();
             }
@@ -204,23 +204,23 @@ namespace SR5Builder
 
         private static void MakeSkillGroups()
         {
-            PreLoadedSkillGroups = new List<SkillGroupLoader>();
+            PreLoadedSkillGroups = new List<SkillGroupPrototype>();
 
-            foreach (SkillLoader skill in PreLoadedSkills["All"])
+            foreach (SkillPrototype skill in PreLoadedSkills["All"])
             {
                 if (skill.GroupName != "None" && skill.GroupName != "")
                 {
                     if (!(from g in PreLoadedSkillGroups
                           select g.Name).Contains(skill.GroupName))
                     {
-                        SkillGroupLoader pg = new SkillGroupLoader();
+                        SkillGroupPrototype pg = new SkillGroupPrototype();
                         pg.Name = skill.GroupName;
                         pg.SkillNames.Add(skill.Name);
                         PreLoadedSkillGroups.Add(pg);
                     }
                     else
                     {
-                        SkillGroupLoader pg = (from g in PreLoadedSkillGroups
+                        SkillGroupPrototype pg = (from g in PreLoadedSkillGroups
                                                   where g.Name == skill.GroupName
                                                   select g).Single();
                         pg.SkillNames.Add(skill.Name);
@@ -240,18 +240,18 @@ namespace SR5Builder
             DirectoryInfo info = new DirectoryInfo(".\\Resources\\Spells");
             FileInfo[] files = info.GetFiles("*.xml");
 
-            PreLoadedSpells = new Dictionary<string, List<SpellLoader>>();
+            PreLoadedSpells = new Dictionary<string, List<SpellPrototype>>();
 
             foreach (FileInfo file in files)
             {
                 string name = Path.GetFileNameWithoutExtension(file.Name);
                 name = name.Replace("Spells", "");
-                PreLoadedSpells.Add(name, SpellLoader.LoadFromFile(file.FullName));
+                PreLoadedSpells.Add(name, SpellPrototype.LoadFromFile(file.FullName));
             }
 
             // Create "All" category
-            List<SpellLoader> allSpells = new List<SpellLoader>();
-            foreach (List<SpellLoader> item in PreLoadedSpells.Values)
+            List<SpellPrototype> allSpells = new List<SpellPrototype>();
+            foreach (List<SpellPrototype> item in PreLoadedSpells.Values)
             {
                 allSpells = allSpells.Concat(item).ToList();
             }
@@ -261,11 +261,11 @@ namespace SR5Builder
 
         private static void LoadGear()
         {
-            List<GearLoader> list;
+            List<GearPrototype> list;
 
             // find all .xml files in req. directory
             // Each file is a category w/ key = filename (w/o extention)
-            XmlSerializer ser = new XmlSerializer(typeof(List<GearLoader>));
+            XmlSerializer ser = new XmlSerializer(typeof(List<GearPrototype>));
             
 
                 // Misc Gear
@@ -281,9 +281,9 @@ namespace SR5Builder
 
 
                 // Initialize Dictionary
-            Gear = new Dictionary<string, Dictionary<string, GearLoader>>(files.Length+1);
+            Gear = new Dictionary<string, Dictionary<string, GearPrototype>>(files.Length+1);
 
-            Gear.Add("All", new Dictionary<string, GearLoader>());
+            Gear.Add("All", new Dictionary<string, GearPrototype>());
 
             foreach (FileInfo file in files)
             {
@@ -291,7 +291,7 @@ namespace SR5Builder
                 {
                     try
                     {
-                        list = (List<GearLoader>)ser.Deserialize(reader);
+                        list = (List<GearPrototype>)ser.Deserialize(reader);
                         System.Diagnostics.Debug.WriteLine("Succesfully loaded file: {0}", (object)file.Name);
                     }
                     catch (InvalidOperationException e) // catch parse errors
@@ -304,9 +304,9 @@ namespace SR5Builder
                 }
 
                 string name = Path.GetFileNameWithoutExtension(file.Name);
-                Gear.Add(name, new Dictionary<string, GearLoader>(list.Count));
+                Gear.Add(name, new Dictionary<string, GearPrototype>(list.Count));
 
-                foreach (GearLoader loader in list)
+                foreach (GearPrototype loader in list)
                 {
                     loader.Category = name;
                     Gear[name].Add(loader.Name, loader);
@@ -317,28 +317,28 @@ namespace SR5Builder
         
         private static void LoadImplants()
         {
-            List<ImplantLoader> list;
-            XmlSerializer ser = new XmlSerializer(typeof(List<ImplantLoader>));
+            List<ImplantPrototype> list;
+            XmlSerializer ser = new XmlSerializer(typeof(List<ImplantPrototype>));
             StreamReader reader;
 
             DirectoryInfo info = new DirectoryInfo(".\\Resources\\Gear\\Implants");
 
             FileInfo[] files = info.GetFiles("*.xml");
 
-            Implants = new Dictionary<string, Dictionary<string, ImplantLoader>>(files.Length + 1);
+            Implants = new Dictionary<string, Dictionary<string, ImplantPrototype>>(files.Length + 1);
 
-            Implants.Add("All", new Dictionary<string, ImplantLoader>());
+            Implants.Add("All", new Dictionary<string, ImplantPrototype>());
 
             foreach (FileInfo file in files)
             {
                 reader = new StreamReader(file.FullName);
-                list = (List<ImplantLoader>)ser.Deserialize(reader);
+                list = (List<ImplantPrototype>)ser.Deserialize(reader);
                 reader.Close();
 
                 string name = Path.GetFileNameWithoutExtension(file.Name);
-                Implants.Add(name, new Dictionary<string, ImplantLoader>(list.Count));
+                Implants.Add(name, new Dictionary<string, ImplantPrototype>(list.Count));
 
-                foreach (ImplantLoader loader in list)
+                foreach (ImplantPrototype loader in list)
                 {
                     Implants[name].Add(loader.Name, loader);
                     Implants["All"].Add(loader.Name, loader);
@@ -352,19 +352,19 @@ namespace SR5Builder
 
             FileInfo[] files = info.GetFiles("*.xml");
 
-            XmlSerializer ser = new XmlSerializer(typeof(List<GearModLoader>));
+            XmlSerializer ser = new XmlSerializer(typeof(List<GearModPrototype>));
             
-            GearMods = new Dictionary<string, GearModLoader>();
-            GearModCategories = new Dictionary<string, Dictionary<string, GearModLoader>>();
+            GearMods = new Dictionary<string, GearModPrototype>();
+            GearModCategories = new Dictionary<string, Dictionary<string, GearModPrototype>>();
 
             foreach (FileInfo file in files)
             {
                 using (StreamReader reader = new StreamReader(file.FullName))
                 {
-                    List<GearModLoader> list = (List<GearModLoader>)ser.Deserialize(reader);
+                    List<GearModPrototype> list = (List<GearModPrototype>)ser.Deserialize(reader);
                     string cat = Path.GetFileNameWithoutExtension(file.Name);
 
-                    foreach (GearModLoader loader in list)
+                    foreach (GearModPrototype loader in list)
                     {
                         loader.Category = cat;
                         loader.SubCategory = loader.SubCategory ?? "None";
@@ -375,7 +375,7 @@ namespace SR5Builder
                         }
                         else
                         {
-                            GearModCategories.Add(cat, new Dictionary<string, GearModLoader>());
+                            GearModCategories.Add(cat, new Dictionary<string, GearModPrototype>());
                             GearModCategories[cat].Add(loader.Name, loader);
                         }
 
@@ -385,7 +385,7 @@ namespace SR5Builder
                         }
                         else
                         {
-                            GearModCategories.Add(loader.SubCategory, new Dictionary<string, GearModLoader>());
+                            GearModCategories.Add(loader.SubCategory, new Dictionary<string, GearModPrototype>());
                             GearModCategories[loader.SubCategory].Add(loader.Name, loader);
                         }
                     }

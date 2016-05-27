@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Collections.Specialized;
 using System.Xml.Serialization;
 
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 
 using DrWPF.Windows.Data;
 
@@ -113,7 +113,7 @@ namespace SR5Builder.DataModels
 
         #region Constructors
 
-        public Augment(IAugmentContainer owner, AugmentLoader loader)
+        public Augment(IAugmentContainer owner, AugmentPrototype loader)
         {
             OwnerTrait = owner;
             targetName = loader.Target;
@@ -125,7 +125,7 @@ namespace SR5Builder.DataModels
             SetTarget(targetName);
         }
 
-        public Augment(IAugmentContainer owner, AugmentLoader loader, string targetName)
+        public Augment(IAugmentContainer owner, AugmentPrototype loader, string targetName)
         {
             OwnerTrait = owner;
             this.targetName = targetName;

@@ -1,4 +1,4 @@
-﻿using SR5Builder.Loaders;
+﻿using SR5Builder.Prototypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,7 +94,7 @@ namespace SR5Builder.DataModels
             owner.Strength.PropertyChanged += OnStrengthChanged;
         }
 
-        public MeleeWeapon(SR5Character owner, MeleeWeaponLoader loader)
+        public MeleeWeapon(SR5Character owner, MeleeWeaponPrototype loader)
             :base(owner)
         {
             owner.Strength.PropertyChanged += OnStrengthChanged;
@@ -119,7 +119,7 @@ namespace SR5Builder.DataModels
 
         #region Public Methods
 
-        public virtual void CopyFromLoader(MeleeWeaponLoader loader)
+        public virtual void CopyFromLoader(MeleeWeaponPrototype loader)
         {
             base.CopyFromLoader(loader);
 

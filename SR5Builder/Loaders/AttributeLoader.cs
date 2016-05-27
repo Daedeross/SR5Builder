@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SR5Builder.Loaders
 {
-    public class AttributeLoader
+    public class AttributePrototype
     {
         public string Name { get; set; }
         public int BaseImp { get; set; }

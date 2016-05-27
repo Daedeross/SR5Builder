@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SR5Builder.DataModels;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 using DrWPF.Windows.Data;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
@@ -53,13 +53,13 @@ namespace SR5Builder.ViewModels
             get { return Cost.ToString("C", GlobalData.CostFormat); }
         }
 
-        public ObservableCollection<GearModLoader> AvailableMods { get; set; }
+        public ObservableCollection<GearModPrototype> AvailableMods { get; set; }
 
-        public ObservableDictionary<string, GearModLoader> ModList { get; set; }
+        public ObservableDictionary<string, GearModPrototype> ModList { get; set; }
 
-        public GearModLoader SelectedNewMod { get; set; }
+        public GearModPrototype SelectedNewMod { get; set; }
 
-        public GearModLoader SelectedMod { get; set; }
+        public GearModPrototype SelectedMod { get; set; }
 
         #endregion // Properties
 
@@ -216,10 +216,10 @@ namespace SR5Builder.ViewModels
         private void CreateModList()
         {
             // add existing mods to tmp collection and add tabooCheck
-            ModList = new ObservableDictionary<string, GearModLoader>();
+            ModList = new ObservableDictionary<string, GearModPrototype>();
             foreach (var modName in gear.Mods.Keys)
             {
-                GearModLoader l = GlobalData.GearMods[modName];
+                GearModPrototype l = GlobalData.GearMods[modName];
                 tabooCheck.Add(modName);
                 tabooCheck.Add(l.Category);
                 tabooCheck.Add(l.SubCategory);
@@ -227,13 +227,13 @@ namespace SR5Builder.ViewModels
             }
 
             // add available mods
-            AvailableMods = new ObservableCollection<GearModLoader>();
+            AvailableMods = new ObservableCollection<GearModPrototype>();
             // add specific allowed mods
             foreach(string key in gear.AvailableMods)
             {
                 if (!ModList.ContainsKey(key))
                 {
-                    GearModLoader gml;
+                    GearModPrototype gml;
                     if (GlobalData.GearMods.TryGetValue(key, out gml))
                     {
                         AvailableMods.Add(gml);
@@ -245,7 +245,7 @@ namespace SR5Builder.ViewModels
             // add mods by sub-category
             foreach (string cat in gear.ModCategories)
             {
-                Dictionary<string, GearModLoader> modCat;
+                Dictionary<string, GearModPrototype> modCat;
                 if (GlobalData.GearModCategories.TryGetValue(cat, out modCat))
                 {
                     foreach (var key in modCat.Keys)

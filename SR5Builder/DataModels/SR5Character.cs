@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using DrWPF.Windows.Data;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 
 namespace SR5Builder.DataModels
 {
@@ -585,20 +585,20 @@ namespace SR5Builder.DataModels
             Initialize(GlobalData.GenSettingsList["Default"]);
         }
 
-        public SR5Character(SettingsLoader settings)
+        public SR5Character(SettingsPrototype settings)
         {
             Initialize(settings);
         }
 
         public SR5Character(IQueryable<ViewModels.Setting> settings)
         {
-            SettingsLoader loader = new SettingsLoader();
+            SettingsPrototype loader = new SettingsPrototype();
             loader.Properties = (from set in settings
                                  select set).ToDictionary(s => s.Key, s => s.Value);
             Initialize(loader);
         }
 
-        private void Initialize(SettingsLoader settings)
+        private void Initialize(SettingsPrototype settings)
         {
             Settings = new GenSettings(settings.Properties);
 

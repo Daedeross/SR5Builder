@@ -1,4 +1,4 @@
-﻿using SR5Builder.Loaders;
+﻿using SR5Builder.Prototypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,13 +73,13 @@ namespace SR5Builder.DataModels
             //FireModes = new FireMode[0];
         }
 
-        public RangedWeapon(SR5Character owner, RangedWeaponLoader loader)
+        public RangedWeapon(SR5Character owner, RangedWeaponPrototype loader)
             : base(owner)
         {
             CopyFromLoader(loader);
         }
 
-        public virtual void CopyFromLoader(RangedWeaponLoader loader)
+        public virtual void CopyFromLoader(RangedWeaponPrototype loader)
         {
             base.CopyFromLoader(loader);
 

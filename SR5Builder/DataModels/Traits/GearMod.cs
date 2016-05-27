@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 using System.Collections.ObjectModel;
 
 namespace SR5Builder.DataModels
@@ -104,7 +104,7 @@ namespace SR5Builder.DataModels
             GivenAugments = new ObservableCollection<Augment>();
         }
 
-        public GearMod(Gear gearPiece, GearModLoader loader)
+        public GearMod(Gear gearPiece, GearModPrototype loader)
             : base(gearPiece.Owner)
         {
             Name = loader.Name;
@@ -121,10 +121,10 @@ namespace SR5Builder.DataModels
             CreateAugments(loader);
         }
 
-        private void CreateAugments(GearModLoader loader)
+        private void CreateAugments(GearModPrototype loader)
         {
             GivenAugments = new ObservableCollection<Augment>();
-            foreach (AugmentLoader a in loader.Augments)
+            foreach (AugmentPrototype a in loader.Augments)
             {
                 GivenAugments.Add(a.ToAugment(this));
             }

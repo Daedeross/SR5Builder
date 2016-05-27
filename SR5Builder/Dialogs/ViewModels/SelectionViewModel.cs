@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SR5Builder.DataModels;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
@@ -84,7 +84,7 @@ namespace SR5Builder.ViewModels
             SelectionList.CollectionChanged += this.OnCollectionChanged;
         }
 
-        public static SelectionViewModel CreateSelection(SR5Character character, TraitExtLoader loader)
+        public static SelectionViewModel CreateSelection(SR5Character character, TraitExtPrototype loader)
         {
             SelectionViewModel vm;
             string message = "";

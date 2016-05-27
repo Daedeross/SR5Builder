@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using DrWPF.Windows.Data;
 using System.Collections.Specialized;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 
 namespace SR5Builder.DataModels
 {
@@ -194,7 +194,7 @@ namespace SR5Builder.DataModels
             Notes = "";
         }
 
-        public Gear(SR5Character owner, GearLoader loader)
+        public Gear(SR5Character owner, GearPrototype loader)
             : base(owner)
         {
             Initialize();
@@ -249,7 +249,7 @@ namespace SR5Builder.DataModels
             {
                 foreach (string name in modNames)
                 {
-                    GearModLoader l;
+                    GearModPrototype l;
                     if (GlobalData.GearMods.TryGetValue(name, out l))
                     {
                         BaseMods.Add(name, l.ToMod(this));
@@ -305,7 +305,7 @@ namespace SR5Builder.DataModels
         {
             if (!BaseMods.ContainsKey(modName) && !Mods.ContainsKey(modName))
             {
-                GearModLoader l;
+                GearModPrototype l;
                 if (GlobalData.GearMods.TryGetValue(modName, out l))
                 {
                     Mods.Add(modName, l.ToMod(this));
@@ -314,7 +314,7 @@ namespace SR5Builder.DataModels
             return false;
         }
 
-        public virtual void CopyFromLoader(GearLoader loader)
+        public virtual void CopyFromLoader(GearPrototype loader)
         {
             mName = loader.Name;
             Book = loader.Book;

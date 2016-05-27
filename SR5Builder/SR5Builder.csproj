@@ -57,6 +57,9 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExpressionEvaluator">
+      <HintPath>lib\ExpressionEvaluator.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -109,6 +112,7 @@
     <Compile Include="DataModels\Traits\LeveledTrait.cs" />
     <Compile Include="DataModels\Traits\Limit.cs" />
     <Compile Include="DataModels\Traits\PowerPoints.cs" />
+    <Compile Include="DataModels\Traits\Quality.cs" />
     <Compile Include="DataModels\Traits\RangedWeapon.cs" />
     <Compile Include="DataModels\Traits\Skill.cs" />
     <Compile Include="DataModels\Traits\SkillGroup.cs" />
@@ -130,15 +134,16 @@
     <Compile Include="Helpers\SettingCellSelector.cs" />
     <Compile Include="Loaders\AttributeLoader.cs" />
     <Compile Include="Loaders\CharacterLoader.cs" />
-    <Compile Include="Loaders\GearLoader.cs" />
-    <Compile Include="Loaders\GearModLoader.cs" />
-    <Compile Include="Loaders\ImplantLoader.cs" />
-    <Compile Include="Loaders\MeleeWeaponLoader.cs" />
-    <Compile Include="Loaders\RangedWeaponLoader.cs" />
-    <Compile Include="Loaders\SettingsLoader.cs" />
-    <Compile Include="Loaders\SpellLoader.cs" />
-    <Compile Include="Loaders\TraitExtLoader.cs" />
-    <Compile Include="Loaders\TraitLoader.cs" />
+    <Compile Include="Prototypes\GearPrototype.cs" />
+    <Compile Include="Prototypes\GearModPrototype.cs" />
+    <Compile Include="Prototypes\ImplantPrototype.cs" />
+    <Compile Include="Prototypes\MeleeWeaponPrototype.cs" />
+    <Compile Include="Prototypes\QualityPrototype.cs" />
+    <Compile Include="Prototypes\RangedWeaponPrototype.cs" />
+    <Compile Include="Prototypes\SettingsPrototype.cs" />
+    <Compile Include="Prototypes\SpellPrototype.cs" />
+    <Compile Include="Prototypes\TraitExtPrototype.cs" />
+    <Compile Include="Prototypes\TraitPrototype.cs" />
     <Compile Include="DataModels\Traits\MeleeWeapon.cs" />
     <Compile Include="DataModels\Traits\Weapon.cs" />
     <Compile Include="Dialogs\SelectionDialog.xaml.cs">
@@ -150,8 +155,8 @@
     </Compile>
     <Compile Include="Dialogs\ViewModels\SelectionViewModel.cs" />
     <Compile Include="Dialogs\ViewModels\SkillAddViewModel.cs" />
-    <Compile Include="Loaders\AdeptPowerLoader.cs" />
-    <Compile Include="Loaders\AugmentLoader.cs" />
+    <Compile Include="Prototypes\AdeptPowerPrototype.cs" />
+    <Compile Include="Prototypes\AugmentPrototype.cs" />
     <Compile Include="Helpers\BlankClass.cs" />
     <Compile Include="Converters\BookPageConverter.cs" />
     <Compile Include="Helpers\Commands.cs" />
@@ -166,11 +171,11 @@
     <Compile Include="Helpers\ObservableDictionary.cs" />
     <Compile Include="Helpers\ObservableSortedDictionary.cs" />
     <Compile Include="Helpers\ObservableStyleDictionary.cs" />
-    <Compile Include="Loaders\SkillLoader.cs" />
-    <Compile Include="Loaders\SkillGroupLoader.cs" />
+    <Compile Include="Prototypes\SkillPrototype.cs" />
+    <Compile Include="Prototypes\SkillGroupPrototype.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Helpers\SerializableDictionary.cs" />
-    <Compile Include="Loaders\WeaponLoader.cs" />
+    <Compile Include="Prototypes\WeaponPrototype.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="ViewModels\CharacterViewModel.cs" />
     <Compile Include="ViewModels\GearEditViewModel.cs" />
@@ -418,7 +423,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Loaders\CharacterTraits\" />
     <Folder Include="Resources\Icons\" />
     <Folder Include="Resources\Priorities\" />
   </ItemGroup>

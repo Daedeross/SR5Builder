@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Diagnostics;
 using SR5Builder.Dialogs;
 using DrWPF.Windows.Data;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 
 namespace SR5Builder.ViewModels
 {
@@ -57,9 +57,9 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public ObservableCollection<SkillLoader> AvailableSkills { get; private set; }
+        public ObservableCollection<SkillPrototype> AvailableSkills { get; private set; }
 
-        public SkillLoader SelectedNewSkill { get; set; }
+        public SkillPrototype SelectedNewSkill { get; set; }
 
         public ObservableDictionary<string, Skill> SkillsList
         {
@@ -69,9 +69,9 @@ namespace SR5Builder.ViewModels
 
         public Skill SelectedSkill { get; set; }
 
-        public ObservableCollection<SkillGroupLoader> AvailableSkillGroups { get; private set; }
+        public ObservableCollection<SkillGroupPrototype> AvailableSkillGroups { get; private set; }
 
-        public SkillGroupLoader SelectedNewSkillGroup { get; set; }
+        public SkillGroupPrototype SelectedNewSkillGroup { get; set; }
 
         public ObservableDictionary<string, SkillGroup> SkillGroupsList
         {
@@ -118,7 +118,7 @@ namespace SR5Builder.ViewModels
         {
             character = c;
             c.PropertyChanged += this.OnCharacterChanged;
-            AvailableSkills = new ObservableCollection<SkillLoader>();
+            AvailableSkills = new ObservableCollection<SkillPrototype>();
             CreateAvailableGroups();
         }
 
@@ -451,7 +451,7 @@ namespace SR5Builder.ViewModels
                 AvailableSkills.Clear();
             else if (mSelectedCategory == "All")
             {
-                List<SkillLoader> tmpList = new List<SkillLoader>();
+                List<SkillPrototype> tmpList = new List<SkillPrototype>();
                 foreach (string cat in CategoryList)
                 {
                     if (cat != "All")
@@ -459,17 +459,17 @@ namespace SR5Builder.ViewModels
                         tmpList = tmpList.Concat(GlobalData.PreLoadedSkills[cat]).ToList();
                     }
                 }
-                AvailableSkills = new ObservableCollection<SkillLoader>(tmpList);
+                AvailableSkills = new ObservableCollection<SkillPrototype>(tmpList);
             }
             else
-                AvailableSkills = new ObservableCollection<SkillLoader>(
+                AvailableSkills = new ObservableCollection<SkillPrototype>(
                     GlobalData.PreLoadedSkills[SelectedCategory]);
             OnPropertyChanged(nameof(AvailableSkills));
         }
 
         private void CreateAvailableGroups()
         {
-            List<SkillGroupLoader> list = GlobalData.PreLoadedSkillGroups;
+            List<SkillGroupPrototype> list = GlobalData.PreLoadedSkillGroups;
             if (character.SpecialKind != SpecialKind.Magic)
             {
                 list = (from sg in list
@@ -482,7 +482,7 @@ namespace SR5Builder.ViewModels
                         where sg.Name != "Tasking"
                         select sg).ToList();
             }
-            AvailableSkillGroups = new ObservableCollection<SkillGroupLoader>(list);
+            AvailableSkillGroups = new ObservableCollection<SkillGroupPrototype>(list);
             OnPropertyChanged(nameof(AvailableSkillGroups));
         }
 

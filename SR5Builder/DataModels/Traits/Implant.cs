@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes;
 
 namespace SR5Builder.DataModels
 {
@@ -21,7 +21,7 @@ namespace SR5Builder.DataModels
 
         #region Constructors
 
-        public Implant(SR5Character owner, ImplantLoader loader)
+        public Implant(SR5Character owner, ImplantPrototype loader)
             :base (owner, loader)
         {
 
