@@ -8,20 +8,6 @@ namespace SR5Builder.ViewModels
 {
     public class QualitiesViewModel: ViewModelBase
     {
-        private int mBob;
-
-        public int Bob
-        {
-            get { return mBob; }
-            set
-            {
-                if (mBob != value)
-                {
-                    mBob = value;
-                    RaisePropertyChanged(nameof(Bob);
-                }
-            }
-        }
 
     }
 }
