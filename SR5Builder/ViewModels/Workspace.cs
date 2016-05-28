@@ -30,7 +30,7 @@ namespace SR5Builder.ViewModels
                 if (value != mSelectedCharacter)
                 {
                     mSelectedCharacter = value;
-                    OnPropertyChanged(nameof(SelectedCharacter));
+                    RaisePropertyChanged(nameof(SelectedCharacter));
                 }
             }
         }

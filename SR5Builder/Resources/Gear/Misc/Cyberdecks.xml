@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearLoader>
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype>
     <Name>Erika MCD-1</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -12,8 +12,8 @@
     <Capacity>0</Capacity>
     <Notes>Attribute Array [4 3 2 1]</Notes>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Microdeck Summit</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -25,8 +25,8 @@
     <Capacity>0</Capacity>
     <Notes>Attribute Array [4 3 3 1]</Notes>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Microtrónica Azteca 200</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -38,8 +38,8 @@
     <Capacity>0</Capacity>
     <Notes>Attribute Array [5 4 3 2]</Notes>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Hermes Chariot</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -51,8 +51,8 @@
     <Capacity>0</Capacity>
     <Notes>Attribute Array [5 4 4 2]</Notes>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Novatech Navigator</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -64,8 +64,8 @@
     <Capacity>0</Capacity>
     <Notes>Attribute Array [6 5 4 3]</Notes>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Renraku Tsurugi</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -77,8 +77,8 @@
     <Capacity>0</Capacity>
     <Notes>Attribute Array [6 5 5 3]</Notes>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Sony CIY-720</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -90,8 +90,8 @@
     <Capacity>0</Capacity>
     <Notes>Attribute Array [7 6 5 4]</Notes>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Shiawase Cyber-5</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -103,8 +103,8 @@
     <Capacity>0</Capacity>
     <Notes>Attribute Array [8 7 6 5]</Notes>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Fairlight Excalibur</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -116,5 +116,5 @@
     <Capacity>0</Capacity>
     <Notes>Attribute Array [9 8 7 6]</Notes>
     <Mods></Mods>
-  </GearLoader>
-</ArrayOfGearLoader>
+  </GearPrototype>
+</ArrayOfGearPrototype>

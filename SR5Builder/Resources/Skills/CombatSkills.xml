@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfSkillLoader>
-  <SkillLoader>
+<ArrayOfSkillPrototype>
+  <SkillPrototype>
     <Name>Archery</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Accuracy</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Automatics</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Accuracy</Limit>
     <GroupName>Firearms</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Blades</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Accuracy</Limit>
     <GroupName>Close Combat</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Clubs</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Accuracy</Limit>
     <GroupName>Close Combat</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Heavy Weapons</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Accuracy</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Longarms</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Accuracy</Limit>
     <GroupName>Firearms</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Pistols</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Accuracy</Limit>
     <GroupName>Firearms</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Throwing Weapons</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Accuracy</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Unarmed Combat</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Phisical</Limit>
     <GroupName>Close Combat</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-</ArrayOfSkillLoader>
+  </SkillPrototype>
+</ArrayOfSkillPrototype>

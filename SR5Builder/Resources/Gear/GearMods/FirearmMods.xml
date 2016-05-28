@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfGearModLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearModLoader>
+<ArrayOfGearModPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearModPrototype>
     <Name>Airburst link</Name>
     <SubCategory>Launcher</SubCategory>
     <Book>SR5</Book>
@@ -12,8 +12,8 @@
     <Taboo>
     </Taboo>
     <Augments></Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Bipod</Name>
     <SubCategory>Under Mount</SubCategory>
     <Book>SR5</Book>
@@ -35,8 +35,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Gas-vent system</Name>
     <SubCategory>Barrel Mount</SubCategory>
     <Book>SR5</Book>
@@ -60,8 +60,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Gas-vent system 2</Name>
     <SubCategory>Barrel Mount</SubCategory>
     <Book>SR5</Book>
@@ -84,8 +84,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Gas-vent system 3</Name>
     <SubCategory>Barrel Mount</SubCategory>
     <Book>SR5</Book>
@@ -109,8 +109,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Gyro mount</Name>
     <SubCategory>Under Mount</SubCategory>
     <Book>SR5</Book>
@@ -130,8 +130,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Imaging scope</Name>
     <SubCategory>Top Mount</SubCategory>
     <Book>SR5</Book>
@@ -145,8 +145,8 @@
     </Taboo>
     <Augments>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Laser sight - Top</Name>
     <SubCategory>Top Mount</SubCategory>
     <Book>SR5</Book>
@@ -167,8 +167,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Laser sight - Bottom</Name>
     <SubCategory>Bottom Mount</SubCategory>
     <Book>SR5</Book>
@@ -189,8 +189,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Shockpad</Name>
     <SubCategory>Firearm</SubCategory>
     <Book>SR5</Book>
@@ -210,8 +210,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Silencer</Name>
     <SubCategory>Barrel Mount</SubCategory>
     <Book>SR5</Book>
@@ -225,8 +225,8 @@
     </Taboo>
     <Augments>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Smart firing platform</Name>
     <SubCategory>Bottom Mount</SubCategory>
     <Book>SR5</Book>
@@ -240,8 +240,8 @@
     </Taboo>
     <Augments>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Smartgun - internal</Name>
     <SubCategory>Firearm</SubCategory>
     <Book>SR5</Book>
@@ -264,8 +264,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Smartgun - Top</Name>
     <SubCategory>Top Mount</SubCategory>
     <Book>SR5</Book>
@@ -287,8 +287,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Smartgun - Bottom</Name>
     <SubCategory>Bottom Mount</SubCategory>
     <Book>SR5</Book>
@@ -310,8 +310,8 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Spare Clip</Name>
     <SubCategory></SubCategory>
     <Book>SR5</Book>
@@ -322,8 +322,8 @@
     <Capacity>0</Capacity>
     <Taboo></Taboo>
     <Augments></Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Speed Loader</Name>
     <SubCategory>Revolvers</SubCategory>
     <Book>SR5</Book>
@@ -334,8 +334,8 @@
     <Capacity>0</Capacity>
     <Taboo></Taboo>
     <Augments></Augments>
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Tripod</Name>
     <SubCategory>Bottom Mount</SubCategory>
     <Book>SR5</Book>
@@ -356,9 +356,9 @@
         <Target>%owner%</Target>
       </AugmentLoader>
     </Augments>
-  </GearModLoader>
+  </GearModPrototype>
   <!-- Built in Mods for various firearms -->
-  <GearModLoader>
+  <GearModPrototype>
     <Name>Silencer ALF</Name> <!--Ares Light Fire -->
     <Book>SR5</Book>
     <Page>426</Page>
@@ -370,10 +370,10 @@
       <string>Barrel Mount</string>
     </Taboo>
     <Augments />
-  </GearModLoader>
-</ArrayOfGearModLoader>
+  </GearModPrototype>
+</ArrayOfGearModPrototype>
 <!--
-  <GearModLoader>
+  <GearModPrototype>
     <Name></Name>
     <SubCategory></SubCategory>
     <Book>SR5</Book>
@@ -386,5 +386,5 @@
     </Taboo>
     <Augments>
     </Augments>
-  </GearModLoader>
+  </GearModPrototype>
 -->

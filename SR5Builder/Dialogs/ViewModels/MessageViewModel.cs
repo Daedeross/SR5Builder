@@ -24,7 +24,7 @@ namespace SR5Builder.ViewModels
         public MessageViewModel(string message)
         {
             mMessage = message;
-            OnPropertyChanged(nameof(Message));
+            RaisePropertyChanged(nameof(Message));
         }
     }
 }

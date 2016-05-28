@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfSpellLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SpellLoader>
+<ArrayOfSpellPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SpellPrototype>
     <Name>Analyze Device</Name>
     <Category>Detection Spells</Category>
     <Type>P</Type>
@@ -14,8 +14,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>285</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Analyze Magic</Name>
     <Category>Detection Spells</Category>
     <Type>P</Type>
@@ -29,8 +29,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>285</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Analyze Truth</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -44,8 +44,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Clairaudience</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -59,8 +59,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Clairvoyance</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -74,8 +74,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Combat Sense</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -89,8 +89,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Detect Enemies</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -104,8 +104,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Detect Enemies, Extended</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -119,8 +119,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Detect Life</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -134,8 +134,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Detect Life, Extended</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -149,8 +149,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>286</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Detect {0}</Name>
     <ExtLabel>Life Form</ExtLabel>
     <ExtKind>Free</ExtKind>
@@ -167,8 +167,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>287</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Detect {0}, Extended</Name>
     <ExtLabel>Life Form</ExtLabel>
     <ExtKind>Free</ExtKind>
@@ -185,8 +185,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>287</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Detect Magic</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -200,8 +200,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>287</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Detect Magic, Extended</Name>
     <Category>Detection Spells</Category>
     <Type>M</Type>
@@ -215,8 +215,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>287</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Detect {0}</Name>
     <ExtLabel>Object</ExtLabel>
     <ExtKind>Free</ExtKind>
@@ -233,8 +233,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>287</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name>Mind Link</Name>
     <Category></Category>
     <Type></Type>
@@ -248,8 +248,8 @@
     </Tags>
     <Book>SR5</Book>
     <Page>287</Page>
-  </SpellLoader>
-  <SpellLoader>
+  </SpellPrototype>
+  <SpellPrototype>
     <Name></Name>
     <Category></Category>
     <Type></Type>
@@ -260,7 +260,7 @@
     <Tags>
       <string></string>
     </Tags>
-  </SpellLoader>
+  </SpellPrototype>
   <Book>SR5</Book>
   <Page>287</Page>
-</ArrayOfSpellLoader>
+</ArrayOfSpellPrototype>

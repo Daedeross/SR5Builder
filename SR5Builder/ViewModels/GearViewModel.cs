@@ -40,8 +40,8 @@ namespace SR5Builder.ViewModels
                         mSelectedGearCategory = value;
                         AvailableGear = new ObservableDictionary<string, GearPrototype>(dict);
                     }
-                    OnPropertyChanged(nameof(SelectedGearCategory));
-                    OnPropertyChanged(nameof(AvailableGear));
+                    RaisePropertyChanged(nameof(SelectedGearCategory));
+                    RaisePropertyChanged(nameof(AvailableGear));
                 }
             }
         }
@@ -79,8 +79,8 @@ namespace SR5Builder.ViewModels
                         mSelectedImplantCategory = value;
                         AvailableImplants = new ObservableDictionary<string, ImplantPrototype>(dict);
                     }
-                    OnPropertyChanged(nameof(SelectedImplantCategory));
-                    OnPropertyChanged(nameof(AvailableImplants));
+                    RaisePropertyChanged(nameof(SelectedImplantCategory));
+                    RaisePropertyChanged(nameof(AvailableImplants));
                 }
             }
         }
@@ -135,9 +135,9 @@ namespace SR5Builder.ViewModels
                             mEditing = false;
                     }
 
-                    OnPropertyChanged(nameof(GearEditVM));
-                    OnPropertyChanged(nameof(Editing));
-                    OnPropertyChanged(nameof(EditVisible));
+                    RaisePropertyChanged(nameof(GearEditVM));
+                    RaisePropertyChanged(nameof(Editing));
+                    RaisePropertyChanged(nameof(EditVisible));
                 }
             }
         }
@@ -197,7 +197,7 @@ namespace SR5Builder.ViewModels
         {
             GearList.Add(SelectedNewGear.Name, SelectedNewGear.ToGear(character));
             SelectedGear = GearList[SelectedNewGear.Name];
-            OnPropertyChanged(nameof(SelectedGear));
+            RaisePropertyChanged(nameof(SelectedGear));
         }
 
         private bool AddGearCanExecute()
@@ -231,7 +231,7 @@ namespace SR5Builder.ViewModels
             else
                 SelectedGear = GearList.Last().Value;
 
-            OnPropertyChanged(nameof(SelectedGear));
+            RaisePropertyChanged(nameof(SelectedGear));
         }
 
         private bool RemoveGearCanExecute()
@@ -261,7 +261,7 @@ namespace SR5Builder.ViewModels
         {
             ImplantList.Add(SelectedNewImplant.Name, new Implant(character, SelectedNewImplant));
             SelectedImplant = ImplantList[SelectedNewImplant.Name];
-            OnPropertyChanged(nameof(SelectedImplant));
+            RaisePropertyChanged(nameof(SelectedImplant));
         }
 
         private bool AddImplantCanExecute()
@@ -295,7 +295,7 @@ namespace SR5Builder.ViewModels
             else
                 SelectedImplant = ImplantList.Last().Value;
 
-            OnPropertyChanged(nameof(SelectedImplant));
+            RaisePropertyChanged(nameof(SelectedImplant));
         }
 
         private bool RemoveImplantCanExecute()

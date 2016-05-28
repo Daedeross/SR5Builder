@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfGearModLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearModLoader>
+<ArrayOfGearModPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearModPrototype>
     <Name>Sim module</Name>
     <SubCategory>Comlink</SubCategory>
     <Book>SR5</Book>
@@ -12,8 +12,8 @@
       <string>Hot-sim module</string>
     </Taboo>
     <Augments />
-  </GearModLoader>
-  <GearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Hot-sim module</Name>
     <SubCategory>Comlink</SubCategory>
     <Book>SR5</Book>
@@ -25,5 +25,5 @@
       <string>Sim module</string>
     </Taboo>
     <Augments />
-  </GearModLoader>
-</ArrayOfGearModLoader>
+  </GearModPrototype>
+</ArrayOfGearModPrototype>

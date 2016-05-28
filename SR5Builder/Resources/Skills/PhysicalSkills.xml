@@ -1,87 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfSkillLoader>
-  <SkillLoader>
+<ArrayOfSkillPrototype>
+  <SkillPrototype>
     <Name>Disguise</Name>
     <LinkedAttribute>Intuition</LinkedAttribute>
     <Limit>Mental</Limit>
     <GroupName>Stealth</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Diving</Name>
     <LinkedAttribute>Body</LinkedAttribute>
     <Limit>Physical</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Escape Artist</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Physical</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Free-Fall</Name>
     <LinkedAttribute>Body</LinkedAttribute>
     <Limit>Physical</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Gymnastics</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Physical</Limit>
     <GroupName>Athletics</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Palming</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Physical</Limit>
     <GroupName>Stealth</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Perception</Name>
     <LinkedAttribute>Intuition</LinkedAttribute>
     <Limit>Mental</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Running</Name>
     <LinkedAttribute>Strength</LinkedAttribute>
     <Limit>Physical</Limit>
     <GroupName>Athletics</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Sneaking</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Physical</Limit>
     <GroupName>Stealth</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Survival</Name>
     <LinkedAttribute>Willpower</LinkedAttribute>
     <Limit>Mental</Limit>
     <GroupName>Outdoors</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Swimming</Name>
     <LinkedAttribute>Strength</LinkedAttribute>
     <Limit>Physical</Limit>
     <GroupName>Athletics</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Tracking</Name>
     <LinkedAttribute>Intuition</LinkedAttribute>
     <Limit>Mental</Limit>
     <GroupName>Outdoors</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-</ArrayOfSkillLoader>
+  </SkillPrototype>
+</ArrayOfSkillPrototype>

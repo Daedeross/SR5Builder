@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearLoader xsi:type="RangedWeaponLoader">
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype xsi:type="RangedWeaponPrototype">
     <Name>Ares Light Fire 75</Name>
     <Book>SR5</Book>
     <Page>426</Page>
@@ -11,7 +11,8 @@
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <Availability>3R</Availability>
-    <FlatCost>200</FlatCost>
+    <FlatCost>200</FlatCost>
+
     <Capacity>0</Capacity>
     <BaseMods>
       <string>Silencer ALF</string>
@@ -34,8 +35,8 @@
     </FireModes>
     <ReloadMethod>c</ReloadMethod>
     <RC>0</RC>
-  </GearLoader>
-  <GearLoader xsi:type="RangedWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
     <Name>Ares Light Fire 70</Name>
     <Book>SR5</Book>
     <Page>426</Page>
@@ -68,8 +69,8 @@
     </FireModes>
     <ReloadMethod>c</ReloadMethod>
     <RC>0</RC>
-  </GearLoader>
-  <GearLoader xsi:type="RangedWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
     <Name>Baretta 201T</Name>
     <Book>SR5</Book>
     <Page>426</Page>
@@ -104,8 +105,8 @@
     </FireModes>
     <ReloadMethod>c</ReloadMethod>
     <RC>0</RC>
-  </GearLoader>
-  <GearLoader xsi:type="RangedWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
     <Name>Colt America L36</Name>
     <Book>SR5</Book>
     <Page>426</Page>
@@ -138,8 +139,8 @@
     </FireModes>
     <ReloadMethod>c</ReloadMethod>
     <RC>0</RC>
-  </GearLoader>
-  <GearLoader xsi:type="RangedWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
     <Name>Fichetti Security 600</Name>
     <Book>SR5</Book>
     <Page>426</Page>
@@ -172,5 +173,5 @@
     </FireModes>
     <ReloadMethod>c</ReloadMethod>
     <RC>0</RC>
-  </GearLoader>
-</ArrayOfGearLoader>
+  </GearPrototype>
+</ArrayOfGearPrototype>

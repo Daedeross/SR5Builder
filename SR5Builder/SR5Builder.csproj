@@ -183,6 +183,7 @@
     <Compile Include="ViewModels\PrioritiesViewModel.cs" />
     <Compile Include="ViewModels\PriorityLevelViewModel.cs" />
     <Compile Include="Dialogs\ViewModels\SkillGroupAddViewModel.cs" />
+    <Compile Include="ViewModels\QualitiesViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\SkillsViewModel.cs" />
     <Compile Include="ViewModels\MagicViewModel.cs" />
@@ -477,6 +478,9 @@
     </Content>
     <Content Include="Resources\Metatypes\Human.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Qualities\PositiveQualities.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Skills\MagicalSkills.xml">

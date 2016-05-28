@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfAdeptPowerLoader 
+<ArrayOfAdeptPowerPrototype 
   xmlns="SR5Builder/AdeptPowers.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <AdeptPowerLoader>
+  <AdeptPowerPrototype>
     <Name>Adrenaline Boost</Name>
     <Book>SR5</Book>
     <Page>308</Page>
@@ -13,8 +13,8 @@
     <PointsPerLevel>0.25</PointsPerLevel>
     <Augments>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Astral Perception</Name>
     <Book>SR5</Book>
     <Page>309</Page>
@@ -24,8 +24,8 @@
     <PointsPerLevel>1</PointsPerLevel>
     <Augments>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Attribute Boost</Name>
     <ExtLabel>Attribute</ExtLabel>
     <ExtKind>Attribute</ExtKind>
@@ -43,8 +43,8 @@
     <PointsPerLevel>0.25</PointsPerLevel>
     <Augments>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Combat Sense</Name>
     <Book>SR5</Book>
     <Page>309</Page>
@@ -69,8 +69,8 @@
         <Target>All</Target>
       </AugmentLoader>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Critical Strike</Name>
     <ExtLabel>Attribute</ExtLabel>
     <ExtKind>Skill</ExtKind>
@@ -97,8 +97,8 @@
         <Target>%ext%</Target>
       </AugmentLoader>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Danger Sense</Name>
     <Book>SR5</Book>
     <Page>309</Page>
@@ -108,8 +108,8 @@
     <PointsPerLevel>0.25</PointsPerLevel>
     <Augments>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Enhanced Perception</Name>
     <Book>SR5</Book>
     <Page>309</Page>
@@ -141,8 +141,8 @@
         <Target>Assensing</Target>
       </AugmentLoader>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Enhanced Accuracy</Name>
     <ExtLabel>Skill</ExtLabel>
     <ExtKind>Combat Skill</ExtKind>
@@ -174,8 +174,8 @@
         <Target>%ext%</Target>
       </AugmentLoader>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Improved Ability</Name>
     <ExtLabel>Skill</ExtLabel>
     <ExtKind>Skill</ExtKind>
@@ -202,8 +202,8 @@
         <Target>%ext%</Target>
       </AugmentLoader>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Improved</Name>
     <ExtLabel>Attribute</ExtLabel>
     <ExtKind>Attribute</ExtKind>
@@ -232,8 +232,8 @@
         <Target>%ext%</Target>
       </AugmentLoader>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Improved Potential</Name>
     <ExtLabel>Limit</ExtLabel>
     <ExtKind>Limit</ExtKind>
@@ -250,8 +250,8 @@
     <PointsPerLevel>0.5</PointsPerLevel>
     <Augments>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Improved Reflexes</Name>
     <Book>SR5</Book>
     <Page>310</Page>
@@ -281,8 +281,8 @@
         <Target>Reaction</Target>
       </AugmentLoader>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Improved Sense</Name>
     <ExtLabel>Choose</ExtLabel>
     <ExtKind>Sense</ExtKind>
@@ -306,8 +306,8 @@
     <PointsPerLevel>0.25</PointsPerLevel>
     <Augments>
     </Augments>
-  </AdeptPowerLoader>
-  <AdeptPowerLoader>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
     <Name>Killing Hands</Name>
     <Book>SR5</Book>
     <Page>310</Page>
@@ -325,5 +325,5 @@
         <Target>Unarmed Combat</Target>
       </AugmentLoader>
     </Augments>
-  </AdeptPowerLoader>
-</ArrayOfAdeptPowerLoader>
+  </AdeptPowerPrototype>
+</ArrayOfAdeptPowerPrototype>

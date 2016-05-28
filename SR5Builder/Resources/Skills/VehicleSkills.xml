@@ -1,52 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfSkillLoader>
-  <SkillLoader>
+<ArrayOfSkillPrototype>
+  <SkillPrototype>
     <Name>Gunnery</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit>Accuracy</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Pilot Aerospace</Name>
     <LinkedAttribute>Reaction</LinkedAttribute>
     <Limit>Handling</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Pilot Aircraft</Name>
     <LinkedAttribute>Reaction</LinkedAttribute>
     <Limit>Handling</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Pilot Walker</Name>
     <LinkedAttribute>Reaction</LinkedAttribute>
     <Limit>Handling</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Pilot Exotic Vehicle</Name>
     <LinkedAttribute>Reaction</LinkedAttribute>
     <Limit>Handling</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Pilot Ground Craft</Name>
     <LinkedAttribute>Reaction</LinkedAttribute>
     <Limit>Handling</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Pilot Watercraft</Name>
     <LinkedAttribute>Reaction</LinkedAttribute>
     <Limit>Handling</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-</ArrayOfSkillLoader>
+  </SkillPrototype>
+</ArrayOfSkillPrototype>

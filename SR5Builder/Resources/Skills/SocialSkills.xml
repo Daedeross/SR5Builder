@@ -1,59 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfSkillLoader>
-  <SkillLoader>
+<ArrayOfSkillPrototype>
+  <SkillPrototype>
     <Name>Con</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>
     <Limit>Social</Limit>
     <GroupName>Acting</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Ettiquette</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>
     <Limit>Social</Limit>
     <GroupName>Influence</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Impersonation</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>
     <Limit>Social</Limit>
     <GroupName>Acting</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Instruction</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>
     <Limit>Social</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Initmidation</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>
     <Limit>Social</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Leadership</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>
     <Limit>Social</Limit>
     <GroupName>Influence</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Negotiation</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>
     <Limit>Social</Limit>
     <GroupName>Influence</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Performance</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>
     <Limit>Social</Limit>
     <GroupName>Acting</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-</ArrayOfSkillLoader>
+  </SkillPrototype>
+</ArrayOfSkillPrototype>

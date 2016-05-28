@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearLoader xsi:type="RangedWeaponLoader">
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype xsi:type="RangedWeaponPrototype">
     <Name>Bow</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -35,8 +35,8 @@
     <ReloadMethod>s</ReloadMethod>
     <RC>0</RC>
     <UseStrength>true</UseStrength>
-  </GearLoader>
-  <GearLoader xsi:type="RangedWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
     <Name>Light Crossbow</Name>
     <Book>SR5</Book>
     <Page>424</Page>
@@ -70,5 +70,5 @@
     <ReloadMethod>m</ReloadMethod>
     <RC>0</RC>
     <UseStrength>false</UseStrength>
-  </GearLoader>
-</ArrayOfGearLoader>
+  </GearPrototype>
+</ArrayOfGearPrototype>

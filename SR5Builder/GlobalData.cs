@@ -58,7 +58,9 @@ namespace SR5Builder
 
         public static Dictionary<string, Dictionary<string, ImplantPrototype>> Implants { get; set; }
 
-            #endregion // Gear
+        #endregion // Gear
+
+        public static Dictionary<string, QualityPrototype> Qualities;
 
         public static NumberFormatInfo CostFormat;
 
@@ -94,6 +96,8 @@ namespace SR5Builder
             // Gear Mods (Includes capacity costing 'ware)
             LoadGearMods();
 
+            LoadQualities();
+
             // set NumberFormat for nuyen
             CostFormat = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
             CostFormat.NumberDecimalDigits = Properties.Settings.Default.NumberDecimalDigits;
@@ -103,7 +107,7 @@ namespace SR5Builder
             CostFormat.CurrencyNegativePattern = Properties.Settings.Default.CurrencyNegativePattern;
 #if DEBUG
             // Use for generating intitial Xml Serialization templates
-            //WriteFile();
+            WriteFile();
 #endif
         }
 
@@ -393,11 +397,19 @@ namespace SR5Builder
             }
         }
 
+        private static void LoadQualities()
+        {
+            List<QualityPrototype> quals = QualityPrototype.LoadFromFile("Resources/Qualities/PositiveQualities.xml");
+
+            Qualities = quals.ToDictionary(q => q.Name, q => q);
+            Log.LogMessage("Quaities Loaded");
+        }
+
             #region Debug and Stuff
 
         public static void WriteFile()
         {
-            
+
         }
 
             #endregion // Debug and Stuff

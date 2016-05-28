@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ArrayOfImplantLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ImplantLoader>
+<ArrayOfImplantPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ImplantPrototype>
     <Name>Cybereyes - Rating 1</Name>
     <Book>SR5</Book>
     <Page>453</Page>
@@ -16,8 +16,8 @@
     </Mods>
     <FlatEssence>0.2</FlatEssence>
     <Augments></Augments>
-  </ImplantLoader>
-  <ImplantLoader>
+  </ImplantPrototype>
+  <ImplantPrototype>
     <Name>Cybereyes - Rating 2</Name>
     <Book>SR5</Book>
     <Page>453</Page>
@@ -33,8 +33,8 @@
     </Mods>
     <FlatEssence>0.3</FlatEssence>
     <Augments></Augments>
-  </ImplantLoader>
-  <ImplantLoader>
+  </ImplantPrototype>
+  <ImplantPrototype>
     <Name>Flare compensation</Name>
     <Book>SR5</Book>
     <Page>453</Page>
@@ -46,5 +46,5 @@
     <Capacity>0</Capacity>
     <FlatEssence>0.2</FlatEssence>
     <Augments></Augments>
-  </ImplantLoader>
-</ArrayOfImplantLoader>
+  </ImplantPrototype>
+</ArrayOfImplantPrototype>

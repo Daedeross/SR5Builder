@@ -102,7 +102,7 @@ namespace SR5Builder.ViewModels
             set
             {
                 character.Metatype = value;
-                OnPropertyChanged(nameof(MetatypeStats));
+                RaisePropertyChanged(nameof(MetatypeStats));
             }
         }
 
@@ -563,10 +563,10 @@ namespace SR5Builder.ViewModels
             switch (e.PropertyName)
             {
                 case "Attributes":
-                    OnPropertyChanged(nameof(AttributePoints));
-                    OnPropertyChanged(nameof(AttributePointsRemaining));
-                    OnPropertyChanged(nameof(PrioritiesValid));
-                    OnPropertyChanged(nameof(AttributePointsDone));
+                    RaisePropertyChanged(nameof(AttributePoints));
+                    RaisePropertyChanged(nameof(AttributePointsRemaining));
+                    RaisePropertyChanged(nameof(PrioritiesValid));
+                    RaisePropertyChanged(nameof(AttributePointsDone));
                     break;
                 case "Special":
                     SpecialChoices = new ObservableCollection<SpecialChoice>(
@@ -575,40 +575,40 @@ namespace SR5Builder.ViewModels
                                      select s
                                      );
                     HandleSpecialChanged();
-                    OnPropertyChanged(nameof(SpecialChoices));
-                    OnPropertyChanged(nameof(SpecialEnabled));
-                    OnPropertyChanged(nameof(SpecialKind));
-                    OnPropertyChanged(nameof(SpecialAttribute));
-                    OnPropertyChanged(nameof(PrioritiesValid));
-                    OnPropertyChanged(nameof(SpecialPointsDone));
-                    OnPropertyChanged(nameof(SpecialAttributePointsRemaining));
-                    OnPropertyChanged(nameof(HasPowerPoints));
+                    RaisePropertyChanged(nameof(SpecialChoices));
+                    RaisePropertyChanged(nameof(SpecialEnabled));
+                    RaisePropertyChanged(nameof(SpecialKind));
+                    RaisePropertyChanged(nameof(SpecialAttribute));
+                    RaisePropertyChanged(nameof(PrioritiesValid));
+                    RaisePropertyChanged(nameof(SpecialPointsDone));
+                    RaisePropertyChanged(nameof(SpecialAttributePointsRemaining));
+                    RaisePropertyChanged(nameof(HasPowerPoints));
                     break;
                 case "Metatype":
                     AvailableMetatypes = new ObservableCollection<NamePoints>(
                                          from s in GlobalData.Metatypes.Values
                                          where s.SpecialPoints.ContainsKey(character.Priorities.Metatype)
                                          select new NamePoints(s.Name, s.SpecialPoints[character.Priorities.Metatype]));
-                    OnPropertyChanged(nameof(AvailableMetatypes));
-                    OnPropertyChanged(nameof(AttributesEnabled));
-                    OnPropertyChanged(nameof(Metatype));
-                    OnPropertyChanged(nameof(PrioritiesValid));
-                    OnPropertyChanged(nameof(AttributePointsDone));
-                    OnPropertyChanged(nameof(SpecialPointsDone));
-                    OnPropertyChanged(nameof(SpecialAttributePoints));
-                    OnPropertyChanged(nameof(SpecialAttributePointsRemaining));
+                    RaisePropertyChanged(nameof(AvailableMetatypes));
+                    RaisePropertyChanged(nameof(AttributesEnabled));
+                    RaisePropertyChanged(nameof(Metatype));
+                    RaisePropertyChanged(nameof(PrioritiesValid));
+                    RaisePropertyChanged(nameof(AttributePointsDone));
+                    RaisePropertyChanged(nameof(SpecialPointsDone));
+                    RaisePropertyChanged(nameof(SpecialAttributePoints));
+                    RaisePropertyChanged(nameof(SpecialAttributePointsRemaining));
                     //character.Metatype = character.Metatype;
                     break;
                 case "Skills":
-                    OnPropertyChanged(nameof(SkillsEnabled));
-                    OnPropertyChanged(nameof(PrioritiesValid));
-                    OnPropertyChanged(nameof(SkillPointsDone));
+                    RaisePropertyChanged(nameof(SkillsEnabled));
+                    RaisePropertyChanged(nameof(PrioritiesValid));
+                    RaisePropertyChanged(nameof(SkillPointsDone));
                     break;
                 default:
-                    OnPropertyChanged(nameof(PrioritiesValid));
+                    RaisePropertyChanged(nameof(PrioritiesValid));
                     break;
             }
-            OnPropertyChanged(nameof(IsDone));
+            RaisePropertyChanged(nameof(IsDone));
         }
 
         private void OnCharacterChanged(object sender, PropertyChangedEventArgs e)
@@ -628,32 +628,32 @@ namespace SR5Builder.ViewModels
                         ActiveSpecialTab = 0;
                         break;
                 }
-                OnPropertyChanged(nameof(ActiveSpecialTab));
-                OnPropertyChanged(nameof(HasPowerPoints));
+                RaisePropertyChanged(nameof(ActiveSpecialTab));
+                RaisePropertyChanged(nameof(HasPowerPoints));
             }
             else if (e.PropertyName.Contains("AttributePoint"))
             {
-                OnPropertyChanged(nameof(AttributePointsDone));
-                OnPropertyChanged(nameof(IsDone));
+                RaisePropertyChanged(nameof(AttributePointsDone));
+                RaisePropertyChanged(nameof(IsDone));
             }
             else if (e.PropertyName.Contains("Skill") && e.PropertyName.Contains("Point"))
             {
                 if (e.PropertyName.Contains("Group"))
                 {
-                    OnPropertyChanged(nameof(SkillGroupPointsDone));
+                    RaisePropertyChanged(nameof(SkillGroupPointsDone));
                 }
                 else
                 {
-                    OnPropertyChanged(nameof(SkillPointsDone));
+                    RaisePropertyChanged(nameof(SkillPointsDone));
                 }
-                OnPropertyChanged(nameof(IsDone));
+                RaisePropertyChanged(nameof(IsDone));
             }
             else if (e.PropertyName == "PowerPointsSpent")
             {
-                OnPropertyChanged(nameof(IsDone));
+                RaisePropertyChanged(nameof(IsDone));
             }
 
-            OnPropertyChanged(p);
+            RaisePropertyChanged(p);
         }
 
         private void OnAttributeChanged(object sender, PropertyChangedEventArgs e)
@@ -663,13 +663,13 @@ namespace SR5Builder.ViewModels
             if (a != null)
             {
                 string name = e.PropertyName.Replace("Rating", "");
-                OnPropertyChanged(name + a.Name);
-                OnPropertyChanged(a.Name + "Text");
+                RaisePropertyChanged(name + a.Name);
+                RaisePropertyChanged(a.Name + "Text");
 
                 if (a == character.PowerPoints &&
                     e.PropertyName == nameof(DataModels.Attribute.AugmentedRating))
                 {
-                    OnPropertyChanged(nameof(HasPowerPoints));
+                    RaisePropertyChanged(nameof(HasPowerPoints));
                 }
             }
         }

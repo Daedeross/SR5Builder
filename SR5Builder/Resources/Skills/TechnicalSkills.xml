@@ -1,157 +1,157 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfSkillLoader>
-  <SkillLoader>
+<ArrayOfSkillPrototype>
+  <SkillPrototype>
     <Name>Aeronautics Mechanic</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Engineering</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Animal Handling</Name>
     <LinkedAttribute>Charisma</LinkedAttribute>
     <Limit>Social</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Armorer</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Artisan</Name>
     <LinkedAttribute>Intuition</LinkedAttribute>
     <Limit></Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Automotive Mechanic</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Engineering</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Biothechnology</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit>Mental</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Chemistry</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit>Mental</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Computer</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Electronics</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Cybercombat</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Cracking</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Cybertechnology</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Biotech</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Demolitions</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit>Mental</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Electronic Warfare</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Cracking</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>First Aid</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Biotech</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Forgery</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit>Mental or Physical</Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Hacking</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Cracking</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Hardware</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Electronics</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Industrial Mechanic</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Engineering</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Locksmith</Name>
     <LinkedAttribute>Agility</LinkedAttribute>
     <Limit></Limit>
     <GroupName>None</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Medicine</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Biotech</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Nautical Mechanic</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Engineering</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Navigation</Name>
     <LinkedAttribute>Intuition</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Outdoors</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Software</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit></Limit>
     <GroupName>Electronics</GroupName>
     <Kind>Active</Kind>
-  </SkillLoader>
-</ArrayOfSkillLoader>
+  </SkillPrototype>
+</ArrayOfSkillPrototype>

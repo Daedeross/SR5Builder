@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearLoader xsi:type="MeleeWeaponLoader">
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Combat axe</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -22,8 +22,8 @@
     <Acc>0</Acc>
     <UseStrength>true</UseStrength>
     <Reach>2</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Combat Knife</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -45,8 +45,8 @@
     <Acc>6</Acc>
     <UseStrength>true</UseStrength>
     <Reach>0</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Forarm snap-blades</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -68,8 +68,8 @@
     <Acc>4</Acc>
     <UseStrength>true</UseStrength>
     <Reach>0</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Katana</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -91,8 +91,8 @@
     <Acc>7</Acc>
     <UseStrength>true</UseStrength>
     <Reach>1</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Knife</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -113,8 +113,8 @@
     <Acc>5</Acc>
     <UseStrength>true</UseStrength>
     <Reach>0</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Pole arm</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -135,8 +135,8 @@
     <Acc>5</Acc>
     <UseStrength>true</UseStrength>
     <Reach>3</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Survival knife</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -157,8 +157,8 @@
     <Acc>5</Acc>
     <UseStrength>true</UseStrength>
     <Reach>0</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Sword</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -179,5 +179,5 @@
     <Acc>6</Acc>
     <UseStrength>true</UseStrength>
     <Reach>2</Reach>
-  </GearLoader>
-</ArrayOfGearLoader>
+  </GearPrototype>
+</ArrayOfGearPrototype>

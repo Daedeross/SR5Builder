@@ -6,10 +6,10 @@
   targetNamespace="SR5Builder/AdeptPowers.xsd"
   attributeFormDefault="unqualified"
   elementFormDefault="qualified">
-  <xs:element name="ArrayOfAdeptPowerLoader">
+  <xs:element name="ArrayOfAdeptPowerPrototype">
     <xs:complexType>
       <xs:sequence>
-        <xs:element maxOccurs="unbounded" name="AdeptPowerLoader">
+        <xs:element maxOccurs="unbounded" name="AdeptPowerPrototype">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" type="xs:string" />

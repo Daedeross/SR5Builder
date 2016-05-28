@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearLoader xsi:type="MeleeWeaponLoader">
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Club</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -22,8 +22,8 @@
     <Acc>4</Acc>
     <UseStrength>true</UseStrength>
     <Reach>1</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Extendable baton</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -45,8 +45,8 @@
     <Acc>5</Acc>
     <UseStrength>true</UseStrength>
     <Reach>1</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Sap</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -68,8 +68,8 @@
     <Acc>5</Acc>
     <UseStrength>true</UseStrength>
     <Reach>0</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Staff</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -91,8 +91,8 @@
     <Acc>6</Acc>
     <UseStrength>true</UseStrength>
     <Reach>2</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Stun baton</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -114,8 +114,8 @@
     <Acc>4</Acc>
     <UseStrength>false</UseStrength>
     <Reach>1</Reach>
-  </GearLoader>
-  <GearLoader xsi:type="MeleeWeaponLoader">
+  </GearPrototype>
+  <GearPrototype xsi:type="MeleeWeaponPrototype">
     <Name>Telescoping staff</Name>
     <Book>SR5</Book>
     <Page>423</Page>
@@ -137,5 +137,5 @@
     <Acc>4</Acc>
     <UseStrength>true</UseStrength>
     <Reach>2</Reach>
-  </GearLoader>
-</ArrayOfGearLoader>
+  </GearPrototype>
+</ArrayOfGearPrototype>

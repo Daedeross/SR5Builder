@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearLoader>
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype>
     <Name>Meta Link</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -14,8 +14,8 @@
     <ModCategories>
       <string>Comlink</string>
     </ModCategories>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Sony Emperor</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -29,8 +29,8 @@
     <ModCategories>
       <string>Comlink</string>
     </ModCategories>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Renraku Sensei</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -44,8 +44,8 @@
     <ModCategories>
       <string>Comlink</string>
     </ModCategories>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Erika Elite</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -59,8 +59,8 @@
     <ModCategories>
       <string>Comlink</string>
     </ModCategories>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Hermese Ikon</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -74,8 +74,8 @@
     <ModCategories>
       <string>Comlink</string>
     </ModCategories>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Transys Avalon</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -89,8 +89,8 @@
     <ModCategories>
       <string>Comlink</string>
     </ModCategories>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Fairlight Caliban</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -104,5 +104,5 @@
     <ModCategories>
       <string>Comlink</string>
     </ModCategories>
-  </GearLoader>
-</ArrayOfGearLoader>
+  </GearPrototype>
+</ArrayOfGearPrototype>

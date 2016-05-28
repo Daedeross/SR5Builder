@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearLoader>
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype>
     <Name>AR Gloves</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -10,8 +10,8 @@
     <Cost>150</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Biometric reader</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -21,8 +21,8 @@
     <Cost>200</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Electronic Paper</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -32,8 +32,8 @@
     <Cost>5</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Printer</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -43,8 +43,8 @@
     <Cost>25</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Satellite link</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -54,8 +54,8 @@
     <Cost>500</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Simrig</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -65,8 +65,8 @@
     <Cost>1000</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Subvocal mic</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -76,8 +76,8 @@
     <Cost>50</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Trid projector</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -87,8 +87,8 @@
     <Cost>200</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Trodes</Name>
     <Book>SR5</Book>
     <Page>439</Page>
@@ -98,5 +98,5 @@
     <Cost>70</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-</ArrayOfGearLoader>
+  </GearPrototype>
+</ArrayOfGearPrototype>

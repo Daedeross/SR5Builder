@@ -1,87 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfSkillLoader>
-  <SkillLoader>
+<ArrayOfSkillPrototype>
+  <SkillPrototype>
     <Name>Alchemy</Name>
     <LinkedAttribute>Magic</LinkedAttribute>
     <Limit>Force</Limit>
     <GroupName>Enchanting</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Arcana</Name>
     <LinkedAttribute>Logic</LinkedAttribute>
     <Limit>Mental</Limit>
     <GroupName>None</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Artificing</Name>
     <LinkedAttribute>Magic</LinkedAttribute>
     <Limit>Force</Limit>
     <GroupName>Enchanting</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Assensing</Name>
     <LinkedAttribute>Intuition</LinkedAttribute>
     <Limit>Astral</Limit>
     <GroupName>None</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Astral Combat</Name>
     <LinkedAttribute>Willpower</LinkedAttribute>
     <Limit>Astral</Limit>
     <GroupName>None</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Banishing</Name>
     <LinkedAttribute>Magic</LinkedAttribute>
     <Limit>Astral</Limit>
     <GroupName>Conjuring</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Binding</Name>
     <LinkedAttribute>Magic</LinkedAttribute>
     <Limit>Force</Limit>
     <GroupName>Conjuring</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Counterspelling</Name>
     <LinkedAttribute>Magic</LinkedAttribute>
     <Limit>Astral</Limit>
     <GroupName>Sorcery</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Disenchanting</Name>
     <LinkedAttribute>Magic</LinkedAttribute>
     <Limit>Force</Limit>
     <GroupName>Enchanting</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Ritual Spellcasting</Name>
     <LinkedAttribute>Magic</LinkedAttribute>
     <Limit>Force</Limit>
     <GroupName>Sorcery</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Spellcasting</Name>
     <LinkedAttribute>Magic</LinkedAttribute>
     <Limit>Force</Limit>
     <GroupName>Sorcery</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-  <SkillLoader>
+  </SkillPrototype>
+  <SkillPrototype>
     <Name>Summoning</Name>
     <LinkedAttribute>Magic</LinkedAttribute>
     <Limit>Force</Limit>
     <GroupName>Conjuring</GroupName>
     <Kind>Magical</Kind>
-  </SkillLoader>
-</ArrayOfSkillLoader>
+  </SkillPrototype>
+</ArrayOfSkillPrototype>

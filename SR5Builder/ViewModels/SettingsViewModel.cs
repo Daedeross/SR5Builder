@@ -57,7 +57,7 @@ namespace SR5Builder.ViewModels
                 {
                     mSelectedSettings = value;
                     OnSelectionChanged();
-                    OnPropertyChanged(nameof(CurrentSettings));
+                    RaisePropertyChanged(nameof(CurrentSettings));
                 }
             }
         }

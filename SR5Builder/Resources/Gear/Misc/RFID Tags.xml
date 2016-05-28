@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfGearLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearLoader>
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype>
     <Name>Standard Tags</Name>
     <Book>SR5</Book>
     <Page>440</Page>
@@ -10,8 +10,8 @@
     <Cost>1</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Datachip</Name>
     <Book>SR5</Book>
     <Page>440</Page>
@@ -21,8 +21,8 @@
     <Cost>5</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Security Tags</Name>
     <Book>SR5</Book>
     <Page>440</Page>
@@ -32,8 +32,8 @@
     <Cost>5</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Sensor Tags</Name>
     <Book>SR5</Book>
     <Page>440</Page>
@@ -43,8 +43,8 @@
     <Cost>40</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-  <GearLoader>
+  </GearPrototype>
+  <GearPrototype>
     <Name>Stealth Tags</Name>
     <Book>SR5</Book>
     <Page>440</Page>
@@ -54,5 +54,5 @@
     <Cost>10</Cost>
     <Capacity>0</Capacity>
     <Mods></Mods>
-  </GearLoader>
-</ArrayOfGearLoader>
+  </GearPrototype>
+</ArrayOfGearPrototype>
