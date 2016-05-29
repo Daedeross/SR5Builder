@@ -22,7 +22,7 @@ namespace SR5Builder.DataModels
                 if (value != mGearPiece)
                 {
                     mGearPiece = value;
-                    RaisePropertyChanged(nameof(GearPiece));
+                    OnPropertyChanged(nameof(GearPiece));
                 }
             }
         }
@@ -36,7 +36,7 @@ namespace SR5Builder.DataModels
                 if (value != mFlatCost)
                 {
                     mFlatCost = value;
-                    RaisePropertyChanged(nameof(FlatCost));
+                    OnPropertyChanged(nameof(FlatCost));
                 }
             }
         }
@@ -67,8 +67,8 @@ namespace SR5Builder.DataModels
                 if (value != mFlatEssence)
                 {
                     mFlatEssence = value;
-                    RaisePropertyChanged(nameof(FlatEssence));
-                    RaisePropertyChanged(nameof(TotalEssence));
+                    OnPropertyChanged(nameof(FlatEssence));
+                    OnPropertyChanged(nameof(TotalEssence));
                 }
             }
         }

@@ -29,9 +29,9 @@ namespace SR5Builder.DataModels
                     if (mPrimaryAttribute != null)
                         mPrimaryAttribute.PropertyChanged += this.OnAttributeChanged;
 
-                    RaisePropertyChanged(nameof(PrimaryAttribute));
-                    RaisePropertyChanged(nameof(BaseRating));
-                    RaisePropertyChanged(nameof(AugmentedRating));
+                    OnPropertyChanged(nameof(PrimaryAttribute));
+                    OnPropertyChanged(nameof(BaseRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
@@ -51,9 +51,9 @@ namespace SR5Builder.DataModels
                     if (mSecondaryAttribute != null)
                         mSecondaryAttribute.PropertyChanged += this.OnAttributeChanged;
 
-                    RaisePropertyChanged(nameof(SecondaryAttribute));
-                    RaisePropertyChanged(nameof(BaseRating));
-                    RaisePropertyChanged(nameof(AugmentedRating));
+                    OnPropertyChanged(nameof(SecondaryAttribute));
+                    OnPropertyChanged(nameof(BaseRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
@@ -73,9 +73,9 @@ namespace SR5Builder.DataModels
                     if (mTertiaryAttribute != null)
                         mTertiaryAttribute.PropertyChanged += this.OnAttributeChanged;
 
-                    RaisePropertyChanged(nameof(TertiaryAttribute));
-                    RaisePropertyChanged(nameof(BaseRating));
-                    RaisePropertyChanged(nameof(AugmentedRating));
+                    OnPropertyChanged(nameof(TertiaryAttribute));
+                    OnPropertyChanged(nameof(BaseRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
@@ -133,22 +133,22 @@ namespace SR5Builder.DataModels
             bool changed = false;
             if (e.PropertyName.Contains("Base"))
             {
-                RaisePropertyChanged(nameof(BaseRating));
+                OnPropertyChanged(nameof(BaseRating));
                 changed = true;
             }
             else if (e.PropertyName.Contains("Improved"))
             {
-                RaisePropertyChanged(nameof(ImprovedRating));
+                OnPropertyChanged(nameof(ImprovedRating));
                 changed = true;
             }
             else if (e.PropertyName.Contains("Augmented"))
             { 
-                RaisePropertyChanged(nameof(AugmentedRating));
+                OnPropertyChanged(nameof(AugmentedRating));
                 changed = true;
             }
             if (changed)
             {
-                RaisePropertyChanged(nameof(DisplayValue));
+                OnPropertyChanged(nameof(DisplayValue));
             }
         }
 

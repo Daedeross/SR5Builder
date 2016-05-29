@@ -60,7 +60,7 @@ namespace SR5Builder.DataModels
             if (   mOwner.SpecialChoice.CanBuyPowerPoints
                 && e.PropertyName == nameof(SpecialAttribute.AugmentedRating))
             {
-                RaisePropertyChanged(nameof(Max));
+                OnPropertyChanged(nameof(Max));
             }
         }
 
@@ -72,10 +72,10 @@ namespace SR5Builder.DataModels
                 {
                     BaseRating = Max;
                 }
-                RaisePropertyChanged(nameof(Max));
-                RaisePropertyChanged(nameof(ImprovedRating));
-                RaisePropertyChanged(nameof(BaseRating));
-                RaisePropertyChanged(nameof(AugmentedRating));
+                OnPropertyChanged(nameof(Max));
+                OnPropertyChanged(nameof(ImprovedRating));
+                OnPropertyChanged(nameof(BaseRating));
+                OnPropertyChanged(nameof(AugmentedRating));
             }
         }
     }

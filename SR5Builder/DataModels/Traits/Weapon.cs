@@ -47,7 +47,7 @@ namespace SR5Builder.DataModels
                     else
                         mSkillUsed.PropertyChanged += this.OnSkillChanged;
 
-                    RaisePropertyChanged(nameof(SkillUsed));
+                    OnPropertyChanged(nameof(SkillUsed));
                 }
             }
         }
@@ -79,8 +79,8 @@ namespace SR5Builder.DataModels
                 if (value != mDamageType)
                 {
                     mDamageType = value;
-                    RaisePropertyChanged(nameof(DamageType));
-                    RaisePropertyChanged(nameof(DisplayDamage));
+                    OnPropertyChanged(nameof(DamageType));
+                    OnPropertyChanged(nameof(DisplayDamage));
                 }
             }
         }
@@ -103,7 +103,7 @@ namespace SR5Builder.DataModels
                 if (value != mAP)
                 {
                     AP = value;
-                    RaisePropertyChanged(nameof(AP));
+                    OnPropertyChanged(nameof(AP));
                 }
             }
         }
@@ -119,8 +119,8 @@ namespace SR5Builder.DataModels
                 if (value != mAcc)
                 {
                     mAcc = value;
-                    RaisePropertyChanged(nameof(Acc));
-                    RaisePropertyChanged(nameof(AugmentedAcc));
+                    OnPropertyChanged(nameof(Acc));
+                    OnPropertyChanged(nameof(AugmentedAcc));
                 }
             }
         }
@@ -186,8 +186,8 @@ namespace SR5Builder.DataModels
 
         private void OnSkillChanged(object sender, PropertyChangedEventArgs e)
         {
-            RaisePropertyChanged(nameof(AugmentedAcc));
-            RaisePropertyChanged(nameof(TotalPool));
+            OnPropertyChanged(nameof(AugmentedAcc));
+            OnPropertyChanged(nameof(TotalPool));
         }
 
         protected override void RecalcBonus(HashSet<string> propNames = null)

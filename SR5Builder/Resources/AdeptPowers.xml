@@ -53,7 +53,7 @@
     <FlatPoints>0</FlatPoints>
     <PointsPerLevel>0.5</PointsPerLevel>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>None</Kind>
         <Bonus>
           <decimal>0</decimal>
@@ -67,7 +67,7 @@
           <decimal>8</decimal>
         </Bonus>
         <Target>All</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
@@ -88,14 +88,14 @@
     <FlatPoints>0</FlatPoints>
     <PointsPerLevel>0.5</PointsPerLevel>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>DamageValue</Kind>
         <Bonus>
           <decimal>0</decimal>
           <decimal>1</decimal>
         </Bonus>
         <Target>%ext%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
@@ -118,7 +118,7 @@
     <FlatPoints>0</FlatPoints>
     <PointsPerLevel>0.5</PointsPerLevel>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Rating</Kind>
         <Bonus>
           <decimal>0</decimal>
@@ -128,8 +128,8 @@
           <decimal>4</decimal>
         </Bonus>
         <Target>Perception</Target>
-      </AugmentLoader>
-      <AugmentLoader>
+      </AugmentPrototype>
+      <AugmentPrototype>
         <Kind>Rating</Kind>
         <Bonus>
           <decimal>0</decimal>
@@ -139,7 +139,7 @@
           <decimal>4</decimal>
         </Bonus>
         <Target>Assensing</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
@@ -165,14 +165,14 @@
     <FlatPoints>0</FlatPoints>
     <PointsPerLevel>0.25</PointsPerLevel>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Accuracy</Kind>
         <Bonus>
           <decimal>0</decimal>
           <decimal>1</decimal>
         </Bonus>
         <Target>%ext%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
@@ -188,7 +188,7 @@
     <FlatPoints>0</FlatPoints>
     <PointsPerLevel>1</PointsPerLevel>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Rating</Kind>
         <Bonus>
           <decimal>0</decimal>
@@ -200,7 +200,7 @@
           <decimal>6</decimal>
         </Bonus>
         <Target>%ext%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
@@ -220,7 +220,7 @@
     <FlatPoints>0</FlatPoints>
     <PointsPerLevel>1</PointsPerLevel>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Rating</Kind>
         <Bonus>
           <decimal>0</decimal>
@@ -230,7 +230,7 @@
           <decimal>4</decimal>
         </Bonus>
         <Target>%ext%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
@@ -260,7 +260,7 @@
     <FlatPoints>0.5</FlatPoints>
     <PointsPerLevel>1</PointsPerLevel>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Rating</Kind>
         <Bonus>
           <decimal>0</decimal>
@@ -269,8 +269,8 @@
           <decimal>3</decimal>
         </Bonus>
         <Target>Physical Initiative Dice</Target>
-      </AugmentLoader>
-      <AugmentLoader>
+      </AugmentPrototype>
+      <AugmentPrototype>
         <Kind>Rating</Kind>
         <Bonus>
           <decimal>0</decimal>
@@ -279,7 +279,7 @@
           <decimal>3</decimal>
         </Bonus>
         <Target>Reaction</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
@@ -316,14 +316,14 @@
     <FlatPoints>0</FlatPoints>
     <PointsPerLevel>0.5</PointsPerLevel>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>DamageType</Kind>
         <Bonus>
           <decimal>0</decimal>
           <decimal>1</decimal>
         </Bonus>
         <Target>Unarmed Combat</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </AdeptPowerPrototype>
 </ArrayOfAdeptPowerPrototype>

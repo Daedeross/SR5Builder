@@ -52,7 +52,7 @@ namespace SR5Builder.ViewModels
                 {
                     mSelectedCategory = value;
                     CreateAvailableSkills();
-                    RaisePropertyChanged(nameof(SelectedCategory));
+                    OnPropertyChanged(nameof(SelectedCategory));
                 }
             }
         }
@@ -428,17 +428,17 @@ namespace SR5Builder.ViewModels
                     if (character.SpecialKind != SpecialKind.Resonance)
                         mCategoryList.Remove("Resonance");
                     CreateAvailableGroups();
-                    RaisePropertyChanged(nameof(CategoryList));
+                    OnPropertyChanged(nameof(CategoryList));
                     break;
                 case "Priorities":
-                    RaisePropertyChanged(nameof(SkillPoints));
-                    RaisePropertyChanged(nameof(SkillGroupPoints));
+                    OnPropertyChanged(nameof(SkillPoints));
+                    OnPropertyChanged(nameof(SkillGroupPoints));
                     break;
                 case "SkillPoints":
                 case "SkillPointsSpent":
                 case "SkillGroupPoints":
                 case "SkillGroupPointsSpent":
-                    RaisePropertyChanged(e.PropertyName);
+                    OnPropertyChanged(e.PropertyName);
                     break;
                 default:
                     break;
@@ -464,7 +464,7 @@ namespace SR5Builder.ViewModels
             else
                 AvailableSkills = new ObservableCollection<SkillPrototype>(
                     GlobalData.PreLoadedSkills[SelectedCategory]);
-            RaisePropertyChanged(nameof(AvailableSkills));
+            OnPropertyChanged(nameof(AvailableSkills));
         }
 
         private void CreateAvailableGroups()
@@ -483,7 +483,7 @@ namespace SR5Builder.ViewModels
                         select sg).ToList();
             }
             AvailableSkillGroups = new ObservableCollection<SkillGroupPrototype>(list);
-            RaisePropertyChanged(nameof(AvailableSkillGroups));
+            OnPropertyChanged(nameof(AvailableSkillGroups));
         }
 
         #endregion // Private Methods

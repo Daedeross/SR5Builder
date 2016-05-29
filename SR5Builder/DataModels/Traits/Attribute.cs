@@ -39,7 +39,7 @@ namespace SR5Builder.DataModels
             get { return mBaseRating + Min; }
             set
             {
-                if (value != mBaseRating)
+                if (value != mBaseRating + Min)
                 {
                     if (value < Min)
                     {
@@ -53,10 +53,10 @@ namespace SR5Builder.DataModels
                     {
                         mBaseRating = value - Min;
                     }
-                    RaisePropertyChanged(nameof(BaseRating));
-                    RaisePropertyChanged(nameof(Points));
-                    RaisePropertyChanged(nameof(ImprovedRating));
-                    RaisePropertyChanged(nameof(AugmentedRating));
+                    OnPropertyChanged(nameof(BaseRating));
+                    OnPropertyChanged(nameof(Points));
+                    OnPropertyChanged(nameof(ImprovedRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
@@ -104,10 +104,10 @@ namespace SR5Builder.DataModels
         {
             if (e.PropertyName == "MetatypeStats")
             {
-                RaisePropertyChanged(nameof(Min));
-                RaisePropertyChanged(nameof(Max));
-                RaisePropertyChanged(nameof(BaseRating));
-                RaisePropertyChanged(nameof(AugmentedRating));
+                OnPropertyChanged(nameof(Min));
+                OnPropertyChanged(nameof(Max));
+                OnPropertyChanged(nameof(BaseRating));
+                OnPropertyChanged(nameof(AugmentedRating));
             }
         }
     }

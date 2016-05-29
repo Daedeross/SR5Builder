@@ -71,7 +71,7 @@ namespace SR5Builder.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void RaisePropertyChanged(String info)
+        protected void OnPropertyChanged(String info)
         {
             if (PropertyChanged != null)
             {
@@ -85,7 +85,7 @@ namespace SR5Builder.ViewModels
                         //Debug.WriteLine(e.PropertyName);
                         //Debug.WriteLine("PropertyChanged Event null?: " + (PropertyChanged == null).ToString());
             #endif
-            RaisePropertyChanged(e.PropertyName);
+            OnPropertyChanged(e.PropertyName);
         }
 
         #endregion

@@ -36,7 +36,7 @@ namespace SR5Builder.DataModels
                 if (value != mRC)
                 {
                     mRC = value;
-                    RaisePropertyChanged(nameof(RC));
+                    OnPropertyChanged(nameof(RC));
                 }
             }
         }

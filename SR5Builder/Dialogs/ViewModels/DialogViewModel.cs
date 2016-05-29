@@ -22,7 +22,7 @@ namespace SR5Builder.ViewModels
                 {
                     mResult = value;
                     System.Diagnostics.Debug.WriteLine("Result");
-                    RaisePropertyChanged(nameof(Result));
+                    OnPropertyChanged(nameof(Result));
                 }
             }
         }

@@ -108,16 +108,16 @@ namespace SR5Builder.DataModels
             switch (e.PropertyName)
             {
                 case "AugmentedRating":
-                    RaisePropertyChanged(e.PropertyName);
-                    RaisePropertyChanged(nameof(DisplayValue));
+                    OnPropertyChanged(e.PropertyName);
+                    OnPropertyChanged(nameof(DisplayValue));
                     break;
                 case "ImprovedRating":
-                    RaisePropertyChanged(e.PropertyName);
-                    RaisePropertyChanged(nameof(DisplayValue));
+                    OnPropertyChanged(e.PropertyName);
+                    OnPropertyChanged(nameof(DisplayValue));
                     break;
                 case "BaseRating":
-                    RaisePropertyChanged(e.PropertyName);
-                    RaisePropertyChanged(nameof(DisplayValue));
+                    OnPropertyChanged(e.PropertyName);
+                    OnPropertyChanged(nameof(DisplayValue));
                     break;
                 default:
                     break;

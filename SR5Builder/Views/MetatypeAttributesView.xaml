@@ -94,109 +94,109 @@
             <Label Grid.Row="1"
                    Target="{Binding ElementName=BodySpin}">_Body</Label>
             <StackPanel Grid.Row="1" Grid.Column="1">
-                <TextBlock Text="{Binding MetatypeStats.BodyMin}" />
+                <TextBlock Text="{Binding Body.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding MetatypeStats.BodyMax}" />
+                <TextBlock Text="{Binding Body.Max}" />
             </StackPanel>
             <xtk:IntegerUpDown Name="BodySpin"
                                Grid.Row="1"  Grid.Column="2"
-                               Minimum="{Binding MetatypeStats.BodyMin, Mode=OneWay}"
-                               Maximum="{Binding MetatypeStats.BodyMax, Mode=OneWay}"
-                               Value="{Binding BaseBody, Mode=TwoWay}" />
+                               Minimum="{Binding Body.Min, Mode=OneWay}"
+                               Maximum="{Binding Body.Max, Mode=OneWay}"
+                               Value="{Binding Body.BaseRating, Mode=TwoWay}" />
             
             <Label Grid.Row="2"
                    Target="{Binding ElementName=AgilitySpin}">_Agility</Label>
             <StackPanel Grid.Row="2" Grid.Column="1">
-                <TextBlock Text="{Binding MetatypeStats.AgilityMin}" />
+                <TextBlock Text="{Binding Agility.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding MetatypeStats.AgilityMax}" />
+                <TextBlock Text="{Binding Agility.Max}" />
             </StackPanel>
             <xtk:IntegerUpDown Name="AgilitySpin"
                                Grid.Row="2"  Grid.Column="2"
-                               Minimum="{Binding MetatypeStats.AgilityMin, Mode=OneWay}"
-                               Maximum="{Binding MetatypeStats.AgilityMax, Mode=OneWay}"
-                               Value="{Binding BaseAgility, Mode=TwoWay}" />
+                               Minimum="{Binding Agility.Min, Mode=OneWay}"
+                               Maximum="{Binding Agility.Max, Mode=OneWay}"
+                               Value="{Binding Agility.BaseRating, Mode=TwoWay}" />
 
             <Label Grid.Row="3"
                    Target="{Binding ElementName=ReactionSpin}">_Reaction</Label>
             <StackPanel Grid.Row="3" Grid.Column="1">
-                <TextBlock Text="{Binding MetatypeStats.ReactionMin}" />
+                <TextBlock Text="{Binding Reaction.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding MetatypeStats.ReactionMax}" />
+                <TextBlock Text="{Binding Reaction.Max}" />
             </StackPanel>
             <xtk:IntegerUpDown Name="ReactionSpin"
                                Grid.Row="3"  Grid.Column="2"
-                               Minimum="{Binding MetatypeStats.ReactionMin, Mode=OneWay}"
-                               Maximum="{Binding MetatypeStats.ReactionMax, Mode=OneWay}"
-                               Value="{Binding BaseReaction, Mode=TwoWay}" />
+                               Minimum="{Binding Reaction.Min, Mode=OneWay}"
+                               Maximum="{Binding Reaction.Max, Mode=OneWay}"
+                               Value="{Binding Reaction.BaseRating, Mode=TwoWay}" />
             
             <Label Grid.Row="4"
                    Target="{Binding ElementName=StrengthSpin}">_Strength</Label>
             <StackPanel Grid.Row="4" Grid.Column="1"
                         >
-                <TextBlock Text="{Binding MetatypeStats.StrengthMin}" />
+                <TextBlock Text="{Binding Strength.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding MetatypeStats.StrengthMax}" />
+                <TextBlock Text="{Binding Strength.Max}" />
             </StackPanel>
             <xtk:IntegerUpDown Name="StrengthSpin"
                                Grid.Row="4"  Grid.Column="2"
-                               Minimum="{Binding MetatypeStats.StrengthMin, Mode=OneWay}"
-                               Maximum="{Binding MetatypeStats.StrengthMax, Mode=OneWay}"
-                               Value="{Binding BaseStrength, Mode=TwoWay}" />
+                               Minimum="{Binding Strength.Min, Mode=OneWay}"
+                               Maximum="{Binding Strength.Max, Mode=OneWay}"
+                               Value="{Binding Strength.BaseRating, Mode=TwoWay}" />
             
             <Label Grid.Row="1" Grid.Column="3"
                    Target="{Binding ElementName=WillpowerSpin}">_Willpower</Label>
             <StackPanel Grid.Row="1" Grid.Column="4"
                         >
-                <TextBlock Text="{Binding MetatypeStats.WillpowerMin}" />
+                <TextBlock Text="{Binding Willpower.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding MetatypeStats.WillpowerMax}" />
+                <TextBlock Text="{Binding Willpower.Max}" />
             </StackPanel>
             <xtk:IntegerUpDown Name="WillpowerSpin"
                                Grid.Row="1"  Grid.Column="5"
-                               Minimum="{Binding MetatypeStats.WillpowerMin, Mode=OneWay}"
-                               Maximum="{Binding MetatypeStats.WillpowerMax, Mode=OneWay}"
-                               Value="{Binding BaseWillpower, Mode=TwoWay}" />
+                               Minimum="{Binding Willpower.Min, Mode=OneWay}"
+                               Maximum="{Binding Willpower.Max, Mode=OneWay}"
+                               Value="{Binding Willpower.BaseRating, Mode=TwoWay}" />
             
             <Label Grid.Row="2" Grid.Column="3"
                    Target="{Binding ElementName=LogicSpin}">_Logic</Label>
             <StackPanel Grid.Row="2" Grid.Column="4">
-                <TextBlock Text="{Binding MetatypeStats.LogicMin}" />
+                <TextBlock Text="{Binding Logic.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding MetatypeStats.LogicMax}" />
+                <TextBlock Text="{Binding Logic.Max}" />
             </StackPanel>
             <xtk:IntegerUpDown Name="LogicSpin"
                                Grid.Row="2"  Grid.Column="5"
-                               Minimum="{Binding MetatypeStats.LogicMin, Mode=OneWay}"
-                               Maximum="{Binding MetatypeStats.LogicMax, Mode=OneWay}"
-                               Value="{Binding BaseLogic, Mode=TwoWay}" />
+                               Minimum="{Binding Logic.Min, Mode=OneWay}"
+                               Maximum="{Binding Logic.Max, Mode=OneWay}"
+                               Value="{Binding Logic.BaseRating, Mode=TwoWay}" />
             
             <Label Grid.Row="3" Grid.Column="3"
                    Target="{Binding ElementName=IntuitionSpin}">_Intuition</Label>
             <StackPanel Grid.Row="3" Grid.Column="4"
                         >
-                <TextBlock Text="{Binding MetatypeStats.IntuitionMin}" />
+                <TextBlock Text="{Binding Intuition.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding MetatypeStats.IntuitionMax}" />
+                <TextBlock Text="{Binding Intuition.Max}" />
             </StackPanel>
             <xtk:IntegerUpDown Name="IntuitionSpin"
                                Grid.Row="3"  Grid.Column="5"
-                               Minimum="{Binding MetatypeStats.IntuitionMin, Mode=OneWay}"
-                               Maximum="{Binding MetatypeStats.IntuitionMax, Mode=OneWay}"
-                               Value="{Binding BaseIntuition, Mode=TwoWay}" />
+                               Minimum="{Binding Intuition.Min, Mode=OneWay}"
+                               Maximum="{Binding Intuition.Max, Mode=OneWay}"
+                               Value="{Binding Intuition.BaseRating, Mode=TwoWay}" />
             
             <Label Grid.Row="4" Grid.Column="3"
                    Target="{Binding ElementName=CharismaSpin}">_Charisma</Label>
             <StackPanel Grid.Row="4" Grid.Column="4">
-                <TextBlock Text="{Binding MetatypeStats.CharismaMin}" />
+                <TextBlock Text="{Binding Charisma.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding MetatypeStats.CharismaMax}" />
+                <TextBlock Text="{Binding Charisma.Max}" />
             </StackPanel>
             <xtk:IntegerUpDown Name="CharismaSpin"
                                Grid.Row="4"  Grid.Column="5"
-                               Minimum="{Binding MetatypeStats.CharismaMin, Mode=OneWay}"
-                               Maximum="{Binding MetatypeStats.CharismaMax, Mode=OneWay}"
-                               Value="{Binding BaseCharisma, Mode=TwoWay}" />
+                               Minimum="{Binding Charisma.Min, Mode=OneWay}"
+                               Maximum="{Binding Charisma.Max, Mode=OneWay}"
+                               Value="{Binding Charisma.BaseRating, Mode=TwoWay}" />
             <Grid Grid.Column="7"
                   Grid.ColumnSpan="4" >
                 <Grid.RowDefinitions>
@@ -235,15 +235,15 @@
                    Target="{Binding ElementName=EdgeSpin}">_Edge</Label>
             <StackPanel Grid.Row="1" Grid.Column="8"
                         >
-                <TextBlock Text="{Binding MetatypeStats.EdgeMin}" />
+                <TextBlock Text="{Binding Edge.Min}" />
                 <TextBlock Text="/" />
-                <TextBlock Text="{Binding MetatypeStats.EdgeMax}" />
+                <TextBlock Text="{Binding Edge.Max}" />
             </StackPanel>
             <xtk:IntegerUpDown Name="EdgeSpin"
                                Grid.Row="1"  Grid.Column="9"
-                               Minimum="{Binding MetatypeStats.EdgeMin, Mode=OneWay}"
-                               Maximum="{Binding MetatypeStats.EdgeMax, Mode=OneWay}"
-                               Value="{Binding BaseEdge, Mode=TwoWay}" />
+                               Minimum="{Binding Edge.Min, Mode=OneWay}"
+                               Maximum="{Binding Edge.Max, Mode=OneWay}"
+                               Value="{Binding Edge.BaseRating, Mode=TwoWay}" />
 
             <Label Grid.Column="7" Grid.Row="3"
                    Content="Power Points">

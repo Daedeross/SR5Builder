@@ -23,8 +23,8 @@ namespace SR5Builder.DataModels
     /// needs two augmetns, one for the reaction bonus, and one for the extra dice.
     /// 
     /// It is up to the targeted trait (which must implement <see cref="IAugmentable"/>)
-    /// how 
-    /// </remarks>on how to handle the Augment.
+    /// how to handle the Augment.
+    /// </remarks>
     public class Augment: DataModelBase
     {
         #region Private Fields
@@ -73,7 +73,7 @@ namespace SR5Builder.DataModels
                     if (mTarget != null)
                         mTarget.Augments.Add(this);
 
-                    RaisePropertyChanged(nameof(Target));
+                    OnPropertyChanged(nameof(Target));
                 }
             }
         }
@@ -151,7 +151,7 @@ namespace SR5Builder.DataModels
 
         private void OnTraitChanged(object sender, PropertyChangedEventArgs e)
         {
-            RaisePropertyChanged(nameof(Bonus));
+            OnPropertyChanged(nameof(Bonus));
         }
 
         // Keeps watch on the Characters Augmentable Collection and

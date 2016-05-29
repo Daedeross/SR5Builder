@@ -27,8 +27,8 @@ namespace SR5Builder.DataModels
                 if (mAdditionalLoss != value)
                 {
                     mAdditionalLoss = value;
-                    RaisePropertyChanged(nameof(AdditionalLoss));
-                    RaisePropertyChanged(nameof(Loss));
+                    OnPropertyChanged(nameof(AdditionalLoss));
+                    OnPropertyChanged(nameof(Loss));
                 }
             }
         }
@@ -243,19 +243,19 @@ namespace SR5Builder.DataModels
             // This <em>should</em> be always true.
             if (mLoss != oldLoss)
             {
-                RaisePropertyChanged(nameof(Loss));
-                RaisePropertyChanged(nameof(Remaining));
+                OnPropertyChanged(nameof(Loss));
+                OnPropertyChanged(nameof(Remaining));
                 
                 if (LossCeiling != oldLossCeiling)
                 {
-                    RaisePropertyChanged(nameof(LossCeiling));
-                    RaisePropertyChanged(nameof(LossFloor));
+                    OnPropertyChanged(nameof(LossCeiling));
+                    OnPropertyChanged(nameof(LossFloor));
                 }
 
                 if (Floor != oldFloor)
                 {
-                    RaisePropertyChanged(nameof(Ceiling));
-                    RaisePropertyChanged(nameof(Floor));
+                    OnPropertyChanged(nameof(Ceiling));
+                    OnPropertyChanged(nameof(Floor));
                 }
             }
         }

@@ -40,8 +40,8 @@ namespace SR5Builder.ViewModels
                 {
                     mSelectedCategory = value;
                     AvailableSpells = new ObservableCollection<SpellPrototype>(GlobalData.PreLoadedSpells[mSelectedCategory]);
-                    RaisePropertyChanged(nameof(AvailableSpells));
-                    RaisePropertyChanged(nameof(SelectedCategory));
+                    OnPropertyChanged(nameof(AvailableSpells));
+                    OnPropertyChanged(nameof(SelectedCategory));
                 }
             }
         }

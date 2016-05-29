@@ -19,8 +19,8 @@ namespace SR5Builder.DataModels
                 if (value != mFree)
                 {
                     mFree = value;
-                    RaisePropertyChanged(nameof(Free));
-                    RaisePropertyChanged(nameof(Karma));
+                    OnPropertyChanged(nameof(Free));
+                    OnPropertyChanged(nameof(Karma));
                 }
             }
         }

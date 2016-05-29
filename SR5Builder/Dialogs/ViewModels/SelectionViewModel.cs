@@ -62,7 +62,7 @@ namespace SR5Builder.ViewModels
 
         private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            RaisePropertyChanged(nameof(Fillable));
+            OnPropertyChanged(nameof(Fillable));
         }
 
         #endregion // Private Methods

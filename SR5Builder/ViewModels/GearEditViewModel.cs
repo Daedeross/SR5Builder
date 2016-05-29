@@ -111,7 +111,7 @@ namespace SR5Builder.ViewModels
             tabooCheck.Add(SelectedNewMod.Category);
             tabooCheck.Add(SelectedNewMod.SubCategory);
             SelectedMod = SelectedNewMod;
-            RaisePropertyChanged(nameof(SelectedMod));
+            OnPropertyChanged(nameof(SelectedMod));
         }
 
         private bool AddModCanExecute()

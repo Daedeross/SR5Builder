@@ -27,9 +27,9 @@ namespace SR5Builder.DataModels
                 if (mBaseRating != value)
                 {
                     mBaseRating = value;
-                    RaisePropertyChanged(nameof(BaseRating));
-                    RaisePropertyChanged(nameof(AugmentedRating));
-                    RaisePropertyChanged(nameof(Points));
+                    OnPropertyChanged(nameof(BaseRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
+                    OnPropertyChanged(nameof(Points));
                 }
             }
         }
@@ -50,8 +50,8 @@ namespace SR5Builder.DataModels
                 if ((int)mBonusRating != value)
                 {
                     mBonusRating = value;
-                    RaisePropertyChanged(nameof(BonusRating));
-                    RaisePropertyChanged(nameof(AugmentedRating));
+                    OnPropertyChanged(nameof(BonusRating));
+                    OnPropertyChanged(nameof(AugmentedRating));
                 }
             }
         }
@@ -176,7 +176,7 @@ namespace SR5Builder.DataModels
             // Call PropertyChanged
             foreach (string name in propNames)
             {
-                RaisePropertyChanged(name);
+                OnPropertyChanged(name);
             }
         }
 
@@ -192,7 +192,7 @@ namespace SR5Builder.DataModels
             if (a.Kind == AugmentKind.Max)
             {
                 ExtraMax += (int)a.Bonus;
-                RaisePropertyChanged(nameof(Max));
+                OnPropertyChanged(nameof(Max));
             }
             return propNames;
         }

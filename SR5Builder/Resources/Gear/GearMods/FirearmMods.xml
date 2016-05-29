@@ -27,13 +27,13 @@
       <string>Tripod</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>RC</Kind>
         <Bonus>
           <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -49,7 +49,7 @@
       <string>Barrel Mount</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>RC</Kind>
         <Bonus>
           <decimal>0</decimal>
@@ -58,7 +58,7 @@
           <decimal>3</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -74,7 +74,7 @@
       <string>Barrel Mount</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>RC</Kind>
         <Bonus>
           <decimal>2</decimal>
@@ -82,7 +82,7 @@
           <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -98,7 +98,7 @@
       <string>Barrel Mount</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>RC</Kind>
         <Bonus>
           <decimal>3</decimal>
@@ -107,7 +107,7 @@
           <decimal>3</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -122,13 +122,13 @@
     <Taboo>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>RC</Kind>
         <Bonus>
           <decimal>6</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -159,13 +159,13 @@
       <string>Top Mount</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Accuracy</Kind>
         <Bonus>
           <decimal>1</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -181,13 +181,13 @@
       <string>Bottom Mount</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Accuracy</Kind>
         <Bonus>
           <decimal>1</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -202,13 +202,13 @@
     <Taboo>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>RC</Kind>
         <Bonus>
           <decimal>1</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -256,13 +256,13 @@
       <string>Laser sight</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Accuracy</Kind>
         <Bonus>
           <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -279,13 +279,13 @@
       <string>Top Mount</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Accuracy</Kind>
         <Bonus>
           <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -302,13 +302,13 @@
       <string>Bottom Mount</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Accuracy</Kind>
         <Bonus>
           <decimal>2</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -348,13 +348,13 @@
       <string>Bottom Mount</string>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>RC</Kind>
         <Bonus>
           <decimal>6</decimal>
         </Bonus>
         <Target>%owner%</Target>
-      </AugmentLoader>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <!-- Built in Mods for various firearms -->

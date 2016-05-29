@@ -8,6 +8,7 @@ using SR5Builder.DataModels;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Attribute = SR5Builder.DataModels.Attribute;
 
 namespace SR5Builder.ViewModels
 {
@@ -53,14 +54,8 @@ namespace SR5Builder.ViewModels
 
         public override string DisplayName
         {
-            get
-            {
-                return character.Name;
-            }
-            set
-            {
-                character.Name = value;
-            }
+            get { return character.Name; }
+            set { character.Name = value; }
         }
 		
 		public CharGenMethod Method 
@@ -102,7 +97,7 @@ namespace SR5Builder.ViewModels
             set
             {
                 character.Metatype = value;
-                RaisePropertyChanged(nameof(MetatypeStats));
+                OnPropertyChanged(nameof(MetatypeStats));
             }
         }
 
@@ -112,161 +107,20 @@ namespace SR5Builder.ViewModels
         }
 
             #endregion Metatype Properties
+        
+            #region Attributes
 
-            #region Attribute Text
+        public Attribute Body { get { return character.Body; } }
+        public Attribute Agility { get { return character.Agility; } }
+        public Attribute Reaction { get { return character.Reaction; } }
+        public Attribute Strength { get { return character.Strength; } }
+        public Attribute Willpower { get { return character.Willpower; } }
+        public Attribute Logic { get { return character.Logic; } }
+        public Attribute Intuition { get { return character.Intuition; } }
+        public Attribute Charisma { get { return character.Charisma; } }
+        public Attribute Edge { get { return character.Edge; } }
 
-        public string BodyText
-        {
-            get
-            {
-                return character.Body.ToString();
-            }
-        }
-
-        public string AgilityText
-        {
-            get
-            {
-                return character.Agility.ToString();
-            }
-        }
-
-        public string ReactionText
-        {
-            get
-            {
-                return character.Reaction.ToString();
-            }
-        }
-
-        public string StrengthText
-        {
-            get
-            {
-                return character.Strength.ToString();
-            }
-        }
-
-        public string WillpowerText
-        {
-            get
-            {
-                return character.Willpower.ToString();
-            }
-        }
-
-        public string LogicText
-        {
-            get
-            {
-                return character.Logic.ToString();
-            }
-        }
-
-        public string IntuitionText
-        {
-            get
-            {
-                return character.Intuition.ToString();
-            }
-        }
-
-        public string CharismaText
-        {
-            get { return character.Charisma.ToString(); }
-        }
-
-        public string EdgeText
-        {
-            get { return character.Edge.ToString(); }
-        }
-
-            #endregion // Attribute Text
-
-            #region Base Attributes
-
-        public int BaseBody
-        {
-            get { return character.Body.BaseRating; }
-            set
-            {
-                character.Body.BaseRating = value;
-            }
-        }
-
-        public int BaseAgility
-        {
-            get { return character.Agility.BaseRating; }
-            set
-            {
-                character.Agility.BaseRating = value;
-            }
-        }
-
-        public int BaseReaction
-        {
-            get { return character.Reaction.BaseRating; }
-            set
-            {
-                character.Reaction.BaseRating = value;
-            }
-        }
-
-        public int BaseStrength
-        {
-            get { return character.Strength.BaseRating; }
-            set
-            {
-                character.Strength.BaseRating = value;
-            }
-        }
-
-        public int BaseWillpower
-        {
-            get { return character.Willpower.BaseRating; }
-            set
-            {
-                character.Willpower.BaseRating = value;
-            }
-        }
-
-        public int BaseLogic
-        {
-            get { return character.Logic.BaseRating; }
-            set
-            {
-                character.Logic.BaseRating = value;
-            }
-        }
-
-        public int BaseIntuition
-        {
-            get { return character.Intuition.BaseRating; }
-            set
-            {
-                character.Intuition.BaseRating = value;
-            }
-        }
-
-        public int BaseCharisma
-        {
-            get { return character.Charisma.BaseRating; }
-            set
-            {
-                character.Charisma.BaseRating = value;
-            }
-        }
-
-        public int BaseEdge
-        {
-            get { return character.Edge.BaseRating; }
-            set
-            {
-                character.Edge.BaseRating = value;
-            }
-        }
-
-            #endregion // Base Attributes
+            #endregion Attributes
 
             #region OtherAttributeStuff
 
@@ -563,10 +417,10 @@ namespace SR5Builder.ViewModels
             switch (e.PropertyName)
             {
                 case "Attributes":
-                    RaisePropertyChanged(nameof(AttributePoints));
-                    RaisePropertyChanged(nameof(AttributePointsRemaining));
-                    RaisePropertyChanged(nameof(PrioritiesValid));
-                    RaisePropertyChanged(nameof(AttributePointsDone));
+                    OnPropertyChanged(nameof(AttributePoints));
+                    OnPropertyChanged(nameof(AttributePointsRemaining));
+                    OnPropertyChanged(nameof(PrioritiesValid));
+                    OnPropertyChanged(nameof(AttributePointsDone));
                     break;
                 case "Special":
                     SpecialChoices = new ObservableCollection<SpecialChoice>(
@@ -575,40 +429,40 @@ namespace SR5Builder.ViewModels
                                      select s
                                      );
                     HandleSpecialChanged();
-                    RaisePropertyChanged(nameof(SpecialChoices));
-                    RaisePropertyChanged(nameof(SpecialEnabled));
-                    RaisePropertyChanged(nameof(SpecialKind));
-                    RaisePropertyChanged(nameof(SpecialAttribute));
-                    RaisePropertyChanged(nameof(PrioritiesValid));
-                    RaisePropertyChanged(nameof(SpecialPointsDone));
-                    RaisePropertyChanged(nameof(SpecialAttributePointsRemaining));
-                    RaisePropertyChanged(nameof(HasPowerPoints));
+                    OnPropertyChanged(nameof(SpecialChoices));
+                    OnPropertyChanged(nameof(SpecialEnabled));
+                    OnPropertyChanged(nameof(SpecialKind));
+                    OnPropertyChanged(nameof(SpecialAttribute));
+                    OnPropertyChanged(nameof(PrioritiesValid));
+                    OnPropertyChanged(nameof(SpecialPointsDone));
+                    OnPropertyChanged(nameof(SpecialAttributePointsRemaining));
+                    OnPropertyChanged(nameof(HasPowerPoints));
                     break;
                 case "Metatype":
                     AvailableMetatypes = new ObservableCollection<NamePoints>(
                                          from s in GlobalData.Metatypes.Values
                                          where s.SpecialPoints.ContainsKey(character.Priorities.Metatype)
                                          select new NamePoints(s.Name, s.SpecialPoints[character.Priorities.Metatype]));
-                    RaisePropertyChanged(nameof(AvailableMetatypes));
-                    RaisePropertyChanged(nameof(AttributesEnabled));
-                    RaisePropertyChanged(nameof(Metatype));
-                    RaisePropertyChanged(nameof(PrioritiesValid));
-                    RaisePropertyChanged(nameof(AttributePointsDone));
-                    RaisePropertyChanged(nameof(SpecialPointsDone));
-                    RaisePropertyChanged(nameof(SpecialAttributePoints));
-                    RaisePropertyChanged(nameof(SpecialAttributePointsRemaining));
+                    OnPropertyChanged(nameof(AvailableMetatypes));
+                    OnPropertyChanged(nameof(AttributesEnabled));
+                    OnPropertyChanged(nameof(Metatype));
+                    OnPropertyChanged(nameof(PrioritiesValid));
+                    OnPropertyChanged(nameof(AttributePointsDone));
+                    OnPropertyChanged(nameof(SpecialPointsDone));
+                    OnPropertyChanged(nameof(SpecialAttributePoints));
+                    OnPropertyChanged(nameof(SpecialAttributePointsRemaining));
                     //character.Metatype = character.Metatype;
                     break;
                 case "Skills":
-                    RaisePropertyChanged(nameof(SkillsEnabled));
-                    RaisePropertyChanged(nameof(PrioritiesValid));
-                    RaisePropertyChanged(nameof(SkillPointsDone));
+                    OnPropertyChanged(nameof(SkillsEnabled));
+                    OnPropertyChanged(nameof(PrioritiesValid));
+                    OnPropertyChanged(nameof(SkillPointsDone));
                     break;
                 default:
-                    RaisePropertyChanged(nameof(PrioritiesValid));
+                    OnPropertyChanged(nameof(PrioritiesValid));
                     break;
             }
-            RaisePropertyChanged(nameof(IsDone));
+            OnPropertyChanged(nameof(IsDone));
         }
 
         private void OnCharacterChanged(object sender, PropertyChangedEventArgs e)
@@ -628,32 +482,32 @@ namespace SR5Builder.ViewModels
                         ActiveSpecialTab = 0;
                         break;
                 }
-                RaisePropertyChanged(nameof(ActiveSpecialTab));
-                RaisePropertyChanged(nameof(HasPowerPoints));
+                OnPropertyChanged(nameof(ActiveSpecialTab));
+                OnPropertyChanged(nameof(HasPowerPoints));
             }
             else if (e.PropertyName.Contains("AttributePoint"))
             {
-                RaisePropertyChanged(nameof(AttributePointsDone));
-                RaisePropertyChanged(nameof(IsDone));
+                OnPropertyChanged(nameof(AttributePointsDone));
+                OnPropertyChanged(nameof(IsDone));
             }
             else if (e.PropertyName.Contains("Skill") && e.PropertyName.Contains("Point"))
             {
                 if (e.PropertyName.Contains("Group"))
                 {
-                    RaisePropertyChanged(nameof(SkillGroupPointsDone));
+                    OnPropertyChanged(nameof(SkillGroupPointsDone));
                 }
                 else
                 {
-                    RaisePropertyChanged(nameof(SkillPointsDone));
+                    OnPropertyChanged(nameof(SkillPointsDone));
                 }
-                RaisePropertyChanged(nameof(IsDone));
+                OnPropertyChanged(nameof(IsDone));
             }
             else if (e.PropertyName == "PowerPointsSpent")
             {
-                RaisePropertyChanged(nameof(IsDone));
+                OnPropertyChanged(nameof(IsDone));
             }
 
-            RaisePropertyChanged(p);
+            OnPropertyChanged(p);
         }
 
         private void OnAttributeChanged(object sender, PropertyChangedEventArgs e)
@@ -663,13 +517,13 @@ namespace SR5Builder.ViewModels
             if (a != null)
             {
                 string name = e.PropertyName.Replace("Rating", "");
-                RaisePropertyChanged(name + a.Name);
-                RaisePropertyChanged(a.Name + "Text");
+                OnPropertyChanged(name + a.Name);
+                OnPropertyChanged(a.Name + "Text");
 
                 if (a == character.PowerPoints &&
                     e.PropertyName == nameof(DataModels.Attribute.AugmentedRating))
                 {
-                    RaisePropertyChanged(nameof(HasPowerPoints));
+                    OnPropertyChanged(nameof(HasPowerPoints));
                 }
             }
         }

@@ -56,13 +56,13 @@ namespace SR5Builder.DataModels
                     {
                         MetatypeStats = GlobalData.Metatypes[value];
                         mMetatype = value;
-                        RaisePropertyChanged(nameof(Metatype));
-                        RaisePropertyChanged(nameof(MetatypeStats));
+                        OnPropertyChanged(nameof(Metatype));
+                        OnPropertyChanged(nameof(MetatypeStats));
                         //OnPropertyChanged(nameof(SpecialAttributePointsRemaining));
                         //RefreshAttributes();
                     }
                 }
-                RaisePropertyChanged(nameof(SpecialAttributePoints));
+                OnPropertyChanged(nameof(SpecialAttributePoints));
             }
         }
 
@@ -84,7 +84,7 @@ namespace SR5Builder.DataModels
                 if (value != mBody)
                 {
                     mBody = value;
-                    RaisePropertyChanged(nameof(Body));
+                    OnPropertyChanged(nameof(Body));
                 }
             }
         }
@@ -98,7 +98,7 @@ namespace SR5Builder.DataModels
                 if (value != mAgility)
                 {
                     mAgility = value;
-                    RaisePropertyChanged(nameof(Agility));
+                    OnPropertyChanged(nameof(Agility));
                 }
             }
         }
@@ -112,7 +112,7 @@ namespace SR5Builder.DataModels
                 if (value != mReaction)
                 {
                     mReaction = value;
-                    RaisePropertyChanged(nameof(Reaction));
+                    OnPropertyChanged(nameof(Reaction));
                 }
             }
         }
@@ -126,7 +126,7 @@ namespace SR5Builder.DataModels
                 if (value != mStrength)
                 {
                     mStrength = value;
-                    RaisePropertyChanged(nameof(Strength));
+                    OnPropertyChanged(nameof(Strength));
                 }
             }
         }
@@ -140,7 +140,7 @@ namespace SR5Builder.DataModels
                 if (value != mWillpower)
                 {
                     mWillpower = value;
-                    RaisePropertyChanged(nameof(Willpower));
+                    OnPropertyChanged(nameof(Willpower));
                 }
             }
         }
@@ -154,7 +154,7 @@ namespace SR5Builder.DataModels
                 if (value != mLogic)
                 {
                     mLogic = value;
-                    RaisePropertyChanged(nameof(Logic));
+                    OnPropertyChanged(nameof(Logic));
                 }
             }
         }
@@ -168,7 +168,7 @@ namespace SR5Builder.DataModels
                 if (value != mIntuition)
                 {
                     mIntuition = value;
-                    RaisePropertyChanged(nameof(Intuition));
+                    OnPropertyChanged(nameof(Intuition));
                 }
             }
         }
@@ -182,7 +182,7 @@ namespace SR5Builder.DataModels
                 if (value != mCharisma)
                 {
                     mCharisma = value;
-                    RaisePropertyChanged(nameof(Charisma));
+                    OnPropertyChanged(nameof(Charisma));
                 }
             }
         }
@@ -196,7 +196,7 @@ namespace SR5Builder.DataModels
                 if (value != mEdge)
                 {
                     mEdge = value;
-                    RaisePropertyChanged(nameof(Edge));
+                    OnPropertyChanged(nameof(Edge));
                 }
             }
         }
@@ -210,7 +210,7 @@ namespace SR5Builder.DataModels
                 if (value != mEssence)
                 {
                     mEssence = value;
-                    RaisePropertyChanged(nameof(Essence));
+                    OnPropertyChanged(nameof(Essence));
                 }
             }
         }
@@ -334,9 +334,9 @@ namespace SR5Builder.DataModels
                     ResetSpecialProperties();
                     mSpecialAttribute.Name = SpecialKind.ToString();
                     mSpecialAttribute.BaseRating = mSpecialAttribute.BaseRating;
-                    RaisePropertyChanged(nameof(SpecialChoice));
-                    RaisePropertyChanged(nameof(SpecialKind));
-                    RaisePropertyChanged(nameof(SpecialAttribute));
+                    OnPropertyChanged(nameof(SpecialChoice));
+                    OnPropertyChanged(nameof(SpecialKind));
+                    OnPropertyChanged(nameof(SpecialAttribute));
                 }
             }
         }
@@ -361,8 +361,8 @@ namespace SR5Builder.DataModels
             set
             {
                 mSpecialAttribute = value;
-                RaisePropertyChanged(nameof(SpecialAttribute));
-                RaisePropertyChanged(nameof(SpecialAttributePointsSpent));
+                OnPropertyChanged(nameof(SpecialAttribute));
+                OnPropertyChanged(nameof(SpecialAttributePointsSpent));
             }
         }
 
@@ -504,8 +504,8 @@ namespace SR5Builder.DataModels
                 if (mAdvancedGrade != value)
                 {
                     mAdvancedGrade = value;
-                    RaisePropertyChanged(nameof(AdvancedGrade));
-                    RaisePropertyChanged(nameof(AdvancedGradeKarma));
+                    OnPropertyChanged(nameof(AdvancedGrade));
+                    OnPropertyChanged(nameof(AdvancedGradeKarma));
                 }
             }
         }
@@ -537,7 +537,7 @@ namespace SR5Builder.DataModels
                 if (value != mKarmaEarned)
                 {
                     mKarmaEarned = value;
-                    RaisePropertyChanged("KarmaEarned");
+                    OnPropertyChanged("KarmaEarned");
                 }
             }
         }
@@ -773,13 +773,13 @@ namespace SR5Builder.DataModels
                         else this.SpecialChoice = newSpecials[0];
                     }
                     else this.SpecialChoice = SpecialChoice.None(Priorities.Special);
-                    RaisePropertyChanged(nameof(SpecialAttribute));
+                    OnPropertyChanged(nameof(SpecialAttribute));
                     RecalcFreeSpells();
                     mSpecialAttribute.Name = SpecialKind.ToString();
                     break;
                 case nameof(Priorities.Skills):
-                    RaisePropertyChanged(nameof(SkillPointsRemaining));
-                    RaisePropertyChanged(nameof(SkillGroupPointsRemaining));
+                    OnPropertyChanged(nameof(SkillPointsRemaining));
+                    OnPropertyChanged(nameof(SkillGroupPointsRemaining));
                     break;
             }
         }
@@ -794,13 +794,13 @@ namespace SR5Builder.DataModels
                 foreach (KeyValuePair<string, Skill> skill in e.NewItems)
                     skill.Value.PropertyChanged += this.OnSkillChanged;
 
-            RaisePropertyChanged(nameof(SkillPointsSpent));
+            OnPropertyChanged(nameof(SkillPointsSpent));
         }
 
         private void OnSkillChanged(object sender, PropertyChangedEventArgs e)
         {
-            RaisePropertyChanged(nameof(SkillPointsSpent));
-            RaisePropertyChanged(nameof(SkillPointsRemaining));
+            OnPropertyChanged(nameof(SkillPointsSpent));
+            OnPropertyChanged(nameof(SkillPointsRemaining));
         }
 
         private void OnSkillGroupListChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -812,13 +812,13 @@ namespace SR5Builder.DataModels
                 foreach (KeyValuePair<string, SkillGroup> kvp in e.NewItems)
                     kvp.Value.PropertyChanged += this.OnSkillGroupChanged;
 
-            RaisePropertyChanged(nameof(SkillGroupPointsSpent));
+            OnPropertyChanged(nameof(SkillGroupPointsSpent));
         }
 
         private void OnSkillGroupChanged(object sender, PropertyChangedEventArgs e)
         {
-            RaisePropertyChanged(nameof(SkillGroupPointsSpent));
-            RaisePropertyChanged(nameof(SkillGroupPointsRemaining));
+            OnPropertyChanged(nameof(SkillGroupPointsSpent));
+            OnPropertyChanged(nameof(SkillGroupPointsRemaining));
         }
 
         private void OnAttributeChanged(object sender, PropertyChangedEventArgs e)
@@ -827,12 +827,12 @@ namespace SR5Builder.DataModels
             {
                 if (sender == mSpecialAttribute || sender == mEdge)
                 {
-                    RaisePropertyChanged(nameof(SpecialAttributePointsSpent));
+                    OnPropertyChanged(nameof(SpecialAttributePointsSpent));
                     //OnPropertyChanged(nameof(SpecialAttributePointsRemaining));
                 }
                 else
                 {
-                    RaisePropertyChanged(nameof(AttributePointsSpent));
+                    OnPropertyChanged(nameof(AttributePointsSpent));
                     //OnPropertyChanged(nameof(AttributePointsRemaining));
                 }
             }
@@ -840,14 +840,14 @@ namespace SR5Builder.DataModels
             {
                 if (sender == MentalLimit || sender == SocialLimit)
                 {
-                    RaisePropertyChanged(nameof(AstralLimit));
+                    OnPropertyChanged(nameof(AstralLimit));
                 }
             }
         }
 
         private void OnImplantsChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            RaisePropertyChanged(nameof(Essence));
+            OnPropertyChanged(nameof(Essence));
         }
 
         /// <summary>
@@ -969,15 +969,15 @@ namespace SR5Builder.DataModels
             // Call Prop Changed
             foreach (string name in propNames)
             {
-                RaisePropertyChanged(name);
+                OnPropertyChanged(name);
             }
         }
 
         private void OnPowerChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "PowerPoints")
+            if (e.PropertyName == nameof(AdeptPower.PowerPoints))
             {
-                RaisePropertyChanged(nameof(PowerPointsSpent));
+                OnPropertyChanged(nameof(PowerPointsSpent));
             }
         }
 
@@ -1044,8 +1044,8 @@ namespace SR5Builder.DataModels
             {
                 mKarmaSpent += item.Karma;
             }
-            RaisePropertyChanged(nameof(KarmaSpent));
-            RaisePropertyChanged(nameof(KarmaAvailable));
+            OnPropertyChanged(nameof(KarmaSpent));
+            OnPropertyChanged(nameof(KarmaAvailable));
         }
 
         private void OnSpellsChanged(object sender, NotifyCollectionChangedEventArgs e)

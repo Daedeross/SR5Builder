@@ -48,15 +48,15 @@
         <Label Grid.Column="0" Grid.Row="8">Edge</Label>
         
         <!-- Column 1: Attribute Text-->
-        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding BodyText}" />
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding AgilityText}" />
-        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding ReactionText}" />
-        <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding StrengthText}" />
-        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding WillpowerText}" />
-        <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding LogicText}" />
-        <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding IntuitionText}" />
-        <TextBlock Grid.Column="1" Grid.Row="7" Text="{Binding CharismaText}" />
-        <TextBlock Grid.Column="1" Grid.Row="8" Text="{Binding EdgeText}" />
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Body.DisplayValue}" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Agility.DisplayValue}" />
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Reaction.DisplayValue}" />
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Strength.DisplayValue}" />
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding Willpower.DisplayValue}" />
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding Logic.DisplayValue}" />
+        <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding Intuition.DisplayValue}" />
+        <TextBlock Grid.Column="1" Grid.Row="7" Text="{Binding Charisma.DisplayValue}" />
+        <TextBlock Grid.Column="1" Grid.Row="8" Text="{Binding Edge.DisplayValue}" />
         
         <!-- Column 2 -->
         <Label Grid.Column="2" Grid.Row="0">Essence</Label>

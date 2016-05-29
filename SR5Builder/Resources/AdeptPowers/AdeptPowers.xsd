@@ -42,7 +42,7 @@
               <xs:element name="Augments">
                 <xs:complexType mixed="false">
                   <xs:sequence minOccurs="0">
-                    <xs:element maxOccurs="unbounded" name="AugmentLoader">
+                    <xs:element maxOccurs="unbounded" name="AugmentPrototype">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="Kind">
