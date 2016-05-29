@@ -9,11 +9,16 @@ using System.Xml.Serialization;
 using SR5Builder.Helpers;
 using SR5Builder.Prototypes;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace SR5Builder
 {
     public static class GlobalData
     {
+        private const string AddSpacePattern = "([a-z])([A-Z])";
+        private const string AddSpaceReplacement = "$1 $2";
+        private static Regex AddSpaveRegex = new Regex(AddSpacePattern);
+
         #region Static Properties
 
             #region General Settings
@@ -60,7 +65,7 @@ namespace SR5Builder
 
         #endregion // Gear
 
-        public static Dictionary<string, QualityPrototype> Qualities;
+        public static Dictionary<string, List<QualityPrototype>> Qualities;
 
         public static NumberFormatInfo CostFormat;
 
@@ -85,7 +90,7 @@ namespace SR5Builder
             LoadSpells();
 
             // Load Adept Powers
-            PreLoadedPowers = AdeptPowerPrototype.LoadFromFile("Resources\\AdeptPowers.xml");
+            PreLoadedPowers = AdeptPowerPrototype.LoadFromFile("Resources\\AdeptPowers\\AdeptPowers.xml");
 
             // Load Normal Gear (non-cyber/bio-ware)
             LoadGear();
@@ -399,9 +404,29 @@ namespace SR5Builder
 
         private static void LoadQualities()
         {
-            List<QualityPrototype> quals = QualityPrototype.LoadFromFile("Resources/Qualities/PositiveQualities.xml");
+            Qualities = new Dictionary<string, List<QualityPrototype>>();
 
-            Qualities = quals.ToDictionary(q => q.Name, q => q);
+            DirectoryInfo info = new DirectoryInfo(".\\Resources\\Qualities");
+
+            FileInfo[] files = info.GetFiles("*.xml");
+
+            foreach (FileInfo file in files)
+            {
+                List<QualityPrototype> quals = QualityPrototype.LoadFromFile(file.FullName);
+                quals.Sort();
+                
+                string cat = Path.GetFileNameWithoutExtension(file.Name);
+                cat = AddSpaveRegex.Replace(cat, AddSpaceReplacement);
+                Qualities.Add(cat, quals);
+            }
+
+            IEnumerable<QualityPrototype> allQuals = new List<QualityPrototype>();
+            foreach (var list in Qualities.Values)
+            {
+                allQuals = allQuals.Concat(list);
+            }
+
+            Qualities.Add("All", allQuals.ToList());
             Log.LogMessage("Quaities Loaded");
         }
 

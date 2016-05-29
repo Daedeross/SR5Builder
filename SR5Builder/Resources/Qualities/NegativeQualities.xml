@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfQualityPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <QualityPrototype>
+    <Name>Addiction (Burnout)</Name>
+    <Book>SR5</Book>
+    <Page>77</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>25</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Addiction (Mild)</Name>
+    <Book>SR5</Book>
+    <Page>77</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>4</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Addiction (Moderate)</Name>
+    <Book>SR5</Book>
+    <Page>77</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>9</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Addiction (Severe)</Name>
+    <Book>SR5</Book>
+    <Page>77</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>20</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Allergy</Name>
+    <Book>SR5</Book>
+    <Page>78</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Astral Beacon</Name>
+    <Book>SR5</Book>
+    <Page>78</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Bad Luck</Name>
+    <Book>SR5</Book>
+    <Page>79</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>12</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Bad Rep</Name>
+    <Book>SR5</Book>
+    <Page>79</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Code of Honor</Name>
+    <Book>SR5</Book>
+    <Page>79</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>15</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Codeblock</Name>
+    <Book>SR5</Book>
+    <Page>801</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Combat Paralysis</Name>
+    <Book>SR5</Book>
+    <Page>80</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>12</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Dependents</Name>
+    <Book>SR5</Book>
+    <Page>80</Page>
+    <ExtArray />
+    <Max>3</Max>
+    <Karma>3</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Distinctive Style</Name>
+    <Book>SR5</Book>
+    <Page>80</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Elf Poser</Name>
+    <Book>SR5</Book>
+    <Page>81</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>6</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Gremlins</Name>
+    <Book>SR5</Book>
+    <Page>81</Page>
+    <ExtArray />
+    <Max>4</Max>
+    <Karma>4</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Incompetent</Name>
+    <Book>SR5</Book>
+    <Page>81</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Insomnia</Name>
+    <Book>SR5</Book>
+    <Page>81</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>15</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Loss of Confidence</Name>
+    <Book>SR5</Book>
+    <Page>82</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Low Pain Tolerance</Name>
+    <Book>SR5</Book>
+    <Page>82</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>9</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Ork Poser</Name>
+    <Book>SR5</Book>
+    <Page>82</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>6</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Prejudiced</Name>
+    <Book>SR5</Book>
+    <Page>82</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>3</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Scorched</Name>
+    <Book>SR5</Book>
+    <Page>83</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Sensitive System</Name>
+    <Book>SR5</Book>
+    <Page>83</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>12</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Simsense Vertigo</Name>
+    <Book>SR5</Book>
+    <Page>83</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>SINner</Name>
+    <Book>SR5</Book>
+    <Page>84</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Social Stress</Name>
+    <Book>SR5</Book>
+    <Page>85</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>8</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Spirit Bane</Name>
+    <Book>SR5</Book>
+    <Page>85</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Uncouth</Name>
+    <Book>SR5</Book>
+    <Page>85</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>14</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Uneducated</Name>
+    <Book>SR5</Book>
+    <Page>87</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>8</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Unsteady Hands</Name>
+    <Book>SR5</Book>
+    <Page>87</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Weak Immune System</Name>
+    <Book>SR5</Book>
+    <Page>87</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+</ArrayOfQualityPrototype>

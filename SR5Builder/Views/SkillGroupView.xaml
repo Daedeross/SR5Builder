@@ -73,11 +73,11 @@
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
                 <Button Width="18" Height="18"
-                        Command="{Binding IncreaseSkillGroupCommand}"
-                        ContentTemplate="{StaticResource IncreaseGlyphNormalKey}" />
-                <Button Width="18" Height="18"
                         Command="{Binding DecreaseSkillGroupCommand}"
                         ContentTemplate="{StaticResource DecreaseGlyphNormalKey}"/>
+                <Button Width="18" Height="18"
+                        Command="{Binding IncreaseSkillGroupCommand}"
+                        ContentTemplate="{StaticResource IncreaseGlyphNormalKey}" />
             </StackPanel>
             <TextBlock Grid.Row="4" TextWrapping="Wrap" TextAlignment="Center"
                        Width="50" Visibility="{Binding PointsVisible, Converter={StaticResource boolToVisConverter}}">Skill Points</TextBlock>

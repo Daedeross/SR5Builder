@@ -46,7 +46,8 @@
                   SelectedValue="{Binding SelectedNewGear}"
                   SelectedValuePath="Value">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Value.Name}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Value.Name}"
+                                    MinWidth="150" Width="*"/>
                 <DataGridTextColumn Header="Rating"
                                     Binding="{Binding Value.Rating, Converter={StaticResource intToStringConverter}}" />
                 <DataGridTextColumn Header="Avail"
@@ -82,12 +83,13 @@
                   SelectedValue="{Binding SelectedGear}"
                   SelectedValuePath="Value">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Value.Name}" Width="*" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Value.Name}" Width="*"
+                                    MinWidth="150"/>
                 <DataGridTextColumn Header="Rating"
                                     Binding="{Binding Value.BaseRating, Converter={StaticResource intToStringConverter}}" />
                 <DataGridTextColumn Header="Avail"
                                     Binding="{Binding Value.Availability}" />
-                <DataGridTextColumn Header="Cost" Binding="{Binding Value.DisplayCost}" />
+                <DataGridTextColumn Header="Cost" Binding="{Binding Value.Cost, Converter={StaticResource moneyConverter}}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

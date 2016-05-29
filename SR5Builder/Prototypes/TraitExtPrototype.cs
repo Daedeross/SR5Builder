@@ -14,7 +14,7 @@ namespace SR5Builder.Prototypes
             get
             {
                 if (ExtLabel != null && ExtLabel.Length > 0)
-                    return String.Format(Name, "["+ExtLabel+"]");
+                    return String.Format(Name, ExtLabel);
                 else return Name;
             }
         }

@@ -12,7 +12,7 @@
             <Setter Property="Padding" Value="5,0" />
         </Style>
         <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="8" />
+            <Setter Property="Margin" Value="5" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
     </Window.Resources>
@@ -54,12 +54,12 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="96" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <TextBlock></TextBlock>
-            <Button Grid.Column="1" Command="{Binding OkCommand}">Add</Button>
-            <Button Grid.Column="2" Command="{Binding CancelCommand}">Cancel</Button>
+            <Button Grid.Column="1" Command="{Binding OkCommand}" IsDefault="True">_Add</Button>
+            <Button Grid.Column="2" Command="{Binding CancelCommand}" IsCancel="True">_Cancel</Button>
         </Grid>
     </Grid>
 </Window>

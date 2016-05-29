@@ -129,7 +129,7 @@
     <Compile Include="Dialogs\ViewModels\NewCharacterViewModel.cs" />
     <Compile Include="Converters\BoolToVisiblilityConverter.cs" />
     <Compile Include="Converters\IntoToStringConverter.cs" />
-    <Compile Include="Converters\IntToMoneyConverter.cs" />
+    <Compile Include="Converters\MoneyConverter.cs" />
     <Compile Include="Helpers\Log.cs" />
     <Compile Include="Helpers\SettingCellSelector.cs" />
     <Compile Include="Loaders\AttributeLoader.cs" />
@@ -217,6 +217,9 @@
     <Compile Include="Views\PowersView.xaml.cs">
       <DependentUpon>PowersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\QualitiesView.xaml.cs">
+      <DependentUpon>QualitiesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
@@ -258,6 +261,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dialogs\NewCharacterDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QualitiesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -428,7 +435,7 @@
     <Folder Include="Resources\Priorities\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\AdeptPowers.xml">
+    <Content Include="Resources\AdeptPowers\AdeptPowers.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
@@ -478,6 +485,9 @@
     </Content>
     <Content Include="Resources\Metatypes\Human.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Qualities\NegativeQualities.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Qualities\PositiveQualities.xml">

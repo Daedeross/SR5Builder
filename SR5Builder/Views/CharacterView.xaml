@@ -58,6 +58,9 @@
             <TabItem Header="Attributes" IsEnabled="{Binding AttributesEnabled}">
                 <views:MetatypeAttributesView DataContext="{Binding}" />
             </TabItem>
+            <TabItem Header="Qualities">
+                <views:QualitiesView DataContext="{Binding QualitiesVM}" />
+            </TabItem>
             <TabItem Header="{Binding SpecialKind}">
                 <TabItem.Style>
                     <Style TargetType="HeaderedContentControl">

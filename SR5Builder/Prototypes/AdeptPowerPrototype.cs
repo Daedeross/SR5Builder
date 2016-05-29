@@ -48,11 +48,7 @@ namespace SR5Builder.Prototypes
             AdeptPower p = new AdeptPower(owner);
             p.Min = Min;
             p.Max = Max;
-            p.Name = Name;
-            if (ExtKind != null && ExtKind.Length > 0)
-            {
-                p.Name += " [" + ext + "]";
-            }
+            p.Name = string.Format(Name, ext);
             p.FlatPoints = FlatPoints;
             p.PointPerLevel = PointsPerLevel;
             p.Book = Book;

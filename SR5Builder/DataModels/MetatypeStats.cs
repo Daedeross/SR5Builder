@@ -106,7 +106,6 @@ namespace SR5Builder.DataModels
             }
         }
 
-
         public SerializableDictionary<Priority, int> SpecialPoints { get; set; }
 
         public MetatypeStats()
@@ -158,6 +157,11 @@ namespace SR5Builder.DataModels
         public void OnAugmentCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        public void OnAugmentRemoving(AugmentKind kind)
+        {
+            //throw new NotImplementedException();
         }
 
         #endregion // IAugmentable

@@ -36,14 +36,7 @@ namespace SR5Builder.Prototypes
             }
 
             Spell sp = new Spell(owner, isFree);
-            if (ExtKind != null && ExtKind.Length > 0)
-            {
-                sp.Name = String.Format(Name, ext);
-            }
-            else
-            {
-                sp.Name = Name;
-            }
+            sp.Name = string.Format(Name, ext);
             sp.Type = Type;
             sp.Range = Range;
             sp.Damage = Damage;

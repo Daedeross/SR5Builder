@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using ExpressionEvaluator;
 
-namespace SR5Builder.DataModels.Traits
+namespace SR5Builder.DataModels
 {
-    public class Quality : LeveledTrait, IKarmaCost
+    public class Quality : LeveledTrait, IKarmaCost, IAugmentContainer
     {
         public struct ValidScope
         {
@@ -20,7 +21,21 @@ namespace SR5Builder.DataModels.Traits
             get
             {
                 return mKarmaPerRating * BaseRating
-                    + mOwner.Settings.InPlayQualityMult * (mKarmaPerRating * ImprovedRating - BaseRating);
+                    + mOwner.Settings.InPlayQualityMult * (mKarmaPerRating * (ImprovedRating - BaseRating));
+            }
+        }
+
+        public override int BaseRating
+        {
+            get
+            {
+                return base.BaseRating;
+            }
+
+            set
+            {
+                base.BaseRating = value;
+                OnPropertyChanged(nameof(Karma));
             }
         }
 
@@ -29,9 +44,13 @@ namespace SR5Builder.DataModels.Traits
             get { return isValidDelegate(scope); }
         }
 
-        public Quality(SR5Character owner, string name)
+        public ObservableCollection<Augment> GivenAugments { get; set; }
+            = new ObservableCollection<Augment>();
+
+        public Quality(SR5Character owner, int karma)
             : base(owner)
         {
+            mKarmaPerRating = karma;
             scope = new ValidScope() { Character = owner, This = this };
         }
 
@@ -52,6 +71,14 @@ namespace SR5Builder.DataModels.Traits
             }
             else
                 isValidDelegate =  (s) => true;
+        }
+
+        public void ClearAugments()
+        {
+            foreach (Augment a in GivenAugments)
+            {
+                a.Target = null;
+            }
         }
     }
 }

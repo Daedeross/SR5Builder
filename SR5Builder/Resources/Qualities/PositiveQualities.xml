@@ -4,92 +4,43 @@
     <Name>Ambidextrous</Name>
     <Book>SR5</Book>
     <Page>71</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>4</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>First Impression</Name>
-    <Book>SR5</Book>
-    <Page>74</Page>
-    <Max>1</Max>
-    <Karma>11</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Mentor Spirit</Name>
-    <Book>SR5</Book>
-    <Page>76</Page>
-    <Max>1</Max>
-    <Karma>5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Analytical Mind</Name>
     <Book>SR5</Book>
     <Page>72</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>5</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Focused Concentration</Name>
-    <Book>SR5</Book>
-    <Page>74</Page>
-    <Max>6</Max>
-    <Karma>4</Karma>
-    <PrereqExpression>SpecialAttribute.AugmentedRating &gt; 0</PrereqExpression>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Natural Athlete</Name>
-    <Book>SR5</Book>
-    <Page>76</Page>
-    <Max>1</Max>
-    <Karma>7</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Aptitude</Name>
     <Book>SR5</Book>
     <Page>72</Page>
+    <ExtArray />
+    <ExtKind>Skill</ExtKind>
+    <ExtLabel>Skill</ExtLabel>
     <Max>1</Max>
     <Karma>14</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Gearhead</Name>
-    <Book>SR5</Book>
-    <Page>74</Page>
-    <Max>1</Max>
-    <Karma>11</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Natural Hardening</Name>
-    <Book>SR5</Book>
-    <Page>76</Page>
-    <Max>1</Max>
-    <Karma>10</Karma>
-    <PrereqExpression>SpecialChoice.Name == "Technomancer"</PrereqExpression>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Max</Kind>
+        <Target>%ext%</Target>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+        </Bonus>
+      </AugmentPrototype>
+    </Augments>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Astral Chameleon</Name>
     <Book>SR5</Book>
     <Page>72</Page>
-    <Max>1</Max>
-    <Karma>10</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Guts</Name>
-    <Book>SR5</Book>
-    <Page>74</Page>
-    <Max>1</Max>
-    <Karma>10</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Natural Immunity (natural)</Name>
-    <Book>SR5</Book>
-    <Page>76</Page>
-    <Max>1</Max>
-    <Karma>4</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Natural Immunity (synthetic)</Name>
-    <Book>SR5</Book>
-    <Page>76</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>10</Karma>
   </QualityPrototype>
@@ -97,41 +48,117 @@
     <Name>Bilingual</Name>
     <Book>SR5</Book>
     <Page>72</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>5</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>High Pain Tolerance</Name>
-    <Book>SR5</Book>
-    <Page>74</Page>
-    <Max>3</Max>
-    <Karma>7</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Photographic Memory</Name>
-    <Book>SR5</Book>
-    <Page>76</Page>
-    <Max>1</Max>
-    <Karma>6</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Blandness</Name>
     <Book>SR5</Book>
     <Page>72</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>8</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Catlike</Name>
+    <Book>SR5</Book>
+    <Page>72</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Codeslinger</Name>
+    <Book>SR5</Book>
+    <Page>72</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Double-Jointed</Name>
+    <Book>SR5</Book>
+    <Page>72</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>6</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Exceptional Attribute</Name>
+    <Book>SR5</Book>
+    <Page>72</Page>
+    <ExtArray>
+      <string>Body</string>
+      <string>Agility</string>
+      <string>Reaction</string>
+      <string>Strength</string>
+      <string>Willpower</string>
+      <string>Logic</string>
+      <string>Intuition</string>
+      <string>Charisma</string>
+    </ExtArray>
+    <ExtKind>Attribute</ExtKind>
+    <ExtLabel>Attribute</ExtLabel>
+    <Max>1</Max>
+    <Karma>14</Karma>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Max</Kind>
+        <Target>%ext%</Target>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+        </Bonus>
+      </AugmentPrototype>
+    </Augments>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>First Impression</Name>
+    <Book>SR5</Book>
+    <Page>74</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>11</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Focused Concentration</Name>
+    <Book>SR5</Book>
+    <Page>74</Page>
+    <ExtArray />
+    <Max>6</Max>
+    <Karma>4</Karma>
+    <PrereqExpression>SpecialAttribute.AugmentedRating &gt; 0</PrereqExpression>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Gearhead</Name>
+    <Book>SR5</Book>
+    <Page>74</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>11</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Guts</Name>
+    <Book>SR5</Book>
+    <Page>74</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>High Pain Tolerance</Name>
+    <Book>SR5</Book>
+    <Page>74</Page>
+    <ExtArray />
+    <Max>3</Max>
+    <Karma>7</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Home Ground (Astral Acclimation)</Name>
     <Book>SR5</Book>
     <Page>74</Page>
-    <Max>1</Max>
-    <Karma>10</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Home Ground (You Know a Guy)</Name>
-    <Book>SR5</Book>
-    <Page>74</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>10</Karma>
   </QualityPrototype>
@@ -139,13 +166,7 @@
     <Name>Home Ground (Digital Turf)</Name>
     <Book>SR5</Book>
     <Page>74</Page>
-    <Max>1</Max>
-    <Karma>10</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Home Ground (The Transporter)</Name>
-    <Book>SR5</Book>
-    <Page>74</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>10</Karma>
   </QualityPrototype>
@@ -153,6 +174,7 @@
     <Name>Home Ground (On the Lam)</Name>
     <Book>SR5</Book>
     <Page>74</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>10</Karma>
   </QualityPrototype>
@@ -160,35 +182,139 @@
     <Name>Home Ground (Street Politics)</Name>
     <Book>SR5</Book>
     <Page>74</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>10</Karma>
   </QualityPrototype>
   <QualityPrototype>
-    <Name>Quick Healer</Name>
+    <Name>Home Ground (The Transporter)</Name>
     <Book>SR5</Book>
-    <Page>77</Page>
+    <Page>74</Page>
+    <ExtArray />
     <Max>1</Max>
-    <Karma>3</Karma>
+    <Karma>10</Karma>
   </QualityPrototype>
   <QualityPrototype>
-    <Name>Catlike</Name>
+    <Name>Home Ground (You Know a Guy)</Name>
     <Book>SR5</Book>
-    <Page>72</Page>
+    <Page>74</Page>
+    <ExtArray />
     <Max>1</Max>
-    <Karma>7</Karma>
+    <Karma>10</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Human-Looking</Name>
     <Book>SR5</Book>
     <Page>75</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>6</Karma>
     <PrereqExpression>Metatype.Name == "Ork" || Metatype.Name == "Elf" || Metatype.Name == "Dwarf" </PrereqExpression>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Indomitable</Name>
+    <Book>SR5</Book>
+    <Page>75</Page>
+    <ExtArray />
+    <Max>3</Max>
+    <Karma>8</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Juryrigger</Name>
+    <Book>SR5</Book>
+    <Page>75</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Lucky</Name>
+    <Book>SR5</Book>
+    <Page>76</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>12</Karma>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Max</Kind>
+        <Target>Edge</Target>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+        </Bonus>
+      </AugmentPrototype>
+    </Augments>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Magical Resistance</Name>
+    <Book>SR5</Book>
+    <Page>76</Page>
+    <ExtArray />
+    <Max>4</Max>
+    <Karma>6</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Mentor Spirit</Name>
+    <Book>SR5</Book>
+    <Page>76</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Natural Athlete</Name>
+    <Book>SR5</Book>
+    <Page>76</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Natural Hardening</Name>
+    <Book>SR5</Book>
+    <Page>76</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>10</Karma>
+    <PrereqExpression>SpecialChoice.Name == "Technomancer"</PrereqExpression>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Natural Immunity (natural)</Name>
+    <Book>SR5</Book>
+    <Page>76</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>4</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Natural Immunity (synthetic)</Name>
+    <Book>SR5</Book>
+    <Page>76</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Photographic Memory</Name>
+    <Book>SR5</Book>
+    <Page>76</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>6</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Quick Healer</Name>
+    <Book>SR5</Book>
+    <Page>77</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>3</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Resistance to Pathogens</Name>
     <Book>SR5</Book>
     <Page>77</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>4</Karma>
   </QualityPrototype>
@@ -196,77 +322,32 @@
     <Name>Resistance to Toxins</Name>
     <Book>SR5</Book>
     <Page>77</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>4</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Codeslinger</Name>
-    <Book>SR5</Book>
-    <Page>72</Page>
-    <Max>1</Max>
-    <Karma>10</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Indomitable</Name>
-    <Book>SR5</Book>
-    <Page>75</Page>
-    <Max>3</Max>
-    <Karma>8</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Spirit Affinity</Name>
     <Book>SR5</Book>
     <Page>77</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>7</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Double-Jointed</Name>
-    <Book>SR5</Book>
-    <Page>72</Page>
-    <Max>1</Max>
-    <Karma>6</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Juryrigger</Name>
-    <Book>SR5</Book>
-    <Page>75</Page>
-    <Max>1</Max>
-    <Karma>10</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Toughness</Name>
     <Book>SR5</Book>
     <Page>77</Page>
+    <ExtArray />
     <Max>1</Max>
     <Karma>9</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Exceptional Attribute</Name>
-    <Book>SR5</Book>
-    <Page>72</Page>
-    <Max>1</Max>
-    <Karma>14</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Lucky</Name>
-    <Book>SR5</Book>
-    <Page>76</Page>
-    <Max>1</Max>
-    <Karma>12</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Will to Live</Name>
     <Book>SR5</Book>
     <Page>77</Page>
+    <ExtArray />
     <Max>3</Max>
     <Karma>3</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Magical Resistance</Name>
-    <Book>SR5</Book>
-    <Page>76</Page>
-    <Max>4</Max>
-    <Karma>6</Karma>
   </QualityPrototype>
 </ArrayOfQualityPrototype>

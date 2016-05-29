@@ -86,8 +86,8 @@
                         </TextBlock.Style>
                         <TextBlock.Text>
                             <MultiBinding Converter="{StaticResource valueRemainingConverter}">
-                                <Binding Path="KarmaSpent" />
-                                <Binding Path="MagicVM.PowerPoints.AugmentedRating" />
+                                <Binding Path="QualitiesVM.KarmaSpent" />
+                                <Binding Path="QualitiesVM.TotalKarma" />
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>
@@ -229,6 +229,15 @@
                         </TextBlock.Text>
                     </TextBlock>
                 </StackPanel>
+            </Border>
+        </StatusBarItem>
+        <StatusBarItem HorizontalAlignment="Right">
+            <Border MinWidth="100">
+                <TextBlock Text="{Binding MoneyRemaining}"
+                           HorizontalAlignment="Right"
+                           TextAlignment="Right"
+                           Margin="5,0"
+                           />
             </Border>
         </StatusBarItem>
     </StatusBar>

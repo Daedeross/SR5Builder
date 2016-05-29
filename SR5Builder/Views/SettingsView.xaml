@@ -40,7 +40,7 @@
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <ListBox MinWidth="200"
+        <ListBox MinWidth="100"
                  ItemsSource="{Binding SavedSettings.Keys}"
                  SelectedItem="{Binding SelectedSettings}">
             <ListBox.ItemTemplate>

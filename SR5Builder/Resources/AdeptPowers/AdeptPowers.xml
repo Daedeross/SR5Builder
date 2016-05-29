@@ -143,7 +143,7 @@
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
-    <Name>Enhanced Accuracy</Name>
+    <Name>Enhanced Accuracy [{0}]</Name>
     <ExtLabel>Skill</ExtLabel>
     <ExtKind>Combat Skill</ExtKind>
     <ExtArray>
@@ -176,7 +176,7 @@
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
-    <Name>Improved Ability</Name>
+    <Name>Improved Ability [{0}]</Name>
     <ExtLabel>Skill</ExtLabel>
     <ExtKind>Skill</ExtKind>
     <ExtArray>
@@ -204,7 +204,7 @@
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
-    <Name>Improved</Name>
+    <Name>Improved [{0}]</Name>
     <ExtLabel>Attribute</ExtLabel>
     <ExtKind>Attribute</ExtKind>
     <ExtArray>
@@ -234,7 +234,7 @@
     </Augments>
   </AdeptPowerPrototype>
   <AdeptPowerPrototype>
-    <Name>Improved Potential</Name>
+    <Name>Improved Potential [{0}]</Name>
     <ExtLabel>Limit</ExtLabel>
     <ExtKind>Limit</ExtKind>
     <ExtArray>

@@ -25,20 +25,20 @@ namespace SR5Builder.ViewModels
 
         #region Properties
 
-        private List<string> mCategoryList;
-        public List<string> CategoryList
+        private List<string> mCategories;
+        public List<string> Categories
         {
             get
             {
-                if (mCategoryList == null)
+                if (mCategories == null)
                 {
-                    mCategoryList = GlobalData.PreLoadedSkills.Keys.ToList();
+                    mCategories = GlobalData.PreLoadedSkills.Keys.ToList();
                     if (character.SpecialKind != SpecialKind.Magic)
-                        mCategoryList.Remove("Magical");
+                        mCategories.Remove("Magical");
                     if (character.SpecialKind != SpecialKind.Resonance)
-                        mCategoryList.Remove("Resonance");
+                        mCategories.Remove("Resonance");
                 }
-                return mCategoryList;
+                return mCategories;
             }
         }
 
@@ -163,11 +163,11 @@ namespace SR5Builder.ViewModels
                 if (result == true)
                 {
                     SkillGroupsList.Remove(grp.Name);
-                    SkillsList.Add(SelectedNewSkill.Name, SelectedNewSkill.NewSkill(character));
+                    SkillsList.Add(SelectedNewSkill.Name, SelectedNewSkill.ToSkill(character));
                 }
             }
             else
-                SkillsList.Add(SelectedNewSkill.Name, SelectedNewSkill.NewSkill(character));
+                SkillsList.Add(SelectedNewSkill.Name, SelectedNewSkill.ToSkill(character));
         }
 
         private bool AddSkillCanExecute()
@@ -231,7 +231,7 @@ namespace SR5Builder.ViewModels
             return (SkillsList != null &&
                     SkillsList.Count > 0 &&
                     SelectedSkill != null &&
-                    SelectedSkill.BaseRating < 6);
+                    SelectedSkill.BaseRating < SelectedSkill.StartingMax);
         }
 
             #endregion // IncreaseSkill
@@ -263,7 +263,7 @@ namespace SR5Builder.ViewModels
             return (SkillsList != null &&
                     SkillsList.Count > 0 &&
                     SelectedSkill != null &&
-                    SelectedSkill.BaseRating > 0);
+                    SelectedSkill.BaseRating > SelectedSkill.Min);
         }
 
             #endregion // DecreaseSkill
@@ -422,13 +422,13 @@ namespace SR5Builder.ViewModels
             switch (e.PropertyName)
             {
                 case "SpecialKind":
-                    mCategoryList = GlobalData.PreLoadedSkills.Keys.ToList();
+                    mCategories = GlobalData.PreLoadedSkills.Keys.ToList();
                     if (character.SpecialKind != SpecialKind.Magic)
-                        mCategoryList.Remove("Magical");
+                        mCategories.Remove("Magical");
                     if (character.SpecialKind != SpecialKind.Resonance)
-                        mCategoryList.Remove("Resonance");
+                        mCategories.Remove("Resonance");
                     CreateAvailableGroups();
-                    OnPropertyChanged(nameof(CategoryList));
+                    OnPropertyChanged(nameof(Categories));
                     break;
                 case "Priorities":
                     OnPropertyChanged(nameof(SkillPoints));
@@ -452,7 +452,7 @@ namespace SR5Builder.ViewModels
             else if (mSelectedCategory == "All")
             {
                 List<SkillPrototype> tmpList = new List<SkillPrototype>();
-                foreach (string cat in CategoryList)
+                foreach (string cat in Categories)
                 {
                     if (cat != "All")
                     {

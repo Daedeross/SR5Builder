@@ -24,7 +24,7 @@ namespace SR5Builder.Prototypes
             grp.Name = this.Name;
             grp.Skills = (from skill in GlobalData.PreLoadedSkills["All"]
                           where skill.GroupName == this.Name
-                          select skill.NewSkill(character)).ToDictionary(skill => skill.Name);
+                          select skill.ToSkill(character)).ToDictionary(skill => skill.Name);
             grp.BaseRating = 1;
 
             return grp;

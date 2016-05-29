@@ -153,7 +153,9 @@ namespace SR5Builder.ViewModels
 
         public Essence Essence { get { return character.Essence; } }
 
-            #endregion // OtherAttributeStuff
+        #endregion // OtherAttributeStuff
+
+        public QualitiesViewModel QualitiesVM { get; set; }
 
             #region Initiatives
 
@@ -265,7 +267,16 @@ namespace SR5Builder.ViewModels
 
         public WeaponsViewModel WeaponsVM { get; set; }
 
-        #endregion
+        public string MoneyRemaining
+        {
+            get
+            {
+                //return string.Format(GlobalData.CostFormat, "{0C}", character.MoneyRemaining);
+                return character.MoneyRemaining.ToString("C", GlobalData.CostFormat);
+            }
+        }
+
+            #endregion
 
             #region Validation
 
@@ -370,6 +381,7 @@ namespace SR5Builder.ViewModels
             MagicVM = new MagicViewModel(character);
             GearVM = new GearViewModel(character);
             WeaponsVM = new WeaponsViewModel(character);
+            QualitiesVM = new QualitiesViewModel(character);
 
             character.Priorities.PropertyChanged += this.OnPrioritiesChanged;
             character.PropertyChanged += this.OnCharacterChanged;

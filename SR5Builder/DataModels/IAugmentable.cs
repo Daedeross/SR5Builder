@@ -54,5 +54,7 @@ namespace SR5Builder.DataModels
         /// <param name="sender"></param>
         /// <param name="e"></param>
         void OnAugmentCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e);
+
+        void OnAugmentRemoving(AugmentKind kind);
     }
 }

@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace SR5Builder.Views
 {
     /// <summary>
-    /// Interaction logic for ImplantsView.xaml
+    /// Interaction logic for QualitiesView.xaml
     /// </summary>
-    public partial class ImplantsView : UserControl
+    public partial class QualitiesView : UserControl
     {
-        public ImplantsView()
+        public QualitiesView()
         {
             InitializeComponent();
         }
 
-        private void DataGrid_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private void DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             GridView gv = ((ListView)sender).View as GridView;
             if (gv != null)

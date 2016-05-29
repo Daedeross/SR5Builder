@@ -116,7 +116,7 @@ namespace SR5Builder.DataModels
 
             if (e.NewItems != null)
             {
-                foreach (var item in e.OldItems)
+                foreach (var item in e.NewItems)
                 {
                     Type valueType = item.GetType();
                     if (valueType.IsGenericType)
@@ -170,7 +170,7 @@ namespace SR5Builder.DataModels
                                 recalc |= gear.TotalEssence != 0;
 
                                 // remove mods from local collection
-                                foreach (GearMod mod in (gear).Mods)
+                                foreach (GearMod mod in (gear).Mods.Values)
                                 {
                                     EssenceCosts.Remove(mod);
                                     mod.PropertyChanged -= OnSubscribedChanged;

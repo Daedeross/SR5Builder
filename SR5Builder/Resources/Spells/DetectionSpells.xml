@@ -151,7 +151,7 @@
     <Page>286</Page>
   </SpellPrototype>
   <SpellPrototype>
-    <Name>Detect {0}</Name>
+    <Name>Detect [{0}]</Name>
     <ExtLabel>Life Form</ExtLabel>
     <ExtKind>Free</ExtKind>
     <ExtPrompt>Please fill in the name of the life form to be detected.</ExtPrompt>
@@ -169,7 +169,7 @@
     <Page>287</Page>
   </SpellPrototype>
   <SpellPrototype>
-    <Name>Detect {0}, Extended</Name>
+    <Name>Detect [{0}], Extended</Name>
     <ExtLabel>Life Form</ExtLabel>
     <ExtKind>Free</ExtKind>
     <ExtPrompt>Please fill in the name of the life form to be detected.</ExtPrompt>
@@ -217,7 +217,7 @@
     <Page>287</Page>
   </SpellPrototype>
   <SpellPrototype>
-    <Name>Detect {0}</Name>
+    <Name>Detect [{0}]</Name>
     <ExtLabel>Object</ExtLabel>
     <ExtKind>Free</ExtKind>
     <ExtPrompt>Please fill in the type of object to be detected.</ExtPrompt>

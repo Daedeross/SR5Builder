@@ -181,6 +181,7 @@ namespace SR5Builder.DataModels
 
         public override void Dispose()
         {
+            Target?.OnAugmentRemoving(kind);
             Target = null;
             base.Dispose();
         }

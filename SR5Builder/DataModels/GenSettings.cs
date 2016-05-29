@@ -18,6 +18,10 @@ namespace SR5Builder.DataModels
 
         public int MaxAugment { get; set; } = 4;
 
+        public int StartingSkillCap { get; set; } = 6;
+
+        public int InPlaySkillCap { get; set; } = 12;
+
         #region Scaling Karma Costs
 
         /// <summary>

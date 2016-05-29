@@ -39,8 +39,8 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                if(mBonusRating > SR5Character.MaxAugment)
-                    mBonusRating = SR5Character.MaxAugment;
+                if(mBonusRating > mOwner.Settings.MaxAugment)
+                    mBonusRating = mOwner.Settings.MaxAugment;
                 if (mBaseRating < 0)
                     mBonusRating = 0;
                 return (int)mBonusRating;
@@ -128,6 +128,8 @@ namespace SR5Builder.DataModels
         //protected ObservableCollection<Augment> mAugments;
         public ObservableCollection<Augment> Augments { get; set; }
 
+        public HashSet<string> RemovedNames { get; set; } = new HashSet<string>();
+
         public void OnAugmentChanged(object sender, PropertyChangedEventArgs e)
         {
             RecalcBonus();
@@ -162,6 +164,12 @@ namespace SR5Builder.DataModels
             if (propNames == null)
                 propNames = new HashSet<string>();
 
+            foreach (string name in RemovedNames)
+            {
+                propNames.Add(name);
+            }
+            RemovedNames.Clear();
+
             //Clear Bonus
             ExtraMax = 0;
             ExtraMin = 0;
@@ -170,8 +178,8 @@ namespace SR5Builder.DataModels
             foreach (Augment a in Augments)
                 propNames = AddAugment(a, propNames);
 
-            if (mBonusRating > SR5Character.MaxAugment)
-                mBonusRating = SR5Character.MaxAugment;
+            if (mBonusRating > mOwner.Settings.MaxAugment)
+                mBonusRating = mOwner.Settings.MaxAugment;
 
             // Call PropertyChanged
             foreach (string name in propNames)
@@ -192,13 +200,46 @@ namespace SR5Builder.DataModels
             if (a.Kind == AugmentKind.Max)
             {
                 ExtraMax += (int)a.Bonus;
-                OnPropertyChanged(nameof(Max));
+                propNames.Add(nameof(Max));
             }
             return propNames;
         }
 
+        public virtual void OnAugmentRemoving(AugmentKind kind)
+        {
+            switch (kind)
+            {
+                case AugmentKind.None:
+                    break;
+                case AugmentKind.Rating:
+                    RemovedNames.Add(nameof(BonusRating));
+                    RemovedNames.Add(nameof(AugmentedRating));
+                    RemovedNames.Add(nameof(DisplayValue));
+                    break;
+                case AugmentKind.Max:
+                    RemovedNames.Add(nameof(Max));
+                    break;
+                case AugmentKind.DamageValue:
+                    break;
+                case AugmentKind.DamageType:
+                    break;
+                case AugmentKind.Accuracy:
+                    break;
+                case AugmentKind.Availability:
+                    break;
+                case AugmentKind.Restriction:
+                    break;
+                case AugmentKind.RC:
+                    break;
+                case AugmentKind.AP:
+                    break;
+                default:
+                    break;
+            }
+        }
+
         #endregion IAugmentable Implemenation
-        
+
         public int CompareTo(LeveledTrait other)
         {
             return (this.mName + mBaseRating).CompareTo(other.Name + mBaseRating);

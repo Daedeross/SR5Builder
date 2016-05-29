@@ -1,8 +1,9 @@
-﻿<UserControl x:Class="SR5Builder.Views.ActiveSkillsView"
+﻿<UserControl x:Class="SR5Builder.Views.QualitiesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SR5Builder.Views"
              xmlns:xtk="http://schemas.xceed.com/wpf/xaml/toolkit"
              xmlns:cnv="clr-namespace:SR5Builder.Converters"
              mc:Ignorable="d" 
@@ -39,26 +40,25 @@
                   SelectedItem="{Binding SelectedCategory, Mode=TwoWay}"
                   
                   />
-        <ListView Name="newSkillsListView"
+        <ListView Name="newQualities"
                   Grid.Column="0" Grid.Row="2"
                   VerticalAlignment="Stretch"                 
-                  DataContext="{Binding AvailableSkills}"
-                  ItemsSource="{Binding}" DataContextChanged="newSkillsListView_DataContextChanged"
-                  SelectedItem="{Binding Path=DataContext.SelectedNewSkill,
+                  DataContext="{Binding AvailableQualities}"
+                  ItemsSource="{Binding}" DataContextChanged="DataContextChanged"
+                  SelectedItem="{Binding Path=DataContext.SelectedNewQuality,
                                          RelativeSource={RelativeSource AncestorType=UserControl}
                                  }">
 
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name">
+                    <GridViewColumn Header="Name" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock MinWidth="50" Text="{Binding Name}" />
+                                <TextBlock MinWidth="100" Text="{Binding DisplayName}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Attribute" DisplayMemberBinding="{Binding LinkedAttribute}" />
-                    <GridViewColumn Header="Group" DisplayMemberBinding="{Binding GroupName}" />
+                    <GridViewColumn Header="Karma" DisplayMemberBinding="{Binding DisplayKarma}" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -73,52 +73,46 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Button Grid.Row="0"
-                    Command="{Binding AddSkillCommand}">Add</Button>
+                    Command="{Binding AddQualityCommand}">Add</Button>
             <Button Grid.Row="1" Padding="2,1"
-                    Command="{Binding RemoveSkillCommand}" >Remove</Button>
+                    Command="{Binding RemoveQualityCommand}" >Remove</Button>
             <StackPanel Grid.Row="2"
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
                 <Button Width="18" Height="18"
-                        Command="{Binding DecreaseSkillCommand}"
+                        Command="{Binding DecreaseQualityCommand}"
                         ContentTemplate="{StaticResource DecreaseGlyphNormalKey}"/>
                 <Button Width="18" Height="18"
-                        Command="{Binding IncreaseSkillCommand}"
+                        Command="{Binding IncreaseQualityCommand}"
                         ContentTemplate="{StaticResource IncreaseGlyphNormalKey}" />
             </StackPanel>
             <TextBlock Grid.Row="4" TextWrapping="Wrap" TextAlignment="Center"
-                       Width="50" Visibility="{Binding PointsVisible, Converter={StaticResource boolToVisConverter}}">Skill Points</TextBlock>
+                       Width="50" Visibility="{Binding PointsVisible, Converter={StaticResource boolToVisConverter}}">Karma</TextBlock>
             <TextBlock Grid.Row="5" Visibility="{Binding PointsVisible, Converter={StaticResource boolToVisConverter}}"
                        HorizontalAlignment="Center">
                 <TextBlock.Text>
                     <MultiBinding Converter="{StaticResource pointsConverter}">
-                        <Binding Path="SkillPointsSpent" />
-                        <Binding Path="SkillPoints" />
+                        <Binding Path="KarmaSpent" />
+                        <Binding Path="TotalKarma" />
                     </MultiBinding>
                 </TextBlock.Text>
             </TextBlock>
         </Grid>
         <ListView Grid.Column="2" Grid.Row="1"
                   MinWidth="300"
-                  ItemsSource="{Binding SkillsList}"
-                  SelectedValue="{Binding SelectedSkill}"
+                  ItemsSource="{Binding Qualities}"
+                  SelectedValue="{Binding SelectedQuality}"
                   SelectedValuePath="Value">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Value.Name}" />
-                    <GridViewColumn Header="Attribute" DisplayMemberBinding="{Binding Value.LinkedAttribute}" />
-                    <GridViewColumn Header="Rating">
+                    <GridViewColumn Header="Name">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <xtk:IntegerUpDown Value="{Binding Value.BaseRating, Mode=TwoWay}"
-                                                   AllowSpin="False"
-                                                   ShowButtonSpinner="False"
-                                                   Minimum="0"
-                                                   Maximum="6"/>
+                                <TextBlock MinWidth="100" Text="{Binding Value.Name}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Total" DisplayMemberBinding="{Binding Value.AugmentedPool, Mode=OneWay}" />
+                    <GridViewColumn Header="Karma" DisplayMemberBinding="{Binding Value.Karma, Mode=OneWay}" />
                 </GridView>
             </ListView.View>
         </ListView>

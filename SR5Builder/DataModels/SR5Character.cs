@@ -14,12 +14,10 @@ namespace SR5Builder.DataModels
 {
     /// <summary>
     /// This class holds all the in-memory data, including its own instance of Settings.
-    /// (De)Serialization is handled by CharacterLoader.
+    /// (De)Seri1alization is handled by CharacterLoader.
     /// </summary>
     public class SR5Character : DataModelBase
     {
-        public static readonly int MaxAugment = 4;
-
         #region Private Fields
 
         #endregion // Private Fields
@@ -396,6 +394,8 @@ namespace SR5Builder.DataModels
 
             #endregion // Priorities
 
+        public ObservableDictionary<string, Quality> Qualities { get; set; }
+
             #region Skills
 
         public ObservableDictionary<string, Skill> SkillList { get; set; }
@@ -574,7 +574,24 @@ namespace SR5Builder.DataModels
 
         //public ObservableDictionary<string, RangedWeapon> ProjectileWeapons { get; set; }
 
-            #endregion // Weapons
+        #endregion // Weapons
+
+
+        private decimal mMoneySpent;
+        public decimal MoneySpent
+        {
+            get { return mMoneySpent; }
+        }
+
+        public decimal StartingMoney
+        {
+            get { return GlobalData.PriorityLevels[Priorities.Resources].Resources; }
+        }
+
+        public decimal MoneyRemaining
+        {
+            get { return StartingMoney - MoneySpent; }
+        }
 
         #endregion // Properties
 
@@ -640,10 +657,14 @@ namespace SR5Builder.DataModels
 
             GearList = new ObservableDictionary<string, Gear>();
             GearList.CollectionChanged += this.OnAugmentablesChanged;
+            GearList.CollectionChanged += this.OnGearCollectionChanged;
 
             ImplantList = new ObservableDictionary<string, Implant>();
             ImplantList.CollectionChanged += this.OnAugmentablesChanged;
-            ImplantList.CollectionChanged += this.OnImplantsChanged;
+            ImplantList.CollectionChanged += this.OnImplantsCollectionChanged;
+
+            Qualities = new ObservableDictionary<string, Quality>();
+            Qualities.CollectionChanged += this.OnAugmentablesChanged;
 
             mEssence.Subscribe();
         }
@@ -781,6 +802,12 @@ namespace SR5Builder.DataModels
                     OnPropertyChanged(nameof(SkillPointsRemaining));
                     OnPropertyChanged(nameof(SkillGroupPointsRemaining));
                     break;
+                case nameof(Priorities.Resources):
+                    OnPropertyChanged(nameof(StartingMoney));
+                    OnPropertyChanged(nameof(MoneyRemaining));
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -845,11 +872,6 @@ namespace SR5Builder.DataModels
             }
         }
 
-        private void OnImplantsChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            OnPropertyChanged(nameof(Essence));
-        }
-
         /// <summary>
         /// Keeps the dictionary containing all Augmentables up to date as Traits are
         /// added and removed from other lists/dictionarys on the character
@@ -894,18 +916,6 @@ namespace SR5Builder.DataModels
                             {
                                 KarmaCosts.Remove(a as IKarmaCost);
                             }
-
-                            //if (a is MeleeWeapon)
-                            //{
-                            //    MeleeWeapons.Remove((string)valueType.GetProperty("Key").GetValue(item, null));
-                            //    propNames.Add("MeleeWeapons");
-                            //}
-
-                            //if (a is RangedWeapon)
-                            //{
-                            //    RangedWeapons.Remove((string)valueType.GetProperty("Key").GetValue(item, null));
-                            //    propNames.Add("RangedWeapons");
-                            //}
                         }
                     }
                 }
@@ -943,24 +953,6 @@ namespace SR5Builder.DataModels
                             {
                                 KarmaCosts.Add(a as IKarmaCost);
                             }
-
-                            if (a is Spell)
-                            {
-
-                            }
-
-                            // Upadate weapon lists
-                            //if (a is MeleeWeapon)
-                            //{
-                            //    MeleeWeapons.Add((string)valueType.GetProperty("Key").GetValue(item, null), (a as MeleeWeapon));
-                            //    propNames.Add("MeleeWeapons");
-                            //}
-
-                            //if (a is RangedWeapon)
-                            //{
-                            //    RangedWeapons.Add((string)valueType.GetProperty("Key").GetValue(item, null), (a as RangedWeapon));
-                            //    propNames.Add("RangedWeapons");
-                            //}
                         }
                     }
                 }
@@ -1075,6 +1067,55 @@ namespace SR5Builder.DataModels
                 }
             }
             RecalcKarmaCost();
+        }
+
+        private void OnImplantsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.OldItems != null)
+                foreach (KeyValuePair<string, Implant> kvp in e.OldItems)
+                    kvp.Value.PropertyChanged -= OnGearChanged;
+
+            if (e.NewItems != null)
+                foreach (KeyValuePair<String, Implant> kvp in e.NewItems)
+                    kvp.Value.PropertyChanged += OnGearChanged;
+
+            RecalcMoney();
+        }
+
+        private void OnGearCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.OldItems != null)
+                foreach (KeyValuePair<string, Gear> kvp in e.OldItems)
+                    kvp.Value.PropertyChanged -= OnGearChanged;
+
+            if (e.NewItems != null)
+                foreach (KeyValuePair<String, Gear> kvp in e.NewItems)
+                    kvp.Value.PropertyChanged += OnGearChanged;
+
+            RecalcMoney();
+        }
+
+        private void OnGearChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(Gear.Cost))
+            {
+                RecalcMoney();
+            }
+        }
+
+        private void RecalcMoney()
+        {
+            mMoneySpent = 0;
+            foreach (Gear item in GearList.Values)
+            {
+                mMoneySpent += item.Cost;
+            }
+            foreach (Gear item in ImplantList)
+            {
+                mMoneySpent += item.Cost;
+            }
+            OnPropertyChanged(nameof(MoneySpent));
+            OnPropertyChanged(nameof(MoneyRemaining));
         }
 
         #endregion // Private Methods
