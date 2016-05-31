@@ -191,6 +191,28 @@
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
+    <Name>Laser sight</Name>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCost>125</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Laser sight - Top</string>
+      <string>Laser sight - Bottom</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Accuracy</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
     <Name>Shockpad</Name>
     <SubCategory>Firearm</SubCategory>
     <Book>SR5</Book>
@@ -239,6 +261,30 @@
       <string>Bottom  Mount</string>
     </Taboo>
     <Augments>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>Smartgun</Name>
+    <Book>SR5</Book>
+    <Page>439</Page>
+    <Rating>0</Rating>
+    <FlatCost>0</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Smartgun - Top</string>
+      <string>Smartgun - Bottom</string>
+      <string>Smartgun - internal</string>
+      <string>Laser sight</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Accuracy</Kind>
+        <Bonus>
+          <decimal>2</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
@@ -370,6 +416,28 @@
       <string>Barrel Mount</string>
     </Taboo>
     <Augments />
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>Detatchable shoulder stock</Name>
+    <Book>SR5</Book>
+    <Page>426</Page>
+    <Rating>0</Rating>
+    <FlatCost>0</FlatCost>
+    <CostMult>1</CostMult>
+    <Capacity>0</Capacity>
+    <Taboo>
+      <string>Shockpad</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>RC</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
   </GearModPrototype>
 </ArrayOfGearModPrototype>
 <!--

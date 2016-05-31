@@ -442,6 +442,7 @@
     <Content Include="Resources\Gear\GearMods\FirearmMods.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\Gear\Implants\Bodyware.xml" />
     <Content Include="Resources\Gear\Implants\Eyeware.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -461,6 +462,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Gear\Misc\RFID Tags.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Gear\Weapons\Firearms - Heavy Pistols .xml">
+      <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Gear\Weapons\Melee Weapons - Blades.xml">

@@ -1110,7 +1110,7 @@ namespace SR5Builder.DataModels
             {
                 mMoneySpent += item.Cost;
             }
-            foreach (Gear item in ImplantList)
+            foreach (Implant item in ImplantList.Values)
             {
                 mMoneySpent += item.Cost;
             }

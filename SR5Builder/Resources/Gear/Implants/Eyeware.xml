@@ -6,6 +6,8 @@
     <Page>453</Page>
     <HasRating>true</HasRating>
     <Rating>1</Rating>
+    <Min>1</Min>
+    <Max>4</Max>
     <Availability>3</Availability>
     <FlatCost>4000</FlatCost>
     <RatingCost>0</RatingCost>
@@ -14,7 +16,8 @@
       <string>Flare compensation</string>
       <string>Image link</string>
     </Mods>
-    <FlatEssence>0.2</FlatEssence>
+    <FlatEssence>0.1</FlatEssence>
+    <RatingEssence>0.1</RatingEssence>
     <Augments></Augments>
   </ImplantPrototype>
   <ImplantPrototype>
