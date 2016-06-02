@@ -27,21 +27,34 @@ namespace SR5Builder.DataModels
             }
         }
 
-        protected int mFlatCost;
-        public int FlatCost
+        protected decimal[] mFlatCostVector;
+        public decimal FlatCost
         {
-            get { return mFlatCost; }
-            set
+            get
             {
-                if (value != mFlatCost)
+                int index = BaseRating;
+                if (index >= mFlatCostVector.Length)
                 {
-                    mFlatCost = value;
-                    OnPropertyChanged(nameof(FlatCost));
+                    index = mFlatCostVector.Length - 1;
                 }
+                return mFlatCostVector[index];
             }
         }
 
-        public decimal CostMult { get; set; }
+        protected decimal[] mCostMultVector;
+        public decimal CostMult
+        {
+            get
+            {
+                int index = BaseRating;
+                if (index >= mCostMultVector.Length)
+                {
+                    index = mCostMultVector.Length - 1;
+                }
+                return mCostMultVector[index];
+            }
+        }
+
 
         public string DisplayCost
         {
@@ -85,11 +98,30 @@ namespace SR5Builder.DataModels
             get { return mFlatEssence + mRatingEssence * mBaseRating; }
         }
 
-        public int Capacity { get; set; }
+        protected int[] mCapacityVector;
+        public int[] CapacityVector { get { return mCapacityVector; } }
+
+        public int Capacity
+        {
+            get
+            {
+                int index = BaseRating;
+                if (index >= mCapacityVector.Length)
+                {
+                    index = mCapacityVector.Length - 1;
+                }
+                return mCapacityVector[index];
+            }
+        }
 
         public ObservableCollection<Augment> GivenAugments { get; set; }
 
         public string Notes { get; set; }
+
+        public override string ToString()
+        {
+            return BaseRating != 0 ? base.ToString() : "";
+        }
 
         #endregion // Properties
 
@@ -99,32 +131,38 @@ namespace SR5Builder.DataModels
             :base(gearPiece.Owner)
         {
             mBaseRating = 0;
-            FlatCost = 0;
-            CostMult = 1;
+            mFlatCostVector = new decimal[1] { 0 };
+            mCostMultVector = new decimal[1] { 1 };
             GivenAugments = new ObservableCollection<Augment>();
         }
 
-        public GearMod(Gear gearPiece, GearModPrototype loader)
+        public GearMod(Gear gearPiece, GearModPrototype proto)
             : base(gearPiece.Owner)
         {
-            Name = loader.Name;
-            Book = loader.Book;
-            Page = loader.Page;
-            Category = loader.Category;
-            SubCategory = loader.SubCategory ?? "None";
-            Capacity = loader.Capacity;
-            mBaseRating = 1;
+            Name = proto.Name;
+            Book = proto.Book;
+            Page = proto.Page;
+            Category = proto.Category;
+            SubCategory = proto.SubCategory ?? "None";
+            Min = proto.Min;
+            Max = proto.Max;
+            mBaseRating = Min;
             GearPiece = gearPiece;
-            FlatCost = loader.FlatCost;
-            CostMult = loader.CostMult;
+            mFlatCostVector = new decimal[proto.FlatCostVector.Length];
+            mCostMultVector = new decimal[proto.CostMultVector.Length];
+            mCapacityVector = new int[proto.CapacityVector.Length];
+            proto.FlatCostVector.CopyTo(mFlatCostVector, 0);
+            proto.CostMultVector.CopyTo(mCostMultVector, 0);
+            proto.CapacityVector.CopyTo(mCapacityVector, 0);
+            
             Notes = string.Copy(Notes ?? "");
-            CreateAugments(loader);
+            CreateAugments(proto);
         }
 
-        private void CreateAugments(GearModPrototype loader)
+        private void CreateAugments(GearModPrototype proto)
         {
             GivenAugments = new ObservableCollection<Augment>();
-            foreach (AugmentPrototype a in loader.Augments)
+            foreach (AugmentPrototype a in proto.Augments)
             {
                 GivenAugments.Add(a.ToAugment(this));
             }

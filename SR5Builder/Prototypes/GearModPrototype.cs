@@ -13,34 +13,34 @@ namespace SR5Builder.Prototypes
 
         public string SubCategory { get; set; }
 
-        public int Rating { get; set; }
+        public int Min { get; set; }
 
-        public int FlatCost { get; set; }
+        public int Max { get; set; }
 
-        public decimal CostMult { get; set; }
+        public decimal[] FlatCostVector { get; set; }
+            = new decimal[1] { 0 };
+
+        public decimal[] CostMultVector { get; set; }
+            = new decimal[1] { 1 };
 
         [XmlIgnore]
         public string DisplayCost
         {
             get
             {
-                if (CostMult != 1)
+                if (CostMultVector[0] != 1)
                 {
-                    if (FlatCost != 0)
-                        return "×" + CostMult + "+" + FlatCost.ToString(GlobalData.CostFormat);
+                    if (FlatCostVector[0] != 0)
+                        return "×" + CostMultVector[0] + "+" + FlatCostVector[0].ToString(GlobalData.CostFormat);
                     else
-                        return "×" + CostMult;
+                        return "×" + CostMultVector[0];
                 }
-                else return "+" + FlatCost.ToString(GlobalData.CostFormat);
+                else return "+" + FlatCostVector[0].ToString(GlobalData.CostFormat);
             }
         }
 
-        public int Capacity { get; set; }
-
-        public decimal FlatEssence { get; set; }
-
-        public decimal RatingEssence { get; set; }
-
+        public int[] CapacityVector { get; set; }
+        
         public string[] Taboo { get; set; }
 
         public string Notes { get; set; }

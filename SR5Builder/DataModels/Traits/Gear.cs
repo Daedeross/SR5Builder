@@ -21,22 +21,24 @@ namespace SR5Builder.DataModels
 
         public bool HasRating { get; set; }
 
-        protected Availability mBaseAvailability;
+        protected Availability[] mAvailabilityVector;
         public Availability BaseAvailability
         {
-            get { return mBaseAvailability; }
-            set
+            get
             {
-                mBaseAvailability = value;
-                OnPropertyChanged(nameof(BaseAvailability));
-                OnPropertyChanged(nameof(Availability));
+                int index = BaseRating;
+                if (index >= mAvailabilityVector.Length)
+                {
+                    index = mAvailabilityVector.Length - 1;
+                }
+                return mAvailabilityVector[index];
             }
         }
 
         protected Availability mBonusAvailability;
         public Availability Availability
         {
-            get { return mBaseAvailability + mBonusAvailability; }
+            get { return BaseAvailability + mBonusAvailability; }
         }
 
         private int mCount = 1;
@@ -54,41 +56,20 @@ namespace SR5Builder.DataModels
             }
         }
 
-        private decimal mFlatCost;
-        public decimal FlatCost
-        {
-            get { return mFlatCost; }
-            set
-            {
-                if (value != mFlatCost)
-                {
-                    mFlatCost = value;
-                    OnPropertyChanged(nameof(FlatCost));
-                    OnPropertyChanged(nameof(BaseCost));
-                    OnPropertyChanged(nameof(Cost));
-                }
-            }
-        }
-
-        protected decimal mRatingCost;
-        public decimal RatingCost
-        {
-            get { return mRatingCost; }
-            set
-            {
-                if (value != mRatingCost)
-                {
-                    mRatingCost = value;
-                    OnPropertyChanged(nameof(RatingCost));
-                    OnPropertyChanged(nameof(BaseCost));
-                    OnPropertyChanged(nameof(Cost));
-                }
-            }
-        }
+        protected decimal[] mCostVector;
+        public decimal[] CostVector { get { return mCostVector; } }
 
         public decimal BaseCost
         {
-            get { return mFlatCost + (HasRating ? mRatingCost * BaseRating : 0); }
+            get
+            {
+                int index = BaseRating;
+                if (index >= mCostVector.Length)
+                {
+                    index = mCostVector.Length - 1;
+                }
+                return mCostVector[index];
+            }
         }
 
         private decimal mExtraCost;
@@ -98,47 +79,36 @@ namespace SR5Builder.DataModels
             get { return ((BaseCost * mCostMult) + mExtraCost) * Count; }
         }
 
-        private decimal mFlatEssence;
-        public decimal FlatEssence
-        {
-            get { return mFlatEssence; }
-            set
-            {
-                if (value != mFlatEssence)
-                {
-                    mFlatEssence = value;
-                    OnPropertyChanged(nameof(FlatEssence));
-                    OnPropertyChanged(nameof(TotalEssence));
-                }
-            }
-        }
-
-        private decimal mRatingEssence;
-        public decimal RatingEssence
-        {
-            get { return mRatingEssence; }
-            set { mRatingEssence = value; }
-        }
+        protected decimal[] mEssenceVector;
+        public decimal[] EssenceVector { get { return mEssenceVector; } }
 
         public decimal TotalEssence
         {
-            get { return mFlatEssence + mRatingEssence * mBaseRating; }
+            get
+            {
+                int index = BaseRating;
+                if (index >= mEssenceVector.Length)
+                {
+                    index = mEssenceVector.Length - 1;
+                }
+                return mEssenceVector[index];
+            }
         }
 
         //public string DisplayCost { get { return Cost.ToString("C", GlobalData.CostFormat); } }
+        protected int[] mCapacityVector;
+        public int[] CapacityVector { get { return mCapacityVector; } }
 
-        protected int mCapacity;
         public int Capacity
         {
-            get { return mCapacity; }
-            set
+            get
             {
-                if (mCapacity != value)
+                int index = BaseRating;
+                if (index >= mCapacityVector.Length)
                 {
-                    mCapacity = value;
-                    OnPropertyChanged(nameof(Capacity));
-                    OnPropertyChanged(nameof(CapacityUsed));
+                    index = mCapacityVector.Length - 1;
                 }
+                return mCapacityVector[index];
             }
         }
 
@@ -158,14 +128,14 @@ namespace SR5Builder.DataModels
 
         public int CapacityRemaining
         {
-            get { return mCapacity - mCapacityUsed; }
+            get { return Capacity - mCapacityUsed; }
         }
 
         public string DisplayCapacity
         {
             get
             {
-                if (mCapacity != 0)
+                if (Capacity != 0)
                 {
                     return mCapacityUsed + "/" + mCapacityUsed;
                 }
@@ -183,6 +153,11 @@ namespace SR5Builder.DataModels
 
         public string Notes { get; set; }
 
+        public override string ToString()
+        {
+            return BaseRating != 0 ? base.ToString() : "";
+        }
+
         #endregion // Properties
 
         #region Constructors
@@ -194,12 +169,12 @@ namespace SR5Builder.DataModels
             Notes = "";
         }
 
-        public Gear(SR5Character owner, GearPrototype loader)
+        public Gear(SR5Character owner, GearPrototype proto)
             : base(owner)
         {
             Initialize();
 
-            CopyFromLoader(loader);
+            CopyFromLoader(proto);
         }
 
         private void Initialize()
@@ -314,33 +289,35 @@ namespace SR5Builder.DataModels
             return false;
         }
 
-        public virtual void CopyFromLoader(GearPrototype loader)
+        public virtual void CopyFromLoader(GearPrototype proto)
         {
-            mName = loader.Name;
-            Book = loader.Book;
-            Page = loader.Page;
-            mBaseRating = loader.Rating;
-            HasRating = true;           // I think technically all gear has a rating of at least 1
+            mName = proto.Name;
+            Book = proto.Book;
+            Page = proto.Page;
+            mBaseRating = proto.Rating;
+            HasRating = proto.Min != 0;
             // load max and min rating if applicable
-            Min = loader.Min != 0 ? loader.Min : loader.Rating;
-            Max = loader.Max != 0 ? loader.Max : loader.Rating;
-            mBaseAvailability = loader.Availability;
-            mFlatCost = loader.FlatCost;
-            mRatingCost = loader.RatingCost;
-            mCapacity = loader.Capacity;
-            mFlatEssence = loader.FlatEssence;
-            mRatingEssence = loader.RatingEssence;
+            Min = proto.Min != 0 ? proto.Min : proto.Rating;
+            Max = proto.Max != 0 ? proto.Max : proto.Rating;
+            mCostVector = new decimal[proto.CostVector.Length];
+            mEssenceVector = new decimal[proto.EssenceVector.Length];
+            mCapacityVector = new int[proto.CapacityVector.Length];
+            mAvailabilityVector = new Availability[proto.AvailabilityVector.Length];
+            proto.CostVector.CopyTo(mCostVector, 0);
+            proto.EssenceVector.CopyTo(mEssenceVector, 0);
+            proto.CapacityVector.CopyTo(mCapacityVector, 0);
+            proto.AvailabilityVector.CopyTo(mAvailabilityVector, 0);
             Count = 1;
-            LoadBaseMods(loader.BaseMods);
-            if (loader.Mods != null)
+            LoadBaseMods(proto.BaseMods);
+            if (proto.Mods != null)
             {
-                foreach (string mod in loader.Mods)
+                foreach (string mod in proto.Mods)
                 {
                     AvailableMods.Add((string)mod.Clone());
                 }
             }
-            ModCategories = (loader.ModCategories ?? new string[0]).ToList();
-            Notes = loader.Notes ?? "";
+            ModCategories = (proto.ModCategories ?? new string[0]).ToList();
+            Notes = proto.Notes ?? "";
         }
 
         #endregion // Public Methods

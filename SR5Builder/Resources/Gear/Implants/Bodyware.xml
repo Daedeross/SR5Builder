@@ -1,20 +1,3 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ArrayOfImplantPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ImplantPrototype>
-    <Name>Cybereyes - Rating 1</Name>
-    <Book>SR5</Book>
-    <Page>453</Page>
-    <HasRating>true</HasRating>
-    <Rating>1</Rating>
-    <Availability>3</Availability>
-    <FlatCost>4000</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>4</Capacity>
-    <Mods>
-      <string>Flare compensation</string>
-      <string>Image link</string>
-    </Mods>
-    <FlatEssence>0.2</FlatEssence>
-    <Augments></Augments>
-  </ImplantPrototype>
 </ArrayOfImplantPrototype>

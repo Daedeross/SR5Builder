@@ -5,9 +5,15 @@
     <SubCategory>Comlink</SubCategory>
     <Book>SR5</Book>
     <Page>439</Page>
-    <FlatCost>100</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>100</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Taboo>
       <string>Hot-sim module</string>
     </Taboo>
@@ -18,9 +24,15 @@
     <SubCategory>Comlink</SubCategory>
     <Book>SR5</Book>
     <Page>439</Page>
-    <FlatCost>350</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>350</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Taboo>
       <string>Sim module</string>
     </Taboo>

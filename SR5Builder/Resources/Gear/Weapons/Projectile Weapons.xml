@@ -10,10 +10,15 @@
     <ExtLabel />
     <HasRating>true</HasRating>
     <Rating>0</Rating>
-    <Availability>6R</Availability>
-    <FlatCost>0</FlatCost>
-    <RatingCost>100</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>6R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>0</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods>
     </BaseMods>
     <Mods />
@@ -26,7 +31,7 @@
     <DV>2</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>-0.25</RatingAP>
+    <RatingAP>-0.25</RatingAP>
     <Acc>6</Acc>
     <AmmoCount>1</AmmoCount>
     <FireModes>
@@ -46,9 +51,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>6R</Availability>
-    <FlatCost>300</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>6R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>300</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods>
     </BaseMods>
     <Mods />

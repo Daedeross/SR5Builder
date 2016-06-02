@@ -6,9 +6,11 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>1</Rating>
-    <Availability>0</Availability>
+    <AvailabilityVector><Availability>0</Availability></AvailabilityVector>
     <Cost>1</Cost>
-    <Capacity>0</Capacity>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods></Mods>
   </GearPrototype>
   <GearPrototype>
@@ -17,9 +19,11 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>1</Rating>
-    <Availability>0</Availability>
+    <AvailabilityVector><Availability>0</Availability></AvailabilityVector>
     <Cost>5</Cost>
-    <Capacity>0</Capacity>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods></Mods>
   </GearPrototype>
   <GearPrototype>
@@ -28,9 +32,11 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>3</Rating>
-    <Availability>3</Availability>
+    <AvailabilityVector><Availability>3</Availability></AvailabilityVector>
     <Cost>5</Cost>
-    <Capacity>0</Capacity>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods></Mods>
   </GearPrototype>
   <GearPrototype>
@@ -39,9 +45,11 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>2</Rating>
-    <Availability>5</Availability>
+    <AvailabilityVector><Availability>5</Availability></AvailabilityVector>
     <Cost>40</Cost>
-    <Capacity>0</Capacity>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods></Mods>
   </GearPrototype>
   <GearPrototype>
@@ -50,9 +58,11 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>3</Rating>
-    <Availability>7R</Availability>
+    <AvailabilityVector><Availability>7R</Availability></AvailabilityVector>
     <Cost>10</Cost>
-    <Capacity>0</Capacity>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods></Mods>
   </GearPrototype>
 </ArrayOfGearPrototype>

@@ -6,10 +6,15 @@
     <Page>439</Page>
     <HasRating>true</HasRating>
     <Rating>1</Rating>
-    <Availability>3R</Availability>
-    <FlatCost>49500</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>3R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>49500</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Notes>Attribute Array [4 3 2 1]</Notes>
     <Mods></Mods>
   </GearPrototype>
@@ -19,10 +24,15 @@
     <Page>439</Page>
     <HasRating>true</HasRating>
     <Rating>1</Rating>
-    <Availability>4R</Availability>
-    <FlatCost>58000</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>4R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>58000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Notes>Attribute Array [4 3 3 1]</Notes>
     <Mods></Mods>
   </GearPrototype>
@@ -32,10 +42,15 @@
     <Page>439</Page>
     <HasRating>true</HasRating>
     <Rating>2</Rating>
-    <Availability>6R</Availability>
-    <FlatCost>110250</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>6R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>110250</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Notes>Attribute Array [5 4 3 2]</Notes>
     <Mods></Mods>
   </GearPrototype>
@@ -45,10 +60,15 @@
     <Page>439</Page>
     <HasRating>true</HasRating>
     <Rating>2</Rating>
-    <Availability>6R</Availability>
-    <FlatCost>123000</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>6R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>123000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Notes>Attribute Array [5 4 4 2]</Notes>
     <Mods></Mods>
   </GearPrototype>
@@ -58,10 +78,15 @@
     <Page>439</Page>
     <HasRating>true</HasRating>
     <Rating>3</Rating>
-    <Availability>9R</Availability>
-    <FlatCost>205750</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>9R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>205750</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Notes>Attribute Array [6 5 4 3]</Notes>
     <Mods></Mods>
   </GearPrototype>
@@ -71,10 +96,15 @@
     <Page>439</Page>
     <HasRating>true</HasRating>
     <Rating>3</Rating>
-    <Availability>9R</Availability>
-    <FlatCost>214125</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>9R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>214125</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Notes>Attribute Array [6 5 5 3]</Notes>
     <Mods></Mods>
   </GearPrototype>
@@ -84,10 +114,15 @@
     <Page>439</Page>
     <HasRating>true</HasRating>
     <Rating>4</Rating>
-    <Availability>12R</Availability>
-    <FlatCost>345000</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>12R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>345000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Notes>Attribute Array [7 6 5 4]</Notes>
     <Mods></Mods>
   </GearPrototype>
@@ -97,10 +132,15 @@
     <Page>439</Page>
     <HasRating>true</HasRating>
     <Rating>5</Rating>
-    <Availability>15R</Availability>
-    <FlatCost>549375</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>15R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>549375</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Notes>Attribute Array [8 7 6 5]</Notes>
     <Mods></Mods>
   </GearPrototype>
@@ -110,10 +150,15 @@
     <Page>439</Page>
     <HasRating>true</HasRating>
     <Rating>6</Rating>
-    <Availability>18R</Availability>
-    <FlatCost>823250</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>18R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>823250</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Notes>Attribute Array [9 8 7 6]</Notes>
     <Mods></Mods>
   </GearPrototype>

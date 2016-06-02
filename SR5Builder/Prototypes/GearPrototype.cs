@@ -31,15 +31,13 @@ namespace SR5Builder.Prototypes
         {
             get
             {
-                if (RatingCost != 0)
+                if (Max > 1)
                 {
-                    if (FlatCost != 0)
-                    {
-                        return FlatCost + " + Rating ×" + RatingCost.ToString("C", GlobalData.CostFormat);
-                    }
-                    return "Rating ×" + RatingCost.ToString("C", GlobalData.CostFormat);
+                    string minCost = CostVector[Min].ToString("C", GlobalData.CostFormat);
+                    string maxCost = CostVector[Max].ToString("C", GlobalData.CostFormat);
+                    return minCost + "-" + maxCost;
                 }
-                return FlatCost.ToString("C", GlobalData.CostFormat);
+                return CostVector[0].ToString("C", GlobalData.CostFormat);
             }
         }
 
@@ -57,17 +55,42 @@ namespace SR5Builder.Prototypes
 
         public int Rating { get; set; }
 
-        public Availability Availability { get; set; }
+        public Availability[] AvailabilityVector { get; set; }
+            = new Availability[1];
 
-        public decimal FlatCost { get; set; }
+        public string Availability
+        {
+            get
+            {
+                if (AvailabilityVector.Length > 1)
+                {
+                    string minA = AvailabilityVector[Min].ToString();
+                    string maxA = AvailabilityVector[Max].ToString();
+                    return minA + "-" + maxA;
+                }
+                else return AvailabilityVector[0].ToString();
+            }
+        }
 
-        public decimal RatingCost { get; set; }
+        public decimal[] CostVector { get; set; } = new decimal[1];
 
-        public int Capacity { get; set; }
+        public int[] CapacityVector { get; set; } = new int[1];
 
-        public decimal FlatEssence { get; set; }
+        public decimal[] EssenceVector { get; set; } = new decimal[1];
 
-        public decimal RatingEssence { get; set; }
+        public string EssenceCost
+        {
+            get
+            {
+                if (EssenceVector.Length > 1)
+                {
+                    decimal minE = EssenceVector[Min];
+                    decimal maxE = EssenceVector[Max];
+                    return string.Format("{0:F1}-{1:F1}", minE, maxE);
+                }
+                else return EssenceVector[0].ToString("F1");
+            }
+        }
 
         public string[] BaseMods { get; set; }
 

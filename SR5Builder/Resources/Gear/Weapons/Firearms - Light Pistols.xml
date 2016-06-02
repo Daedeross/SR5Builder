@@ -10,9 +10,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>3R</Availability>
-    <FlatCost>1250</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>3R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>1250</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods>
       <string>Silencer ALF</string>
       <string>Smartgun</string>
@@ -26,7 +32,7 @@
     <DV>6</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>6</Acc>
     <AmmoCount>16</AmmoCount>
     <FireModes>
@@ -45,9 +51,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>3R</Availability>
-    <FlatCost>200</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>3R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>200</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods>
       <string>Silencer ALF</string>
     </BaseMods>
@@ -60,7 +72,7 @@
     <DV>6</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>7</Acc>
     <AmmoCount>16</AmmoCount>
     <FireModes>
@@ -79,9 +91,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>7R</Availability>
-    <FlatCost>210</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>7R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>210</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods>
       <string>Detatchable shoulder stock</string>
     </BaseMods>
@@ -95,7 +113,7 @@
     <DV>6</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>6</Acc>
     <AmmoCount>21</AmmoCount>
     <FireModes>
@@ -115,9 +133,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>4R</Availability>
-    <FlatCost>320</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>4R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>320</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods>
     </BaseMods>
     <Mods />
@@ -130,7 +154,7 @@
     <DV>7</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>7</Acc>
     <AmmoCount>11</AmmoCount>
     <FireModes>
@@ -149,9 +173,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>6R</Availability>
-    <FlatCost>350</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>6R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>350</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods>
       <string>Laser sight - Top</string>
       <string>Detatchable shoulder stock</string>
@@ -166,7 +196,7 @@
     <DV>7</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>6</Acc>
     <AmmoCount>11</AmmoCount>
     <FireModes>
@@ -185,9 +215,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>3R</Availability>
-    <FlatCost>350</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>3R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>350</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods>
     </BaseMods>
     <Mods />

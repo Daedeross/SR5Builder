@@ -10,9 +10,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>12R</Availability>
-    <FlatCost>4000</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>12R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>4000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>5</DV>
@@ -33,9 +39,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>0</Availability>
-    <FlatCost>300</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>300</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>2</DV>
@@ -56,9 +68,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>7R</Availability>
-    <FlatCost>200</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>7R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>200</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>2</DV>
@@ -79,9 +97,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>9R</Availability>
-    <FlatCost>1000</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>9R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>1000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>3</DV>
@@ -102,9 +126,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>0</Availability>
-    <FlatCost>10</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>10</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>1</DV>
@@ -124,9 +154,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>6R</Availability>
-    <FlatCost>1000</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>6R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>1000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>3</DV>
@@ -146,9 +182,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>0</Availability>
-    <FlatCost>100</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>100</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>2</DV>
@@ -168,9 +210,15 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>5R</Availability>
-    <FlatCost>500</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>5R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>500</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>3</DV>

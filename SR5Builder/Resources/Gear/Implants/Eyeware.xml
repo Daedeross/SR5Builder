@@ -1,40 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfImplantPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ImplantPrototype>
-    <Name>Cybereyes - Rating 1</Name>
+    <Name>Cybereyes</Name>
     <Book>SR5</Book>
     <Page>453</Page>
     <HasRating>true</HasRating>
-    <Rating>1</Rating>
     <Min>1</Min>
     <Max>4</Max>
-    <Availability>3</Availability>
-    <FlatCost>4000</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>4</Capacity>
+    <Rating>1</Rating>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+      <string>3</string>
+      <string>6</string>
+      <string>9</string>
+      <string>12</string>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>0</decimal>
+      <decimal>4000</decimal>
+      <decimal>6000</decimal>
+      <decimal>10000</decimal>
+      <decimal>14000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+      <int>4</int>
+      <int>8</int>
+      <int>12</int>
+      <int>16</int>
+    </CapacityVector>
     <Mods>
       <string>Flare compensation</string>
       <string>Image link</string>
     </Mods>
-    <FlatEssence>0.1</FlatEssence>
-    <RatingEssence>0.1</RatingEssence>
-    <Augments></Augments>
-  </ImplantPrototype>
-  <ImplantPrototype>
-    <Name>Cybereyes - Rating 2</Name>
-    <Book>SR5</Book>
-    <Page>453</Page>
-    <HasRating>true</HasRating>
-    <Rating>2</Rating>
-    <Availability>6</Availability>
-    <FlatCost>6000</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>8</Capacity>
-    <Mods>
-      <string>Flare compensation</string>
-      <string>Image link</string>
-    </Mods>
-    <FlatEssence>0.3</FlatEssence>
+    <EssenceVector>
+      <decimal>0.0</decimal>
+      <decimal>0.2</decimal>
+      <decimal>0.3</decimal>
+      <decimal>0.4</decimal>
+      <decimal>0.5</decimal>
+    </EssenceVector>>
     <Augments></Augments>
   </ImplantPrototype>
   <ImplantPrototype>
@@ -43,11 +48,16 @@
     <Page>453</Page>
     <HasRating>false</HasRating>
     <Rating>1</Rating>
-    <Availability>2</Availability>
-    <FlatCost>1000</FlatCost>
-    <RatingCost>0</RatingCost>
-    <Capacity>0</Capacity>
-    <FlatEssence>0.2</FlatEssence>
+    <AvailabilityVector><Availability>2</Availability></AvailabilityVector>
+    <CostVector>
+      <decimal>1000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <EssenceVector>
+      <decimal>0.2</decimal>
+    </EssenceVector>
     <Augments></Augments>
   </ImplantPrototype>
 </ArrayOfImplantPrototype>

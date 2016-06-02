@@ -10,15 +10,21 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>0</Availability>
-    <FlatCost>30</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>30</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>3</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>4</Acc>
     <UseStrength>true</UseStrength>
     <Reach>1</Reach>
@@ -33,15 +39,21 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>4</Availability>
-    <FlatCost>100</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>4</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>100</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>2</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>5</Acc>
     <UseStrength>true</UseStrength>
     <Reach>1</Reach>
@@ -56,15 +68,21 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>2</Availability>
-    <FlatCost>30</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>2</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>30</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>2</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>5</Acc>
     <UseStrength>true</UseStrength>
     <Reach>0</Reach>
@@ -79,15 +97,21 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>3</Availability>
-    <FlatCost>100</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>3</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>100</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>3</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>6</Acc>
     <UseStrength>true</UseStrength>
     <Reach>2</Reach>
@@ -102,15 +126,21 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>6R</Availability>
-    <FlatCost>750</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>6R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>750</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>9</DV>
     <DamageType>S</DamageType>
     <AP>-5</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>4</Acc>
     <UseStrength>false</UseStrength>
     <Reach>1</Reach>
@@ -125,15 +155,21 @@
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
-    <Availability>4</Availability>
-    <FlatCost>350</FlatCost>
-    <Capacity>0</Capacity>
+    <AvailabilityVector>
+      <Availability>4</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>350</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <BaseMods />
     <Mods />
     <DV>2</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
-		<RatingAP>0</RatingAP>
+    <RatingAP>0</RatingAP>
     <Acc>4</Acc>
     <UseStrength>true</UseStrength>
     <Reach>2</Reach>

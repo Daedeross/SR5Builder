@@ -7,9 +7,15 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>1</Rating>
-    <Availability>2</Availability>
-    <FlatCost>100</FlatCost>
-    <Capacity>0</Capacity>
+    <Availability>
+      <string>2</string>
+    </Availability>
+    <CostVector>
+      <decimal>100</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods />
     <ModCategories>
       <string>Comlink</string>
@@ -22,9 +28,15 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>2</Rating>
-    <Availability>4</Availability>
-    <FlatCost>700</FlatCost>
-    <Capacity>0</Capacity>
+    <Availability>
+      <string>4</string>
+    </Availability>
+    <CostVector>
+      <decimal>700</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods />
     <ModCategories>
       <string>Comlink</string>
@@ -37,9 +49,15 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>3</Rating>
-    <Availability>6</Availability>
-    <FlatCost>1000</FlatCost>
-    <Capacity>0</Capacity>
+    <Availability>
+      <string>6</string>
+    </Availability>
+    <CostVector>
+      <decimal>1000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods />
     <ModCategories>
       <string>Comlink</string>
@@ -52,9 +70,15 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>4</Rating>
-    <Availability>8</Availability>
-    <FlatCost>2500</FlatCost>
-    <Capacity>0</Capacity>
+    <Availability>
+      <string>8</string>
+    </Availability>
+    <CostVector>
+      <decimal>2500</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods />
     <ModCategories>
       <string>Comlink</string>
@@ -67,9 +91,15 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>5</Rating>
-    <Availability>10</Availability>
-    <FlatCost>3000</FlatCost>
-    <Capacity>0</Capacity>
+    <Availability>
+      <string>10</string>
+    </Availability>
+    <CostVector>
+      <decimal>3000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods />
     <ModCategories>
       <string>Comlink</string>
@@ -82,9 +112,15 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>6</Rating>
-    <Availability>12</Availability>
-    <FlatCost>5000</FlatCost>
-    <Capacity>0</Capacity>
+    <Availability>
+      <string>12</string>
+    </Availability>
+    <CostVector>
+      <decimal>5000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods />
     <ModCategories>
       <string>Comlink</string>
@@ -97,9 +133,15 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>7</Rating>
-    <Availability>14</Availability>
-    <FlatCost>8000</FlatCost>
-    <Capacity>0</Capacity>
+    <Availability>
+      <string>14</string>
+    </Availability>
+    <CostVector>
+      <decimal>8000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Mods />
     <ModCategories>
       <string>Comlink</string>

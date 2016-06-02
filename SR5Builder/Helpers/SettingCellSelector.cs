@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-
 namespace SR5Builder.Helpers
 {
     public class SettingCellSelector : DataTemplateSelector
     {
         public DataTemplate IntTemplate { get; set; }
-
         public DataTemplate FloatTemplate { get; set; }
-
         public DataTemplate StringTemplate { get; set; }
-
         public DataTemplate MethodTemplate { get; set; }
-
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
             object val;
@@ -27,7 +22,6 @@ namespace SR5Builder.Helpers
             {
                 return StringTemplate;
             }
-
             if (val is int)
             {
                 return IntTemplate;

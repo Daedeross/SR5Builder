@@ -6,9 +6,15 @@
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>600</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>600</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Taboo>
     </Taboo>
     <Augments></Augments>
@@ -19,9 +25,15 @@
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>200</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>200</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Taboo>
       <string>Smart firing platform</string>
       <string>Tripod</string>
@@ -41,10 +53,24 @@
     <SubCategory>Barrel Mount</SubCategory>
     <Book>SR5</Book>
     <Page>432</Page>
+    <Min>1</Min>
+    <Max>3</Max>
     <Rating>1</Rating>
-    <FlatCost>200</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>0</decimal>
+      <decimal>200</decimal>
+      <decimal>400</decimal>
+      <decimal>600</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+      <decimal>1</decimal>
+      <decimal>1</decimal>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Barrel Mount</string>
     </Taboo>
@@ -62,63 +88,20 @@
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
-    <Name>Gas-vent system 2</Name>
-    <SubCategory>Barrel Mount</SubCategory>
-    <Book>SR5</Book>
-    <Page>432</Page>
-    <Rating>2</Rating>
-    <FlatCost>400</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
-    <Taboo>
-      <string>Barrel Mount</string>
-    </Taboo>
-    <Augments>
-      <AugmentPrototype>
-        <Kind>RC</Kind>
-        <Bonus>
-          <decimal>2</decimal>
-          <decimal>2</decimal>
-          <decimal>2</decimal>
-        </Bonus>
-        <Target>%owner%</Target>
-      </AugmentPrototype>
-    </Augments>
-  </GearModPrototype>
-  <GearModPrototype>
-    <Name>Gas-vent system 3</Name>
-    <SubCategory>Barrel Mount</SubCategory>
-    <Book>SR5</Book>
-    <Page>432</Page>
-    <Rating>3</Rating>
-    <FlatCost>600</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
-    <Taboo>
-      <string>Barrel Mount</string>
-    </Taboo>
-    <Augments>
-      <AugmentPrototype>
-        <Kind>RC</Kind>
-        <Bonus>
-          <decimal>3</decimal>
-          <decimal>3</decimal>
-          <decimal>3</decimal>
-          <decimal>3</decimal>
-        </Bonus>
-        <Target>%owner%</Target>
-      </AugmentPrototype>
-    </Augments>
-  </GearModPrototype>
-  <GearModPrototype>
     <Name>Gyro mount</Name>
     <SubCategory>Under Mount</SubCategory>
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>200</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>200</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
     </Taboo>
     <Augments>
@@ -137,9 +120,15 @@
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>125</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>125</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Top Mount</string>
     </Taboo>
@@ -152,9 +141,15 @@
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>125</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>125</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Top Mount</string>
     </Taboo>
@@ -174,9 +169,15 @@
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>125</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>125</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Bottom Mount</string>
     </Taboo>
@@ -195,9 +196,15 @@
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>125</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>125</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Laser sight - Top</string>
       <string>Laser sight - Bottom</string>
@@ -218,9 +225,15 @@
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>50</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>50</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
     </Taboo>
     <Augments>
@@ -239,9 +252,15 @@
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>500</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>500</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Barrel Mount</string>
     </Taboo>
@@ -254,9 +273,15 @@
     <Book>SR5</Book>
     <Page>432</Page>
     <Rating>0</Rating>
-    <FlatCost>2500</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>2500</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Bottom  Mount</string>
     </Taboo>
@@ -268,9 +293,15 @@
     <Book>SR5</Book>
     <Page>439</Page>
     <Rating>0</Rating>
-    <FlatCost>0</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Smartgun - Top</string>
       <string>Smartgun - Bottom</string>
@@ -293,9 +324,15 @@
     <Book>SR5</Book>
     <Page>439</Page>
     <Rating>0</Rating>
-    <FlatCost>0</FlatCost>
-    <CostMult>2</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>2</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Smartgun - Top</string>
       <string>Smartgun - Bottom</string>
@@ -317,9 +354,15 @@
     <Book>SR5</Book>
     <Page>439</Page>
     <Rating>0</Rating>
-    <FlatCost>200</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>200</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Smartgun - internal</string>
       <string>Top Mount</string>
@@ -340,9 +383,15 @@
     <Book>SR5</Book>
     <Page>439</Page>
     <Rating>0</Rating>
-    <FlatCost>200</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>200</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Smartgun - internal</string>
       <string>Bottom Mount</string>
@@ -363,9 +412,15 @@
     <Book>SR5</Book>
     <Page>433</Page>
     <Rating>0</Rating>
-    <FlatCost>5</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>5</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo></Taboo>
     <Augments></Augments>
   </GearModPrototype>
@@ -375,9 +430,15 @@
     <Book>SR5</Book>
     <Page>433</Page>
     <Rating>0</Rating>
-    <FlatCost>25</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>25</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo></Taboo>
     <Augments></Augments>
   </GearModPrototype>
@@ -387,9 +448,15 @@
     <Book>SR5</Book>
     <Page>433</Page>
     <Rating>0</Rating>
-    <FlatCost>500</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>500</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Bottom Mount</string>
     </Taboo>
@@ -405,13 +472,20 @@
   </GearModPrototype>
   <!-- Built in Mods for various firearms -->
   <GearModPrototype>
-    <Name>Silencer ALF</Name> <!--Ares Light Fire -->
+    <Name>Silencer ALF</Name>
+    <!--Ares Light Fire -->
     <Book>SR5</Book>
     <Page>426</Page>
     <Rating>0</Rating>
-    <FlatCost>0</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Barrel Mount</string>
     </Taboo>
@@ -422,9 +496,15 @@
     <Book>SR5</Book>
     <Page>426</Page>
     <Rating>0</Rating>
-    <FlatCost>0</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <decimal>0</decimal>
+    </CapacityVector>
     <Taboo>
       <string>Shockpad</string>
     </Taboo>
@@ -447,9 +527,9 @@
     <Book>SR5</Book>
     <Page>439</Page>
     <Rating>0</Rating>
-    <FlatCost>0</FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>0</Capacity>
+    <FlatCostVector><decimal>0</decimal></FlatCostVector>
+    <CostMultVector><decimal>1</decimal></CostMultVector>
+    <CapacityVector><int>0</int></CapacityVector>
     <Taboo>
     </Taboo>
     <Augments>
