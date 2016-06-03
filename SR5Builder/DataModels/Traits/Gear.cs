@@ -21,6 +21,18 @@ namespace SR5Builder.DataModels
 
         public bool HasRating { get; set; }
 
+        public override int BaseRating
+        {
+            get { return base.BaseRating; }
+            set
+            {
+                base.BaseRating = value;
+                OnPropertyChanged(nameof(Availability));
+                OnPropertyChanged(nameof(Cost));
+                OnPropertyChanged(nameof(TotalEssence));
+            }
+        }
+
         protected Availability[] mAvailabilityVector;
         public Availability BaseAvailability
         {
@@ -259,11 +271,11 @@ namespace SR5Builder.DataModels
                     break;
                 case AugmentKind.Availability:
                     mBonusAvailability.Level += (int)a.Bonus;
-                    propNames.Add("Availability");
+                    propNames.Add(nameof(Availability));
                     break;
                 case AugmentKind.Restriction:
                     mBonusAvailability.Restriction = (Restriction)Math.Max((int)a.Bonus, (int)mBonusAvailability.Restriction);
-                    propNames.Add("Availability");
+                    propNames.Add(nameof(Availability));
                     break;
                 default:
                     break;

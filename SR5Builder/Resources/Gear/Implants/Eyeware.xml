@@ -10,10 +10,10 @@
     <Rating>1</Rating>
     <AvailabilityVector>
       <Availability>0</Availability>
-      <string>3</string>
-      <string>6</string>
-      <string>9</string>
-      <string>12</string>
+      <Availability>3</Availability>
+      <Availability>6</Availability>
+      <Availability>9</Availability>
+      <Availability>12</Availability>
     </AvailabilityVector>
     <CostVector>
       <decimal>0</decimal>
@@ -29,10 +29,10 @@
       <int>12</int>
       <int>16</int>
     </CapacityVector>
-    <Mods>
-      <string>Flare compensation</string>
-      <string>Image link</string>
-    </Mods>
+    <Mods />
+    <ModCategories>
+      <string>Vision</string>
+    </ModCategories>
     <EssenceVector>
       <decimal>0.0</decimal>
       <decimal>0.2</decimal>
@@ -48,7 +48,9 @@
     <Page>453</Page>
     <HasRating>false</HasRating>
     <Rating>1</Rating>
-    <AvailabilityVector><Availability>2</Availability></AvailabilityVector>
+    <AvailabilityVector>
+      <Availability>2</Availability>
+    </AvailabilityVector>
     <CostVector>
       <decimal>1000</decimal>
     </CostVector>

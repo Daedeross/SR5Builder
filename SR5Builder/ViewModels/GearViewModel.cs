@@ -241,6 +241,70 @@ namespace SR5Builder.ViewModels
 
             #endregion // RemoveGear
 
+            #region IncreaseGear
+
+        private RelayCommand mIncreaseGearCommand;
+        public ICommand IncreaseGearCommand
+        {
+            get
+            {
+                if (mIncreaseGearCommand == null)
+                {
+                    mIncreaseGearCommand = new RelayCommand(
+                                                       p => this.IncreaseGearExecute(),
+                                                       p => this.IncreaseGearCanExecute());
+                }
+                return mIncreaseGearCommand;
+            }
+        }
+
+        private void IncreaseGearExecute()
+        {
+            SelectedGear.BaseRating++;
+        }
+
+        private bool IncreaseGearCanExecute()
+        {
+            return (GearList != null &&
+                    GearList.Count > 0 &&
+                    SelectedGear != null &&
+                    SelectedGear.BaseRating < SelectedGear.Max);
+        }
+
+            #endregion // IncreaseGear
+
+            #region DecreaseGear
+
+        private RelayCommand mDecreaseGearCommand;
+        public ICommand DecreaseGearCommand
+        {
+            get
+            {
+                if (mDecreaseGearCommand == null)
+                {
+                    mDecreaseGearCommand = new RelayCommand(
+                                                       p => this.DecreaseGearExecute(),
+                                                       p => this.DecreaseGearCanExecute());
+                }
+                return mDecreaseGearCommand;
+            }
+        }
+
+        private void DecreaseGearExecute()
+        {
+            SelectedGear.BaseRating--;
+        }
+
+        private bool DecreaseGearCanExecute()
+        {
+            return (GearList != null &&
+                    GearList.Count > 0 &&
+                    SelectedGear != null &&
+                    SelectedGear.BaseRating > SelectedGear.Min);
+        }
+
+            #endregion // DecreaseGear
+
             #region AddImplant
 
         private RelayCommand mAddImplantCommand;
@@ -305,6 +369,70 @@ namespace SR5Builder.ViewModels
 
             #endregion // RemoveImplant
 
+            #region IncreaseImplant
+
+        private RelayCommand mIncreaseImplantCommand;
+        public ICommand IncreaseImplantCommand
+        {
+            get
+            {
+                if (mIncreaseImplantCommand == null)
+                {
+                    mIncreaseImplantCommand = new RelayCommand(
+                                                       p => this.IncreaseImplantExecute(),
+                                                       p => this.IncreaseImplantCanExecute());
+                }
+                return mIncreaseImplantCommand;
+            }
+        }
+
+        private void IncreaseImplantExecute()
+        {
+            SelectedImplant.BaseRating++;
+        }
+
+        private bool IncreaseImplantCanExecute()
+        {
+            return (ImplantList != null &&
+                    ImplantList.Count > 0 &&
+                    SelectedImplant != null &&
+                    SelectedImplant.BaseRating < SelectedImplant.Max);
+        }
+
+            #endregion // IncreaseImplant
+
+            #region DecreaseImplant
+
+        private RelayCommand mDecreaseImplantCommand;
+        public ICommand DecreaseImplantCommand
+        {
+            get
+            {
+                if (mDecreaseImplantCommand == null)
+                {
+                    mDecreaseImplantCommand = new RelayCommand(
+                                                       p => this.DecreaseImplantExecute(),
+                                                       p => this.DecreaseImplantCanExecute());
+                }
+                return mDecreaseImplantCommand;
+            }
+        }
+
+        private void DecreaseImplantExecute()
+        {
+            SelectedImplant.BaseRating--;
+        }
+
+        private bool DecreaseImplantCanExecute()
+        {
+            return (ImplantList != null &&
+                    ImplantList.Count > 0 &&
+                    SelectedImplant != null &&
+                    SelectedImplant.BaseRating > SelectedImplant.Min);
+        }
+
+            #endregion // DecreaseImplant
+
             #region LaunchEdit
 
         private RelayCommand mLaunchEditCommand;
@@ -337,7 +465,8 @@ namespace SR5Builder.ViewModels
                                                                   || SelectedGear.ModCategories.Count != 0))
                 return true;
 
-            if (SelectedTab == "Augmentations" && SelectedImplant != null && SelectedImplant.AvailableMods.Count != 0)
+            if (SelectedTab == "Augmentations" && SelectedImplant != null && (SelectedImplant.AvailableMods.Count != 0
+                                                                              || SelectedImplant.ModCategories.Count != 0))
                 return true;
 
             return false;

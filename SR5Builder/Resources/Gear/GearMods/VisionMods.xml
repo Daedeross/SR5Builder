@@ -1,25 +1,211 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ArrayOfGearModLoader xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <GearModLoader>
-    <Name></Name>
-    <SubCategory></SubCategory>
+<ArrayOfGearModPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearModPrototype>
+    <Name>Low-light vision</Name>
+    <SubCategory>Vision</SubCategory>
     <Book>SR5</Book>
-    <Page>432</Page>
+    <Page>444</Page>
     <Rating>0</Rating>
-    <FlatCost></FlatCost>
-    <CostMult>1</CostMult>
-    <Capacity>1</Capacity>
+    <FlatCostVector>
+      <decimal>500</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>1</int>
+    </CapacityVector>
     <Taboo>
     </Taboo>
     <Augments>
-      <AugmentLoader>
+      <AugmentPrototype>
         <Kind>Availability</Kind>
         <Bonus>
           <decimal>4</decimal>
         </Bonus>
-        <Target>Perception</Target>
-      </AugmentLoader>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
     </Augments>
-  </GearModLoader>
-</ArrayOfGearModLoader>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>Flare compensation</Name>
+    <SubCategory>Vision</SubCategory>
+    <Book>SR5</Book>
+    <Page>444</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>250</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>1</int>
+    </CapacityVector>
+    <Taboo>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Availability</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>Image link</Name>
+    <SubCategory>Vision</SubCategory>
+    <Book>SR5</Book>
+    <Page>444</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>25</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>1</int>
+    </CapacityVector>
+    <Taboo>
+    </Taboo>
+    <Augments></Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>Smartlink</Name>
+    <SubCategory>Vision</SubCategory>
+    <Book>SR5</Book>
+    <Page>444</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>2000</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>1</int>
+    </CapacityVector>
+    <Taboo>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Availability</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+      <AugmentPrototype>
+        <Kind>Restriction</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>Thermographic vision</Name>
+    <SubCategory>Vision</SubCategory>
+    <Book>SR5</Book>
+    <Page>444</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>500</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>1</int>
+    </CapacityVector>
+    <Taboo>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Availability</Kind>
+        <Bonus>
+          <decimal>6</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>Vision enhancement</Name>
+    <SubCategory>Vision</SubCategory>
+    <Book>SR5</Book>
+    <Page>444</Page>
+    <Min>1</Min>
+    <Max>6</Max>
+    <Rating>1</Rating>
+    <FlatCostVector>
+      <decimal>0</decimal>
+      <decimal>500</decimal>
+      <decimal>1000</decimal>
+      <decimal>1500</decimal>
+      <decimal>2000</decimal>
+      <decimal>2500</decimal>
+      <decimal>3000</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+      <int>1</int>
+      <int>2</int>
+      <int>3</int>
+      <int>4</int>
+      <int>5</int>
+      <int>6</int>
+    </CapacityVector>
+    <Taboo>
+      <AugmentPrototype>
+        <Kind>Availability</Kind>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>2</decimal>
+          <decimal>4</decimal>
+          <decimal>6</decimal>
+          <decimal>8</decimal>
+          <decimal>10</decimal>
+          <decimal>12</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Taboo>
+    <Augments></Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>Vision magnification</Name>
+    <SubCategory>Vision</SubCategory>
+    <Book>SR5</Book>
+    <Page>444</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>250</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>1</int>
+    </CapacityVector>
+    <Taboo>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Availability</Kind>
+        <Bonus>
+          <decimal>2</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+</ArrayOfGearModPrototype>
 

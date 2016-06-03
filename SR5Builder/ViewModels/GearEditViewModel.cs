@@ -36,9 +36,11 @@ namespace SR5Builder.ViewModels
                 {
                     return "—";
                 }
-                else return gear.CapacityUsed + "/" + gear.Capacity;
+                else return mCapacityUsed + "/" + gear.Capacity;
             }
         }
+
+        private int mCapacityUsed;
 
         public decimal Cost
         {
@@ -106,11 +108,12 @@ namespace SR5Builder.ViewModels
 
         private void AddModExecute()
         {
-            ModList.Add(SelectedNewMod.Name, SelectedNewMod);
-            tabooCheck.Add(SelectedNewMod.Name);
-            tabooCheck.Add(SelectedNewMod.Category);
-            tabooCheck.Add(SelectedNewMod.SubCategory);
-            SelectedMod = SelectedNewMod;
+            GearModPrototype newMod = SelectedNewMod.Clone(SelectedNewMod.Min);
+            ModList.Add(newMod.Name, newMod);
+            tabooCheck.Add(newMod.Name);
+            tabooCheck.Add(newMod.Category);
+            tabooCheck.Add(newMod.SubCategory);
+            SelectedMod = newMod;
             OnPropertyChanged(nameof(SelectedMod));
         }
 
@@ -161,9 +164,75 @@ namespace SR5Builder.ViewModels
             return (SelectedMod != null);
         }
 
-            #endregion // RemoveMod
+        #endregion // RemoveMod
 
-            #region Done
+
+        #region IncreaseMod
+
+        private RelayCommand mIncreaseModCommand;
+        public ICommand IncreaseModCommand
+        {
+            get
+            {
+                if (mIncreaseModCommand == null)
+                {
+                    mIncreaseModCommand = new RelayCommand(
+                                                       p => this.IncreaseModExecute(),
+                                                       p => this.IncreaseModCanExecute());
+                }
+                return mIncreaseModCommand;
+            }
+        }
+
+        private void IncreaseModExecute()
+        {
+            SelectedMod.Rating++;
+        }
+
+        private bool IncreaseModCanExecute()
+        {
+            return (ModList != null &&
+                    ModList.Count > 0 &&
+                    SelectedMod != null &&
+                    SelectedMod.Rating < SelectedMod.Max);
+        }
+
+        #endregion // IncreaseMod
+
+        #region DecreaseMod
+
+        private RelayCommand mDecreaseModCommand;
+        public ICommand DecreaseModCommand
+        {
+            get
+            {
+                if (mDecreaseModCommand == null)
+                {
+                    mDecreaseModCommand = new RelayCommand(
+                                                       p => this.DecreaseModExecute(),
+                                                       p => this.DecreaseModCanExecute());
+                }
+                return mDecreaseModCommand;
+            }
+        }
+
+        private void DecreaseModExecute()
+        {
+            SelectedMod.Rating--;
+        }
+
+        private bool DecreaseModCanExecute()
+        {
+            return (ModList != null &&
+                    ModList.Count > 0 &&
+                    SelectedMod != null &&
+                    SelectedMod.Rating > SelectedMod.Min);
+        }
+
+        #endregion // DecreaseMod
+
+
+        #region Done
 
         private RelayCommand mDoneCommand;
 
@@ -217,9 +286,11 @@ namespace SR5Builder.ViewModels
         {
             // add existing mods to tmp collection and add tabooCheck
             ModList = new ObservableDictionary<string, GearModPrototype>();
-            foreach (var modName in gear.Mods.Keys)
+            foreach (var kvp in gear.Mods.AsEnumerable())
             {
-                GearModPrototype l = GlobalData.GearMods[modName];
+                string modName = kvp.Key;
+                int rating = kvp.Value.BaseRating;
+                GearModPrototype l = GlobalData.GearMods[modName].Clone(rating);
                 tabooCheck.Add(modName);
                 tabooCheck.Add(l.Category);
                 tabooCheck.Add(l.SubCategory);
@@ -272,6 +343,15 @@ namespace SR5Builder.ViewModels
                 tabooCheck.Add(mod.Name);
                 tabooCheck.Add(mod.Category);
                 tabooCheck.Add(mod.SubCategory);
+            }
+        }
+
+        private void RefreshCapacity()
+        {
+            mCapacityUsed = 0;
+            foreach (var mod in ModList.Values)
+            {
+                mCapacityUsed += mod.Capacity;
             }
         }
 

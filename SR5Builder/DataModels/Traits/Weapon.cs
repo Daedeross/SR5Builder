@@ -210,18 +210,18 @@ namespace SR5Builder.DataModels
                     return base.AddAugment(a, propNames);
                 case AugmentKind.DamageValue:
                     mBonusDV += (int)a.Bonus;
-                    propNames.Add("DV");
-                    propNames.Add("DisplayDamage");
+                    propNames.Add(nameof(DV));
+                    propNames.Add(nameof(DisplayDamage));
                     break;
                 case AugmentKind.DamageType:
                     mAugDamageType = (DamageType)Math.Max((int)mAugDamageType, (int)a.Bonus);
-                    propNames.Add("DamageType");
-                    propNames.Add("DisplayDamage");
+                    propNames.Add(nameof(DamageType));
+                    propNames.Add(nameof(DisplayDamage));
                     break;
                 case AugmentKind.Accuracy:
                     mBonusAcc += (int)a.Bonus;
-                    propNames.Add("Acc");
-                    propNames.Add("AugmentedAcc");
+                    propNames.Add(nameof(Acc));
+                    propNames.Add(nameof(AugmentedAcc));
                     break;
                 case AugmentKind.Availability:
                     return base.AddAugment(a, propNames);
@@ -229,7 +229,7 @@ namespace SR5Builder.DataModels
                     return base.AddAugment(a, propNames);
                 case AugmentKind.AP:
                     mBonusAP += (int)a.Bonus;
-                    propNames.Add("AP");
+                    propNames.Add(nameof(AP));
                     break;
                 case AugmentKind.RC:
                     break;

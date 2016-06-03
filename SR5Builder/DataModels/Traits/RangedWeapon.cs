@@ -122,12 +122,10 @@ namespace SR5Builder.DataModels
                 case AugmentKind.Restriction:
                     return base.AddAugment(a, propNames);
                 case AugmentKind.AP:
-                    mBonusAP += (int)a.Bonus;
-                    propNames.Add("AP");
-                    break;
+                    return base.AddAugment(a, propNames);
                 case AugmentKind.RC:
                     mBonusRC += (int)a.Bonus;
-                    propNames.Add("RC");
+                    propNames.Add(nameof(RC));
                     break;
                 default:
                     break;

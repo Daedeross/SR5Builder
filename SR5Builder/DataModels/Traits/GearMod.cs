@@ -146,7 +146,7 @@ namespace SR5Builder.DataModels
             SubCategory = proto.SubCategory ?? "None";
             Min = proto.Min;
             Max = proto.Max;
-            mBaseRating = Min;
+            mBaseRating = proto.Rating > 0 ? Min : proto.Rating;
             GearPiece = gearPiece;
             mFlatCostVector = new decimal[proto.FlatCostVector.Length];
             mCostMultVector = new decimal[proto.CostMultVector.Length];

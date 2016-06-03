@@ -63,6 +63,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
                 <RowDefinition />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
@@ -70,7 +71,17 @@
                     Command="{Binding AddImplantCommand}">_Add</Button>
             <Button Grid.Row="1" Padding="2,1"
                     Command="{Binding RemoveImplantCommand}">R_emove</Button>
-            <Button Grid.Row="3"
+            <StackPanel Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button Width="18" Height="18"
+                        Command="{Binding DecreaseImplantCommand}"
+                        ContentTemplate="{StaticResource DecreaseGlyphNormalKey}"/>
+                <Button Width="18" Height="18"
+                        Command="{Binding IncreaseImplantCommand}"
+                        ContentTemplate="{StaticResource IncreaseGlyphNormalKey}" />
+            </StackPanel>
+            <Button Grid.Row="4"
                     Command="{Binding LaunchEditCommand}">_Edit</Button>
         </Grid>
 
