@@ -1,173 +1,137 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <GearPrototype xsi:type="RangedWeaponPrototype">
-    <Name>Ares Light Fire 75</Name>
+    <Name>Colt Cobra TZ-120</Name>
     <Book>SR5</Book>
-    <Page>426</Page>
-    <Category>Ranged Weapons - Light Pistol</Category>
-    <ExtArray />
-    <ExtKind />
-    <ExtLabel />
+    <Page>427</Page>
+    <Category>Ranged Weapons - SMG</Category>
+    <ExtArray /><ExtKind /><ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <AvailabilityVector>
-      <Availability>3R</Availability>
+      <Availability>5R</Availability>
     </AvailabilityVector>
     <CostVector>
-      <decimal>1250</decimal>
+      <decimal>660</decimal>
     </CostVector>
     <CapacityVector>
       <int>0</int>
     </CapacityVector>
     <BaseMods>
-      <string>_Silencer</string>
-      <string>_Smartgun</string>
+      <string>_Laser sight - Top</string>
+      <string>_Gas-vent system 2</string>
+      <strimg>_Folding stock</strimg>
     </BaseMods>
     <ModCategories>
       <string>General</string>
       <string>Firearm</string>
-      <string>Top Mount</string>
     </ModCategories>
     <Mods />
-    <DV>6</DV>
-    <DamageType>P</DamageType>
-    <AP>0</AP>
-    <RatingAP>0</RatingAP>
-    <Acc>6</Acc>
-    <AmmoCount>16</AmmoCount>
-    <FireModes>
-      <FireMode>SA</FireMode>
-    </FireModes>
-    <ReloadMethod>c</ReloadMethod>
-    <RC>0</RC>
-  </GearPrototype>
-  <GearPrototype xsi:type="RangedWeaponPrototype">
-    <Name>Ares Light Fire 70</Name>
-    <Book>SR5</Book>
-    <Page>426</Page>
-    <Category>Ranged Weapons - Light Pistol</Category>
-    <ExtArray />
-    <ExtKind />
-    <ExtLabel />
-    <HasRating>false</HasRating>
-    <Rating>0</Rating>
-    <AvailabilityVector>
-      <Availability>3R</Availability>
-    </AvailabilityVector>
-    <CostVector>
-      <decimal>200</decimal>
-    </CostVector>
-    <CapacityVector>
-      <int>0</int>
-    </CapacityVector>
-    <BaseMods>
-      <string>Silencer ALF</string>
-    </BaseMods>
-    <Mods />
-    <ModCategories>
-      <string>General</string>
-      <string>Firearm</string>
-      <string>Top Mount</string>
-    </ModCategories>
-    <DV>6</DV>
-    <DamageType>P</DamageType>
-    <AP>0</AP>
-    <RatingAP>0</RatingAP>
-    <Acc>7</Acc>
-    <AmmoCount>16</AmmoCount>
-    <FireModes>
-      <FireMode>SA</FireMode>
-    </FireModes>
-    <ReloadMethod>c</ReloadMethod>
-    <RC>0</RC>
-  </GearPrototype>
-  <GearPrototype xsi:type="RangedWeaponPrototype">
-    <Name>Baretta 201T</Name>
-    <Book>SR5</Book>
-    <Page>426</Page>
-    <Category>Ranged Weapons - Light Pistol</Category>
-    <ExtArray />
-    <ExtKind />
-    <ExtLabel />
-    <HasRating>false</HasRating>
-    <Rating>0</Rating>
-    <AvailabilityVector>
-      <Availability>7R</Availability>
-    </AvailabilityVector>
-    <CostVector>
-      <decimal>210</decimal>
-    </CostVector>
-    <CapacityVector>
-      <int>0</int>
-    </CapacityVector>
-    <BaseMods>
-      <string>_Detatchable shoulder stock</string>
-    </BaseMods>
-    <Mods />
-    <ModCategories>
-      <string>General</string>
-      <string>Firearm</string>
-      <string>Barrel Mount</string>
-      <string>Top Mount</string>
-    </ModCategories>
-    <DV>6</DV>
-    <DamageType>P</DamageType>
-    <AP>0</AP>
-    <RatingAP>0</RatingAP>
-    <Acc>6</Acc>
-    <AmmoCount>21</AmmoCount>
-    <FireModes>
-      <FireMode>SA</FireMode>
-      <FireMode>BF</FireMode>
-    </FireModes>
-    <ReloadMethod>c</ReloadMethod>
-    <RC>0</RC>
-  </GearPrototype>
-  <GearPrototype xsi:type="RangedWeaponPrototype">
-    <Name>Colt America L36</Name>
-    <Book>SR5</Book>
-    <Page>426</Page>
-    <Category>Ranged Weapons - Light Pistol</Category>
-    <ExtArray />
-    <ExtKind />
-    <ExtLabel />
-    <HasRating>false</HasRating>
-    <Rating>0</Rating>
-    <AvailabilityVector>
-      <Availability>4R</Availability>
-    </AvailabilityVector>
-    <CostVector>
-      <decimal>320</decimal>
-    </CostVector>
-    <CapacityVector>
-      <int>0</int>
-    </CapacityVector>
-    <BaseMods>
-    </BaseMods>
-    <Mods />
-    <ModCategories>
-      <string>General</string>
-      <string>Firearm</string>
-      <string>Barrel Mount</string>
-      <string>Top Mount</string>
-    </ModCategories>
     <DV>7</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
     <RatingAP>0</RatingAP>
-    <Acc>7</Acc>
-    <AmmoCount>11</AmmoCount>
+    <Acc>4</Acc>
+    <AmmoCount>32</AmmoCount>
     <FireModes>
       <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+      <FireMode>FA</FireMode>
     </FireModes>
     <ReloadMethod>c</ReloadMethod>
     <RC>0</RC>
   </GearPrototype>
   <GearPrototype xsi:type="RangedWeaponPrototype">
-    <Name>Fichetti Security 600</Name>
+    <Name>FN P93 Praetor</Name>
     <Book>SR5</Book>
-    <Page>426</Page>
-    <Category>Ranged Weapons - Light Pistol</Category>
+    <Page>427</Page>
+    <Category>Ranged Weapons - SMG</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>11F</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>900</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Fixed shoulder stock</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+      <string>Barrel Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>8</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>6</Acc>
+    <AmmoCount>50</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+      <FireMode>FA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>1</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>HK-227</Name>
+    <Book>SR5</Book>
+    <Page>427</Page>
+    <Category>Ranged Weapons - SMG</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>8R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>730</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Folding stock</string>
+      <string>_Silencer</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>7</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>5</Acc>
+    <AmmoCount>28</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+      <FireMode>FA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Ingram Smartgun X</Name>
+    <Book>SR5</Book>
+    <Page>427</Page>
+    <Category>Ranged Weapons - SMG</Category>
     <ExtArray />
     <ExtKind />
     <ExtLabel />
@@ -177,73 +141,156 @@
       <Availability>6R</Availability>
     </AvailabilityVector>
     <CostVector>
-      <decimal>350</decimal>
+      <decimal>800</decimal>
     </CostVector>
     <CapacityVector>
       <int>0</int>
     </CapacityVector>
     <BaseMods>
-      <string>_Laser sight - Top</string>
-      <string>_Folding stock</string>
+      <string>_Smartgun</string>
+      <string>_Gas-vent system 2</string>
     </BaseMods>
-    <Mods />
     <ModCategories>
       <string>General</string>
       <string>Firearm</string>
-      <string>Barrel Mount</string>
       <string>Top Mount</string>
     </ModCategories>
-    <DV>7</DV>
+    <Mods />
+    <DV>8</DV>
     <DamageType>P</DamageType>
     <AP>0</AP>
     <RatingAP>0</RatingAP>
-    <Acc>6</Acc>
-    <AmmoCount>11</AmmoCount>
+    <Acc>4</Acc>
+    <AmmoCount>32</AmmoCount>
     <FireModes>
-      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+      <FireMode>FA</FireMode>
     </FireModes>
     <ReloadMethod>c</ReloadMethod>
     <RC>0</RC>
   </GearPrototype>
   <GearPrototype xsi:type="RangedWeaponPrototype">
-    <Name>Taurus Omni-6</Name>
+    <Name>SCK Model 100</Name>
     <Book>SR5</Book>
-    <Page>426</Page>
-    <Category>Ranged Weapons - Light Pistol</Category>
+    <Page>428</Page>
+    <Category>Ranged Weapons - SMG</Category>
     <ExtArray />
     <ExtKind />
     <ExtLabel />
     <HasRating>false</HasRating>
     <Rating>0</Rating>
     <AvailabilityVector>
-      <Availability>3R</Availability>
+      <Availability>6R</Availability>
     </AvailabilityVector>
     <CostVector>
-      <decimal>350</decimal>
+      <decimal>875</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Smartgun</string>
+      <string>_Folding stock</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+      <string>Barrel Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>8</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>5</Acc>
+    <AmmoCount>30</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Uzi IV</Name>
+    <Book>SR5</Book>
+    <Page>428</Page>
+    <Category>Ranged Weapons - SMG</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>4R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>450</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Folding Stock</string>
+      <string>_Laser sight - Top</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Barrel Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>7</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>4</Acc>
+    <AmmoCount>24</AmmoCount>
+    <FireModes>
+      <FireMode>BF</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <!--<GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name></Name>
+    <Book>SR5</Book>
+    <Page></Page>
+    <Category>Ranged Weapons - </Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability></Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal></decimal>
     </CostVector>
     <CapacityVector>
       <int>0</int>
     </CapacityVector>
     <BaseMods>
     </BaseMods>
-    <Mods />
     <ModCategories>
       <string>General</string>
       <string>Firearm</string>
-      <string>Barrel Mount</string>
       <string>Top Mount</string>
+      <string>Barrel Mount</string>
     </ModCategories>
-    <DV>7</DV>
-    <DamageType>P</DamageType>
+    <Mods />
+    <DV></DV>
+    <DamageType>S</DamageType>
     <AP>0</AP>
-    <RatingAP>-1</RatingAP>
-    <Acc>5</Acc>
-    <AmmoCount>6</AmmoCount>
+    <RatingAP>0</RatingAP>
+    <Acc></Acc>
+    <AmmoCount></AmmoCount>
     <FireModes>
-      <FireMode>SA</FireMode>
-      <FireMode>SS</FireMode>
+      <FireMode></FireMode>
     </FireModes>
-    <ReloadMethod>cy</ReloadMethod>
+    <ReloadMethod></ReloadMethod>
     <RC>0</RC>
-  </GearPrototype>
+  </GearPrototype>-->
 </ArrayOfGearPrototype>

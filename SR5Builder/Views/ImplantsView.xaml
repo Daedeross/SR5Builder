@@ -94,6 +94,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Value.Name}"
                                     MinWidth="150"/>
+                <DataGridTextColumn Header="Ess."
+                                    Binding="{Binding Value.TotalEssence}" />
                 <DataGridTextColumn Header="Rating"
                                     Binding="{Binding Value.BaseRating, Converter={StaticResource intToStringConverter}}" />
                 <DataGridTextColumn Header="Avail"

@@ -32,7 +32,12 @@ namespace SR5Builder.DataModels
 
         public Availability(string str)
         {
-            if (str.EndsWith("R"))
+            if (str.Length == 0)
+            {
+                Restriction = Restriction.N;
+                Level = 0;
+            }
+            else if (str.EndsWith("R"))
             {
                 Restriction = Restriction.R;
                 Level = Convert.ToInt32(str.Replace("R", ""));
@@ -117,8 +122,12 @@ namespace SR5Builder.DataModels
         public void ReadXml(System.Xml.XmlReader reader)
         {
             string temp = reader.ReadElementContentAsString();
-
-            if (temp.EndsWith("R"))
+            if (temp.Length == 0)
+            {
+                Restriction = Restriction.N;
+                Level = 0;
+            }
+            else if (temp.EndsWith("R"))
             {
                 Restriction = Restriction.R;
                 Level = Convert.ToInt32(temp.Replace("R", ""));

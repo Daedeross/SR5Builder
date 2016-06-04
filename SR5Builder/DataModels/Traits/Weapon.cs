@@ -245,7 +245,7 @@ namespace SR5Builder.DataModels
 
         public virtual void CopyFromLoader(WeaponPrototype loader)
         {
-            base.CopyFromLoader(loader);
+            base.CopyFromPrototype(loader);
 
             mDV = loader.DV;
             mDamageType = loader.DamageType;

@@ -21,7 +21,7 @@
     </CapacityVector>
     <BaseMods>
       <string>Silencer ALF</string>
-      <string>Smartgun</string>
+      <string>_Smartgun</string>
     </BaseMods>
     <ModCategories>
       <string>General</string>

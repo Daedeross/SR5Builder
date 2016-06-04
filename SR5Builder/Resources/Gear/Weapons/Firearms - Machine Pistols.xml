@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Ares Crusader II</Name>
+    <Book>SR5</Book>
+    <Page>427</Page>
+    <Category>Ranged Weapons - Machine Pistol</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>9R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>830</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Gas-vent system 2</string>
+      <string>_Smartgun</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>7</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>5</Acc>
+    <AmmoCount>40</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Ceska Black Scorpion</Name>
+    <Book>SR5</Book>
+    <Page>427</Page>
+    <Category>Ranged Weapons - Machine Pistol</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>6R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>270</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Folding stock</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+      <string>Barrel Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>6</DV>
+    <DamageType>P</DamageType>
+    <AP>0</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>5</Acc>
+    <AmmoCount>35</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Steyr TMP</Name>
+    <Book>SR5</Book>
+    <Page>427</Page>
+    <Category>Ranged Weapons - Machine Pistol</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>8R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>350</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Laser sight - Top</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Barrel Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>8</DV>
+    <DamageType>P</DamageType>
+    <AP>5</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>5</Acc>
+    <AmmoCount>4</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <!--<GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name></Name>
+    <Book>SR5</Book>
+    <Page></Page>
+    <Category>Ranged Weapons - </Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability></Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal></decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+      <string>Barrel Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV></DV>
+    <DamageType>S</DamageType>
+    <AP></AP>
+    <RatingAP>0</RatingAP>
+    <Acc></Acc>
+    <AmmoCount></AmmoCount>
+    <FireModes>
+      <FireMode></FireMode>
+    </FireModes>
+    <ReloadMethod></ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>-->
+</ArrayOfGearPrototype>

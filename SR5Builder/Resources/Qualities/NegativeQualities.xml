@@ -6,7 +6,7 @@
     <Page>77</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>25</Karma>
+    <Karma>-25</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Addiction (Mild)</Name>
@@ -14,7 +14,7 @@
     <Page>77</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>4</Karma>
+    <Karma>-4</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Addiction (Moderate)</Name>
@@ -22,7 +22,7 @@
     <Page>77</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>9</Karma>
+    <Karma>-9</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Addiction (Severe)</Name>
@@ -30,7 +30,7 @@
     <Page>77</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>20</Karma>
+    <Karma>-20</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Allergy</Name>
@@ -38,7 +38,7 @@
     <Page>78</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>5</Karma>
+    <Karma>-5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Astral Beacon</Name>
@@ -46,7 +46,7 @@
     <Page>78</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>10</Karma>
+    <Karma>-10</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Bad Luck</Name>
@@ -54,7 +54,7 @@
     <Page>79</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>12</Karma>
+    <Karma>-12</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Bad Rep</Name>
@@ -62,7 +62,7 @@
     <Page>79</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>7</Karma>
+    <Karma>-7</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Code of Honor</Name>
@@ -70,7 +70,7 @@
     <Page>79</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>15</Karma>
+    <Karma>-15</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Codeblock</Name>
@@ -78,7 +78,7 @@
     <Page>801</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>10</Karma>
+    <Karma>-10</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Combat Paralysis</Name>
@@ -86,7 +86,7 @@
     <Page>80</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>12</Karma>
+    <Karma>-12</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Dependents</Name>
@@ -94,7 +94,7 @@
     <Page>80</Page>
     <ExtArray />
     <Max>3</Max>
-    <Karma>3</Karma>
+    <Karma>-3</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Distinctive Style</Name>
@@ -102,7 +102,7 @@
     <Page>80</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>5</Karma>
+    <Karma>-5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Elf Poser</Name>
@@ -110,7 +110,7 @@
     <Page>81</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>6</Karma>
+    <Karma>-6</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Gremlins</Name>
@@ -118,7 +118,7 @@
     <Page>81</Page>
     <ExtArray />
     <Max>4</Max>
-    <Karma>4</Karma>
+    <Karma>-4</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Incompetent</Name>
@@ -126,7 +126,7 @@
     <Page>81</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>5</Karma>
+    <Karma>-5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Insomnia</Name>
@@ -134,7 +134,7 @@
     <Page>81</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>15</Karma>
+    <Karma>-15</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Loss of Confidence</Name>
@@ -142,7 +142,7 @@
     <Page>82</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>10</Karma>
+    <Karma>-10</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Low Pain Tolerance</Name>
@@ -150,7 +150,7 @@
     <Page>82</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>9</Karma>
+    <Karma>-9</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Ork Poser</Name>
@@ -158,7 +158,7 @@
     <Page>82</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>6</Karma>
+    <Karma>-6</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Prejudiced</Name>
@@ -166,7 +166,7 @@
     <Page>82</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>3</Karma>
+    <Karma>-3</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Scorched</Name>
@@ -174,7 +174,7 @@
     <Page>83</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>10</Karma>
+    <Karma>-10</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Sensitive System</Name>
@@ -182,7 +182,7 @@
     <Page>83</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>12</Karma>
+    <Karma>-12</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Simsense Vertigo</Name>
@@ -190,7 +190,7 @@
     <Page>83</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>5</Karma>
+    <Karma>-5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>SINner</Name>
@@ -198,7 +198,7 @@
     <Page>84</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>5</Karma>
+    <Karma>-5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Social Stress</Name>
@@ -206,7 +206,7 @@
     <Page>85</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>8</Karma>
+    <Karma>-8</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Spirit Bane</Name>
@@ -214,7 +214,7 @@
     <Page>85</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>7</Karma>
+    <Karma>-7</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Uncouth</Name>
@@ -222,7 +222,7 @@
     <Page>85</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>14</Karma>
+    <Karma>-14</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Uneducated</Name>
@@ -230,7 +230,7 @@
     <Page>87</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>8</Karma>
+    <Karma>-8</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Unsteady Hands</Name>
@@ -238,7 +238,7 @@
     <Page>87</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>7</Karma>
+    <Karma>-7</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Weak Immune System</Name>
@@ -246,6 +246,6 @@
     <Page>87</Page>
     <ExtArray />
     <Max>0</Max>
-    <Karma>10</Karma>
+    <Karma>-10</Karma>
   </QualityPrototype>
 </ArrayOfQualityPrototype>

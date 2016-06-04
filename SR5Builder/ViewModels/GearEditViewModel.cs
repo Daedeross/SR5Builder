@@ -7,6 +7,8 @@ using SR5Builder.Prototypes;
 using DrWPF.Windows.Data;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 
 namespace SR5Builder.ViewModels
 {
@@ -161,13 +163,13 @@ namespace SR5Builder.ViewModels
 
         private bool RemoveModCanExecute()
         {
-            return (SelectedMod != null);
+            return (SelectedMod != null &&
+                    !SelectedMod.IsBuiltIn);
         }
 
         #endregion // RemoveMod
-
-
-        #region IncreaseMod
+        
+            #region IncreaseMod
 
         private RelayCommand mIncreaseModCommand;
         public ICommand IncreaseModCommand
@@ -194,12 +196,13 @@ namespace SR5Builder.ViewModels
             return (ModList != null &&
                     ModList.Count > 0 &&
                     SelectedMod != null &&
+                    !SelectedMod.IsBuiltIn &&
                     SelectedMod.Rating < SelectedMod.Max);
         }
 
-        #endregion // IncreaseMod
+            #endregion // IncreaseMod
 
-        #region DecreaseMod
+            #region DecreaseMod
 
         private RelayCommand mDecreaseModCommand;
         public ICommand DecreaseModCommand
@@ -226,13 +229,13 @@ namespace SR5Builder.ViewModels
             return (ModList != null &&
                     ModList.Count > 0 &&
                     SelectedMod != null &&
+                    !SelectedMod.IsBuiltIn &&
                     SelectedMod.Rating > SelectedMod.Min);
         }
 
-        #endregion // DecreaseMod
-
-
-        #region Done
+            #endregion // DecreaseMod
+        
+            #region Done
 
         private RelayCommand mDoneCommand;
 
@@ -297,6 +300,17 @@ namespace SR5Builder.ViewModels
                 ModList.Add(modName, l);
             }
 
+            foreach (var kvp in gear.BaseMods)
+            {
+                string modName = kvp.Key;
+                int rating = kvp.Value.BaseRating;
+                GearModPrototype l = GlobalData.GearMods[modName].Clone(rating);
+                tabooCheck.Add(modName);
+                tabooCheck.Add(l.Category);
+                tabooCheck.Add(l.SubCategory);
+                ModList.Add(modName, l);
+            }
+
             // add available mods
             AvailableMods = new ObservableCollection<GearModPrototype>();
             // add specific allowed mods
@@ -304,13 +318,16 @@ namespace SR5Builder.ViewModels
             {
                 if (!ModList.ContainsKey(key))
                 {
-                    GearModPrototype gml;
-                    if (GlobalData.GearMods.TryGetValue(key, out gml))
+                    GearModPrototype gmp;
+                    if (GlobalData.GearMods.TryGetValue(key, out gmp))
                     {
-                        AvailableMods.Add(gml);
+                        if (!gmp.IsBuiltIn)
+                        {
+                            AvailableMods.Add(gmp);
+                        }
                     }
                     else
-                        SR5Builder.Helpers.Log.LogMessage("Failed to add GearMod: '" + key + ".' item not found in resources.");
+                        Helpers.Log.LogMessage("Failed to add GearMod: '" + key + ".' item not found in resources.");
                 }
             }
             // add mods by sub-category
@@ -323,10 +340,40 @@ namespace SR5Builder.ViewModels
                     {
                         if (!ModList.ContainsKey(key))
                         {
-                            AvailableMods.Add(modCat[key]);
+                            if (!modCat[key].IsBuiltIn)
+                            {
+                                AvailableMods.Add(modCat[key]);
+                            }
                         }
                     }
                 }
+            }
+            RefreshCapacity();
+            foreach (KeyValuePair<string, GearModPrototype> kvp in ModList)
+            {
+                kvp.Value.PropertyChanged += ModChanged;
+            }
+            ModList.CollectionChanged += ModListChanged;
+        }
+
+        private void ModListChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.OldItems != null)
+                foreach (KeyValuePair<string, GearModPrototype> kvp in e.OldItems)
+                    kvp.Value.PropertyChanged -= ModChanged;
+
+            if (e.NewItems != null)
+                foreach (KeyValuePair<string, GearModPrototype> kvp in e.NewItems)
+                    kvp.Value.PropertyChanged += ModChanged;
+
+            RefreshCapacity();
+        }
+
+        private void ModChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(GearModPrototype.Capacity))
+            {
+                RefreshCapacity();
             }
         }
 
@@ -348,10 +395,15 @@ namespace SR5Builder.ViewModels
 
         private void RefreshCapacity()
         {
+            int oldCap = mCapacityUsed;
             mCapacityUsed = 0;
             foreach (var mod in ModList.Values)
             {
                 mCapacityUsed += mod.Capacity;
+            }
+            if (oldCap != mCapacityUsed)
+            {
+                OnPropertyChanged(nameof(Capacity));
             }
         }
 

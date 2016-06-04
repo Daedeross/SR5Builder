@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Defiance EX Shocker</Name>
+    <Book>SR5</Book>
+    <Page>424</Page>
+    <Category>Ranged Weapons - Taser</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>250</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>9</DV>
+    <DamageType>S</DamageType>
+    <AP>-5</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>4</Acc>
+    <AmmoCount>4</AmmoCount>
+    <FireModes>
+      <FireMode>SS</FireMode>
+    </FireModes>
+    <ReloadMethod>m</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Yamaha Pulsar</Name>
+    <Book>SR5</Book>
+    <Page>425</Page>
+    <Category>Ranged Weapons - Taser</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability></Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>180</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>7</DV>
+    <DamageType>S</DamageType>
+    <AP>-5</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>5</Acc>
+    <AmmoCount>4</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+    </FireModes>
+    <ReloadMethod>m</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <!--<GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name></Name>
+    <Book>SR5</Book>
+    <Page></Page>
+    <Category>Ranged Weapons - </Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability></Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal></decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+      <string>Barrel Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV></DV>
+    <DamageType>S</DamageType>
+    <AP></AP>
+    <RatingAP>0</RatingAP>
+    <Acc></Acc>
+    <AmmoCount></AmmoCount>
+    <FireModes>
+      <FireMode></FireMode>
+    </FireModes>
+    <ReloadMethod></ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>-->
+</ArrayOfGearPrototype>

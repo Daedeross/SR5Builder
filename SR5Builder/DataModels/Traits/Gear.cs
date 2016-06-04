@@ -186,7 +186,7 @@ namespace SR5Builder.DataModels
         {
             Initialize();
 
-            CopyFromLoader(proto);
+            CopyFromPrototype(proto);
         }
 
         private void Initialize()
@@ -301,7 +301,7 @@ namespace SR5Builder.DataModels
             return false;
         }
 
-        public virtual void CopyFromLoader(GearPrototype proto)
+        public virtual void CopyFromPrototype(GearPrototype proto)
         {
             mName = proto.Name;
             Book = proto.Book;

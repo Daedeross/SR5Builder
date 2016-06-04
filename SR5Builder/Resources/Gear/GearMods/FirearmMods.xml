@@ -69,7 +69,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Barrel Mount</string>
@@ -100,7 +100,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
     </Taboo>
@@ -127,7 +127,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Top Mount</string>
@@ -148,7 +148,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Top Mount</string>
@@ -176,38 +176,10 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Bottom Mount</string>
-    </Taboo>
-    <Augments>
-      <AugmentPrototype>
-        <Kind>Accuracy</Kind>
-        <Bonus>
-          <decimal>1</decimal>
-        </Bonus>
-        <Target>%owner%</Target>
-      </AugmentPrototype>
-    </Augments>
-  </GearModPrototype>
-  <GearModPrototype>
-    <Name>Laser sight</Name>
-    <Book>SR5</Book>
-    <Page>432</Page>
-    <Rating>0</Rating>
-    <FlatCostVector>
-      <decimal>125</decimal>
-    </FlatCostVector>
-    <CostMultVector>
-      <decimal>1</decimal>
-    </CostMultVector>
-    <CapacityVector>
-      <decimal>0</decimal>
-    </CapacityVector>
-    <Taboo>
-      <string>Laser sight - Top</string>
-      <string>Laser sight - Bottom</string>
     </Taboo>
     <Augments>
       <AugmentPrototype>
@@ -232,7 +204,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
     </Taboo>
@@ -259,7 +231,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Barrel Mount</string>
@@ -280,7 +252,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Bottom  Mount</string>
@@ -289,7 +261,7 @@
     </Augments>
   </GearModPrototype>
   <GearModPrototype>
-    <Name>Smartgun</Name>
+    <Name>_Smartgun</Name>
     <Book>SR5</Book>
     <Page>439</Page>
     <Rating>0</Rating>
@@ -300,7 +272,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Smartgun - Top</string>
@@ -331,9 +303,10 @@
       <decimal>2</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
+      <string>_Smartgun</string>
       <string>Smartgun - Top</string>
       <string>Smartgun - Bottom</string>
       <string>Laser sight</string>
@@ -361,10 +334,12 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
+      <string>_Smartgun</string>
       <string>Smartgun - internal</string>
+      <string>Smartgun - Bottom</string>
       <string>Top Mount</string>
     </Taboo>
     <Augments>
@@ -390,10 +365,12 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
+      <string>_Smartgun</string>
       <string>Smartgun - internal</string>
+      <string>Smartgun - Top</string>
       <string>Bottom Mount</string>
     </Taboo>
     <Augments>
@@ -419,12 +396,12 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo></Taboo>
     <Augments></Augments>
   </GearModPrototype>
-  <GearModPrototype>
+  <!--<GearModPrototype> Moved to Ammo & Accessories
     <Name>Speed Loader</Name>
     <SubCategory>Revolvers</SubCategory>
     <Book>SR5</Book>
@@ -437,11 +414,11 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo></Taboo>
     <Augments></Augments>
-  </GearModPrototype>
+  </GearModPrototype>-->
   <GearModPrototype>
     <Name>Tripod</Name>
     <SubCategory>Bottom Mount</SubCategory>
@@ -455,7 +432,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Bottom Mount</string>
@@ -471,9 +448,10 @@
     </Augments>
   </GearModPrototype>
   <!-- Built in Mods for various firearms -->
+  <!-- All built in mods start with _ (underscore)-->
   <GearModPrototype>
-    <Name>Silencer ALF</Name>
-    <!--Ares Light Fire -->
+    <Name>_Silencer</Name>
+    <SubCategory>Barrel Mount</SubCategory>
     <Book>SR5</Book>
     <Page>426</Page>
     <Rating>0</Rating>
@@ -484,7 +462,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Barrel Mount</string>
@@ -492,7 +470,8 @@
     <Augments />
   </GearModPrototype>
   <GearModPrototype>
-    <Name>Detatchable shoulder stock</Name>
+    <Name>_Detatchable shoulder stock</Name>
+    <SubCategory>Stock</SubCategory>
     <Book>SR5</Book>
     <Page>426</Page>
     <Rating>0</Rating>
@@ -503,7 +482,7 @@
       <decimal>1</decimal>
     </CostMultVector>
     <CapacityVector>
-      <decimal>0</decimal>
+      <int>0</int>
     </CapacityVector>
     <Taboo>
       <string>Shockpad</string>
@@ -519,20 +498,227 @@
       </AugmentPrototype>
     </Augments>
   </GearModPrototype>
-</ArrayOfGearModPrototype>
-<!--
   <GearModPrototype>
+    <Name>_Folding stock</Name>
+    <SubCategory>Stock</SubCategory>
+    <Book>SR5</Book>
+    <Page>426</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <Taboo>
+      <string>Shockpad</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>RC</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>_Fixed shoulder stock</Name>
+    <SubCategory>Stock</SubCategory>
+    <Book>SR5</Book>
+    <Page>426</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <Taboo>
+      <string>Shockpad</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>RC</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>_Gas-vent system 1</Name>
+    <SubCategory>Barrel Mount</SubCategory>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <Taboo>
+      <string>Barrel Mount</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>RC</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>_Gas-vent system 2</Name>
+    <SubCategory>Barrel Mount</SubCategory>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <Taboo>
+      <string>Barrel Mount</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>RC</Kind>
+        <Bonus>
+          <decimal>2</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>_Gas-vent system 3</Name>
+    <SubCategory>Barrel Mount</SubCategory>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <Taboo>
+      <string>Barrel Mount</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>RC</Kind>
+        <Bonus>
+          <decimal>3</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>_Laser sight - Top</Name>
+    <SubCategory>Top Mount</SubCategory>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>125</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <Taboo>
+      <string>Top Mount</string>
+      <string>_Laser sight - Bottom</string>
+      <string>Laser sight - Bottom</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Accuracy</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>_Laser sight - Bottom</Name>
+    <SubCategory>Bottom Mount</SubCategory>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>125</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <Taboo>
+      <string>Bottom Mount</string>
+      <string>_Laser sight - Top</string>
+      <string>Laser sight - Top</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Accuracy</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
+</ArrayOfGearModPrototype>
+
+  <!--<GearModPrototype>
     <Name></Name>
     <SubCategory></SubCategory>
     <Book>SR5</Book>
     <Page>439</Page>
     <Rating>0</Rating>
-    <FlatCostVector><decimal>0</decimal></FlatCostVector>
-    <CostMultVector><decimal>1</decimal></CostMultVector>
-    <CapacityVector><int>0</int></CapacityVector>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
     <Taboo>
     </Taboo>
     <Augments>
     </Augments>
-  </GearModPrototype>
--->
+  </GearModPrototype>-->

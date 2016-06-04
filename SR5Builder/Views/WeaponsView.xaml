@@ -24,6 +24,7 @@
                           RowBackground="DarkGray"
                           Background="White"
                           AutoGenerateColumns="False"
+                          IsReadOnly="True"
                           ItemsSource="{Binding Source={StaticResource meleeWeapons}}" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Weapon" Width="*" Binding="{Binding Value.Name}" />
@@ -41,6 +42,7 @@
                           RowBackground="DarkGray"
                           Background="White"
                           AutoGenerateColumns="False"
+                          IsReadOnly="True"
                           ItemsSource="{Binding RangedWeapons}" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Weapon" Width="*" Binding="{Binding Value.Name}" />

@@ -14,6 +14,12 @@ namespace SR5Builder.Prototypes
 
         public string SubCategory { get; set; }
 
+        [XmlIgnore]
+        public bool IsBuiltIn
+        {
+            get { return Name?.StartsWith("_") ?? false; }
+        }
+
         public int Min { get; set; }
 
         public int Max { get; set; }
@@ -78,7 +84,8 @@ namespace SR5Builder.Prototypes
         }
 
         public int[] CapacityVector { get; set; }
-        
+            = new int[1] { 0 };
+
         public string[] Taboo { get; set; }
 
         public string Notes { get; set; }
@@ -139,7 +146,7 @@ namespace SR5Builder.Prototypes
             get
             {
                 int index = mRating < 0 ? 0 : mRating;
-                index = index < CapacityVector.Length ? index : CapacityVector.Length;
+                index = index < CapacityVector.Length ? index : CapacityVector.Length -1;
                 return CapacityVector[index];
             }
         }
@@ -149,11 +156,6 @@ namespace SR5Builder.Prototypes
         #endregion // Properties
 
         #region Constructors
-
-        public GearModPrototype()
-        {
-            //Taboo = string[0];
-        }
 
         #endregion // Constructors
 
