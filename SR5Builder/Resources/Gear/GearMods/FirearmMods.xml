@@ -700,6 +700,55 @@
       </AugmentPrototype>
     </Augments>
   </GearModPrototype>
+  <GearModPrototype>
+    <Name>_Grenade Launcher</Name>
+    <SubCategory>Bottom Mount</SubCategory>
+    <Book>SR5</Book>
+    <Page>428</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <Taboo>
+      <string>Bottom Mount</string>
+    </Taboo>
+    <Augments>
+    </Augments>
+  </GearModPrototype>
+  <GearModPrototype>
+    <Name>_Shockpad</Name>
+    <SubCategory>Firearm</SubCategory>
+    <Book>SR5</Book>
+    <Page>432</Page>
+    <Rating>0</Rating>
+    <FlatCostVector>
+      <decimal>0</decimal>
+    </FlatCostVector>
+    <CostMultVector>
+      <decimal>1</decimal>
+    </CostMultVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <Taboo>
+      <string>Shockpad</string>
+    </Taboo>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>RC</Kind>
+        <Bonus>
+          <decimal>1</decimal>
+        </Bonus>
+        <Target>%owner%</Target>
+      </AugmentPrototype>
+    </Augments>
+  </GearModPrototype>
 </ArrayOfGearModPrototype>
 
   <!--<GearModPrototype>

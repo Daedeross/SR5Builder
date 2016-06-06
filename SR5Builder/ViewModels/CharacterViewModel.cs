@@ -276,6 +276,11 @@ namespace SR5Builder.ViewModels
             }
         }
 
+        public int ArmorRating
+        {
+            get { return character.ArmorRating; }
+        }
+
             #endregion
 
             #region Validation

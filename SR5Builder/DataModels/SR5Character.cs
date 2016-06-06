@@ -252,16 +252,13 @@ namespace SR5Builder.DataModels
         public InitiativeDice HotSimInitiativeDice { get; set; }
         public InitiativeDice AstralInitiativeDice { get; set; }
 
-            #endregion // Initiatives
+                #endregion // Initiatives
 
-            #region Limits
+                #region Limits
 
         public Limit MentalLimit { get; private set; }
-
         public Limit PhysicalLimit { get; private set; }
-
         public Limit SocialLimit { get; private set; }
-
         public Limit AstralLimit
         {
             get
@@ -509,6 +506,9 @@ namespace SR5Builder.DataModels
                 }
             }
         }
+            #endregion // Spells / Powers
+
+            #region Karma
 
         public int AdvancedGradeKarma
         {
@@ -526,8 +526,6 @@ namespace SR5Builder.DataModels
             }
         }
 
-        #endregion // Spells / Powers
-        
         private int mKarmaEarned;
         public int KarmaEarned
         {
@@ -552,11 +550,13 @@ namespace SR5Builder.DataModels
         {
             get { return mKarmaSpent; }
         }
-    
+
         public int KarmaAvailable
         {
             get { return mKarmaEarned - mKarmaSpent; }
-        }
+        } 
+
+            #endregion
 
             #region Gear
 
@@ -576,7 +576,6 @@ namespace SR5Builder.DataModels
 
         #endregion // Weapons
 
-
         private decimal mMoneySpent;
         public decimal MoneySpent
         {
@@ -591,6 +590,16 @@ namespace SR5Builder.DataModels
         public decimal MoneyRemaining
         {
             get { return StartingMoney - MoneySpent; }
+        }
+
+        public List<IArmor> Armors { get; set; }
+            = new List<IArmor>();
+
+        private int mArmorRating;
+        public int ArmorRating
+        {
+            get
+            { return mArmorRating; }
         }
 
         #endregion // Properties
@@ -718,14 +727,14 @@ namespace SR5Builder.DataModels
             }
             
             // Initiatives
-            PhysicalInitiative = new Initiative(mReaction, mIntuition);
+            PhysicalInitiative = new Initiative(this, mReaction, mIntuition);
             PhysicalInitiative.Name = "Initiative";
             ARInititative = PhysicalInitiative;
-            ColdSimInitiative = new Initiative(mIntuition, mLogic);
+            ColdSimInitiative = new Initiative(this, mIntuition, mLogic);
             ColdSimInitiative.Name = "Cold Sim Initiative";
-            HotSimInitiative = new Initiative(mIntuition, mLogic);
+            HotSimInitiative = new Initiative(this, mIntuition, mLogic);
             HotSimInitiative.Name = "Hot Sim Initiative";
-            AstralInitiative = new Initiative(mIntuition, mIntuition);
+            AstralInitiative = new Initiative(this, mIntuition, mIntuition);
             AstralInitiative.Name = "Astral Initiative";
 
             Augmentables.Add(PhysicalInitiative.Name, PhysicalInitiative);
@@ -747,11 +756,11 @@ namespace SR5Builder.DataModels
             Augmentables.Add(AstralInitiativeDice.Name, AstralInitiativeDice);
 
             // Limits
-            MentalLimit = new Limit(mLogic, mIntuition, mWillpower);
+            MentalLimit = new Limit(this, mLogic, mIntuition, mWillpower);
             MentalLimit.Name = "Mental Limit";
-            PhysicalLimit = new Limit(mStrength, mBody, mReaction);
+            PhysicalLimit = new Limit(this, mStrength, mBody, mReaction);
             PhysicalLimit.Name = "Physical Limit";
-            SocialLimit = new Limit(mCharisma, mWillpower, mEssence);
+            SocialLimit = new Limit(this, mCharisma, mWillpower, mEssence);
             SocialLimit.Name = "Social Limit";
 
             // Add limits to Augmentables
@@ -1073,25 +1082,60 @@ namespace SR5Builder.DataModels
         {
             if (e.OldItems != null)
                 foreach (KeyValuePair<string, Implant> kvp in e.OldItems)
+                {
                     kvp.Value.PropertyChanged -= OnGearChanged;
+                    if (kvp.Value.IsArmor)
+                    {
+                        Armors.Remove(kvp.Value);
+                        kvp.Value.PropertyChanged -= OnArmorChanged;
+                    }
+                }
 
             if (e.NewItems != null)
                 foreach (KeyValuePair<String, Implant> kvp in e.NewItems)
+                {
                     kvp.Value.PropertyChanged += OnGearChanged;
+                    if (kvp.Value.IsArmor)
+                    {
+                        Armors.Add(kvp.Value);
+                        kvp.Value.PropertyChanged += OnArmorChanged;
+                    }
+                }
 
             RecalcMoney();
         }
 
         private void OnGearCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
+            bool isArmor = false;
             if (e.OldItems != null)
                 foreach (KeyValuePair<string, Gear> kvp in e.OldItems)
+                {
                     kvp.Value.PropertyChanged -= OnGearChanged;
+                    if (kvp.Value.IsArmor)
+                    {
+                        Armors.Remove(kvp.Value);
+                        kvp.Value.PropertyChanged -= OnArmorChanged;
+                        isArmor = true;
+                    }
+                }
 
             if (e.NewItems != null)
                 foreach (KeyValuePair<String, Gear> kvp in e.NewItems)
+                {
                     kvp.Value.PropertyChanged += OnGearChanged;
+                    if (kvp.Value.IsArmor)
+                    {
+                        Armors.Add(kvp.Value);
+                        kvp.Value.PropertyChanged += OnArmorChanged;
+                        isArmor = true;
+                    }
+                }
 
+            if (isArmor)
+            {
+                OnArmorChanged(null, new PropertyChangedEventArgs(nameof(IArmor.ArmorRating)));
+            }
             RecalcMoney();
         }
 
@@ -1100,6 +1144,33 @@ namespace SR5Builder.DataModels
             if (e.PropertyName == nameof(Gear.Cost))
             {
                 RecalcMoney();
+            }
+        }
+
+        private void OnArmorChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(IArmor.ArmorRating))
+            {
+                int oldArmor = mArmorRating;
+                int max = 0;
+                mArmorRating = 0;
+                foreach (IArmor a in Armors)
+                {
+                    if (a.IsClothing)
+                    {
+                        max = Math.Max(a.ArmorRating, max);
+                    }
+                    else
+                    {
+                        mArmorRating += a.ArmorRating;
+                    }
+                }
+
+                mArmorRating += max;
+                if (mArmorRating != oldArmor)
+                {
+                    OnPropertyChanged(nameof(ArmorRating));
+                }
             }
         }
 

@@ -46,6 +46,7 @@
         <Label Grid.Column="0" Grid.Row="6">Intuition</Label>
         <Label Grid.Column="0" Grid.Row="7">Charisma</Label>
         <Label Grid.Column="0" Grid.Row="8">Edge</Label>
+        <Label Grid.Column="0" Grid.Row="9">Armor</Label>
         
         <!-- Column 1: Attribute Text-->
         <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Body.DisplayValue}" />
@@ -57,6 +58,7 @@
         <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding Intuition.DisplayValue}" />
         <TextBlock Grid.Column="1" Grid.Row="7" Text="{Binding Charisma.DisplayValue}" />
         <TextBlock Grid.Column="1" Grid.Row="8" Text="{Binding Edge.DisplayValue}" />
+        <TextBlock Grid.Column="1" Grid.Row="9" Text="{Binding ArmorRating}" />
         
         <!-- Column 2 -->
         <Label Grid.Column="2" Grid.Row="0">Essence</Label>

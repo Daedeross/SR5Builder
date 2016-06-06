@@ -143,9 +143,9 @@ namespace SR5Builder.DataModels
 
         private void SetTarget(string targetName)
         {
+            
             IAugmentable a;
             mOwnerTrait.Owner.Augmentables.TryGetValue(targetName, out a);
-
             Target = a;
         }
 

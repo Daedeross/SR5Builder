@@ -15,8 +15,10 @@ namespace SR5Builder.DataModels
     //    F = 2,
     //}
 
-    public class Gear: LeveledTrait, IEssenceCost
+    public class Gear: LeveledTrait, IEssenceCost, IArmor
     {
+        public bool IsArmor { get; protected set; }
+
         #region Properties
 
         public bool HasRating { get; set; }
@@ -30,7 +32,25 @@ namespace SR5Builder.DataModels
                 OnPropertyChanged(nameof(Availability));
                 OnPropertyChanged(nameof(Cost));
                 OnPropertyChanged(nameof(TotalEssence));
+                if (IsArmor)
+                {
+                    OnPropertyChanged(nameof(ArmorRating));
+                }
             }
+        }
+
+        private int mBonusArmor;
+        public int ArmorRating
+        {
+            get
+            {
+                return IsArmor ? BaseRating + mBonusArmor: 0;
+            }
+        }
+
+        public virtual bool IsClothing
+        {
+            get { return true; }
         }
 
         protected Availability[] mAvailabilityVector;
@@ -306,6 +326,7 @@ namespace SR5Builder.DataModels
             mName = proto.Name;
             Book = proto.Book;
             Page = proto.Page;
+            IsArmor = proto.IsArmor;
             mBaseRating = proto.Rating;
             HasRating = proto.Min != 0;
             // load max and min rating if applicable

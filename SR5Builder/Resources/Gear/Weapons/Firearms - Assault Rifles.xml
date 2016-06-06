@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfGearPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>AK-97</Name>
+    <Book>SR5</Book>
+    <Page>428</Page>
+    <Category>Ranged Weapons - Assault Rifle</Category>
+    <ExtArray /><ExtKind /><ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>4R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>950</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+      <string>Barrel Mount</string>
+      <string>Bottom Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>10</DV>
+    <DamageType>P</DamageType>
+    <AP>-2</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>5</Acc>
+    <AmmoCount>38</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+      <FireMode>FA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Ares Alpha</Name>
+    <Book>SR5</Book>
+    <Page>428</Page>
+    <Category>Ranged Weapons - Assault Rifle</Category>
+    <ExtArray />
+    <ExtKind />
+    <ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>11F</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>2650</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Grenade Launcher</string>
+      <string>_Smartgun</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+      <string>Barrel Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>11</DV>
+    <DamageType>P</DamageType>
+    <AP>-2</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>5</Acc>
+    <AmmoCount>42</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+      <FireMode>FA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>2</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Colt M23</Name>
+    <Book>SR5</Book>
+    <Page>428</Page>
+    <Category>Ranged Weapons - Assault Rifle</Category>
+    <ExtArray /><ExtKind /><ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>4R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>550</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+      <string>Barrel Mount</string>
+      <string>Bottom Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>9</DV>
+    <DamageType>P</DamageType>
+    <AP>-2</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>4</Acc>
+    <AmmoCount>40</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+      <FireMode>FA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>FN HAR</Name>
+    <Book>SR5</Book>
+    <Page>428</Page>
+    <Category>Ranged Weapons - Assault Rifle</Category>
+    <ExtArray /><ExtKind /><ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>8R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>1500</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Gas-vent system 2</string>
+      <string>_Laser sight - Top</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Bottom Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>10</DV>
+    <DamageType>P</DamageType>
+    <AP>-2</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>5</Acc>
+    <AmmoCount>32</AmmoCount>
+    <FireModes>
+      <FireMode>SA</FireMode>
+      <FireMode>BF</FireMode>
+      <FireMode>FA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>0</RC>
+  </GearPrototype>
+  <GearPrototype xsi:type="RangedWeaponPrototype">
+    <Name>Yamaha Raiden</Name>
+    <Book>SR5</Book>
+    <Page>428</Page>
+    <Category>Ranged Weapons - Assault Rifle</Category>
+    <ExtArray /><ExtKind /><ExtLabel />
+    <HasRating>false</HasRating>
+    <Rating>0</Rating>
+    <AvailabilityVector>
+      <Availability>14F</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>2600</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <BaseMods>
+      <string>_Silencer</string>
+      <string>_Smartgun</string>
+    </BaseMods>
+    <ModCategories>
+      <string>General</string>
+      <string>Firearm</string>
+      <string>Top Mount</string>
+      <string>Bottom Mount</string>
+    </ModCategories>
+    <Mods />
+    <DV>11</DV>
+    <DamageType>P</DamageType>
+    <AP>-2</AP>
+    <RatingAP>0</RatingAP>
+    <Acc>6</Acc>
+    <AmmoCount>60</AmmoCount>
+    <FireModes>
+      <FireMode>BF</FireMode>
+      <FireMode>FA</FireMode>
+    </FireModes>
+    <ReloadMethod>c</ReloadMethod>
+    <RC>1</RC>
+  </GearPrototype>
+</ArrayOfGearPrototype>

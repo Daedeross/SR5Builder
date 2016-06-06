@@ -12,8 +12,10 @@ namespace SR5Builder.DataModels
     /// </summary>
     public interface IAugmentContainer: INotifyPropertyChanged
     {
+        string Name { get; set; }
+
         /// <summary>
-        /// The character instance that owns teh traits.
+        /// The character instance that owns the traits.
         /// </summary>
         /// <remarks>
         /// Required so the Augmetns can find their target.

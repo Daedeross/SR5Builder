@@ -77,7 +77,8 @@ namespace SR5Builder.DataModels
 
         #region Constructors
 
-        public Initiative(Attribute attribute1, Attribute attribute2)
+        public Initiative(SR5Character owner, Attribute attribute1, Attribute attribute2)
+            :base(owner)
         {
             mAttributeOne = attribute1;
             mAttributeOne.PropertyChanged += this.OnAttributeChanged;
@@ -107,15 +108,15 @@ namespace SR5Builder.DataModels
         {
             switch (e.PropertyName)
             {
-                case "AugmentedRating":
+                case nameof(Attribute.AugmentedRating):
                     OnPropertyChanged(e.PropertyName);
                     OnPropertyChanged(nameof(DisplayValue));
                     break;
-                case "ImprovedRating":
+                case nameof(Attribute.ImprovedRating):
                     OnPropertyChanged(e.PropertyName);
                     OnPropertyChanged(nameof(DisplayValue));
                     break;
-                case "BaseRating":
+                case nameof(Attribute.BaseRating):
                     OnPropertyChanged(e.PropertyName);
                     OnPropertyChanged(nameof(DisplayValue));
                     break;

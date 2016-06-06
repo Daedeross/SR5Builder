@@ -6,7 +6,9 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>1</Rating>
-    <AvailabilityVector><Availability>0</Availability></AvailabilityVector>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+    </AvailabilityVector>
     <Cost>1</Cost>
     <CapacityVector>
       <int>0</int>
@@ -19,7 +21,9 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>1</Rating>
-    <AvailabilityVector><Availability>0</Availability></AvailabilityVector>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+    </AvailabilityVector>
     <Cost>5</Cost>
     <CapacityVector>
       <int>0</int>
@@ -32,7 +36,9 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>3</Rating>
-    <AvailabilityVector><Availability>3</Availability></AvailabilityVector>
+    <AvailabilityVector>
+      <Availability>3</Availability>
+    </AvailabilityVector>
     <Cost>5</Cost>
     <CapacityVector>
       <int>0</int>
@@ -45,7 +51,9 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>2</Rating>
-    <AvailabilityVector><Availability>5</Availability></AvailabilityVector>
+    <AvailabilityVector>
+      <Availability>5</Availability>
+    </AvailabilityVector>
     <Cost>40</Cost>
     <CapacityVector>
       <int>0</int>
@@ -58,7 +66,9 @@
     <Page>440</Page>
     <HasRating>true</HasRating>
     <Rating>3</Rating>
-    <AvailabilityVector><Availability>7R</Availability></AvailabilityVector>
+    <AvailabilityVector>
+      <Availability>7R</Availability>
+    </AvailabilityVector>
     <Cost>10</Cost>
     <CapacityVector>
       <int>0</int>

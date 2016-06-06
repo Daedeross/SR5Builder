@@ -164,7 +164,14 @@ namespace SR5Builder.DataModels
             GivenAugments = new ObservableCollection<Augment>();
             foreach (AugmentPrototype a in proto.Augments)
             {
-                GivenAugments.Add(a.ToAugment(this));
+                if (a.Target == "%owner%")
+                {
+                    GivenAugments.Add(a.ToAugment(this, GearPiece.Name));
+                }
+                else
+                {
+                    GivenAugments.Add(a.ToAugment(this));
+                }
             }
         }
 

@@ -7,9 +7,9 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>1</Rating>
-    <Availability>
-      <string>2</string>
-    </Availability>
+    <AvailabilityVector>
+      <Availability>2</Availability>
+    </AvailabilityVector>
     <CostVector>
       <decimal>100</decimal>
     </CostVector>
@@ -28,9 +28,9 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>2</Rating>
-    <Availability>
-      <string>4</string>
-    </Availability>
+    <AvailabilityVector>
+      <Availability>4</Availability>
+    </AvailabilityVector>
     <CostVector>
       <decimal>700</decimal>
     </CostVector>
@@ -49,9 +49,9 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>3</Rating>
-    <Availability>
-      <string>6</string>
-    </Availability>
+    <AvailabilityVector>
+      <Availability>6</Availability>
+    </AvailabilityVector>
     <CostVector>
       <decimal>1000</decimal>
     </CostVector>
@@ -70,9 +70,9 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>4</Rating>
-    <Availability>
-      <string>8</string>
-    </Availability>
+    <AvailabilityVector>
+      <Availability>8</Availability>
+    </AvailabilityVector>
     <CostVector>
       <decimal>2500</decimal>
     </CostVector>
@@ -91,9 +91,9 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>5</Rating>
-    <Availability>
-      <string>10</string>
-    </Availability>
+    <AvailabilityVector>
+      <Availability>10</Availability>
+    </AvailabilityVector>
     <CostVector>
       <decimal>3000</decimal>
     </CostVector>
@@ -112,9 +112,9 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>6</Rating>
-    <Availability>
-      <string>12</string>
-    </Availability>
+    <AvailabilityVector>
+      <Availability>12</Availability>
+    </AvailabilityVector>
     <CostVector>
       <decimal>5000</decimal>
     </CostVector>
@@ -133,9 +133,9 @@
     <Category>Comlink</Category>
     <HasRating>true</HasRating>
     <Rating>7</Rating>
-    <Availability>
-      <string>14</string>
-    </Availability>
+    <AvailabilityVector>
+      <Availability>14</Availability>
+    </AvailabilityVector>
     <CostVector>
       <decimal>8000</decimal>
     </CostVector>

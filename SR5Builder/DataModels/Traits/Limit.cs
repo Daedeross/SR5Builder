@@ -111,13 +111,8 @@ namespace SR5Builder.DataModels
 
         #region Constructors
 
-        public Limit()
-        {
-
-        }
-
-        public Limit(Attribute primary, Attribute secondary, Attribute tertiary)
-            :base()
+        public Limit(SR5Character owner, Attribute primary, Attribute secondary, Attribute tertiary)
+            :base(owner)
         {
             PrimaryAttribute = primary;
             SecondaryAttribute = secondary;

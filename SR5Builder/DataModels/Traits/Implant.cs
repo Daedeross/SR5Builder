@@ -7,15 +7,20 @@ using SR5Builder.Prototypes;
 
 namespace SR5Builder.DataModels
 {
-    public class Implant: Gear, IAugmentContainer
+    public class Implant: Gear, IAugmentContainer, IArmor
     {
         #region Private Fields
-
+        
         #endregion // Private fields
 
         #region Properties
 
         public ObservableCollection<Augment> GivenAugments { get; set; }
+
+        public override bool IsClothing
+        {
+            get { return false; }
+        }
 
         #endregion // Properties
 
@@ -24,7 +29,11 @@ namespace SR5Builder.DataModels
         public Implant(SR5Character owner, ImplantPrototype loader)
             :base (owner, loader)
         {
-
+            GivenAugments = new ObservableCollection<Augment>();
+            foreach (AugmentPrototype a in loader.Augments)
+            {
+                GivenAugments.Add(a.ToAugment(this));
+            }
         }
 
         #endregion // Constructors
