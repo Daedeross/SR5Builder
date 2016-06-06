@@ -443,7 +443,10 @@
     <Content Include="Resources\Gear\GearMods\FirearmMods.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\Gear\Implants\Bodyware.xml" />
+    <Content Include="Resources\Gear\Implants\Bodyware.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Resources\Gear\GearMods\VisionMods.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

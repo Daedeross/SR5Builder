@@ -328,7 +328,6 @@ namespace SR5Builder
         {
             List<ImplantPrototype> list;
             XmlSerializer ser = new XmlSerializer(typeof(List<ImplantPrototype>));
-            StreamReader reader;
 
             DirectoryInfo info = new DirectoryInfo(".\\Resources\\Gear\\Implants");
 
@@ -340,15 +339,28 @@ namespace SR5Builder
 
             foreach (FileInfo file in files)
             {
-                reader = new StreamReader(file.FullName);
-                list = (List<ImplantPrototype>)ser.Deserialize(reader);
-                reader.Close();
+                using (StreamReader reader = new StreamReader(file.FullName))
+                {
+                    try
+                    {
+                        list = (List<ImplantPrototype>)ser.Deserialize(reader);
+                        System.Diagnostics.Debug.WriteLine("Succesfully loaded file: {0}", (object)file.Name);
+                    }
+                    catch (InvalidOperationException e) // catch parse errors
+                    {
+                        System.Diagnostics.Debug.WriteLine("Error Loading file: {0}.", (object)file.Name);   // log error
+                        System.Diagnostics.Debug.WriteLine("• {0}.", (object)e.Message);
+                        System.Diagnostics.Debug.WriteLine("• {0}", e.InnerException.Message);
+                        continue; // skip loading of file and go to next
+                    }
+                }
 
                 string name = Path.GetFileNameWithoutExtension(file.Name);
                 Implants.Add(name, new Dictionary<string, ImplantPrototype>(list.Count));
 
                 foreach (ImplantPrototype loader in list)
                 {
+                    loader.Category = name;
                     Implants[name].Add(loader.Name, loader);
                     Implants["All"].Add(loader.Name, loader);
                 }

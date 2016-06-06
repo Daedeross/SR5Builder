@@ -164,6 +164,8 @@
       <int>6</int>
     </CapacityVector>
     <Taboo>
+    </Taboo>
+    <Augments>
       <AugmentPrototype>
         <Kind>Availability</Kind>
         <Bonus>
@@ -177,8 +179,7 @@
         </Bonus>
         <Target>%owner%</Target>
       </AugmentPrototype>
-    </Taboo>
-    <Augments></Augments>
+    </Augments>
   </GearModPrototype>
   <GearModPrototype>
     <Name>Vision magnification</Name>

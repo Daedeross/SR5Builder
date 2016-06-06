@@ -1,3 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ArrayOfImplantPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ImplantPrototype>
+    <Name>Bone Lacing</Name>
+    <Book>SR5</Book>
+    <Page>454</Page>
+    <HasRating>true</HasRating>
+    <IsArmor>true</IsArmor>
+    <Rating>1</Rating>
+    <Min>1</Min>
+    <Max>3</Max>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+      <Availability>8R</Availability>
+      <Availability>12R</Availability>
+      <Availability>16R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>0</decimal>
+      <decimal>8000</decimal>
+      <decimal>18000</decimal>
+      <decimal>30000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <EssenceVector>
+      <decimal>0.0</decimal>
+      <decimal>0.5</decimal>
+      <decimal>1.0</decimal>
+      <decimal>1.5</decimal>
+    </EssenceVector>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>DamageValue</Kind>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+        </Bonus>
+        <Target>Unarmed Combat</Target>
+      </AugmentPrototype>
+    </Augments>
+  </ImplantPrototype>
 </ArrayOfImplantPrototype>
