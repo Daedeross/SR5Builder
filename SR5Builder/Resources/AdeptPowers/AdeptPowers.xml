@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfAdeptPowerPrototype 
+<ArrayOfAdeptPowerPrototype
   xmlns="SR5Builder/AdeptPowers.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -325,5 +325,172 @@
         <Target>Unarmed Combat</Target>
       </AugmentPrototype>
     </Augments>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Kinesics</Name>
+    <Book>SR5</Book>
+    <Page>310</Page>
+    <Min>1</Min>
+    <Max>8</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments></Augments>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Light Body</Name>
+    <Book>SR5</Book>
+    <Page>310</Page>
+    <Min>1</Min>
+    <Max>4</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Missle Parry</Name>
+    <Book>SR5</Book>
+    <Page>310</Page>
+    <Min>1</Min>
+    <Max>8</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Mystic Armor</Name>
+    <Book>SR5</Book>
+    <Page>310</Page>
+    <Min>1</Min>
+    <Max>16</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
+          <decimal>5</decimal>
+          <decimal>6</decimal>
+          <decimal>7</decimal>
+          <decimal>8</decimal>
+          <decimal>9</decimal>
+          <decimal>10</decimal>
+          <decimal>11</decimal>
+          <decimal>12</decimal>
+          <decimal>13</decimal>
+          <decimal>14</decimal>
+          <decimal>15</decimal>
+          <decimal>16</decimal>
+        </Bonus>
+        <Target>Armor</Target>
+      </AugmentPrototype>
+    </Augments>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Natural Immunity</Name>
+    <Book>SR5</Book>
+    <Page>311</Page>
+    <Min>1</Min>
+    <Max>8</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Pain Resistance</Name>
+    <Book>SR5</Book>
+    <Page>311</Page>
+    <Min>1</Min>
+    <Max>8</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
+          <decimal>5</decimal>
+          <decimal>6</decimal>
+          <decimal>7</decimal>
+          <decimal>8</decimal>
+        </Bonus>
+        <Target>Physical Condition Threshold</Target>
+      </AugmentPrototype>
+      <AugmentPrototype>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
+          <decimal>5</decimal>
+          <decimal>6</decimal>
+          <decimal>7</decimal>
+          <decimal>8</decimal>
+        </Bonus>
+        <Target>Stun Condition Threshold</Target>
+      </AugmentPrototype>
+    </Augments>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Spell Resistance</Name>
+    <Book>SR5</Book>
+    <Page>311</Page>
+    <Min>1</Min>
+    <Max>8</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Traceless Walk</Name>
+    <Book>SR5</Book>
+    <Page>311</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Voice Control</Name>
+    <Book>SR5</Book>
+    <Page>311</Page>
+    <Min>1</Min>
+    <Max>4</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
+        </Bonus>
+        <Target>Social Limit</Target>
+      </AugmentPrototype>
+    </Augments>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Wall Running</Name>
+    <Book>SR5</Book>
+    <Page>311</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments />
   </AdeptPowerPrototype>
 </ArrayOfAdeptPowerPrototype>

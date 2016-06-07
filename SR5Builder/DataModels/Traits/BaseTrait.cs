@@ -33,8 +33,7 @@ namespace SR5Builder.DataModels
         [XmlIgnore]
         public virtual int Points
         {
-            get;
-            set;
+            get; set;
         }
 
         public BaseTrait(SR5Character c)
