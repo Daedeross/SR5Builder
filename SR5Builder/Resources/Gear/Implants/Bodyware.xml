@@ -43,4 +43,46 @@
       </AugmentPrototype>
     </Augments>
   </ImplantPrototype>
+  <ImplantPrototype>
+    <Name>Dermal Plating</Name>
+    <Book>SR5</Book>
+    <Page>454</Page>
+    <HasRating>true</HasRating>
+    <IsArmor>true</IsArmor>
+    <Rating>1</Rating>
+    <Min>1</Min>
+    <Max>6</Max>
+    <AvailabilityVector>
+      <Availability>0</Availability>
+      <Availability>4R</Availability>
+      <Availability>8R</Availability>
+      <Availability>12R</Availability>
+      <Availability>16R</Availability>
+      <Availability>20R</Availability>
+      <Availability>24R</Availability>
+    </AvailabilityVector>
+    <CostVector>
+      <decimal>0</decimal>
+      <decimal>3000</decimal>
+      <decimal>6000</decimal>
+      <decimal>9000</decimal>
+      <decimal>12000</decimal>
+      <decimal>15000</decimal>
+      <decimal>18000</decimal>
+    </CostVector>
+    <CapacityVector>
+      <int>0</int>
+    </CapacityVector>
+    <EssenceVector>
+      <decimal>0.0</decimal>
+      <decimal>0.5</decimal>
+      <decimal>1.0</decimal>
+      <decimal>1.5</decimal>
+      <decimal>2.0</decimal>
+      <decimal>2.5</decimal>
+      <decimal>3.0</decimal>
+    </EssenceVector>
+    <Augments>
+    </Augments>
+  </ImplantPrototype>
 </ArrayOfImplantPrototype>

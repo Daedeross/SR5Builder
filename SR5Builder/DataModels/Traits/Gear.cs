@@ -68,7 +68,7 @@ namespace SR5Builder.DataModels
         }
 
         protected Availability mBonusAvailability;
-        public Availability Availability
+        public virtual Availability Availability
         {
             get { return BaseAvailability + mBonusAvailability; }
         }
@@ -106,7 +106,7 @@ namespace SR5Builder.DataModels
 
         private decimal mExtraCost;
         private decimal mCostMult = 1;
-        public decimal Cost
+        public virtual decimal Cost
         {
             get { return ((BaseCost * mCostMult) + mExtraCost) * Count; }
         }
@@ -114,7 +114,7 @@ namespace SR5Builder.DataModels
         protected decimal[] mEssenceVector;
         public decimal[] EssenceVector { get { return mEssenceVector; } }
 
-        public decimal TotalEssence
+        public virtual decimal TotalEssence
         {
             get
             {

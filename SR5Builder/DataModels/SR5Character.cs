@@ -1080,6 +1080,7 @@ namespace SR5Builder.DataModels
 
         private void OnImplantsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
+            bool isArmor = false;
             if (e.OldItems != null)
                 foreach (KeyValuePair<string, Implant> kvp in e.OldItems)
                 {
@@ -1088,6 +1089,7 @@ namespace SR5Builder.DataModels
                     {
                         Armors.Remove(kvp.Value);
                         kvp.Value.PropertyChanged -= OnArmorChanged;
+                        isArmor = true;
                     }
                 }
 
@@ -1099,9 +1101,14 @@ namespace SR5Builder.DataModels
                     {
                         Armors.Add(kvp.Value);
                         kvp.Value.PropertyChanged += OnArmorChanged;
+                        isArmor = true;
                     }
                 }
 
+            if (isArmor)
+            {
+                OnArmorChanged(null, new PropertyChangedEventArgs(nameof(IArmor.ArmorRating)));
+            }
             RecalcMoney();
         }
 

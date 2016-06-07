@@ -55,7 +55,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid Grid.Column="1" Grid.Row="1" Margin="0,24">
+        <Grid Grid.Column="1" Grid.Row="1" Margin="0,24" MinWidth="75">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
@@ -72,10 +72,10 @@
             <StackPanel Grid.Row="2"
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
-                <Button Width="18" Height="18"
+                <Button Width="28" Height="18"
                         Command="{Binding DecreaseSkillGroupCommand}"
                         ContentTemplate="{StaticResource DecreaseGlyphNormalKey}"/>
-                <Button Width="18" Height="18"
+                <Button Width="28" Height="18"
                         Command="{Binding IncreaseSkillGroupCommand}"
                         ContentTemplate="{StaticResource IncreaseGlyphNormalKey}" />
             </StackPanel>

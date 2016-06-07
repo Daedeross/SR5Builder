@@ -27,17 +27,47 @@ namespace SR5Builder.Prototypes
         }
 
         [XmlIgnore]
+        protected string mDisplayCost;
         public string DisplayCost
         {
             get
             {
-                if (Max > 1)
+                if (mDisplayCost != null)
                 {
-                    string minCost = CostVector[Min].ToString("C", GlobalData.CostFormat);
-                    string maxCost = CostVector[Max].ToString("C", GlobalData.CostFormat);
-                    return minCost + "-" + maxCost;
+                    return mDisplayCost;
                 }
-                return CostVector[0].ToString("C", GlobalData.CostFormat);
+                if (Max > 1 && CostVector.Length > 1)
+                {
+                    bool isSimple = true;
+                    decimal[] diffs = new decimal[CostVector.Length-1];
+                    for (int i = 0; i < CostVector.Length-1; i++)
+                    {
+                        diffs[i] = CostVector[i+1] - CostVector[i];
+                    }
+                    for (int i = 1; i < diffs.Length; i++)
+                    {
+                        if (diffs[i] != diffs[i-1])
+                        {
+                            isSimple = false;
+                            break;
+                        }
+                    }
+                    if (isSimple)
+                    {
+                        mDisplayCost = "Rating × " + diffs[0].ToString("C", GlobalData.CostFormat);
+                    }
+                    else
+                    {
+                        string minCost = CostVector[Min].ToString("C", GlobalData.CostFormat);
+                        string maxCost = CostVector[Max].ToString("C", GlobalData.CostFormat);
+                        mDisplayCost = minCost + "-" + maxCost;
+                    }
+                }
+                else
+                {
+                    mDisplayCost = CostVector[0].ToString("C", GlobalData.CostFormat);
+                }
+                return mDisplayCost;
             }
         }
 

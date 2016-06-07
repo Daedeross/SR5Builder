@@ -63,9 +63,26 @@ namespace SR5Builder.DataModels
             return a;
         }
 
+        public static Availability Add(Availability a1, int i)
+        {
+            Availability a = new Availability();
+            a.Level = a1.Level + i;
+            return a;
+        }
+
         public static Availability operator +(Availability a1, Availability a2)
         {
             return Add(a1, a2);
+        }
+
+        public static Availability operator +(Availability a1, int i)
+        {
+            return Add(a1, i);
+        }
+
+        public static Availability operator -(Availability a1, int i)
+        {
+            return Add(a1, -i);
         }
 
         public static Availability Zero

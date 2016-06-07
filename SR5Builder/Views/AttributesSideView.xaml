@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" MinWidth="60">
-    <Grid>
+    <Grid Width="70">
         <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="HorizontalAlignment" Value="Left" />
@@ -32,8 +32,8 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
             <ColumnDefinition Width="auto" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <!-- Attributes -->
@@ -46,7 +46,7 @@
         <TextBlock Grid.Row="6"><Bold>INT</Bold></TextBlock>
         <TextBlock Grid.Row="7"><Bold>CHA</Bold></TextBlock>
         <TextBlock Grid.Row="8"><Bold>ESS</Bold></TextBlock>
-        <Button Grid.Row="10" Command="{Binding ExamineCommand}">Test</Button>
+        <!--<Button Grid.Row="10" Command="{Binding ExamineCommand}">Test</Button>-->
         
         <TextBlock Name="bodBox"
                    Grid.Row="0" Grid.Column="1"

@@ -55,9 +55,9 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" Margin="0" HorizontalAlignment="Center">
-                                        <TextBlock Text="{Binding Value.Ammo}" />
+                                        <TextBlock Text="{Binding Value.AmmoCount}" />
                                         <TextBlock Text="(" />
-                                        <TextBlock Text="{Binding Value}" />
+                                        <TextBlock Text="{Binding Value.ReloadMethod}" />
                                         <TextBlock Text=")" />
                                     </StackPanel>
                                 </DataTemplate>

@@ -1,4 +1,6 @@
-﻿namespace SR5Builder
+﻿using System.ComponentModel;
+
+namespace SR5Builder
 {
     /// <summary>
     /// The possible types of character generation.
@@ -72,7 +74,7 @@
         None = 0,
         /// <summary>Augment alters the target trait's <b>Rating.</b></summary>
         Rating,
-        /// <summary>Changed the trait's innate Max</summary>
+        /// <summary>Changes the trait's innate Max</summary>
         Max,
         /// <summary>Augment alters the target trait's <b>Damage Value.</b></summary>
         DamageValue,
@@ -145,6 +147,20 @@
         cy,
         /// <summary>belt-fed</summary>
         belt,
+    }
+
+    public enum ImplantGrade
+    {
+        [Description("Used")]
+        Used = -1,
+        [Description("Standard")]
+        Standard = 0,
+        [Description("Alpha")]
+        Alpha = 1,
+        [Description("Beta")]
+        Beta = 2,
+        [Description("Delta")]
+        Delta = 3
     }
 
 }

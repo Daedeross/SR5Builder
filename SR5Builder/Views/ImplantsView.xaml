@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:SR5Builder"
+             xmlns:h="clr-namespace:Helpers"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="600">
     <Grid>
@@ -51,7 +54,7 @@
                                     Binding="{Binding Value.Rating, Converter={StaticResource intToStringConverter}}" />
                 <DataGridTextColumn Header="Avail"
                                     Binding="{Binding Value.Availability}" />
-                <DataGridTextColumn Header="Cost" Binding="{Binding Value.Cost, Converter={StaticResource moneyConverter}}" />
+                <DataGridTextColumn Header="Cost" Binding="{Binding Value.DisplayCost}" />
             </DataGrid.Columns>
             <!--<DataGrid.GroupStyle>
                 <GroupStyle>
@@ -59,12 +62,14 @@
             </DataGrid.GroupStyle>-->
         </DataGrid>
 
-        <Grid Grid.Column="1" Grid.Row="1">
+        <Grid Grid.Column="1" Grid.Row="1" MinWidth="75">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <Button Grid.Row="0"
@@ -74,14 +79,20 @@
             <StackPanel Grid.Row="2"
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
-                <Button Width="18" Height="18"
+                <Button Width="28" Height="18"
                         Command="{Binding DecreaseImplantCommand}"
                         ContentTemplate="{StaticResource DecreaseGlyphNormalKey}"/>
-                <Button Width="18" Height="18"
+                <Button Width="28" Height="18"
                         Command="{Binding IncreaseImplantCommand}"
                         ContentTemplate="{StaticResource IncreaseGlyphNormalKey}" />
             </StackPanel>
-            <Button Grid.Row="4"
+            <Label Grid.Row="4">Grade:</Label>
+            <ComboBox Grid.Row="5"
+                      ItemsSource="{Binding Source={h:Enumeration {x:Type local:ImplantGrade}}}"
+                      DisplayMemberPath="Description"
+                      SelectedValue="{Binding SelectedImplant.Grade}"
+                      SelectedValuePath="Value" />
+            <Button Grid.Row="7"
                     Command="{Binding LaunchEditCommand}">_Edit</Button>
         </Grid>
 

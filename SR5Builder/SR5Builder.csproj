@@ -131,6 +131,7 @@
     <Compile Include="Converters\BoolToVisiblilityConverter.cs" />
     <Compile Include="Converters\IntoToStringConverter.cs" />
     <Compile Include="Converters\MoneyConverter.cs" />
+    <Compile Include="Helpers\EnumerationExtension.cs" />
     <Compile Include="Helpers\Log.cs" />
     <Compile Include="Helpers\SettingCellSelector.cs" />
     <Compile Include="Loaders\AttributeLoader.cs" />

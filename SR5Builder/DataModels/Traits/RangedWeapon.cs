@@ -12,6 +12,14 @@ namespace SR5Builder.DataModels
 
         public FireMode[] FireModes { get; set; }
 
+        public string Ammo
+        {
+            get
+            {
+                return String.Format("{0} ({1})", AmmoCount, ReloadMethod);
+            }
+        }
+
         public string DisplayModes
         {
             get
