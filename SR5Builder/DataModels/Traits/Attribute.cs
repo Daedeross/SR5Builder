@@ -57,6 +57,7 @@ namespace SR5Builder.DataModels
                     OnPropertyChanged(nameof(Points));
                     OnPropertyChanged(nameof(ImprovedRating));
                     OnPropertyChanged(nameof(AugmentedRating));
+                    OnPropertyChanged(nameof(DisplayValue));
                 }
             }
         }

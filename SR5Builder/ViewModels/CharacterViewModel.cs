@@ -485,7 +485,7 @@ namespace SR5Builder.ViewModels
         private void OnCharacterChanged(object sender, PropertyChangedEventArgs e)
         {
             string p = e.PropertyName;
-            if (e.PropertyName == "SpecialChoice")
+            if (e.PropertyName == nameof(SR5Character.SpecialChoice))
             {
                 switch (SpecialChoice.Name)
                 {
@@ -501,6 +501,7 @@ namespace SR5Builder.ViewModels
                 }
                 OnPropertyChanged(nameof(ActiveSpecialTab));
                 OnPropertyChanged(nameof(HasPowerPoints));
+                OnPropertyChanged(nameof(SpecialKind));
             }
             else if (e.PropertyName.Contains("AttributePoint"))
             {

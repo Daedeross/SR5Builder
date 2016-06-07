@@ -4,16 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" MinWidth="60">
-    <Grid Width="70">
+             d:DesignHeight="300" MinWidth="70">
+    <Grid>
         <Grid.Resources>
-            <Style TargetType="TextBlock">
+            <Style x:Key="nameLabel" TargetType="TextBlock">
                 <Setter Property="HorizontalAlignment" Value="Left" />
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="Margin" Value="4,0" />
             </Style>
-            <Style x:Key="nameLebel" TargetType="TextBlock">
-                
+            <Style BasedOn="{StaticResource nameLabel}" TargetType="TextBlock">
+
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -32,7 +32,7 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" MinWidth="36" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
@@ -45,7 +45,25 @@
         <TextBlock Grid.Row="5"><Bold>LOG</Bold></TextBlock>
         <TextBlock Grid.Row="6"><Bold>INT</Bold></TextBlock>
         <TextBlock Grid.Row="7"><Bold>CHA</Bold></TextBlock>
-        <TextBlock Grid.Row="8"><Bold>ESS</Bold></TextBlock>
+        <TextBlock Grid.Row="8">
+            <TextBlock.Style>
+                <Style TargetType="TextBlock" BasedOn="{StaticResource nameLabel}">
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SpecialKind}" Value="Magic">
+                            <Setter Property="Visibility" Value="Visible" />
+                            <Setter Property="Text" Value="MAG" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding SpecialKind}" Value="Resonance">
+                            <Setter Property="Visibility" Value="Visible" />
+                            <Setter Property="Text" Value="RES" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBlock Grid.Row="9"><Bold>ESS</Bold></TextBlock>
         <!--<Button Grid.Row="10" Command="{Binding ExamineCommand}">Test</Button>-->
         
         <TextBlock Name="bodBox"
@@ -81,10 +99,24 @@
                    Grid.Row="7" Grid.Column="1"
                    Text="{Binding Charisma.DisplayValue}"
                    />
-        <TextBlock Name="essBox"
+        <TextBlock Name="spcBox"
                    Grid.Row="8" Grid.Column="1"
+                   Text="{Binding SpecialAttribute.DisplayValue}"
+                   >
+            <TextBlock.Style>
+                <Style TargetType="TextBlock" BasedOn="{StaticResource nameLabel}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SpecialKind}" Value="None">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <TextBlock Name="essBox"
+                   Grid.Row="9" Grid.Column="1"
                    Text="{Binding Essence.Remaining}"
                    />
-        <TextBlock Grid.Row="9" Text="{Binding Method}" />
+        <TextBlock Grid.Row="10" Grid.ColumnSpan="2" Text="{Binding Method}" />
     </Grid>
 </UserControl>
