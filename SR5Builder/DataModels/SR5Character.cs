@@ -592,15 +592,7 @@ namespace SR5Builder.DataModels
             get { return StartingMoney - MoneySpent; }
         }
 
-        public List<IArmor> Armors { get; set; }
-            = new List<IArmor>();
-
-        private int mArmorRating;
-        public int ArmorRating
-        {
-            get
-            { return mArmorRating; }
-        }
+        public Armor Armor { get; set; }
 
         #endregion // Properties
 
@@ -638,6 +630,9 @@ namespace SR5Builder.DataModels
 
             InitializeAttributes();
             InitializeCollections();
+
+            Armor = new Armor(this);
+            Augmentables.Add("Armor", Armor);
 
             SpecialChoice = SpecialChoice.None(Priority.U);
         }
@@ -1080,69 +1075,27 @@ namespace SR5Builder.DataModels
 
         private void OnImplantsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            bool isArmor = false;
             if (e.OldItems != null)
                 foreach (KeyValuePair<string, Implant> kvp in e.OldItems)
-                {
                     kvp.Value.PropertyChanged -= OnGearChanged;
-                    if (kvp.Value.IsArmor)
-                    {
-                        Armors.Remove(kvp.Value);
-                        kvp.Value.PropertyChanged -= OnArmorChanged;
-                        isArmor = true;
-                    }
-                }
 
             if (e.NewItems != null)
                 foreach (KeyValuePair<String, Implant> kvp in e.NewItems)
-                {
                     kvp.Value.PropertyChanged += OnGearChanged;
-                    if (kvp.Value.IsArmor)
-                    {
-                        Armors.Add(kvp.Value);
-                        kvp.Value.PropertyChanged += OnArmorChanged;
-                        isArmor = true;
-                    }
-                }
 
-            if (isArmor)
-            {
-                OnArmorChanged(null, new PropertyChangedEventArgs(nameof(IArmor.ArmorRating)));
-            }
             RecalcMoney();
         }
 
         private void OnGearCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            bool isArmor = false;
             if (e.OldItems != null)
                 foreach (KeyValuePair<string, Gear> kvp in e.OldItems)
-                {
                     kvp.Value.PropertyChanged -= OnGearChanged;
-                    if (kvp.Value.IsArmor)
-                    {
-                        Armors.Remove(kvp.Value);
-                        kvp.Value.PropertyChanged -= OnArmorChanged;
-                        isArmor = true;
-                    }
-                }
 
             if (e.NewItems != null)
                 foreach (KeyValuePair<String, Gear> kvp in e.NewItems)
-                {
                     kvp.Value.PropertyChanged += OnGearChanged;
-                    if (kvp.Value.IsArmor)
-                    {
-                        Armors.Add(kvp.Value);
-                        kvp.Value.PropertyChanged += OnArmorChanged;
-                        isArmor = true;
-                    }
-                }
-
-            if (isArmor)
-            {
-                OnArmorChanged(null, new PropertyChangedEventArgs(nameof(IArmor.ArmorRating)));
-            }
+            
             RecalcMoney();
         }
 
@@ -1154,32 +1107,6 @@ namespace SR5Builder.DataModels
             }
         }
 
-        private void OnArmorChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == nameof(IArmor.ArmorRating))
-            {
-                int oldArmor = mArmorRating;
-                int max = 0;
-                mArmorRating = 0;
-                foreach (IArmor a in Armors)
-                {
-                    if (a.IsClothing)
-                    {
-                        max = Math.Max(a.ArmorRating, max);
-                    }
-                    else
-                    {
-                        mArmorRating += a.ArmorRating;
-                    }
-                }
-
-                mArmorRating += max;
-                if (mArmorRating != oldArmor)
-                {
-                    OnPropertyChanged(nameof(ArmorRating));
-                }
-            }
-        }
 
         private void RecalcMoney()
         {

@@ -50,9 +50,14 @@
                               <xs:restriction base="xs:string">
                                 <xs:enumeration value="None" />
                                 <xs:enumeration value="Rating" />
+                                <xs:enumeration value="Max" />
                                 <xs:enumeration value="DamageValue" />
                                 <xs:enumeration value="DamageType" />
                                 <xs:enumeration value="Accuracy" />
+                                <xs:enumeration value="Availability" />
+                                <xs:enumeration value="Restriction" />
+                                <xs:enumeration value="RC" />
+                                <xs:enumeration value="AP" />
                               </xs:restriction>
                             </xs:simpleType>
                           </xs:element>

@@ -276,9 +276,9 @@ namespace SR5Builder.ViewModels
             }
         }
 
-        public int ArmorRating
+        public LeveledTrait ArmorRating
         {
-            get { return character.ArmorRating; }
+            get { return character.Armor; }
         }
 
             #endregion
