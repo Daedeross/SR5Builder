@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfAdeptPowerPrototype
+  xmlns="SR5Builder/AdeptPowers.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <AdeptPowerPrototype>
+    <Name>Analytics</Name>
+    <Book>SG</Book>
+    <Page>169</Page>
+    <Min>1</Min>
+    <Max>8</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Animal Empaty</Name>
+    <Book>SG</Book>
+    <Page>169</Page>
+    <Min>1</Min>
+    <Max>6</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments>
+      <AugmentPrototype>
+        <Kind>Rating</Kind>
+        <Bonus>
+          <decimal>0</decimal>
+          <decimal>1</decimal>
+          <decimal>2</decimal>
+          <decimal>3</decimal>
+          <decimal>4</decimal>
+          <decimal>5</decimal>
+          <decimal>6</decimal>
+        </Bonus>
+        <Target>Animal Handling</Target>
+      </AugmentPrototype>
+    </Augments>
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Berserk</Name>
+    <Book>SG</Book>
+    <Page>169</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Berserker's Rage</Name>
+    <Prerequsites>
+      <string>Berserk</string>
+    </Prerequsites>
+    <Book>SG</Book>
+    <Page>169</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Blind Fighting</Name>
+    <Book>SG</Book>
+    <Page>169</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.5</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Cloak</Name>
+    <Book>SG</Book>
+    <Page>169</Page>
+    <Min>1</Min>
+    <Max>6</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Cool Resolve</Name>
+    <Book>SG</Book>
+    <Page>169</Page>
+    <Min>1</Min>
+    <Max>4</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Commanding Voice</Name>
+    <Book>SG</Book>
+    <Page>170</Page>
+    <Min>1</Min>
+    <Max>3</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>0.25</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Counterstrike</Name>
+    <Book>SG</Book>
+    <Page>170</Page>
+    <Min>1</Min>
+    <Max>8</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Elemental Body</Name>
+    <Prerequsites>
+      <string>Elemental Strike</string>
+    </Prerequsites>
+    <Book>SG</Book>
+    <Page>170</Page>
+    <Min>1</Min>
+    <Max>1</Max>
+    <FlatPoints>0</FlatPoints>
+    <PointsPerLevel>1</PointsPerLevel>
+    <Augments />
+  </AdeptPowerPrototype>
+  <AdeptPowerPrototype>
+    <Name>Elemental Strike</Name>
+    <Prerequsites>
+      <string>Killing Hands</string>
+    </Prerequsites>
+  </AdeptPowerPrototype>
+</ArrayOfAdeptPowerPrototype>

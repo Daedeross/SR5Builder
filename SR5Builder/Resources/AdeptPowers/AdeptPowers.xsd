@@ -33,6 +33,13 @@
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
+              <xs:element name="Prerequsites" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element maxOccurs="unbounded" name="string" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
               <xs:element name="Book" type="xs:string" />
               <xs:element name="Page" type="xs:unsignedShort" />
               <xs:element name="Min" type="xs:unsignedByte" />

@@ -10,6 +10,8 @@ namespace SR5Builder.Prototypes
     [XmlRoot(Namespace="SR5Builder/AdeptPowers.xsd")]
     public class AdeptPowerPrototype: TraitExtPrototype
     {
+        string[] Prerequisites { get; set; }
+
         public int Min { get; set; }
 
         public int Max { get; set; }

@@ -90,7 +90,7 @@ namespace SR5Builder
             LoadSpells();
 
             // Load Adept Powers
-            PreLoadedPowers = AdeptPowerPrototype.LoadFromFile("Resources\\AdeptPowers\\AdeptPowers.xml");
+            LoadPowers();
 
             // Load Normal Gear (non-cyber/bio-ware)
             LoadGear();
@@ -161,7 +161,7 @@ namespace SR5Builder
                     List<SpecialChoice> new_list = SpecialChoice.LoadFromFile(file.FullName);
                     Specials = Specials.Concat(new_list).ToList();
                 }
-                catch
+                catch (InvalidOperationException e)
                 {
                     Log.LogMessage("Error loading SpeicalCoice(s) from " + file.FullName);
                 }
@@ -173,6 +173,29 @@ namespace SR5Builder
             XmlSerializer ser = new XmlSerializer(typeof(SerializableDictionary<Priority, PriorityLevel>));
             StreamReader reader = new StreamReader(".\\Resources\\PrioritiesLevels.xml");
             PriorityLevels = (SerializableDictionary<Priority, PriorityLevel>)ser.Deserialize(reader);
+        }
+
+        private static void LoadPowers()
+        {
+            PreLoadedPowers = new List<AdeptPowerPrototype>();
+            DirectoryInfo dInfo = new DirectoryInfo("Resources\\AdeptPowers");
+            FileInfo[] files = dInfo.GetFiles("*.xml");
+
+            foreach (FileInfo file in files)
+            {
+                try
+                {
+                    PreLoadedPowers = PreLoadedPowers.Concat(
+                        AdeptPowerPrototype.LoadFromFile(file.FullName)).ToList();
+                }
+                catch (InvalidOperationException e) // catch parse errors
+                {
+                    System.Diagnostics.Debug.WriteLine("Error Loading file: {0}.", (object)file.Name);   // log error
+                    System.Diagnostics.Debug.WriteLine("• {0}.", (object)e.Message);
+                    System.Diagnostics.Debug.WriteLine("• {0}", e.InnerException.Message);
+                    continue; // skip loading of file and go to next
+                } 
+            }
         }
 
             #region Skills
@@ -253,9 +276,19 @@ namespace SR5Builder
 
             foreach (FileInfo file in files)
             {
-                string name = Path.GetFileNameWithoutExtension(file.Name);
-                name = name.Replace("Spells", "");
-                PreLoadedSpells.Add(name, SpellPrototype.LoadFromFile(file.FullName));
+                try
+                {
+                    string name = Path.GetFileNameWithoutExtension(file.Name);
+                    name = name.Replace("Spells", "");
+                    PreLoadedSpells.Add(name, SpellPrototype.LoadFromFile(file.FullName));
+                }
+                catch (InvalidOperationException e) // catch parse errors
+                {
+                    System.Diagnostics.Debug.WriteLine("Error Loading file: {0}.", (object)file.Name);   // log error
+                    System.Diagnostics.Debug.WriteLine("• {0}.", (object)e.Message);
+                    System.Diagnostics.Debug.WriteLine("• {0}", e.InnerException.Message);
+                    continue; // skip loading of file and go to next
+                }
             }
 
             // Create "All" category
