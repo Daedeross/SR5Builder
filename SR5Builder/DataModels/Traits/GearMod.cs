@@ -32,7 +32,7 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                int index = BaseRating;
+                int index = Math.Max(BaseRating, 0);
                 if (index >= mFlatCostVector.Length)
                 {
                     index = mFlatCostVector.Length - 1;

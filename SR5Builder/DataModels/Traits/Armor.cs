@@ -81,7 +81,7 @@ namespace SR5Builder.DataModels
         {
             bool isArmor = false;
             if (e.OldItems != null)
-                foreach (KeyValuePair<string, Gear> kvp in e.OldItems)
+                foreach (KeyValuePair<string, Implant> kvp in e.OldItems)
                     if (kvp.Value.IsArmor)
                     {
                         isArmor = true;
@@ -90,7 +90,7 @@ namespace SR5Builder.DataModels
                     }
 
             if (e.NewItems != null)
-                foreach (KeyValuePair<String, Gear> kvp in e.NewItems)
+                foreach (KeyValuePair<String, Implant> kvp in e.NewItems)
                     if (kvp.Value.IsArmor)
                     {
                         isArmor = true;

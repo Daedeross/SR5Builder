@@ -564,9 +564,9 @@ namespace SR5Builder.DataModels
 
         public ObservableDictionary<string, Implant> ImplantList { get; set; }
 
-            #endregion // Gear
+        #endregion // Gear
 
-            #region Weapons
+        #region Weapons
 
         public ObservableDictionary<string, MeleeWeapon> MeleeWeapons { get; set; }
 
@@ -1106,7 +1106,6 @@ namespace SR5Builder.DataModels
                 RecalcMoney();
             }
         }
-
 
         private void RecalcMoney()
         {
