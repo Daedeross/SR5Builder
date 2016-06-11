@@ -564,9 +564,11 @@ namespace SR5Builder.DataModels
 
         public ObservableDictionary<string, Implant> ImplantList { get; set; }
 
-        #endregion // Gear
+            #endregion // Gear
 
-        #region Weapons
+            #region Weapons
+
+        public UnarmedAttack UnarmedAttack { get; set; }
 
         public ObservableDictionary<string, MeleeWeapon> MeleeWeapons { get; set; }
 
@@ -574,7 +576,7 @@ namespace SR5Builder.DataModels
 
         //public ObservableDictionary<string, RangedWeapon> ProjectileWeapons { get; set; }
 
-        #endregion // Weapons
+            #endregion // Weapons
 
         private decimal mMoneySpent;
         public decimal MoneySpent
@@ -762,6 +764,10 @@ namespace SR5Builder.DataModels
             Augmentables.Add(MentalLimit.Name, MentalLimit);
             Augmentables.Add(PhysicalLimit.Name, PhysicalLimit);
             Augmentables.Add(SocialLimit.Name, SocialLimit);
+            
+
+            
+            //Augmentables.Add(UnarmedAttack.Name, UnarmedAttack);
         }
 
         #endregion // Constructors

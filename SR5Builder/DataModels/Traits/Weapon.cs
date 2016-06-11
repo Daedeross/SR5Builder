@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using SR5Builder.Prototypes;
+using System.Collections.Specialized;
 
 namespace SR5Builder.DataModels
 {
@@ -23,11 +24,13 @@ namespace SR5Builder.DataModels
         #region Properties
 
         protected Skill mSkillUsed;
+        protected string mSkillName;
         public string SkillUsed
         {
-            get { return mSkillUsed.Name; }
+            get { return mSkillUsed?.Name; }
             set
             {
+                mSkillName = value;
                 if (mSkillUsed == null || mSkillUsed.Name != value)
                 {
                     if (mSkillUsed == null)
@@ -48,6 +51,7 @@ namespace SR5Builder.DataModels
                         mSkillUsed.PropertyChanged += this.OnSkillChanged;
 
                     OnPropertyChanged(nameof(SkillUsed));
+                    OnPropertyChanged(nameof(TotalPool));
                 }
             }
         }
@@ -102,7 +106,7 @@ namespace SR5Builder.DataModels
             {
                 if (value != mAP)
                 {
-                    AP = value;
+                    mAP = value - mBonusAP;
                     OnPropertyChanged(nameof(AP));
                 }
             }
@@ -130,9 +134,7 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                int tmp = 0;
-                if (mSkillUsed != null)
-                    tmp = mSkillUsed.AccuracyBonus;
+                int tmp = mSkillUsed?.AccuracyBonus ?? 0;
 
                 return Acc + mBonusAcc + tmp;
             }
@@ -169,13 +171,17 @@ namespace SR5Builder.DataModels
         public Weapon(SR5Character owner)
             : base(owner)
         {
-            mOwner.Agility.PropertyChanged += this.OnSkillChanged;
+            mOwner.Agility.PropertyChanged += OnSkillChanged;
+            mOwner.SkillList.CollectionChanged += OnSkillsCollectionChanged;
+            mOwner.SkillGroupsList.CollectionChanged += OnSkillsCollectionChanged;
         }
 
         public Weapon(SR5Character owner, WeaponPrototype loader)
             :base(owner)
         {
-            mOwner.Agility.PropertyChanged += this.OnSkillChanged;
+            mOwner.Agility.PropertyChanged += OnSkillChanged;
+            mOwner.SkillList.CollectionChanged += OnSkillsCollectionChanged;
+            mOwner.SkillGroupsList.CollectionChanged += OnSkillsCollectionChanged;
 
             CopyFromLoader(loader);
         }
@@ -186,8 +192,20 @@ namespace SR5Builder.DataModels
 
         private void OnSkillChanged(object sender, PropertyChangedEventArgs e)
         {
-            OnPropertyChanged(nameof(AugmentedAcc));
-            OnPropertyChanged(nameof(TotalPool));
+            if (e.PropertyName == nameof(Skill.TotalPool))
+            {
+                OnPropertyChanged(nameof(TotalPool));
+            }
+            if (e.PropertyName == nameof(Skill.AccuracyBonus))
+            {
+                OnPropertyChanged(nameof(AugmentedAcc));
+                OnPropertyChanged(nameof(DisplayAcc));
+            }
+        }
+
+        private void OnSkillsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            SkillUsed = mSkillName;
         }
 
         protected override void RecalcBonus(HashSet<string> propNames = null)
@@ -204,8 +222,6 @@ namespace SR5Builder.DataModels
         {
             switch (a.Kind)
             {
-                case AugmentKind.None:
-                    break;
                 case AugmentKind.Rating:
                     return base.AddAugment(a, propNames);
                 case AugmentKind.DamageValue:
@@ -230,8 +246,6 @@ namespace SR5Builder.DataModels
                 case AugmentKind.AP:
                     mBonusAP += (int)a.Bonus;
                     propNames.Add(nameof(AP));
-                    break;
-                case AugmentKind.RC:
                     break;
                 default:
                     break;
