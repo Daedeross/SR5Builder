@@ -28,6 +28,7 @@
                           ItemsSource="{Binding Source={StaticResource meleeWeapons}}" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Weapon" Width="*" Binding="{Binding Value.Name}" />
+                        <DataGridTextColumn Header="Pool" Width="auto" Binding="{Binding Value.TotalPool}" />
                         <DataGridTextColumn Header="Acc" Width="auto" Binding="{Binding Value.DisplayAcc}" />
                         <DataGridTextColumn Header="Reach" Width="auto" Binding="{Binding Value.Reach}" />
                         <DataGridTextColumn Header="Damage" Width="auto" Binding="{Binding Value.DisplayDamage}" />
@@ -46,6 +47,7 @@
                           ItemsSource="{Binding RangedWeapons}" >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Weapon" Width="*" Binding="{Binding Value.Name}" />
+                        <DataGridTextColumn Header="Pool" Width="auto" Binding="{Binding Value.TotalPool}" />
                         <DataGridTextColumn Header="Acc" Width="auto" Binding="{Binding Value.DisplayAcc}" />
                         <DataGridTextColumn Header="Damage" Width="auto" Binding="{Binding Value.DisplayDamage}" />
                         <DataGridTextColumn Header="AP" Width="auto" Binding="{Binding Value.AP, Converter={StaticResource intToStringConverter}}" />
