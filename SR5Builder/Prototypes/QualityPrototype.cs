@@ -60,7 +60,7 @@ namespace SR5Builder.Prototypes
                 throw new ArgumentException("Quality requires an name extension.", "ext");
             }
 
-            Quality q = new Quality(c, Karma);
+            Quality q = new Quality(c, Karma, this.PrereqExpression);
             q.Name = string.Format(Name, ext);
             q.Min = 1;
             q.Max = Max;

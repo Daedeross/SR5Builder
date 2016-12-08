@@ -8,7 +8,7 @@ using System.Text;
 
 namespace SR5Builder.DataModels
 {
-    public abstract class LeveledTrait: BaseTrait, IAugmentable, IComparable<LeveledTrait>
+    public abstract class LeveledTrait: BaseTrait, IAugmentable, IComparable<LeveledTrait>, IComparable<int>
     {
         #region Properties
         
@@ -245,5 +245,183 @@ namespace SR5Builder.DataModels
         {
             return (this.mName + mBaseRating).CompareTo(other.Name + mBaseRating);
         }
+
+        public int CompareTo(int other)
+        {
+            return this.AugmentedRating.CompareTo(other);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return ReferenceEquals(this, obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+        
+        #region Operators
+
+        public static implicit operator int(LeveledTrait lt)
+        {
+            return lt?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(LeveledTrait t)
+        {
+            return -t?.AugmentedRating ?? 0 ;
+        }
+
+        public static int operator +(LeveledTrait l, LeveledTrait r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator +(LeveledTrait l, int r)
+        {
+            return l?.AugmentedRating ?? 0  + r;
+        }
+        public static int operator +(int l, LeveledTrait r)
+        {
+            return l + r?.AugmentedRating ?? 0 ;
+        }
+
+        public static int operator -(LeveledTrait l, LeveledTrait r)
+        {
+            return l?.AugmentedRating ?? 0  - r?.AugmentedRating ?? 0 ;
+        }
+        public static int operator -(LeveledTrait l, int r)
+        {
+            return l?.AugmentedRating ?? 0  - r;
+        }
+        public static int operator -(int l, LeveledTrait r)
+        {
+            return l - r?.AugmentedRating ?? 0 ;
+        }
+
+        public static int operator *(LeveledTrait l, LeveledTrait r)
+        {
+            return l?.AugmentedRating ?? 0  * r?.AugmentedRating ?? 0 ;
+        }
+        public static int operator *(LeveledTrait l, int r)
+        {
+            return l?.AugmentedRating ?? 0  * r;
+        }
+        public static int operator *(int l, LeveledTrait r)
+        {
+            return l * r?.AugmentedRating ?? 0 ;
+        }
+
+        public static int operator /(LeveledTrait l, LeveledTrait r)
+        {
+            return l?.AugmentedRating ?? 0  / r?.AugmentedRating ?? 0 ;
+        }
+        public static int operator /(LeveledTrait l, int r)
+        {
+            return l?.AugmentedRating ?? 0  / r;
+        }
+        public static int operator /(int l, LeveledTrait r)
+        {
+            return l / r?.AugmentedRating ?? 0 ;
+        }
+
+        public static int operator %(LeveledTrait l, LeveledTrait r)
+        {
+            return l?.AugmentedRating ?? 0  + r?.AugmentedRating ?? 0 ;
+        }
+        public static int operator %(LeveledTrait l, int r)
+        {
+            return l?.AugmentedRating ?? 0  + r;
+        }
+        public static int operator %(int l, LeveledTrait r)
+        {
+            return l + r?.AugmentedRating ?? 0 ;
+        }
+
+        #region Comparison
+
+        //public static bool operator ==(LeveledTrait l, LeveledTrait r)
+        //{
+        //    return l.AugmentedRating == r.AugmentedRating;
+        //}
+        //public static bool operator ==(LeveledTrait l, int r)
+        //{
+        //    return l.AugmentedRating == r;
+        //}
+        //public static bool operator ==(int l, LeveledTrait r)
+        //{
+        //    return l == r.AugmentedRating;
+        //}
+
+        //public static bool operator !=(LeveledTrait l, LeveledTrait r)
+        //{
+        //    return l.AugmentedRating != r.AugmentedRating;
+        //}
+        //public static bool operator !=(LeveledTrait l, int r)
+        //{
+        //    return l.AugmentedRating != r;
+        //}
+        //public static bool operator !=(int l, LeveledTrait r)
+        //{
+        //    return l != r.AugmentedRating;
+        //}
+
+
+        public static bool operator <(LeveledTrait l, LeveledTrait r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <(LeveledTrait l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <(int l, LeveledTrait r)
+        {
+            return l < r.AugmentedRating;
+        }
+        
+        public static bool operator >(LeveledTrait l, LeveledTrait r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >(LeveledTrait l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >(int l, LeveledTrait r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+
+        public static bool operator <=(LeveledTrait l, LeveledTrait r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <=(LeveledTrait l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <=(int l, LeveledTrait r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >=(LeveledTrait l, LeveledTrait r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >=(LeveledTrait l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >=(int l, LeveledTrait r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+        #endregion
+
+        #endregion
     }
 }

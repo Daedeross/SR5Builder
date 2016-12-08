@@ -42,7 +42,7 @@ namespace SR5Builder.DataModels
             get { return mOwnerTrait; }
             set
             {
-                if (value != mOwnerTrait)
+                if (!ReferenceEquals(value, mOwnerTrait))
                 {
                     if (mOwnerTrait != null)
                     {
@@ -63,7 +63,7 @@ namespace SR5Builder.DataModels
             get { return mTarget; }
             set
             {
-                if (value != mTarget)
+                if (!ReferenceEquals(value, mTarget))
                 {
                     if (mTarget != null)
                         mTarget.Augments.Remove(this);

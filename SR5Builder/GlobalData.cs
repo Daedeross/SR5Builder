@@ -164,6 +164,7 @@ namespace SR5Builder
                 catch (InvalidOperationException e)
                 {
                     Log.LogMessage("Error loading SpeicalCoice(s) from " + file.FullName);
+                    Log.LogMessage(e.ToString());
                 }
             }
         }

@@ -72,9 +72,9 @@ namespace SR5Builder.DataModels
 
         private void OnSubscribedChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (   (sender == mOwner.Essence && e.PropertyName == nameof(Essence.Floor))
-                || (sender == mOwner.Priorities && e.PropertyName == nameof(Priorities.Special))
-                || (sender == mOwner && e.PropertyName == nameof(SR5Character.SpecialChoice))
+            if (   (ReferenceEquals(sender, mOwner.Essence) && e.PropertyName == nameof(Essence.Floor))
+                || (ReferenceEquals(sender, mOwner.Priorities) && e.PropertyName == nameof(Priorities.Special))
+                || (ReferenceEquals(sender, mOwner) && e.PropertyName == nameof(SR5Character.SpecialChoice))
                )
             {
                 int oldLoss = loss;
@@ -105,6 +105,8 @@ namespace SR5Builder.DataModels
                 }
                 
                 OnPropertyChanged(nameof(Min));
+                OnPropertyChanged(nameof(BaseRating));
+                OnPropertyChanged(nameof(AugmentedRating));
             }
         }
     }

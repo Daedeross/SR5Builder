@@ -128,7 +128,7 @@
     <ExtArray />
     <Max>6</Max>
     <Karma>4</Karma>
-    <PrereqExpression>SpecialAttribute.AugmentedRating &gt; 0</PrereqExpression>
+    <PrereqExpression>Character.SpecialAttribute &gt; 0</PrereqExpression>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Gearhead</Name>
@@ -209,7 +209,7 @@
     <ExtArray />
     <Max>1</Max>
     <Karma>6</Karma>
-    <PrereqExpression>Metatype.Name == "Ork" || Metatype.Name == "Elf" || Metatype.Name == "Dwarf" </PrereqExpression>
+    <PrereqExpression>Character.Metatype.Name == "Ork" || Character.Metatype.Name == "Elf" || Character.Metatype.Name == "Dwarf" </PrereqExpression>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Indomitable</Name>
@@ -276,7 +276,7 @@
     <ExtArray />
     <Max>1</Max>
     <Karma>10</Karma>
-    <PrereqExpression>SpecialChoice.Name == "Technomancer"</PrereqExpression>
+    <PrereqExpression>Character.SpecialChoice.Name == "Technomancer"</PrereqExpression>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Natural Immunity (natural)</Name>

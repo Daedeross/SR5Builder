@@ -19,7 +19,7 @@ namespace SR5Builder.DataModels
             get { return mGearPiece; }
             set
             {
-                if (value != mGearPiece)
+                if (!ReferenceEquals(value, mGearPiece))
                 {
                     mGearPiece = value;
                     OnPropertyChanged(nameof(GearPiece));

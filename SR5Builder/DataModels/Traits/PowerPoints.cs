@@ -78,5 +78,142 @@ namespace SR5Builder.DataModels
                 OnPropertyChanged(nameof(AugmentedRating));
             }
         }
+        
+        #region Operators
+
+        public static implicit operator int(PowerPoints lt)
+        {
+            return lt?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(PowerPoints t)
+        {
+            return -t?.AugmentedRating ?? 0;
+        }
+
+        public static int operator +(PowerPoints l, PowerPoints r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator +(PowerPoints l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator +(int l, PowerPoints r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(PowerPoints l, PowerPoints r)
+        {
+            return l?.AugmentedRating ?? 0 - r?.AugmentedRating ?? 0;
+        }
+        public static int operator -(PowerPoints l, int r)
+        {
+            return l?.AugmentedRating ?? 0 - r;
+        }
+        public static int operator -(int l, PowerPoints r)
+        {
+            return l - r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator *(PowerPoints l, PowerPoints r)
+        {
+            return l?.AugmentedRating ?? 0 * r?.AugmentedRating ?? 0;
+        }
+        public static int operator *(PowerPoints l, int r)
+        {
+            return l?.AugmentedRating ?? 0 * r;
+        }
+        public static int operator *(int l, PowerPoints r)
+        {
+            return l * r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator /(PowerPoints l, PowerPoints r)
+        {
+            return l?.AugmentedRating ?? 0 / r?.AugmentedRating ?? 0;
+        }
+        public static int operator /(PowerPoints l, int r)
+        {
+            return l?.AugmentedRating ?? 0 / r;
+        }
+        public static int operator /(int l, PowerPoints r)
+        {
+            return l / r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator %(PowerPoints l, PowerPoints r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator %(PowerPoints l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator %(int l, PowerPoints r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        #region Comparison
+
+        public static bool operator <(PowerPoints l, PowerPoints r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <(PowerPoints l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <(int l, PowerPoints r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >(PowerPoints l, PowerPoints r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >(PowerPoints l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >(int l, PowerPoints r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+
+        public static bool operator <=(PowerPoints l, PowerPoints r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <=(PowerPoints l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <=(int l, PowerPoints r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >=(PowerPoints l, PowerPoints r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >=(PowerPoints l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >=(int l, PowerPoints r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+        #endregion
+
+        #endregion
+
     }
 }

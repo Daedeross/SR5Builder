@@ -97,5 +97,142 @@ namespace SR5Builder.DataModels
                 OnPropertyChanged(nameof(AugmentedRating));
             }
         }
+
+        #region Operators
+
+        public static implicit operator int(Attribute lt)
+        {
+            return lt?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(Attribute t)
+        {
+            return -t?.AugmentedRating ?? 0;
+        }
+
+        public static int operator +(Attribute l, Attribute r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator +(Attribute l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator +(int l, Attribute r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(Attribute l, Attribute r)
+        {
+            return l?.AugmentedRating ?? 0 - r?.AugmentedRating ?? 0;
+        }
+        public static int operator -(Attribute l, int r)
+        {
+            return l?.AugmentedRating ?? 0 - r;
+        }
+        public static int operator -(int l, Attribute r)
+        {
+            return l - r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator *(Attribute l, Attribute r)
+        {
+            return l?.AugmentedRating ?? 0 * r?.AugmentedRating ?? 0;
+        }
+        public static int operator *(Attribute l, int r)
+        {
+            return l?.AugmentedRating ?? 0 * r;
+        }
+        public static int operator *(int l, Attribute r)
+        {
+            return l * r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator /(Attribute l, Attribute r)
+        {
+            return l?.AugmentedRating ?? 0 / r?.AugmentedRating ?? 0;
+        }
+        public static int operator /(Attribute l, int r)
+        {
+            return l?.AugmentedRating ?? 0 / r;
+        }
+        public static int operator /(int l, Attribute r)
+        {
+            return l / r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator %(Attribute l, Attribute r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator %(Attribute l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator %(int l, Attribute r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        #region Comparison
+
+        public static bool operator <(Attribute l, Attribute r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <(Attribute l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <(int l, Attribute r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >(Attribute l, Attribute r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >(Attribute l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >(int l, Attribute r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+
+        public static bool operator <=(Attribute l, Attribute r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <=(Attribute l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <=(int l, Attribute r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >=(Attribute l, Attribute r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >=(Attribute l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >=(int l, Attribute r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+        #endregion
+
+        #endregion
+
     }
 }

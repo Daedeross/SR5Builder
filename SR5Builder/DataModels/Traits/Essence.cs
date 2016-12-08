@@ -259,5 +259,142 @@ namespace SR5Builder.DataModels
                 }
             }
         }
+        
+        #region Operators
+
+        public static implicit operator int(Essence lt)
+        {
+            return lt?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(Essence t)
+        {
+            return -t?.AugmentedRating ?? 0;
+        }
+
+        public static int operator +(Essence l, Essence r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator +(Essence l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator +(int l, Essence r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(Essence l, Essence r)
+        {
+            return l?.AugmentedRating ?? 0 - r?.AugmentedRating ?? 0;
+        }
+        public static int operator -(Essence l, int r)
+        {
+            return l?.AugmentedRating ?? 0 - r;
+        }
+        public static int operator -(int l, Essence r)
+        {
+            return l - r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator *(Essence l, Essence r)
+        {
+            return l?.AugmentedRating ?? 0 * r?.AugmentedRating ?? 0;
+        }
+        public static int operator *(Essence l, int r)
+        {
+            return l?.AugmentedRating ?? 0 * r;
+        }
+        public static int operator *(int l, Essence r)
+        {
+            return l * r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator /(Essence l, Essence r)
+        {
+            return l?.AugmentedRating ?? 0 / r?.AugmentedRating ?? 0;
+        }
+        public static int operator /(Essence l, int r)
+        {
+            return l?.AugmentedRating ?? 0 / r;
+        }
+        public static int operator /(int l, Essence r)
+        {
+            return l / r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator %(Essence l, Essence r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator %(Essence l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator %(int l, Essence r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        #region Comparison
+
+        public static bool operator <(Essence l, Essence r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <(Essence l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <(int l, Essence r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >(Essence l, Essence r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >(Essence l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >(int l, Essence r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+
+        public static bool operator <=(Essence l, Essence r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <=(Essence l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <=(int l, Essence r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >=(Essence l, Essence r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >=(Essence l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >=(int l, Essence r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+        #endregion
+
+        #endregion
+
     }
 }

@@ -13,7 +13,7 @@ namespace SR5Builder.ViewModels
     {
         #region Private Fields
 
-        private SR5Character character;
+        //private SR5Character character;
 
         private string message;
 

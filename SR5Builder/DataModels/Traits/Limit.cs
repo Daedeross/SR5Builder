@@ -20,7 +20,7 @@ namespace SR5Builder.DataModels
             get { return mPrimaryAttribute; }
             set
             {
-                if (value != mPrimaryAttribute)
+                if (!ReferenceEquals(value, mPrimaryAttribute))
                 {
                     if (mPrimaryAttribute != null)
                         mPrimaryAttribute.PropertyChanged -= this.OnAttributeChanged;
@@ -42,7 +42,7 @@ namespace SR5Builder.DataModels
             get { return mSecondaryAttribute; }
             set
             {
-                if (value != mSecondaryAttribute)
+                if (!ReferenceEquals(value, mSecondaryAttribute))
                 {
                     if (mSecondaryAttribute != null)
                         mSecondaryAttribute.PropertyChanged -= this.OnAttributeChanged;
@@ -64,7 +64,7 @@ namespace SR5Builder.DataModels
             get { return mTertiaryAttribute; }
             set
             {
-                if (value != mTertiaryAttribute)
+                if (!ReferenceEquals(value, mTertiaryAttribute))
                 {
                     if (mTertiaryAttribute != null)
                         mTertiaryAttribute.PropertyChanged -= this.OnAttributeChanged;
@@ -152,5 +152,141 @@ namespace SR5Builder.DataModels
         #region Public Methods
 
         #endregion // Public Methods
+        
+        #region Operators
+
+        public static implicit operator int(Limit lt)
+        {
+            return lt?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(Limit t)
+        {
+            return -t?.AugmentedRating ?? 0;
+        }
+
+        public static int operator +(Limit l, Limit r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator +(Limit l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator +(int l, Limit r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(Limit l, Limit r)
+        {
+            return l?.AugmentedRating ?? 0 - r?.AugmentedRating ?? 0;
+        }
+        public static int operator -(Limit l, int r)
+        {
+            return l?.AugmentedRating ?? 0 - r;
+        }
+        public static int operator -(int l, Limit r)
+        {
+            return l - r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator *(Limit l, Limit r)
+        {
+            return l?.AugmentedRating ?? 0 * r?.AugmentedRating ?? 0;
+        }
+        public static int operator *(Limit l, int r)
+        {
+            return l?.AugmentedRating ?? 0 * r;
+        }
+        public static int operator *(int l, Limit r)
+        {
+            return l * r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator /(Limit l, Limit r)
+        {
+            return l?.AugmentedRating ?? 0 / r?.AugmentedRating ?? 0;
+        }
+        public static int operator /(Limit l, int r)
+        {
+            return l?.AugmentedRating ?? 0 / r;
+        }
+        public static int operator /(int l, Limit r)
+        {
+            return l / r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator %(Limit l, Limit r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator %(Limit l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator %(int l, Limit r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        #region Comparison
+
+        public static bool operator <(Limit l, Limit r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <(Limit l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <(int l, Limit r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >(Limit l, Limit r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >(Limit l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >(int l, Limit r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+        public static bool operator <=(Limit l, Limit r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <=(Limit l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <=(int l, Limit r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >=(Limit l, Limit r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >=(Limit l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >=(int l, Limit r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+        #endregion
+
+        #endregion
+
     }
 }

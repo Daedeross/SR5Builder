@@ -24,7 +24,7 @@ namespace SR5Builder.Views
             InitializeComponent();
         }
 
-        private void DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private new void DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             GridView gv = ((ListView)sender).View as GridView;
             if (gv != null)

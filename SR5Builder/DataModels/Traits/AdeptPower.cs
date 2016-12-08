@@ -95,5 +95,143 @@ namespace SR5Builder.DataModels
                 a.Target = null;
             }
         }
+
+
+        #region Operators
+
+        public static implicit operator int(AdeptPower lt)
+        {
+            return lt?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(AdeptPower t)
+        {
+            return -t?.AugmentedRating ?? 0;
+        }
+
+        public static int operator +(AdeptPower l, AdeptPower r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator +(AdeptPower l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator +(int l, AdeptPower r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(AdeptPower l, AdeptPower r)
+        {
+            return l?.AugmentedRating ?? 0 - r?.AugmentedRating ?? 0;
+        }
+        public static int operator -(AdeptPower l, int r)
+        {
+            return l?.AugmentedRating ?? 0 - r;
+        }
+        public static int operator -(int l, AdeptPower r)
+        {
+            return l - r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator *(AdeptPower l, AdeptPower r)
+        {
+            return l?.AugmentedRating ?? 0 * r?.AugmentedRating ?? 0;
+        }
+        public static int operator *(AdeptPower l, int r)
+        {
+            return l?.AugmentedRating ?? 0 * r;
+        }
+        public static int operator *(int l, AdeptPower r)
+        {
+            return l * r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator /(AdeptPower l, AdeptPower r)
+        {
+            return l?.AugmentedRating ?? 0 / r?.AugmentedRating ?? 0;
+        }
+        public static int operator /(AdeptPower l, int r)
+        {
+            return l?.AugmentedRating ?? 0 / r;
+        }
+        public static int operator /(int l, AdeptPower r)
+        {
+            return l / r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator %(AdeptPower l, AdeptPower r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator %(AdeptPower l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator %(int l, AdeptPower r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        #region Comparison
+
+        public static bool operator <(AdeptPower l, AdeptPower r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <(AdeptPower l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <(int l, AdeptPower r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >(AdeptPower l, AdeptPower r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >(AdeptPower l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >(int l, AdeptPower r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+
+        public static bool operator <=(AdeptPower l, AdeptPower r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <=(AdeptPower l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <=(int l, AdeptPower r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >=(AdeptPower l, AdeptPower r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >=(AdeptPower l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >=(int l, AdeptPower r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+        #endregion
+
+        #endregion
+
     }
 }

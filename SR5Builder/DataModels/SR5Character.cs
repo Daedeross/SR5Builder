@@ -79,7 +79,7 @@ namespace SR5Builder.DataModels
             get { return mBody; }
             set
             {
-                if (value != mBody)
+                if (!ReferenceEquals(value, mBody))
                 {
                     mBody = value;
                     OnPropertyChanged(nameof(Body));
@@ -93,7 +93,7 @@ namespace SR5Builder.DataModels
             get { return mAgility; }
             set
             {
-                if (value != mAgility)
+                if (!ReferenceEquals(value, mAgility))
                 {
                     mAgility = value;
                     OnPropertyChanged(nameof(Agility));
@@ -107,7 +107,7 @@ namespace SR5Builder.DataModels
             get { return mReaction; }
             set
             {
-                if (value != mReaction)
+                if (!ReferenceEquals(value, mReaction))
                 {
                     mReaction = value;
                     OnPropertyChanged(nameof(Reaction));
@@ -121,7 +121,7 @@ namespace SR5Builder.DataModels
             get { return mStrength; }
             set
             {
-                if (value != mStrength)
+                if (!ReferenceEquals(value, mStrength))
                 {
                     mStrength = value;
                     OnPropertyChanged(nameof(Strength));
@@ -135,7 +135,7 @@ namespace SR5Builder.DataModels
             get { return mWillpower; }
             set
             {
-                if (value != mWillpower)
+                if (!ReferenceEquals(value, mWillpower))
                 {
                     mWillpower = value;
                     OnPropertyChanged(nameof(Willpower));
@@ -149,7 +149,7 @@ namespace SR5Builder.DataModels
             get { return mLogic; }
             set
             {
-                if (value != mLogic)
+                if (!ReferenceEquals(value, mLogic))
                 {
                     mLogic = value;
                     OnPropertyChanged(nameof(Logic));
@@ -163,7 +163,7 @@ namespace SR5Builder.DataModels
             get { return mIntuition; }
             set
             {
-                if (value != mIntuition)
+                if (!ReferenceEquals(value, mIntuition))
                 {
                     mIntuition = value;
                     OnPropertyChanged(nameof(Intuition));
@@ -177,7 +177,7 @@ namespace SR5Builder.DataModels
             get { return mCharisma; }
             set
             {
-                if (value != mCharisma)
+                if (!ReferenceEquals(value, mCharisma))
                 {
                     mCharisma = value;
                     OnPropertyChanged(nameof(Charisma));
@@ -191,7 +191,7 @@ namespace SR5Builder.DataModels
             get { return mEdge; }
             set
             {
-                if (value != mEdge)
+                if (!ReferenceEquals(value, mEdge))
                 {
                     mEdge = value;
                     OnPropertyChanged(nameof(Edge));
@@ -205,7 +205,7 @@ namespace SR5Builder.DataModels
             get { return mEssence; }
             protected set
             {
-                if (value != mEssence)
+                if (!ReferenceEquals(value, mEssence))
                 {
                     mEssence = value;
                     OnPropertyChanged(nameof(Essence));
@@ -856,7 +856,7 @@ namespace SR5Builder.DataModels
         {
             if (e.PropertyName == "Points")
             {
-                if (sender == mSpecialAttribute || sender == mEdge)
+                if (object.ReferenceEquals(sender, mSpecialAttribute) || object.ReferenceEquals(sender, mEdge))
                 {
                     OnPropertyChanged(nameof(SpecialAttributePointsSpent));
                     //OnPropertyChanged(nameof(SpecialAttributePointsRemaining));
@@ -869,7 +869,7 @@ namespace SR5Builder.DataModels
             }
             else if (e.PropertyName == "AugmentedRating")
             {
-                if (sender == MentalLimit || sender == SocialLimit)
+                if (object.ReferenceEquals(sender, MentalLimit) || object.ReferenceEquals(sender, SocialLimit))
                 {
                     OnPropertyChanged(nameof(AstralLimit));
                 }
