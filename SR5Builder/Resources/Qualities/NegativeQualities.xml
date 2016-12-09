@@ -65,6 +65,14 @@
     <Karma>-7</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Blighted</Name>
+    <Book>R&amp;G</Book>
+    <Page>169</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>-</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Code of Honor</Name>
     <Book>SR5</Book>
     <Page>79</Page>
@@ -79,6 +87,14 @@
     <ExtArray />
     <Max>0</Max>
     <Karma>-10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Combat Junkie</Name>
+    <Book>R&amp;G</Book>
+    <Page>127</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>-7</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Combat Paralysis</Name>

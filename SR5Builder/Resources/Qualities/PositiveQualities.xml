@@ -1,6 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfQualityPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <QualityPrototype>
+    <Name>Acrobatic Defender</Name>
+    <Book>R&amp;G</Book>
+    <Page>127</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>4</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Agile Defender</Name>
+    <Book>R&amp;G</Book>
+    <Page>127</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>3</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Ambidextrous</Name>
     <Book>SR5</Book>
     <Page>71</Page>
@@ -59,6 +75,14 @@
     <ExtArray />
     <Max>1</Max>
     <Karma>8</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Brand Loyalty</Name>
+    <Book>R&amp;G</Book>
+    <Page>127</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>3</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Catlike</Name>
@@ -295,6 +319,22 @@
     <Karma>10</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>One Trick Pony</Name>
+    <Book>R&amp;G</Book>
+    <Page>127</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Perceptive Defender</Name>
+    <Book>R&amp;G</Book>
+    <Page>127</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>4</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Photographic Memory</Name>
     <Book>SR5</Book>
     <Page>76</Page>
@@ -327,12 +367,28 @@
     <Karma>4</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Sharpshooter</Name>
+    <Book>R&amp;G</Book>
+    <Page>127</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>4</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Spirit Affinity</Name>
     <Book>SR5</Book>
     <Page>77</Page>
     <ExtArray />
     <Max>1</Max>
     <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Too Pretty to Hit</Name>
+    <Book>R&amp;G</Book>
+    <Page>127</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>4</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Toughness</Name>

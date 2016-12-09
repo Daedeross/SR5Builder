@@ -671,6 +671,7 @@ namespace SR5Builder.DataModels
 
             Qualities = new ObservableDictionary<string, Quality>();
             Qualities.CollectionChanged += this.OnAugmentablesChanged;
+            Qualities.CollectionChanged += this.OnQualitiesCollectionChanged;
 
             mEssence.Subscribe();
         }
@@ -1128,6 +1129,19 @@ namespace SR5Builder.DataModels
             OnPropertyChanged(nameof(MoneyRemaining));
         }
 
+        private void OnQualitiesCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.OldItems != null)
+            {
+                foreach (KeyValuePair<string, Quality> kvp in e.OldItems)
+                {
+                    kvp.Value.Cleanup();
+                }
+            }
+        }
+
         #endregion // Private Methods
+
+
     }
 }

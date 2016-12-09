@@ -118,5 +118,21 @@ namespace SR5Builder.DataModels
                 }
             }
         }
+
+        public void Cleanup()
+        {
+            foreach (var key in watched.Keys)
+            {
+                key.PropertyChanged -= this.OnWatchedChanged;
+            }
+            ClearAugments();
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            Cleanup();
+        }
     }
 }
