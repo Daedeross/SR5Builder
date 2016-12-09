@@ -12,9 +12,13 @@ namespace SR5Builder.Prototypes
 {
     public class QualityPrototype: TraitExtPrototype
     {
+        public string[] LevelNames { get; set; }
+
         public int Max { get; set; }
 
         public int Karma { get; set; }
+
+        public int[] KarmaArray { get; set; }
 
         public string DisplayKarma
         {
@@ -22,7 +26,14 @@ namespace SR5Builder.Prototypes
             {
                 if (Max > 1)
                 {
-                    return string.Format("{0} ea. (max {1})", Karma, Max);
+                    if ((KarmaArray == null || KarmaArray.Length == 0))
+                    {
+                        return $"{Karma} ea. (max {Max})";
+                    }
+                    else
+                    {
+                        return "[varies]";
+                    }
                 }
                 else return Karma.ToString();
             }
@@ -55,17 +66,17 @@ namespace SR5Builder.Prototypes
 
         public Quality ToQuality(DataModels.SR5Character c, string ext)
         {
-            if ((ExtKind != null && ExtKind.Length > 0) && (ext == null || ext.Length == 0))
+            if ((( ExtKind != null && ExtKind.Length > 0 ) || ExtKind != "level") && (ext == null || ext.Length == 0))
             {
                 throw new ArgumentException("Quality requires an name extension.", "ext");
             }
 
             Quality q = new Quality(c, Karma, this.PrereqExpression);
-            q.Name = string.Format(Name, ext);
+            base.CopyToTrait(q, ext);
+            q.LevelNames = LevelNames;
+            q.KarmaArray = KarmaArray;
             q.Min = 1;
             q.Max = Max;
-            q.Book = Book;
-            q.Page = Page;
             q.BaseRating = 1;
 
             if (Augments != null)

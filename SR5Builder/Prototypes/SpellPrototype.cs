@@ -36,15 +36,13 @@ namespace SR5Builder.Prototypes
             }
 
             Spell sp = new Spell(owner, isFree);
-            sp.Name = string.Format(Name, ext);
+            base.CopyToTrait(sp, ext);
             sp.Type = Type;
             sp.Range = Range;
             sp.Damage = Damage;
             sp.Duration = Duration;
             sp.Drain = Drain;
             sp.Tags = Tags;
-            sp.Book = Book;
-            sp.Page = Page;
 
             return sp;
         }

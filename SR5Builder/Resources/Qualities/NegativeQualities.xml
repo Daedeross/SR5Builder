@@ -68,9 +68,19 @@
     <Name>Blighted</Name>
     <Book>R&amp;G</Book>
     <Page>169</Page>
+    <LevelNames>
+      <string>6 months</string>
+      <string>12 months</string>
+      <string>24 months</string>
+    </LevelNames>
+    <KarmaArray>
+      <int>5</int>
+      <int>10</int>
+      <int>15</int>
+    </KarmaArray>
     <ExtArray />
-    <Max>1</Max>
-    <Karma>-</Karma>
+    <Max>3</Max>
+    <Karma>-5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Code of Honor</Name>
@@ -119,6 +129,14 @@
     <ExtArray />
     <Max>0</Max>
     <Karma>-5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Earther</Name>
+    <Book>R&amp;G</Book>
+    <Page>169</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>-3</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Elf Poser</Name>

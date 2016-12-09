@@ -19,13 +19,42 @@ namespace SR5Builder.DataModels
             public Quality This;
         }
 
+        public int[] KarmaArray { get; set; }
+
         private int mKarmaPerRating;
         public int Karma
         {
             get
             {
-                return mKarmaPerRating * BaseRating
-                    + mOwner.Settings.InPlayQualityMult * (mKarmaPerRating * (ImprovedRating - BaseRating));
+                if (KarmaArray == null || KarmaArray.Length == 0)
+                {
+                    return mKarmaPerRating * BaseRating
+                                + mOwner.Settings.InPlayQualityMult * (mKarmaPerRating * (ImprovedRating - BaseRating)); 
+                }
+                else
+                {
+                    int baseKarma;
+                    if (BaseRating < KarmaArray.Length)
+                    {
+                        baseKarma = KarmaArray[BaseRating];
+                    }
+                    else
+                    {
+                        baseKarma = 0;
+                        Log.LogMessage($"Warning: Index out of bounds for {Name}: BaseRating = {BaseRating}");
+                    }
+                    int extraKarma;
+                    if (ImprovedRating < KarmaArray.Length)
+                    {
+                        extraKarma = KarmaArray[ImprovedRating];
+                    }
+                    else
+                    {
+                        extraKarma = 0;
+                        Log.LogMessage($"Warning: Index out of bounds for {Name}: ImprovedRating = {ImprovedRating}");
+                    }
+                    return baseKarma + mOwner.Settings.InPlayQualityMult * extraKarma;
+                }
             }
         }
 
@@ -50,6 +79,25 @@ namespace SR5Builder.DataModels
 
         public ObservableCollection<Augment> GivenAugments { get; set; }
             = new ObservableCollection<Augment>();
+        
+        public override string DisplayValue
+        {
+            get
+            {
+                int i = AugmentedRating;
+                if (   LevelNames != null
+                    && Max > 1
+                    && i >= 0
+                    && i < LevelNames.Length)
+                {
+                    return $" [{LevelNames[i]}]";
+                }
+                else
+                {
+                    return base.DisplayValue;
+                }
+            }
+        }
 
         public Quality(SR5Character owner, int karma, string validExpression)
             : base(owner)

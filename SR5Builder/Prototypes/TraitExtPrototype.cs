@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using SR5Builder.DataModels;
 
 namespace SR5Builder.Prototypes
 {
@@ -26,5 +27,13 @@ namespace SR5Builder.Prototypes
         public string ExtLabel { get; set; }
 
         public string ExtPrompt { get; set; }
+
+        protected void CopyToTrait(BaseTrait trait, string ext)
+        {
+            trait.Name = string.Format(Name, ext);
+            trait.Book = Book;
+            trait.Page = Page;
+            trait.Category = Category;
+        }
     }
 }

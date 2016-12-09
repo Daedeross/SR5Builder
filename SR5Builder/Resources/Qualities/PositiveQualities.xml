@@ -351,6 +351,30 @@
     <Karma>3</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Radiation Sponge</Name>
+    <Book>R&amp;G</Book>
+    <Page>169</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Rad-Tolerant</Name>
+    <Book>R&amp;G</Book>
+    <Page>169</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>3</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Spacer</Name>
+    <Book>R&amp;G</Book>
+    <Page>169</Page>
+    <ExtArray />
+    <Max>0</Max>
+    <Karma>3</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Resistance to Pathogens</Name>
     <Book>SR5</Book>
     <Page>77</Page>

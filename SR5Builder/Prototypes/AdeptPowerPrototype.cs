@@ -48,13 +48,11 @@ namespace SR5Builder.Prototypes
             }
 
             AdeptPower p = new AdeptPower(owner);
+            base.CopyToTrait(p, ext);
             p.Min = Min;
             p.Max = Max;
-            p.Name = string.Format(Name, ext);
             p.FlatPoints = FlatPoints;
             p.PointPerLevel = PointsPerLevel;
-            p.Book = Book;
-            p.Page = Page;
             p.BaseRating = 1;
 
             foreach (AugmentPrototype a in Augments)

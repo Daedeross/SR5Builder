@@ -102,7 +102,7 @@ namespace SR5Builder.ViewModels
         private void AddQualityExecute()
         {
             string ext = null;
-            if (SelectedNewQuality.ExtKind != null && SelectedNewQuality.ExtKind.Length != 0)
+            if ((SelectedNewQuality.ExtKind != null && SelectedNewQuality.ExtKind.Length != 0 )|| SelectedNewQuality.ExtKind != "level")
             {
                 // Open dialog
                 SelectionViewModel vm = SelectionViewModel.CreateSelection(character, SelectedNewQuality);

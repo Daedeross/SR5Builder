@@ -18,6 +18,8 @@ namespace SR5Builder.DataModels
         public virtual int ExtraMax { get; set; }
         public virtual int Max { get; set; }
 
+        public string[] LevelNames { get; set; }
+
         protected int mBaseRating;
         public virtual int BaseRating
         {
@@ -89,7 +91,21 @@ namespace SR5Builder.DataModels
 
         public virtual string DisplayValue
         {
-            get { return ToString(); }
+            get
+            {
+                int i = AugmentedRating;
+                if (   LevelNames != null
+                    && LevelNames.Length > 0
+                    && i < LevelNames.Length
+                    && i >= 0)
+                {
+                    return ToString() + $" [{LevelNames[i]}]";
+                }
+                else
+                {
+                    return ToString();
+                }
+            }
         }
 
         #endregion Properties
@@ -119,7 +135,7 @@ namespace SR5Builder.DataModels
         public override string ToString()
         {
             if (mBonusRating != 0)
-                return ImprovedRating + " (" + AugmentedRating + ")";
+                return ImprovedRating + $" ({AugmentedRating})";
             else
                 return ImprovedRating.ToString();
         }
