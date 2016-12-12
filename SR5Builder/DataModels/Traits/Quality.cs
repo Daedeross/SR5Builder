@@ -46,7 +46,7 @@ namespace SR5Builder.DataModels
                     int extraKarma;
                     if (ImprovedRating < KarmaArray.Length)
                     {
-                        extraKarma = KarmaArray[ImprovedRating];
+                        extraKarma = KarmaArray[ImprovedRating] - baseKarma;
                     }
                     else
                     {
@@ -124,7 +124,10 @@ namespace SR5Builder.DataModels
                 isValidDelegate = isValidExpr.ScopeCompile<ValidScope>();
             }
             else
-                isValidDelegate =  (s) => true;
+            {
+                isValidExpr = null;
+                isValidDelegate = (s) => true;
+            }
 
             SetWatched();
         }
@@ -138,6 +141,7 @@ namespace SR5Builder.DataModels
                     key.PropertyChanged -= this.OnWatchedChanged;
                 }
             }
+            if (isValidExpr == null) return;
 
             watched = ExpressionUtils.FindMembers(isValidExpr, scope);
             foreach (var key in watched.Keys)
@@ -169,9 +173,12 @@ namespace SR5Builder.DataModels
 
         public void Cleanup()
         {
-            foreach (var key in watched.Keys)
+            if (watched != null)
             {
-                key.PropertyChanged -= this.OnWatchedChanged;
+                foreach (var key in watched.Keys)
+                {
+                    key.PropertyChanged -= this.OnWatchedChanged;
+                }
             }
             ClearAugments();
         }
@@ -182,5 +189,168 @@ namespace SR5Builder.DataModels
 
             Cleanup();
         }
+
+        #region Operators
+
+        public static implicit operator int(Quality lt)
+        {
+            return lt?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(Quality t)
+        {
+            return -t?.AugmentedRating ?? 0;
+        }
+
+        public static int operator +(Quality l, Quality r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator +(Quality l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator +(int l, Quality r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator -(Quality l, Quality r)
+        {
+            return l?.AugmentedRating ?? 0 - r?.AugmentedRating ?? 0;
+        }
+        public static int operator -(Quality l, int r)
+        {
+            return l?.AugmentedRating ?? 0 - r;
+        }
+        public static int operator -(int l, Quality r)
+        {
+            return l - r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator *(Quality l, Quality r)
+        {
+            return l?.AugmentedRating ?? 0 * r?.AugmentedRating ?? 0;
+        }
+        public static int operator *(Quality l, int r)
+        {
+            return l?.AugmentedRating ?? 0 * r;
+        }
+        public static int operator *(int l, Quality r)
+        {
+            return l * r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator /(Quality l, Quality r)
+        {
+            return l?.AugmentedRating ?? 0 / r?.AugmentedRating ?? 0;
+        }
+        public static int operator /(Quality l, int r)
+        {
+            return l?.AugmentedRating ?? 0 / r;
+        }
+        public static int operator /(int l, Quality r)
+        {
+            return l / r?.AugmentedRating ?? 0;
+        }
+
+        public static int operator %(Quality l, Quality r)
+        {
+            return l?.AugmentedRating ?? 0 + r?.AugmentedRating ?? 0;
+        }
+        public static int operator %(Quality l, int r)
+        {
+            return l?.AugmentedRating ?? 0 + r;
+        }
+        public static int operator %(int l, Quality r)
+        {
+            return l + r?.AugmentedRating ?? 0;
+        }
+
+        #region Comparison
+
+        //public static bool operator ==(Quality l, Quality r)
+        //{
+        //    return l.AugmentedRating == r.AugmentedRating;
+        //}
+        //public static bool operator ==(Quality l, int r)
+        //{
+        //    return l.AugmentedRating == r;
+        //}
+        //public static bool operator ==(int l, Quality r)
+        //{
+        //    return l == r.AugmentedRating;
+        //}
+
+        //public static bool operator !=(Quality l, Quality r)
+        //{
+        //    return l.AugmentedRating != r.AugmentedRating;
+        //}
+        //public static bool operator !=(Quality l, int r)
+        //{
+        //    return l.AugmentedRating != r;
+        //}
+        //public static bool operator !=(int l, Quality r)
+        //{
+        //    return l != r.AugmentedRating;
+        //}
+
+
+        public static bool operator <(Quality l, Quality r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <(Quality l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <(int l, Quality r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >(Quality l, Quality r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >(Quality l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >(int l, Quality r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+
+        public static bool operator <=(Quality l, Quality r)
+        {
+            return l.AugmentedRating < r.AugmentedRating;
+        }
+        public static bool operator <=(Quality l, int r)
+        {
+            return l.AugmentedRating < r;
+        }
+        public static bool operator <=(int l, Quality r)
+        {
+            return l < r.AugmentedRating;
+        }
+
+        public static bool operator >=(Quality l, Quality r)
+        {
+            return l.AugmentedRating > r.AugmentedRating;
+        }
+        public static bool operator >=(Quality l, int r)
+        {
+            return l.AugmentedRating > r;
+        }
+        public static bool operator >=(int l, Quality r)
+        {
+            return l > r.AugmentedRating;
+        }
+
+        #endregion
+
+        #endregion
     }
 }

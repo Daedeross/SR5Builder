@@ -1,44 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfQualityPrototype xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <QualityPrototype>
-    <Name>Addiction (Burnout)</Name>
+    <Name>Addiction</Name>
     <Book>SR5</Book>
     <Page>77</Page>
+    <LevelNames>
+      <string></string>
+      <string>Mild</string>
+      <string>Moderate</string>
+      <string>Severe</string>
+      <string>Burnout</string>
+    </LevelNames>
+    <KarmaArray>
+      <int>0</int>
+      <int>-4</int>
+      <int>-9</int>
+      <int>-20</int>
+      <int>-25</int>
+    </KarmaArray>
     <ExtArray />
-    <Max>0</Max>
-    <Karma>-25</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Addiction (Mild)</Name>
-    <Book>SR5</Book>
-    <Page>77</Page>
-    <ExtArray />
-    <Max>0</Max>
+    <Max>4</Max>
     <Karma>-4</Karma>
   </QualityPrototype>
   <QualityPrototype>
-    <Name>Addiction (Moderate)</Name>
-    <Book>SR5</Book>
-    <Page>77</Page>
+    <Name>Albinism</Name>
+    <Book>Run Faster</Book>
+    <Page>151</Page>
     <ExtArray />
-    <Max>0</Max>
-    <Karma>-9</Karma>
-  </QualityPrototype>
-  <QualityPrototype>
-    <Name>Addiction (Severe)</Name>
-    <Book>SR5</Book>
-    <Page>77</Page>
-    <ExtArray />
-    <Max>0</Max>
-    <Karma>-20</Karma>
+    <Max>2</Max>
+    <Karma>-4</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Allergy</Name>
     <Book>SR5</Book>
     <Page>78</Page>
     <ExtArray />
-    <Max>0</Max>
-    <Karma>-5</Karma>
+    <Max>25</Max>
+    <Karma>-1</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Amnesia</Name>
+    <Book>Run Faster</Book>
+    <Page>152</Page>
+    <LevelNames>
+      <string></string>
+      <string>Surface Loss</string>
+      <string>Neural Deletion</string>
+    </LevelNames>
+    <KarmaArray>
+      <int>0</int>
+      <int>-4</int>
+      <int>-8</int>
+    </KarmaArray>
+    <ExtArray />
+    <Max>2</Max>
+    <Karma>-4</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Asthma</Name>
+    <Book>Run Faster</Book>
+    <Page>152</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>8</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Astral Beacon</Name>
@@ -65,23 +89,68 @@
     <Karma>-7</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Bi-Polar</Name>
+    <Book>Run Faster</Book>
+    <Page>152</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Big Regret</Name>
+    <Book>Run Faster</Book>
+    <Page>153</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Blighted</Name>
     <Book>R&amp;G</Book>
     <Page>169</Page>
     <LevelNames>
+      <string></string>
       <string>6 months</string>
       <string>12 months</string>
       <string>24 months</string>
     </LevelNames>
     <KarmaArray>
-      <int>5</int>
-      <int>10</int>
-      <int>15</int>
+      <int>0</int>
+      <int>-5</int>
+      <int>-10</int>
+      <int>-15</int>
     </KarmaArray>
     <ExtArray />
     <Max>3</Max>
     <Karma>-5</Karma>
   </QualityPrototype>
+  <QualityPrototype>
+    <Name>Blind</Name>
+    <Book>Run Faster</Book>
+    <Page>153</Page>
+    <LevelNames>
+      <string></string>
+      <string>Total</string>
+      <string>with Astral Sight</string>
+    </LevelNames>
+    <KarmaArray>
+      <int>0</int>
+      <int>-15</int>
+      <int>-5</int>
+    </KarmaArray>
+    <ExtArray />
+    <Max>2</Max>
+    <Karma>0</Karma>
+    <PrereqExpression>(Character.SpecialChoice.Name == ("Magician") || Character.PowerList.ContainsKey("Astral Perception")) ? This.AugmentedRating == 2 : This.AugmentedRating == 1</PrereqExpression>
+  </QualityPrototype>
+  <!--<QualityPrototype>
+    <Name></Name>
+    <Book>Run Faster</Book>
+    <Page>153</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma></Karma>
+  </QualityPrototype>-->
   <QualityPrototype>
     <Name>Code of Honor</Name>
     <Book>SR5</Book>
@@ -166,8 +235,18 @@
     <Name>Insomnia</Name>
     <Book>SR5</Book>
     <Page>81</Page>
+    <LevelNames>
+      <string></string>
+      <string>Moderate</string>
+      <string>Severe</string>
+    </LevelNames>
+    <KarmaArray>
+      <int>0</int>
+      <int>-10</int>
+      <int>-15</int>
+    </KarmaArray>
     <ExtArray />
-    <Max>0</Max>
+    <Max>2</Max>
     <Karma>-15</Karma>
   </QualityPrototype>
   <QualityPrototype>
@@ -199,8 +278,8 @@
     <Book>SR5</Book>
     <Page>82</Page>
     <ExtArray />
-    <Max>0</Max>
-    <Karma>-3</Karma>
+    <Max>10</Max>
+    <Karma>-1</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Scorched</Name>
@@ -230,8 +309,22 @@
     <Name>SINner</Name>
     <Book>SR5</Book>
     <Page>84</Page>
+    <LevelNames>
+      <string></string>
+      <string>National</string>
+      <string>Criminal</string>
+      <string>Corporate Limited</string>
+      <string>Corporate</string>
+    </LevelNames>
+    <KarmaArray>
+      <int>0</int>
+      <int>-5</int>
+      <int>-10</int>
+      <int>-15</int>
+      <int>-25</int>
+    </KarmaArray>
     <ExtArray />
-    <Max>0</Max>
+    <Max>4</Max>
     <Karma>-5</Karma>
   </QualityPrototype>
   <QualityPrototype>

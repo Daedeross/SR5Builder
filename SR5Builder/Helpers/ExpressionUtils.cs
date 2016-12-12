@@ -76,6 +76,26 @@
                 left.UnionWith(right);
                 return left;
             }
+            else if (ex is ConditionalExpression)
+            {
+                var ce = ex as ConditionalExpression;
+                var test = findMembersTraverse(ce.Test, scope);
+                var left = findMembersTraverse(ce.IfTrue, scope);
+                var right = findMembersTraverse(ce.IfFalse, scope);
+                test.UnionWith(left);
+                test.UnionWith(right);
+                return test;
+            }
+            else if (ex is IndexExpression)
+            {
+                var ie = ex as IndexExpression;
+                var set = findMembersTraverse(ie.Object, scope);
+                foreach (var exp in ie.Arguments)
+                {
+                    set.UnionWith(findMembersTraverse(exp, scope));
+                }
+                return set;
+            }
 
             return new HashSet<Tuple<INotifyPropertyChanged, string>>();
         }

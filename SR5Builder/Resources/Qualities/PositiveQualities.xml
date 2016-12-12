@@ -9,6 +9,14 @@
     <Karma>4</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Adrenaline Surge</Name>
+    <Book>Run Faster</Book>
+    <Page>145</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>12</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Agile Defender</Name>
     <Book>R&amp;G</Book>
     <Page>127</Page>
@@ -31,6 +39,14 @@
     <ExtArray />
     <Max>1</Max>
     <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Animal Empathy</Name>
+    <Book>Run Faster</Book>
+    <Page>145</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>3</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Aptitude</Name>
@@ -69,12 +85,28 @@
     <Karma>5</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Black Market Pipeline</Name>
+    <Book>Run Faster</Book>
+    <Page>145</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Blandness</Name>
     <Book>SR5</Book>
     <Page>72</Page>
     <ExtArray />
     <Max>1</Max>
     <Karma>8</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Born Rich</Name>
+    <Book>Run Faster</Book>
+    <Page>145</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Brand Loyalty</Name>
@@ -93,6 +125,14 @@
     <Karma>7</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>City Slicker</Name>
+    <Book>Run Faster</Book>
+    <Page>145</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Codeslinger</Name>
     <Book>SR5</Book>
     <Page>72</Page>
@@ -101,12 +141,60 @@
     <Karma>10</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>College Educated</Name>
+    <Book>Run Faster</Book>
+    <Page>145</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>4</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Common Sense</Name>
+    <Book>Run Faster</Book>
+    <Page>145</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>3</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Daredevil</Name>
+    <Book>Run Faster</Book>
+    <Page>146</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>6</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Digital Doppelganger</Name>
+    <Book>Run Faster</Book>
+    <Page>146</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Disgraced</Name>
+    <Book>Run Faster</Book>
+    <Page>146</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>2</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Double-Jointed</Name>
     <Book>SR5</Book>
     <Page>72</Page>
     <ExtArray />
     <Max>1</Max>
     <Karma>6</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Erased</Name>
+    <Book>Run Faster</Book>
+    <Page>146</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>8</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Exceptional Attribute</Name>
@@ -138,6 +226,28 @@
     </Augments>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Fame</Name>
+    <Book>Run Faster</Book>
+    <Page>146</Page>
+    <LevelNames>
+      <string></string>
+      <string>Local</string>
+      <string>National</string>
+      <string>Megacorporate</string>
+      <string>Global</string>
+    </LevelNames>
+    <KarmaArray>
+      <int>0</int>
+      <int>4</int>
+      <int>8</int>
+      <int>12</int>
+      <int>16</int>
+    </KarmaArray>
+    <ExtArray />
+    <Max>4</Max>
+    <Karma>0</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>First Impression</Name>
     <Book>SR5</Book>
     <Page>74</Page>
@@ -153,6 +263,14 @@
     <Max>6</Max>
     <Karma>4</Karma>
     <PrereqExpression>Character.SpecialAttribute &gt; 0</PrereqExpression>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Friends in High Places</Name>
+    <Book>Run Faster</Book>
+    <Page>147</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>8</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Gearhead</Name>
@@ -244,12 +362,44 @@
     <Karma>8</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Inspired</Name>
+    <Book>Run Faster</Book>
+    <Page>147</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>4</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Jack of all Trades, Master of None</Name>
+    <Book>Run Faster</Book>
+    <Page>147</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>2</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Juryrigger</Name>
     <Book>SR5</Book>
     <Page>75</Page>
     <ExtArray />
     <Max>1</Max>
     <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Lightning Reflexes</Name>
+    <Book>Run Faster</Book>
+    <Page>148</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>20</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Linguist</Name>
+    <Book>Run Faster</Book>
+    <Page>148</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>4</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Lucky</Name>
@@ -268,6 +418,14 @@
         </Bonus>
       </AugmentPrototype>
     </Augments>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Made Man</Name>
+    <Book>Run Faster</Book>
+    <Page>148</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Magical Resistance</Name>
@@ -319,12 +477,44 @@
     <Karma>10</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Night Vision</Name>
+    <Book>Run Faster</Book>
+    <Page>148</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>2</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>One Trick Pony</Name>
     <Book>R&amp;G</Book>
     <Page>127</Page>
     <ExtArray />
     <Max>1</Max>
     <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Outdoorsman</Name>
+    <Book>Run Faster</Book>
+    <Page>148</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>3</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Overclocker</Name>
+    <Book>Run Faster</Book>
+    <Page>148</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Perceptive</Name>
+    <Book>Run Faster</Book>
+    <Page>148</Page>
+    <ExtArray />
+    <Max>2</Max>
+    <Karma>5</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Perceptive Defender</Name>
@@ -335,12 +525,36 @@
     <Karma>4</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>PErfect Time</Name>
+    <Book>Run Faster</Book>
+    <Page>148</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Photographic Memory</Name>
     <Book>SR5</Book>
     <Page>76</Page>
     <ExtArray />
     <Max>1</Max>
     <Karma>6</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Poor Link</Name>
+    <Book>Run Faster</Book>
+    <Page>148</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>8</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Privleged Family Name</Name>
+    <Book>Run Faster</Book>
+    <Page>149</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>7</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Quick Healer</Name>
@@ -367,12 +581,46 @@
     <Karma>3</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Restricted Gear</Name>
+    <Book>Run Faster</Book>
+    <Page>149</Page>
+    <ExtArray />
+    <Max>3</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>School of Hard Knocks</Name>
+    <Book>Run Faster</Book>
+    <Page>149</Page>
+    <ExtArray />
+    <Max>3</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Spacer</Name>
     <Book>R&amp;G</Book>
     <Page>169</Page>
     <ExtArray />
     <Max>0</Max>
     <Karma>3</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Rep</Name>
+    <Book>Run Faster</Book>
+    <Page>149</Page>
+    <LevelNames>
+      <string></string>
+      <string>Solid</string>
+      <string>Legendary</string>
+    </LevelNames>
+    <KarmaArray>
+      <int>0</int>
+      <int>2</int>
+      <int>4</int>
+    </KarmaArray>
+    <ExtArray />
+    <Max>2</Max>
+    <Karma>2</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Resistance to Pathogens</Name>
@@ -399,12 +647,68 @@
     <Karma>4</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Sense of Direction</Name>
+    <Book>Run Faster</Book>
+    <Page>149</Page>
+    <ExtArray />
+    <Max>3</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Sensei</Name>
+    <Book>Run Faster</Book>
+    <Page>149</Page>
+    <ExtArray />
+    <Max>3</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Speed Reading</Name>
+    <Book>Run Faster</Book>
+    <Page>149</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>2</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Spike Resistance</Name>
+    <Book>Run Faster</Book>
+    <Page>150</Page>
+    <ExtArray />
+    <Max>3</Max>
+    <Karma>10</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Spirit Affinity</Name>
     <Book>SR5</Book>
     <Page>77</Page>
     <ExtArray />
     <Max>1</Max>
     <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Spirit Whisperer</Name>
+    <Book>Run Faster</Book>
+    <Page>150</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>8</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Steely Eyed Wheelman</Name>
+    <Book>Run Faster</Book>
+    <Page>150</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>2</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Technical School Education</Name>
+    <Book>Run Faster</Book>
+    <Page>150</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>4</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Too Pretty to Hit</Name>
@@ -415,12 +719,62 @@
     <Karma>4</Karma>
   </QualityPrototype>
   <QualityPrototype>
+    <Name>Tough as Nails (Physical)</Name>
+    <Book>Run Faster</Book>
+    <Page>150</Page>
+    <ExtArray />
+    <Max>4</Max>
+    <Karma>5</Karma>
+    <PrereqExpression>Character.Qualities.ContainsKey("Tough as Nails (Stun)") ? Character.Qualities.["Tough as Nails (Stun)"]) + This &lt; 5 : true</PrereqExpression>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Tough as Nails (Stun)</Name>
+    <Book>Run Faster</Book>
+    <Page>150</Page>
+    <ExtArray />
+    <Max>4</Max>
+    <Karma>5</Karma>
+    <PrereqExpression>Character.Qualities.ContainsKey("Tough as Nails (Physical)") ? Character.Qualities.["Tough as Nails (Physical)"]) + This &lt; 5 : true</PrereqExpression>
+  </QualityPrototype>
+  <QualityPrototype>
     <Name>Toughness</Name>
     <Book>SR5</Book>
     <Page>77</Page>
     <ExtArray />
     <Max>1</Max>
     <Karma>9</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Trust Fund</Name>
+    <Book>Run Faster</Book>
+    <Page>151</Page>
+    <ExtArray />
+    <Max>4</Max>
+    <Karma>5</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Trysworthy</Name>
+    <Book>Run Faster</Book>
+    <Page>151</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>15</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Vehicle Empathy</Name>
+    <Book>Run Faster</Book>
+    <Page>151</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>7</Karma>
+  </QualityPrototype>
+  <QualityPrototype>
+    <Name>Water Sprite</Name>
+    <Book>Run Faster</Book>
+    <Page>151</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>6</Karma>
   </QualityPrototype>
   <QualityPrototype>
     <Name>Will to Live</Name>
@@ -430,4 +784,21 @@
     <Max>3</Max>
     <Karma>3</Karma>
   </QualityPrototype>
+  <QualityPrototype>
+    <Name>Witness My Hate</Name>
+    <Book>Run Faster</Book>
+    <Page>151</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma>7</Karma>
+    <PrereqExpression>Character.SpecialChoice.Name.Contains("Magician") || Character.SpecialChoice.Name == "Mystic Adept"</PrereqExpression>
+  </QualityPrototype>
+  <!--<QualityPrototype>
+    <Name></Name>
+    <Book>Run Faster</Book>
+    <Page>151</Page>
+    <ExtArray />
+    <Max>1</Max>
+    <Karma></Karma>
+  </QualityPrototype>-->
 </ArrayOfQualityPrototype>

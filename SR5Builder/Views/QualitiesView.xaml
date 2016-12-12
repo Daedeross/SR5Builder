@@ -18,7 +18,7 @@
                 <Setter Property="VerticalContentAlignment" Value="Center" />
             </Style>
             <Style TargetType="TextBlock">
-                <!--<Setter Property="Padding" Value="4,5,4,1"/>-->
+                <Setter Property="Padding" Value="3,1"/>
             </Style>
             <cnv:ValueRemainingConverter x:Key="pointsConverter" />
         </Grid.Resources>
@@ -109,19 +109,20 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Border>
-                                    <StackPanel Orientation="Horizontal" MinWidth="100">
+                                    <StackPanel Orientation="Horizontal" MinWidth="100" Margin="0">
                                         <StackPanel.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="Black" />
+                                            <Style TargetType="StackPanel">
+                                                <Setter Property="Background" Value="Transparent" />
                                                 <Style.Triggers>
                                                     <DataTrigger Binding="{Binding Value.IsValid}" Value="False">
-                                                        <Setter Property="Foreground" Value="Red" />
+                                                        <Setter Property="Background" Value="Red" />
                                                     </DataTrigger>
                                                 </Style.Triggers>
                                             </Style>
                                         </StackPanel.Style>
-                                        <TextBlock Text="{Binding Value.Name}" />
-                                        <TextBlock Text="{Binding Value.DisplayValue}" />
+                                        <TextBlock Name="qName" Text="{Binding Value.Name}" />
+                                        <TextBlock Text=" "></TextBlock>
+                                        <TextBlock Name="qValue" Text="{Binding Value.DisplayValue}" />
                                     </StackPanel>
                                     
                                 </Border>

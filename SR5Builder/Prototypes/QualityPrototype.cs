@@ -26,13 +26,15 @@ namespace SR5Builder.Prototypes
             {
                 if (Max > 1)
                 {
-                    if ((KarmaArray == null || KarmaArray.Length == 0))
+                    if ((KarmaArray == null || KarmaArray.Length <= 1))
                     {
                         return $"{Karma} ea. (max {Max})";
                     }
                     else
                     {
-                        return "[varies]";
+                        int min = KarmaArray[1];
+                        int max = KarmaArray.Last();
+                        return $"{min} to {max}";
                     }
                 }
                 else return Karma.ToString();
@@ -66,7 +68,7 @@ namespace SR5Builder.Prototypes
 
         public Quality ToQuality(DataModels.SR5Character c, string ext)
         {
-            if ((( ExtKind != null && ExtKind.Length > 0 ) || ExtKind != "level") && (ext == null || ext.Length == 0))
+            if (( ExtKind != null && ExtKind.Length > 0 && ExtKind != "level"))
             {
                 throw new ArgumentException("Quality requires an name extension.", "ext");
             }
