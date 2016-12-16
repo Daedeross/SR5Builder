@@ -625,7 +625,7 @@ namespace DrWPF.Windows.Data
 
         #region KeyedDictionaryEntryCollection<TKey>
 
-        protected class KeyedDictionaryEntryCollection<TKey> : KeyedCollection<TKey, DictionaryEntry>
+        protected class KeyedDictionaryEntryCollection<TKey1> : KeyedCollection<TKey1, DictionaryEntry>
         {
             #region constructors
 
@@ -633,7 +633,7 @@ namespace DrWPF.Windows.Data
 
             public KeyedDictionaryEntryCollection() : base() { }
 
-            public KeyedDictionaryEntryCollection(IEqualityComparer<TKey> comparer) : base(comparer) { }
+            public KeyedDictionaryEntryCollection(IEqualityComparer<TKey1> comparer) : base(comparer) { }
 
             #endregion public
 
@@ -643,9 +643,9 @@ namespace DrWPF.Windows.Data
 
             #region protected
 
-            protected override TKey GetKeyForItem(DictionaryEntry entry)
+            protected override TKey1 GetKeyForItem(DictionaryEntry entry)
             {
-                return (TKey)entry.Key;
+                return (TKey1)entry.Key;
             }
 
             #endregion protected

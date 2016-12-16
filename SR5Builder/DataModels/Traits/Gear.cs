@@ -269,6 +269,7 @@ namespace SR5Builder.DataModels
         {
             // Reset avail
             mBonusAvailability = Availability.Zero;
+            mBonusArmor = 0;
 
             // Do for base
             // This should call the vitual AddAugment() method for each augment
@@ -296,6 +297,10 @@ namespace SR5Builder.DataModels
                 case AugmentKind.Restriction:
                     mBonusAvailability.Restriction = (Restriction)Math.Max((int)a.Bonus, (int)mBonusAvailability.Restriction);
                     propNames.Add(nameof(Availability));
+                    break;
+                case AugmentKind.Armor:
+                    mBonusArmor += (int)a.Bonus;
+                    propNames.Add(nameof(ArmorRating));
                     break;
                 default:
                     break;

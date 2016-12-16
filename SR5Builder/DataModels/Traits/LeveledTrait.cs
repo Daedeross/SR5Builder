@@ -112,13 +112,13 @@ namespace SR5Builder.DataModels
 
         #region Constructors
 
-        public LeveledTrait()
+        protected LeveledTrait()
             :base()
         {
             Initialize();
         }
 
-        public LeveledTrait(SR5Character owner)
+        protected LeveledTrait(SR5Character owner)
             :base(owner)
         {
             Initialize();

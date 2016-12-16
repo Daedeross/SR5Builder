@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using DrWPF.Windows.Data;
 using SR5Builder.Prototypes;
+using SR5Builder.Loaders;
 
 namespace SR5Builder.DataModels
 {
@@ -618,6 +619,11 @@ namespace SR5Builder.DataModels
             Initialize(loader);
         }
 
+        public SR5Character(CharacterLoader loader)
+        {
+
+        }
+
         private void Initialize(SettingsPrototype settings)
         {
             Settings = new GenSettings(settings.Properties);
@@ -646,30 +652,36 @@ namespace SR5Builder.DataModels
 
             // create Skill and SkillGroup dicts and add them to Augmentable listener
             SkillList = new ObservableDictionary<string, Skill>();
-            SkillList.CollectionChanged += this.OnSkillListChanged;
-            SkillList.CollectionChanged += this.OnAugmentablesChanged;
 
             SkillGroupsList = new ObservableDictionary<string, SkillGroup>();
-            SkillGroupsList.CollectionChanged += this.OnSkillGroupListChanged;
-            SkillGroupsList.CollectionChanged += this.OnAugmentablesChanged;
 
             SpellList = new ObservableDictionary<string, Spell>();
-            SpellList.CollectionChanged += OnSpellsChanged;
 
             PowerList = new ObservableDictionary<string, AdeptPower>();
+
+            GearList = new ObservableDictionary<string, Gear>();
+
+            ImplantList = new ObservableDictionary<string, Implant>();
+
+            Qualities = new ObservableDictionary<string, Quality>();
+
+            SubscribeEvents();
+        }
+
+        private void SubscribeEvents()
+        {
+            SkillList.CollectionChanged += this.OnSkillListChanged;
+            SkillList.CollectionChanged += this.OnAugmentablesChanged;
+            SkillGroupsList.CollectionChanged += this.OnSkillGroupListChanged;
+            SkillGroupsList.CollectionChanged += this.OnAugmentablesChanged;
+            SpellList.CollectionChanged += OnSpellsChanged;
             PowerList.CollectionChanged += this.OnAugmentablesChanged;
                 // Even though Adept powers never recieve Augments,
                 // this is needed to remove augments when powers are removed
-
-            GearList = new ObservableDictionary<string, Gear>();
             GearList.CollectionChanged += this.OnAugmentablesChanged;
             GearList.CollectionChanged += this.OnGearCollectionChanged;
-
-            ImplantList = new ObservableDictionary<string, Implant>();
             ImplantList.CollectionChanged += this.OnAugmentablesChanged;
             ImplantList.CollectionChanged += this.OnImplantsCollectionChanged;
-
-            Qualities = new ObservableDictionary<string, Quality>();
             Qualities.CollectionChanged += this.OnAugmentablesChanged;
             Qualities.CollectionChanged += this.OnQualitiesCollectionChanged;
 
@@ -765,8 +777,6 @@ namespace SR5Builder.DataModels
             Augmentables.Add(MentalLimit.Name, MentalLimit);
             Augmentables.Add(PhysicalLimit.Name, PhysicalLimit);
             Augmentables.Add(SocialLimit.Name, SocialLimit);
-            
-
             
             //Augmentables.Add(UnarmedAttack.Name, UnarmedAttack);
         }
@@ -1141,7 +1151,5 @@ namespace SR5Builder.DataModels
         }
 
         #endregion // Private Methods
-
-
     }
 }

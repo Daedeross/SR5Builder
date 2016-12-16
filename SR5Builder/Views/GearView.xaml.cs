@@ -29,7 +29,7 @@ namespace SR5Builder.Views
         {
             GridViewColumnHeader headerClicked =
                 e.OriginalSource as GridViewColumnHeader;
-            ListSortDirection direction;
+            //ListSortDirection direction;
         }
     }
 }

@@ -90,6 +90,8 @@ namespace SR5Builder
         RC,
         /// <summary>Augment alters the target trait's <b>Armor Penetration</b> rating.</summary>
         AP,
+        /// <summary>Augment alters the target trait's <b>Armor</b> Rating</summary>
+        Armor,
     }
 
     /// <summary>

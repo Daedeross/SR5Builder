@@ -36,13 +36,13 @@ namespace SR5Builder.DataModels
             get; set;
         }
 
-        public BaseTrait(SR5Character c)
+        protected BaseTrait(SR5Character c)
         {
             UserNotes = "";
             mOwner = c;
         }
 
-        public BaseTrait()
+        protected BaseTrait()
         {
             UserNotes = "";
             mOwner = null;

@@ -11,9 +11,9 @@ namespace SR5Builder.ViewModels
 {
     public class Setting//: IEditableObject
     {
-        private string oldKey;
+        //private string oldKey;
         public string Key { get; private set; }
-        private object oldValue;
+        //private object oldValue;
         public object Value {
             get;
             set;

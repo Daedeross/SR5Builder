@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SR5Builder.Loaders
+﻿namespace SR5Builder.Loaders
 {
-    public class AttributePrototype
-    {
-        public string Name { get; set; }
-        public int BaseImp { get; set; }
+    using SR5Builder.Prototypes;
 
-        public int KarmaImp { get; set; }
+    public class AttributeLoader: TraitPrototype
+    {
+        public int BaseRating { get; set; }
+        public int ImprovedRating { get; set; }
     }
 }
