@@ -9,6 +9,8 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Attribute = SR5Builder.DataModels.Attribute;
+using Microsoft.Win32;
+using System.IO;
 
 namespace SR5Builder.ViewModels
 {
@@ -568,6 +570,24 @@ namespace SR5Builder.ViewModels
         #endregion // Private Methods
 
         #region Public Methods
+
+        public void Print()
+        {
+            var dlg = new SaveFileDialog();
+            dlg.AddExtension = true;
+            dlg.Filter = "Portable Document Format (*.pdf)|*.pdf";
+            dlg.FilterIndex = 0;
+            dlg.OverwritePrompt = true;
+
+            if (dlg.ShowDialog() == true)
+            {
+                string path = dlg.FileName;
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    character.WriteToFile(stream);
+                }
+            }
+        }
 
         public override void Dispose()
         {

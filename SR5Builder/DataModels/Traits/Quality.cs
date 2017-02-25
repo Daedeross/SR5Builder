@@ -54,12 +54,17 @@ namespace SR5Builder.DataModels
             scope = new ValidScope() { Character = owner, This = this };
         }
 
+        public Quality(SR5Character owner, int karma, string isValidText)
+            : this(owner, karma)
+        {
+            isValidExprText = isValidText;
+            CompileExpression();
+        }
+
         private ValidScope scope;
 
         private string isValidExprText;
-
         private Func<ValidScope, bool> isValidDelegate;
-
         private CompiledExpression<bool> isValidExpr;
 
         private void CompileExpression()
@@ -70,7 +75,7 @@ namespace SR5Builder.DataModels
                 isValidDelegate = isValidExpr.ScopeCompile<ValidScope>();
             }
             else
-                isValidDelegate =  (s) => true;
+                isValidDelegate = (s) => true;
         }
 
         public void ClearAugments()

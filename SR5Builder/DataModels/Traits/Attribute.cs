@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.ComponentModel;
 using SR5Builder.Prototypes;
+using SR5Builder.Loaders;
 
 namespace SR5Builder.DataModels
 {
@@ -96,6 +97,12 @@ namespace SR5Builder.DataModels
                 OnPropertyChanged(nameof(BaseRating));
                 OnPropertyChanged(nameof(AugmentedRating));
             }
+        }
+
+        public virtual void SetFromLoader(AttributeLoader loader)
+        {
+            BaseRating = loader.Base;
+            ImprovedRating = loader.Improved;
         }
     }
 }

@@ -123,7 +123,36 @@ namespace SR5Builder.ViewModels
             return SelectedCharacter != null;
         }
 
-        #endregion // ExamineCharacter
+            #endregion // ExamineCharacter
+            #region PrintCharacter
+
+        private RelayCommand mPrintCharacterCommand;
+        public ICommand PrintCharacterCommand
+        {
+            get
+            {
+                if (mPrintCharacterCommand == null)
+                {
+                    mPrintCharacterCommand = new RelayCommand(
+                        parap => this.PrintCharacterExecute(),
+                        param => this.PrintCharacterCanExecute()
+                        );
+                }
+                return mPrintCharacterCommand;
+            }
+        }
+
+        private void PrintCharacterExecute()
+        {
+            SelectedCharacter.Print();
+        }
+
+        private bool PrintCharacterCanExecute()
+        {
+            return SelectedCharacter != null;
+        }
+
+            #endregion // PrintCharacter
 
         #endregion // Commands
 

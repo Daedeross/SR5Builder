@@ -8,8 +8,10 @@
         <vm:Workspace x:Key="workspace" />
     </Window.Resources>
     <Window.InputBindings>
-        <KeyBinding Key="N" Modifiers="Control"
+        <KeyBinding Key="N" Modifiers="Ctrl"
                     Command="{Binding AddNewCharacter, Source={StaticResource workspace}}" />
+        <KeyBinding Key="P" Modifiers="Ctrl"
+                    Command="{Binding PrintCharacterCommand, Source={StaticResource workspace}}" />
     </Window.InputBindings>
     <Grid DataContext="{StaticResource workspace}">
         <Grid.RowDefinitions>
@@ -20,6 +22,17 @@
         <Menu Name="MainMenu">
             <MenuItem Header="_File">
                 <MenuItem Header="_New" Command="{Binding AddNewCharacter}" InputGestureText="Ctl+N" />
+                <MenuItem Header="_Print" Command="{Binding PrintCharacterCommand}" InputGestureText="Ctrl+P">
+                    <MenuItem.Style>
+                        <Style TargetType="MenuItem">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SelectedCharacter}" Value="{x:Null}">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </MenuItem.Style>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Header="Examine" Command="{Binding ExamineCharacterCommand}" />

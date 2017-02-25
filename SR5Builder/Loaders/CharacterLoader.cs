@@ -12,11 +12,15 @@ namespace SR5Builder.Loaders
     {
         #region Properties
 
+        public GenSettings Settings { get; set; }
         public string Name { get; set; }
 
         public string Metatype { get; set; }
+        public SpecialChoice SpecialChoice { get; set; }
 
-        public List<Attribute> Attributes { get; set; }
+        #region Attributes
+        public List<AttributeLoader> Attributes { get; set; }
+        #endregion
 
         #endregion
 
@@ -25,12 +29,22 @@ namespace SR5Builder.Loaders
         /// </summary>
         public CharacterLoader()
         {
-
+            Attributes = new List<AttributeLoader>();
         }
 
         public CharacterLoader(SR5Character character)
         {
-             
+            Attributes = new List<AttributeLoader>();
+            Settings = character.Settings;
+            foreach (var kvp in character.Attributes)
+            {
+                Attributes.Add(new AttributeLoader
+                {
+                    Name = kvp.Key,
+                    Base = kvp.Value.BaseRating,
+                    Improved = kvp.Value.ImprovedRating
+                });
+            }
         }
     }
 }

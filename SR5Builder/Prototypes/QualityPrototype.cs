@@ -57,10 +57,19 @@ namespace SR5Builder.Prototypes
         {
             if ((ExtKind != null && ExtKind.Length > 0) && (ext == null || ext.Length == 0))
             {
-                throw new ArgumentException("Quality requires an name extension.", "ext");
+                throw new ArgumentException("Quality requires a name extension.", "ext");
             }
 
-            Quality q = new Quality(c, Karma);
+            Quality q;
+
+            if (string.IsNullOrWhiteSpace(PrereqExpression))
+            {
+                q = new Quality(c, Karma);
+            }
+            else
+            {
+                q = new Quality(c, Karma, PrereqExpression);
+            }
             q.Name = string.Format(Name, ext);
             q.Min = 1;
             q.Max = Max;

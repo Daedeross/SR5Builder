@@ -46,7 +46,7 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                int index = BaseRating;
+                int index = Math.Max(0, BaseRating);
                 if (index >= mCostMultVector.Length)
                 {
                     index = mCostMultVector.Length - 1;
@@ -105,7 +105,7 @@ namespace SR5Builder.DataModels
         {
             get
             {
-                int index = BaseRating;
+                int index = Math.Max(0, BaseRating);
                 if (index >= mCapacityVector.Length)
                 {
                     index = mCapacityVector.Length - 1;

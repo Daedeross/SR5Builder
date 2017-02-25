@@ -9,6 +9,14 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using DrWPF.Windows.Data;
 using SR5Builder.Prototypes;
+using SR5Builder.Loaders;
+using System.IO;
+using iText.Kernel.Pdf;
+using iText.Layout.Element;
+using iText.Layout;
+using iText.Kernel.Geom;
+using iText.Kernel.Font;
+using iText.IO.Font;
 
 namespace SR5Builder.DataModels
 {
@@ -616,6 +624,45 @@ namespace SR5Builder.DataModels
             Initialize(loader);
         }
 
+        public SR5Character(CharacterLoader loader)
+        {
+            Settings = loader.Settings;
+            Priorities = new Priorities();
+            Priorities.ChangeMethod(Settings.Method);
+            MetatypeStats = new MetatypeStats();
+            Metatype = loader.Metatype;
+            
+            KarmaCosts.CollectionChanged += OnKarmaCostsCollectionChanged;
+            Augmentables = new ObservableDictionary<string, IAugmentable>();
+
+            InitializeAttributes();
+            InitializeCollections();
+
+            Armor = new Armor(this);
+            Augmentables.Add("Armor", Armor);
+
+            SpecialChoice = loader.SpecialChoice;
+
+            var attrDict = loader.Attributes.ToDictionary(al => al.Name, al => al);
+            try
+            {
+                Body.SetFromLoader(attrDict["Body"]);
+                Agility.SetFromLoader(attrDict["Agility"]);
+                Reaction.SetFromLoader(attrDict["Reaction"]);
+                Strength.SetFromLoader(attrDict["Strength"]);
+                Willpower.SetFromLoader(attrDict["Willpower"]);
+                Logic.SetFromLoader(attrDict["Logic"]);
+                Intuition.SetFromLoader(attrDict["Intuition"]);
+                Charisma.SetFromLoader(attrDict["Charisma"]);
+                SpecialAttribute.SetFromLoader(attrDict["SpecialAttribute"]);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                Debug.WriteLine(ex);
+                throw;
+            }
+        }
+
         private void Initialize(SettingsPrototype settings)
         {
             Settings = new GenSettings(settings.Properties);
@@ -771,6 +818,37 @@ namespace SR5Builder.DataModels
         public void Examine()
         {
             Debug.WriteLine("Examine" + Name);
+        }
+        
+        internal void WriteToFile(Stream stream)
+        {
+            using (PdfWriter writer = new PdfWriter(stream))
+            {
+                PdfDocument dest = new PdfDocument(writer);
+
+                Document doc = new Document(dest, PageSize.LETTER);
+                doc.SetMargins(20, 20, 20, 20);
+
+                PdfFont font = PdfFontFactory.CreateFont(FontConstants.TIMES_ROMAN);
+                PdfFont bold = PdfFontFactory.CreateFont(FontConstants.TIMES_BOLD);
+
+                Table table = new Table(new float[] { 2, 1, 1 });
+                table.SetWidthPercent(100);
+                table.AddHeaderCell(new Cell().Add(new Paragraph("Attribute")))
+                     .AddHeaderCell(new Cell().Add(new Paragraph("Base")))
+                     .AddHeaderCell(new Cell().Add(new Paragraph("Improved")));
+
+                foreach (var kvp in Attributes)
+                {
+                    table.AddCell(kvp.Key);
+                    table.AddCell(kvp.Value.BaseRating.ToString());
+                    table.AddCell(kvp.Value.ImprovedRating.ToString());
+                }
+
+                doc.Add(table);
+
+                dest.Close();
+            }
         }
 
         #endregion Public Methods

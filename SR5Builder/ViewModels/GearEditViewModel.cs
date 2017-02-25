@@ -299,7 +299,7 @@ namespace SR5Builder.ViewModels
                 tabooCheck.Add(l.SubCategory);
                 ModList.Add(modName, l);
             }
-
+            
             foreach (var kvp in gear.BaseMods)
             {
                 string modName = kvp.Key;
@@ -308,7 +308,7 @@ namespace SR5Builder.ViewModels
                 tabooCheck.Add(modName);
                 tabooCheck.Add(l.Category);
                 tabooCheck.Add(l.SubCategory);
-                ModList.Add(modName, l);
+                ModList[modName] = l;
             }
 
             // add available mods
