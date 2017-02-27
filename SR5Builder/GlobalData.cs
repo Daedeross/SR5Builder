@@ -161,7 +161,7 @@ namespace SR5Builder
                     List<SpecialChoice> new_list = SpecialChoice.LoadFromFile(file.FullName);
                     Specials = Specials.Concat(new_list).ToList();
                 }
-                catch (InvalidOperationException e)
+                catch (InvalidOperationException)
                 {
                     Log.LogMessage("Error loading SpeicalCoice(s) from " + file.FullName);
                 }
@@ -245,8 +245,10 @@ namespace SR5Builder
                     if (!(from g in PreLoadedSkillGroups
                           select g.Name).Contains(skill.GroupName))
                     {
-                        SkillGroupPrototype pg = new SkillGroupPrototype();
-                        pg.Name = skill.GroupName;
+                        SkillGroupPrototype pg = new SkillGroupPrototype()
+                        {
+                            Name = skill.GroupName
+                        };
                         pg.SkillNames.Add(skill.Name);
                         PreLoadedSkillGroups.Add(pg);
                     }
@@ -322,10 +324,11 @@ namespace SR5Builder
             files = files.Concat(info.GetFiles("*.xml")).ToArray();
 
 
-                // Initialize Dictionary
-            Gear = new Dictionary<string, Dictionary<string, GearPrototype>>(files.Length+1);
-
-            Gear.Add("All", new Dictionary<string, GearPrototype>());
+            // Initialize Dictionary
+            Gear = new Dictionary<string, Dictionary<string, GearPrototype>>(files.Length + 1)
+            {
+                {  "All", new Dictionary<string, GearPrototype>() }
+            };
 
             foreach (FileInfo file in files)
             {
@@ -366,10 +369,10 @@ namespace SR5Builder
 
             FileInfo[] files = info.GetFiles("*.xml");
 
-            Implants = new Dictionary<string, Dictionary<string, ImplantPrototype>>(files.Length + 1);
-
-            Implants.Add("All", new Dictionary<string, ImplantPrototype>());
-
+            Implants = new Dictionary<string, Dictionary<string, ImplantPrototype>>(files.Length + 1)
+            {
+                { "All", new Dictionary<string, ImplantPrototype>() }
+            };
             foreach (FileInfo file in files)
             {
                 using (StreamReader reader = new StreamReader(file.FullName))

@@ -20,16 +20,16 @@ namespace SR5Builder.Prototypes
 
         public Skill ToSkill(SR5Character owner)
         {
-            Skill skill = new Skill(owner);
-
-            skill.Name = Name;
-            skill.Kind = Kind;
-            skill.Min = 1;
-            skill.BaseRating = 1;
-            skill.GroupName = GroupName;
-            skill.LinkedAttribute = LinkedAttribute;
-            skill.UsualLimit = Limit;
-
+            Skill skill = new Skill(owner)
+            {
+                Name = Name,
+                Kind = Kind,
+                Min = 1,
+                BaseRating = 1,
+                GroupName = GroupName,
+                LinkedAttribute = LinkedAttribute,
+                UsualLimit = Limit
+            };
             return skill;
         }
 

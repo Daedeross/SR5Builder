@@ -11,6 +11,7 @@ using System.Windows.Input;
 using Attribute = SR5Builder.DataModels.Attribute;
 using Microsoft.Win32;
 using System.IO;
+using SR5Builder.Loaders;
 
 namespace SR5Builder.ViewModels
 {
@@ -587,6 +588,12 @@ namespace SR5Builder.ViewModels
                     character.WriteToFile(stream);
                 }
             }
+        }
+
+        public void Save()
+        {
+            var loader = new CharacterLoader(character);
+            loader.WriteToFile("test.sr5");
         }
 
         public override void Dispose()

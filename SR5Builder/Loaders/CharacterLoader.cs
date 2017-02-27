@@ -5,6 +5,8 @@ using System.Text;
 using SR5Builder.DataModels;
 using System.Xml.Serialization;
 using Attribute = SR5Builder.DataModels.Attribute;
+using System.IO;
+using SR5Builder.Helpers;
 
 namespace SR5Builder.Loaders
 {
@@ -20,6 +22,8 @@ namespace SR5Builder.Loaders
 
         #region Attributes
         public List<AttributeLoader> Attributes { get; set; }
+
+        public List<SkillLoader> Skills { get; set; }
         #endregion
 
         #endregion
@@ -34,16 +38,53 @@ namespace SR5Builder.Loaders
 
         public CharacterLoader(SR5Character character)
         {
-            Attributes = new List<AttributeLoader>();
             Settings = character.Settings;
-            foreach (var kvp in character.Attributes)
-            {
-                Attributes.Add(new AttributeLoader
+
+            Attributes = character.Attributes.Select(a =>
+                new AttributeLoader
                 {
-                    Name = kvp.Key,
-                    Base = kvp.Value.BaseRating,
-                    Improved = kvp.Value.ImprovedRating
-                });
+                    Name     = a.Key,
+                    Base     = a.Value.BaseRating,
+                    Improved = a.Value.ImprovedRating
+                }).ToList();
+
+            Skills = character.SkillList.Select(s =>
+            new SkillLoader
+            {
+                Name = s.Key,
+                Base = s.Value.BaseRating,
+                GroupName = s.Value.GroupName,
+                Improved = s.Value.ImprovedRating,
+                Kind = s.Value.Kind,
+                Limit = s.Value.UsualLimit,
+                LinkedAttribute = s.Value.LinkedAttribute
+            }).ToList();
+        }
+
+        public void WriteToFile(string filename)
+        {
+            using (var stream = new StreamWriter(filename))
+            {
+                var ser = new XmlSerializer(typeof(CharacterLoader));
+                ser.Serialize(stream, this);
+            }
+        }
+
+        public CharacterLoader LoadFromFile(string filename)
+        {
+            using (var stream = new StreamReader(filename))
+            {
+                var ser = new XmlSerializer(typeof(CharacterLoader));
+                try
+                {
+                    var cl = (CharacterLoader)ser.Deserialize(stream);
+                    return cl;
+                }
+                catch (Exception)
+                {
+                    Log.LogMessage($"Error deserializing character from file: {filename}");
+                    throw;
+                }
             }
         }
     }

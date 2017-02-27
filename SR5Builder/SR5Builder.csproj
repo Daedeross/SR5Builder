@@ -466,6 +466,10 @@
     <None Include="Resources\Metatypes\Metatypes.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Resources\Qualities\Qualities.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\Skills\Skills.xsd">
       <SubType>Designer</SubType>
     </None>

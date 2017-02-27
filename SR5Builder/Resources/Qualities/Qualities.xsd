@@ -1,5 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           targetNamespace="SR5Builder/Qualities.xsd">
   <xsd:element name="ArrayOfQualityPrototype">
     <xsd:complexType>
       <xsd:sequence>
@@ -8,7 +13,7 @@
             <xsd:sequence>
               <xsd:element name="Name" type="xsd:string" />
               <xsd:element name="Book" type="xsd:string" />
-              <xsd:element name="Page" type="xsd:unsignedByte" />
+              <xsd:element name="Page" type="xsd:int" />
               <xsd:element name="ExtArray">
                 <xsd:complexType>
                   <xsd:sequence minOccurs="0">
@@ -18,8 +23,8 @@
               </xsd:element>
               <xsd:element minOccurs="0" name="ExtKind" type="xsd:string" />
               <xsd:element minOccurs="0" name="ExtLabel" type="xsd:string" />
-              <xsd:element name="Max" type="xsd:unsignedByte" />
-              <xsd:element name="Karma" type="xsd:unsignedByte" />
+              <xsd:element name="Max" type="xsd:int" />
+              <xsd:element name="Karma" type="xsd:int" />
               <xsd:element minOccurs="0" name="PrereqExpression" type="xsd:string" />
               <xsd:element minOccurs="0" name="Augments">
                 <xsd:complexType>
@@ -32,7 +37,7 @@
                           <xsd:element name="Bonus">
                             <xsd:complexType>
                               <xsd:sequence>
-                                <xsd:element maxOccurs="unbounded" name="decimal" type="xsd:unsignedByte" />
+                                <xsd:element maxOccurs="unbounded" name="decimal" type="xsd:decimal" />
                               </xsd:sequence>
                             </xsd:complexType>
                           </xsd:element>

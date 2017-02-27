@@ -106,8 +106,10 @@ namespace SR5Builder.ViewModels
             {
                 // Open dialog
                 SelectionViewModel vm = SelectionViewModel.CreateSelection(character, SelectedNewQuality);
-                SelectionDialog dlg = new SelectionDialog();
-                dlg.DataContext = vm;
+                SelectionDialog dlg = new SelectionDialog()
+                {
+                    DataContext = vm
+                };
 
                 bool? result = dlg.ShowDialog();
                 ext = vm.Selection;

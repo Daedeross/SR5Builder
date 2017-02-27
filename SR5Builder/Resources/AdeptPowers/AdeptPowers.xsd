@@ -41,9 +41,9 @@
                 </xs:complexType>
               </xs:element>
               <xs:element name="Book" type="xs:string" />
-              <xs:element name="Page" type="xs:unsignedShort" />
-              <xs:element name="Min" type="xs:unsignedByte" />
-              <xs:element name="Max" type="xs:unsignedByte" />
+              <xs:element name="Page" type="xs:positiveInteger" />
+              <xs:element name="Min" type="xs:positiveInteger" />
+              <xs:element name="Max" type="xs:positiveInteger" />
               <xs:element name="FlatPoints" type="xs:decimal" />
               <xs:element name="PointsPerLevel" type="xs:decimal" />
               <xs:element name="Augments">

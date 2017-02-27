@@ -93,8 +93,35 @@ namespace SR5Builder.ViewModels
             return true;
         }
 
-            #endregion // AddNewCharacter
+        #endregion // AddNewCharacter
+            #region SaveCharacter
 
+        private RelayCommand mSaveCharacter;
+        public ICommand SaveCharacter
+        {
+            get
+            {
+                if (mSaveCharacter == null)
+                {
+                    mSaveCharacter = new RelayCommand(
+                        parap => this.SaveCharacterExecute(),
+                        param => this.SaveCharacterCanExecute()
+                        );
+                }
+                return mSaveCharacter;
+            }
+        }
+
+        private void SaveCharacterExecute()
+        {
+            SelectedCharacter.Save();
+        }
+
+        private bool SaveCharacterCanExecute()
+        {
+            return SelectedCharacter != null;
+        }
+            #endregion // SaveCharacter
             #region ExamineCharacter
 
         private RelayCommand mExamineCharacterCommand;

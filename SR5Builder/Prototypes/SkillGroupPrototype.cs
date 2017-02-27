@@ -20,13 +20,14 @@ namespace SR5Builder.Prototypes
 
         public SkillGroup NewSkillGroup(SR5Character character)
         {
-            SkillGroup grp = new SkillGroup(character);
-            grp.Name = this.Name;
-            grp.Skills = (from skill in GlobalData.PreLoadedSkills["All"]
+            SkillGroup grp = new SkillGroup(character)
+            {
+                Name = this.Name,
+                Skills = (from skill in GlobalData.PreLoadedSkills["All"]
                           where skill.GroupName == this.Name
-                          select skill.ToSkill(character)).ToDictionary(skill => skill.Name);
-            grp.BaseRating = 1;
-
+                          select skill.ToSkill(character)).ToDictionary(skill => skill.Name),
+                BaseRating = 1
+            };
             return grp;
         }
 

@@ -14,10 +14,7 @@ namespace Helpers
 
         public EnumerationExtension(Type enumType)
         {
-            if (enumType == null)
-                throw new ArgumentNullException("enumType");
-
-            EnumType = enumType;
+            EnumType = enumType ?? throw new ArgumentNullException("enumType");
         }
 
         public Type EnumType
@@ -58,9 +55,7 @@ namespace Helpers
               .FirstOrDefault() as DescriptionAttribute;
 
 
-            return descriptionAttribute != null
-              ? descriptionAttribute.Description
-              : enumValue.ToString();
+            return descriptionAttribute?.Description ?? enumValue.ToString();
         }
 
         public class EnumerationMember

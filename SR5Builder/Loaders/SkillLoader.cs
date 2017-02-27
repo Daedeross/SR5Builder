@@ -15,17 +15,17 @@ namespace SR5Builder.Loaders
 
         public Skill ToSkill(SR5Character character)
         {
-            Skill skill = new Skill(character);
-
-            skill.Name = Name;
-            skill.Kind = Kind;
-            skill.Min = 1;
-            skill.BaseRating = Base;
-            skill.ImprovedRating = Improved;
-            skill.GroupName = GroupName;
-            skill.LinkedAttribute = LinkedAttribute;
-            skill.UsualLimit = Limit;
-
+            Skill skill = new Skill(character)
+            {
+                Name = Name,
+                Kind = Kind,
+                Min = 1,
+                BaseRating = Base,
+                ImprovedRating = Improved,
+                GroupName = GroupName,
+                LinkedAttribute = LinkedAttribute,
+                UsualLimit = Limit
+            };
             return skill;
         }
     }

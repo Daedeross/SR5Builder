@@ -102,8 +102,8 @@ namespace SR5Builder.Prototypes
             {
                 try
                 {
-                    XmlSerializer ser = new XmlSerializer(typeof(List<QualityPrototype>));
-                    List<QualityPrototype> obj = (List<QualityPrototype>)ser.Deserialize(reader);
+                    XmlSerializer ser = new XmlSerializer(typeof(List<QualityPrototype>), "SR5Builder/Qualities.xsd");
+                    List <QualityPrototype> obj = (List<QualityPrototype>)ser.Deserialize(reader);
                     return obj;
                 }
                 catch (IOException e)
