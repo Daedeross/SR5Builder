@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using DrWPF.Windows.Data;
 using SR5Builder.Prototypes;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes.Loaders;
 using System.IO;
 using iText.Kernel.Pdf;
 using iText.Layout.Element;

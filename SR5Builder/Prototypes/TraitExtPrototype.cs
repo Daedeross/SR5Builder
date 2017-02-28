@@ -26,5 +26,13 @@ namespace SR5Builder.Prototypes
         public string ExtLabel { get; set; }
 
         public string ExtPrompt { get; set; }
+
+        protected void CheckExt(string ext)
+        {
+            if ((ExtKind != null && ExtKind.Length > 0) && (ext == null || ext.Length == 0))
+            {
+                throw new ArgumentException("Power requires an name extension.", "ext");
+            }
+        }
     }
 }

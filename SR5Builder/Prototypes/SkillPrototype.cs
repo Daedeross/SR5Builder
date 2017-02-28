@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SR5Builder.Prototypes
 {
-    public class SkillPrototype: IComparable<SkillPrototype>
+    public class SkillPrototype: TraitExtPrototype, IComparable<SkillPrototype>
     {
         public string Name { get; set; }
 
@@ -18,11 +18,13 @@ namespace SR5Builder.Prototypes
 
         public SkillType Kind { get; set; }
 
-        public Skill ToSkill(SR5Character owner)
+        public virtual Skill ToSkill(SR5Character owner, string ext = "")
         {
+            CheckExt(ext);
+
             Skill skill = new Skill(owner)
             {
-                Name = Name,
+                Name = string.Format(Name, ext),
                 Kind = Kind,
                 Min = 1,
                 BaseRating = 1,

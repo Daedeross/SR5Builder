@@ -11,7 +11,7 @@ using System.Windows.Input;
 using Attribute = SR5Builder.DataModels.Attribute;
 using Microsoft.Win32;
 using System.IO;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes.Loaders;
 
 namespace SR5Builder.ViewModels
 {

@@ -8,7 +8,7 @@ using Attribute = SR5Builder.DataModels.Attribute;
 using System.IO;
 using SR5Builder.Helpers;
 
-namespace SR5Builder.Loaders
+namespace SR5Builder.Prototypes.Loaders
 {
     public class CharacterLoader
     {
@@ -59,6 +59,7 @@ namespace SR5Builder.Loaders
                 Limit = s.Value.UsualLimit,
                 LinkedAttribute = s.Value.LinkedAttribute
             }).ToList();
+
         }
 
         public void WriteToFile(string filename)

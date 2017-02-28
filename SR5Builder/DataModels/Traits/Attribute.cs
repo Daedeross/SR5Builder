@@ -4,8 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.ComponentModel;
-using SR5Builder.Prototypes;
-using SR5Builder.Loaders;
+using SR5Builder.Prototypes.Loaders;
 
 namespace SR5Builder.DataModels
 {

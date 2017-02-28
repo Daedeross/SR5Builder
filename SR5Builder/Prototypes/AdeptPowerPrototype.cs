@@ -40,23 +40,21 @@ namespace SR5Builder.Prototypes
 
         public AugmentPrototype[] Augments { get; set; }
 
-        public AdeptPower ToPower(SR5Character owner, string ext)
+        public virtual AdeptPower ToPower(SR5Character owner, string ext)
         {
-            if ((ExtKind != null && ExtKind.Length > 0) && (ext == null || ext.Length == 0))
+            CheckExt(ext);
+
+            AdeptPower p = new AdeptPower(owner)
             {
-                throw new ArgumentException("Power requires an name extension.", "ext");
-            }
-
-            AdeptPower p = new AdeptPower(owner);
-            p.Min = Min;
-            p.Max = Max;
-            p.Name = string.Format(Name, ext);
-            p.FlatPoints = FlatPoints;
-            p.PointPerLevel = PointsPerLevel;
-            p.Book = Book;
-            p.Page = Page;
-            p.BaseRating = 1;
-
+                Min = Min,
+                Max = Max,
+                Name = string.Format(Name, ext),
+                FlatPoints = FlatPoints,
+                PointPerLevel = PointsPerLevel,
+                Book = Book,
+                Page = Page,
+                BaseRating = 1
+            };
             foreach (AugmentPrototype a in Augments)
             {
                 if (a.Target == "%ext%")
