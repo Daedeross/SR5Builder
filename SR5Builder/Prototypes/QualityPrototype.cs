@@ -55,10 +55,7 @@ namespace SR5Builder.Prototypes
 
         public Quality ToQuality(DataModels.SR5Character c, string ext)
         {
-            if ((ExtKind != null && ExtKind.Length > 0) && (ext == null || ext.Length == 0))
-            {
-                throw new ArgumentException("Quality requires a name extension.", "ext");
-            }
+            CheckExt(ext);
 
             Quality q;
 
