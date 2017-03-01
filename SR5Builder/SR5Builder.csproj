@@ -175,6 +175,7 @@
     <Compile Include="Prototypes\Loaders\AttributeLoader.cs" />
     <Compile Include="Prototypes\Loaders\CharacterLoader.cs" />
     <Compile Include="Prototypes\Loaders\LeveledTraitLoader.cs" />
+    <Compile Include="Prototypes\Loaders\QualityLoader.cs" />
     <Compile Include="Prototypes\Loaders\SkillGroupLoader.cs" />
     <Compile Include="Prototypes\Loaders\SkillLoader.cs" />
     <Compile Include="Prototypes\Loaders\SpecialAttributeLoader.cs" />
