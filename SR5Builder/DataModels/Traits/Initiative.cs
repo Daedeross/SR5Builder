@@ -77,9 +77,10 @@ namespace SR5Builder.DataModels
 
         #region Constructors
 
-        public Initiative(SR5Character owner, Attribute attribute1, Attribute attribute2)
+        public Initiative(SR5Character owner, Attribute attribute1, Attribute attribute2, string name)
             :base(owner)
         {
+            mName = name;
             mAttributeOne = attribute1;
             mAttributeOne.PropertyChanged += this.OnAttributeChanged;
             mAttributeTwo = attribute2;

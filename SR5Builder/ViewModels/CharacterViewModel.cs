@@ -394,14 +394,18 @@ namespace SR5Builder.ViewModels
             character.Priorities.PropertyChanged += this.OnPrioritiesChanged;
             character.PropertyChanged += this.OnCharacterChanged;
 
+            InitialLoad();
+
             LinkAttributeChanged();
         }
 
         private void LinkAttributeChanged()
         {
-            foreach (SR5Builder.DataModels.Attribute a in character.Attributes.Values)
+            foreach (var a in character.Attributes.Values)
             {
                 a.PropertyChanged += this.OnAttributeChanged;
+                OnAttributeChanged(a, new PropertyChangedEventArgs(nameof(Attribute.ImprovedRating)));
+                OnAttributeChanged(a, new PropertyChangedEventArgs(nameof(Attribute.AugmentedRating)));
             }
         }
 
@@ -431,6 +435,19 @@ namespace SR5Builder.ViewModels
         #endregion // Commands
 
         #region Private Methods
+
+        private void InitialLoad()
+        {
+            SpecialChoices = new ObservableCollection<SpecialChoice>(
+                                     from s in GlobalData.Specials
+                                     where s.Priority == character.Priorities.Special
+                                     select s
+                                     );
+            AvailableMetatypes = new ObservableCollection<NamePoints>(
+                                 from s in GlobalData.Metatypes.Values
+                                 where s.SpecialPoints.ContainsKey(character.Priorities.Metatype)
+                                 select new NamePoints(s.Name, s.SpecialPoints[character.Priorities.Metatype]));
+        }
 
         private void OnPrioritiesChanged(object sender, PropertyChangedEventArgs e)
         {
@@ -574,12 +591,13 @@ namespace SR5Builder.ViewModels
 
         public void Print()
         {
-            var dlg = new SaveFileDialog();
-            dlg.AddExtension = true;
-            dlg.Filter = "Portable Document Format (*.pdf)|*.pdf";
-            dlg.FilterIndex = 0;
-            dlg.OverwritePrompt = true;
-
+            var dlg = new SaveFileDialog()
+            {
+                AddExtension = true,
+                Filter = "Portable Document Format (*.pdf)|*.pdf",
+                FilterIndex = 0,
+                OverwritePrompt = true
+            };
             if (dlg.ShowDialog() == true)
             {
                 string path = dlg.FileName;

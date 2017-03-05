@@ -19,5 +19,19 @@ namespace SR5Builder.Prototypes.Loaders
             skill.ImprovedRating = Improved;
             return skill;
         }
+
+        public SkillLoader()
+        { }
+
+        public SkillLoader(Skill s)
+        {
+            Name = s.Name;
+            Base = s.BaseRating;
+            GroupName = s.GroupName;
+            Improved = s.ImprovedRating;
+            Kind = s.Kind;
+            Limit = s.UsualLimit;
+            LinkedAttribute = s.LinkedAttribute;
+        }
     }
 }

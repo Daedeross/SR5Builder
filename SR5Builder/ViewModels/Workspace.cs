@@ -8,6 +8,8 @@ using System.Windows.Input;
 using Helpers;
 using SR5Builder.DataModels;
 using SR5Builder.Dialogs;
+using Microsoft.Win32;
+using SR5Builder.Prototypes.Loaders;
 
 namespace SR5Builder.ViewModels
 {
@@ -79,8 +81,10 @@ namespace SR5Builder.ViewModels
             bool? result = dlg.ShowDialog();
             if (result == true)
             {
-                SR5Character c = new SR5Character(vm.Settings.CurrentSettings.AsQueryable());
-                c.Name = "Character " + (CharacterVMs.Count + 1).ToString();
+                SR5Character c = new SR5Character(vm.Settings.CurrentSettings.AsQueryable())
+                {
+                    Name = "Character " + (CharacterVMs.Count + 1).ToString()
+                };
                 CharacterViewModel cvm = new CharacterViewModel(c);
                 //cvm.DisplayName = 
                 CharacterVMs.Add(cvm);
@@ -93,7 +97,45 @@ namespace SR5Builder.ViewModels
             return true;
         }
 
-        #endregion // AddNewCharacter
+            #endregion // AddNewCharacter
+            #region OpenCharacter
+
+        private RelayCommand mOpenCharacter;
+        public ICommand OpenCharacter
+        {
+            get
+            {
+                if (mOpenCharacter == null)
+                {
+                    mOpenCharacter = new RelayCommand(
+                        parap => this.OpenCharacterExecute(),
+                        param => this.OpenCharacterCanExecute()
+                        );
+                }
+                return mOpenCharacter;
+            }
+        }
+
+        private void OpenCharacterExecute()
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "SR5 Character (*.sr5)|*.sr5";
+            if (dlg.ShowDialog() == true)
+            {
+                CharacterLoader loader = CharacterLoader.LoadFromFile(dlg.FileName);
+                SR5Character c = new SR5Character(loader);
+                CharacterViewModel cvm = new CharacterViewModel(c);
+                CharacterVMs.Add(cvm);
+                SelectedCharacter = CharacterVMs.Last();
+            }
+        }
+
+        private bool OpenCharacterCanExecute()
+        {
+            return true;
+        }
+
+            #endregion // OpenCharacter
             #region SaveCharacter
 
         private RelayCommand mSaveCharacter;

@@ -8,7 +8,7 @@ namespace SR5Builder.Prototypes
 {
     public class SkillPrototype: TraitExtPrototype, IComparable<SkillPrototype>
     {
-        public string Name { get; set; }
+        //public string Name { get; set; }
 
         public string LinkedAttribute { get; set; }
 

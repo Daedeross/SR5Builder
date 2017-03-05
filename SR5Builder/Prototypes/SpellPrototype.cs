@@ -22,6 +22,22 @@ namespace SR5Builder.Prototypes
 
         public string[] Tags { get; set; }
 
+        public SpellPrototype()
+        { }
+
+        public SpellPrototype(Spell s)
+        {
+            Name = s.Name;
+            Page = s.Page;
+            Book = s.Book;
+            Type = s.Type;
+            Range = s.Range;
+            Damage = s.Damage;
+            Duration = s.Duration;
+            Drain = s.Drain;
+            Tags = s.Tags;
+        }
+
         /// <summary>
         /// Creates Spell instance from the loader and attatches it to a character.
         /// </summary>

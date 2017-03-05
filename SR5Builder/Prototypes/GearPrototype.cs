@@ -11,7 +11,7 @@ namespace SR5Builder.Prototypes
     [XmlInclude(typeof(WeaponPrototype)),
     XmlInclude(typeof(MeleeWeaponPrototype)),
     XmlInclude(typeof(RangedWeaponPrototype))]
-    public class GearPrototype: TraitPrototype
+    public class GearPrototype : TraitPrototype
     {
         #region Properties
 
@@ -39,14 +39,14 @@ namespace SR5Builder.Prototypes
                 if (Max > 1 && CostVector.Length > 1)
                 {
                     bool isSimple = true;
-                    decimal[] diffs = new decimal[CostVector.Length-1];
-                    for (int i = 0; i < CostVector.Length-1; i++)
+                    decimal[] diffs = new decimal[CostVector.Length - 1];
+                    for (int i = 0; i < CostVector.Length - 1; i++)
                     {
-                        diffs[i] = CostVector[i+1] - CostVector[i];
+                        diffs[i] = CostVector[i + 1] - CostVector[i];
                     }
                     for (int i = 1; i < diffs.Length; i++)
                     {
-                        if (diffs[i] != diffs[i-1])
+                        if (diffs[i] != diffs[i - 1])
                         {
                             isSimple = false;
                             break;

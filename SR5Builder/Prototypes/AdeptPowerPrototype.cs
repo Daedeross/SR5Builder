@@ -44,7 +44,7 @@ namespace SR5Builder.Prototypes
         {
             CheckExt(ext);
 
-            AdeptPower p = new AdeptPower(owner)
+            AdeptPower p = new AdeptPower(owner, Name, ext)
             {
                 Min = Min,
                 Max = Max,

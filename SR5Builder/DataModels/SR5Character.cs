@@ -618,20 +618,40 @@ namespace SR5Builder.DataModels
 
         public SR5Character(IQueryable<ViewModels.Setting> settings)
         {
-            SettingsPrototype loader = new SettingsPrototype();
-            loader.Properties = (from set in settings
-                                 select set).ToDictionary(s => s.Key, s => s.Value);
-            Initialize(loader);
+            SettingsPrototype prototype = new SettingsPrototype()
+            {
+                Properties = settings.ToDictionary(s => s.Key, s => s.Value)
+            };
+            Initialize(prototype);
         }
 
         public SR5Character(CharacterLoader loader)
         {
             Settings = loader.Settings;
-            Priorities = new Priorities();
-            Priorities.ChangeMethod(Settings.Method);
+            Priorities = new Priorities(
+                Settings.Method,
+                loader.Priorities.Metatype,
+                loader.Priorities.Attributes,
+                loader.Priorities.Special,
+                loader.Priorities.Special,
+                loader.Priorities.Resources);
+            //Priorities.ChangeMethod(Settings.Method);
             MetatypeStats = new MetatypeStats();
+            //Priorities.Metatype = loader.Priorities.Metatype;
+            //Priorities.Attributes = loader.Priorities.Attributes;
+            //Priorities.Special = loader.Priorities.Special;
+            //Priorities.Skills = loader.Priorities.Special;
+            //Priorities.Resources = loader.Priorities.Resources;
+
             Metatype = loader.Metatype;
-            
+
+            SpecialChoice[] newSpecials = (from s in GlobalData.Specials
+                                           where s.Priority == Priorities.Special
+                                           select s).ToArray();
+            if (newSpecials.Count() == 0)
+                mSpecialChoice = SpecialChoice.None(Priorities.Special);
+            else mSpecialChoice = newSpecials.First(sc => sc.Name == loader.SpecialChoice);
+
             KarmaCosts.CollectionChanged += OnKarmaCostsCollectionChanged;
             Augmentables = new ObservableDictionary<string, IAugmentable>();
 
@@ -640,8 +660,6 @@ namespace SR5Builder.DataModels
 
             Armor = new Armor(this);
             Augmentables.Add("Armor", Armor);
-
-            SpecialChoice = loader.SpecialChoice;
 
             var attrDict = loader.Attributes.ToDictionary(al => al.Name, al => al);
             try
@@ -654,13 +672,41 @@ namespace SR5Builder.DataModels
                 Logic.SetFromLoader(attrDict["Logic"]);
                 Intuition.SetFromLoader(attrDict["Intuition"]);
                 Charisma.SetFromLoader(attrDict["Charisma"]);
-                SpecialAttribute.SetFromLoader(attrDict["SpecialAttribute"]);
+                SpecialAttribute.SetFromLoader(attrDict["Special"]);
+                Edge.SetFromLoader(attrDict["Edge"]);
+                PowerPoints.SetFromLoader(attrDict["PowerPoints"]);
             }
             catch (KeyNotFoundException ex)
             {
                 Debug.WriteLine(ex);
                 throw;
             }
+
+            foreach (var skill in loader.Skills)
+            {
+                SkillList.Add(skill.Name, skill.ToSkill(this));
+            }
+            foreach (var skillGroup in loader.SkillGroups)
+            {
+                SkillGroupsList.Add(skillGroup.Name, skillGroup.ToSkillGroup(this));
+            }
+            foreach (var spell in loader.Spells)
+            {
+                SpellList.Add(spell.Name, spell.ToSpell(this));
+            }
+            foreach (var power in loader.AdeptPowers)
+            {
+                PowerList.Add(power.Name, power.ToPower(this));
+            }
+
+            // Notify Changes
+            Priorities.Refresh();
+            ResetSpecialProperties();
+            mSpecialAttribute.Name = SpecialKind.ToString();
+            mSpecialAttribute.BaseRating = mSpecialAttribute.BaseRating;
+            OnPropertyChanged(nameof(SpecialChoice));
+            OnPropertyChanged(nameof(SpecialKind));
+            OnPropertyChanged(nameof(SpecialAttribute));
         }
 
         private void Initialize(SettingsPrototype settings)
@@ -735,9 +781,10 @@ namespace SR5Builder.DataModels
 
             mEdge = new Attribute(this, "Edge");
 
-            mEssence = new Essence(this, "Essence");
-            mEssence.BaseRating = 6;    // may get pulled from settings later
-
+            mEssence = new Essence(this, "Essence")
+            {
+                BaseRating = 6    // may get pulled from settings later?
+            };
             mSpecialAttribute = new SpecialAttribute(this);
 
             // Add attributes to containing Dictionary
@@ -769,15 +816,11 @@ namespace SR5Builder.DataModels
             }
             
             // Initiatives
-            PhysicalInitiative = new Initiative(this, mReaction, mIntuition);
-            PhysicalInitiative.Name = "Initiative";
+            PhysicalInitiative = new Initiative(this, mReaction, mIntuition, "Initiative");
             ARInititative = PhysicalInitiative;
-            ColdSimInitiative = new Initiative(this, mIntuition, mLogic);
-            ColdSimInitiative.Name = "Cold Sim Initiative";
-            HotSimInitiative = new Initiative(this, mIntuition, mLogic);
-            HotSimInitiative.Name = "Hot Sim Initiative";
-            AstralInitiative = new Initiative(this, mIntuition, mIntuition);
-            AstralInitiative.Name = "Astral Initiative";
+            ColdSimInitiative = new Initiative(this, mIntuition, mLogic, "Cold Sim Initiative");
+            HotSimInitiative = new Initiative(this, mIntuition, mLogic, "Hot Sim Initiative");
+            AstralInitiative = new Initiative(this, mIntuition, mIntuition, "Astral Initiative");
 
             Augmentables.Add(PhysicalInitiative.Name, PhysicalInitiative);
             Augmentables.Add(ColdSimInitiative.Name, ColdSimInitiative);

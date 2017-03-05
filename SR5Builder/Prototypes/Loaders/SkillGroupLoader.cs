@@ -13,8 +13,21 @@ namespace SR5Builder.Prototypes.Loaders
         public int Improved { get; set; }
         public SkillGroup ToSkillGroup(SR5Character owner)
         {
-            return base.NewSkillGroup(owner);
+            var sg = base.NewSkillGroup(owner);
+            sg.BaseRating = Base;
+            sg.ImprovedRating = Improved;
+            return sg;
         }
 
+        public SkillGroupLoader()
+        { }
+
+        public SkillGroupLoader(SkillGroup sg)
+        {
+            Name = sg.Name;
+            Base = sg.BaseRating;
+            Improved = sg.ImprovedRating;
+            SkillNames = sg.Skills.Keys.ToList();
+        }
     }
 }

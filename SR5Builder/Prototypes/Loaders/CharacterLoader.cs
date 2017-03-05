@@ -13,17 +13,23 @@ namespace SR5Builder.Prototypes.Loaders
     public class CharacterLoader
     {
         #region Properties
-
+        
         public GenSettings Settings { get; set; }
+        [XmlElement]
         public string Name { get; set; }
 
         public string Metatype { get; set; }
-        public SpecialChoice SpecialChoice { get; set; }
 
-        #region Attributes
+        public PrioritiesLoader Priorities { get; set; }
+
+        public string SpecialChoice { get; set; }
+
+        #region Collections
         public List<AttributeLoader> Attributes { get; set; }
-
         public List<SkillLoader> Skills { get; set; }
+        public List<SkillGroupLoader> SkillGroups { get; set; }
+        public List<SpellLoader> Spells { get; set; }
+        public List<AdeptPowerLoader> AdeptPowers { get; set; }
         #endregion
 
         #endregion
@@ -36,11 +42,26 @@ namespace SR5Builder.Prototypes.Loaders
             Attributes = new List<AttributeLoader>();
         }
 
-        public CharacterLoader(SR5Character character)
+        public CharacterLoader(SR5Character c)
         {
-            Settings = character.Settings;
+            Settings = c.Settings;
 
-            Attributes = character.Attributes.Select(a =>
+            Name = c.Name;
+
+            Metatype = c.Metatype;
+
+            SpecialChoice = c.SpecialChoice.Name;
+
+            Priorities = new PrioritiesLoader
+            {
+                Metatype = c.Priorities.Metatype,
+                Attributes = c.Priorities.Attributes,
+                Special = c.Priorities.Special,
+                Skills = c.Priorities.Skills,
+                Resources = c.Priorities.Resources
+            };
+
+            Attributes = c.Attributes.Select(a =>
                 new AttributeLoader
                 {
                     Name     = a.Key,
@@ -48,18 +69,14 @@ namespace SR5Builder.Prototypes.Loaders
                     Improved = a.Value.ImprovedRating
                 }).ToList();
 
-            Skills = character.SkillList.Select(s =>
-            new SkillLoader
-            {
-                Name = s.Key,
-                Base = s.Value.BaseRating,
-                GroupName = s.Value.GroupName,
-                Improved = s.Value.ImprovedRating,
-                Kind = s.Value.Kind,
-                Limit = s.Value.UsualLimit,
-                LinkedAttribute = s.Value.LinkedAttribute
-            }).ToList();
-
+            Skills = c.SkillList.Select(s =>
+                new SkillLoader(s.Value)).ToList();
+            SkillGroups = c.SkillGroupsList.Select(s =>
+                new SkillGroupLoader(s.Value)).ToList();
+            Spells = c.SpellList.Select(s =>
+                new SpellLoader(s.Value)).ToList();
+            AdeptPowers = c.PowerList.Select(p =>
+                new AdeptPowerLoader(p.Value)).ToList();
         }
 
         public void WriteToFile(string filename)
@@ -71,7 +88,7 @@ namespace SR5Builder.Prototypes.Loaders
             }
         }
 
-        public CharacterLoader LoadFromFile(string filename)
+        public static CharacterLoader LoadFromFile(string filename)
         {
             using (var stream = new StreamReader(filename))
             {

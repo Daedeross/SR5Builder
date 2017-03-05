@@ -33,7 +33,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -174,7 +174,9 @@
     <Compile Include="Prototypes\Loaders\AdeptPowerLoader.cs" />
     <Compile Include="Prototypes\Loaders\AttributeLoader.cs" />
     <Compile Include="Prototypes\Loaders\CharacterLoader.cs" />
+    <Compile Include="Prototypes\Loaders\GearLoader.cs" />
     <Compile Include="Prototypes\Loaders\LeveledTraitLoader.cs" />
+    <Compile Include="Prototypes\Loaders\PrioritiesLoader.cs" />
     <Compile Include="Prototypes\Loaders\SkillGroupLoader.cs" />
     <Compile Include="Prototypes\Loaders\SkillLoader.cs" />
     <Compile Include="Prototypes\Loaders\SpecialAttributeLoader.cs" />

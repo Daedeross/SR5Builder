@@ -14,6 +14,8 @@
                     Command="{Binding PrintCharacterCommand, Source={StaticResource workspace}}" />
         <KeyBinding Key="S" Modifiers="Ctrl"
                     Command="{Binding SaveCharacter, Source={StaticResource workspace}}" />
+        <KeyBinding Key="O" Modifiers="Ctrl"
+                    Command="{Binding OpenCharacter, Source={StaticResource workspace}}" />
     </Window.InputBindings>
     <Grid DataContext="{StaticResource workspace}">
         <Grid.RowDefinitions>
@@ -24,6 +26,7 @@
         <Menu Name="MainMenu">
             <MenuItem Header="_File">
                 <MenuItem Header="_New" Command="{Binding AddNewCharacter}" InputGestureText="Ctl+N" />
+                <MenuItem Header="_Open" Command="{Binding OpenCharacter}" InputGestureText="Ctl+O" />
                 <MenuItem Header="_Save" Command="{Binding SaveCharacter}" InputGestureText="Ctl+S" />
                 <MenuItem Header="_Print" Command="{Binding PrintCharacterCommand}" InputGestureText="Ctrl+P">
                     <MenuItem.Style>

@@ -26,6 +26,7 @@ namespace SR5Builder.Prototypes
         public string ExtLabel { get; set; }
 
         public string ExtPrompt { get; set; }
+        
 
         protected void CheckExt(string ext)
         {

@@ -102,8 +102,7 @@ namespace SR5Builder.DataModels
                         if (baseType == typeof(KeyValuePair<,>))
                         {
                             object a = valueType.GetProperty("Value").GetValue(item, null);
-                            IEssenceCost mod = a as IEssenceCost;
-                            if (mod != null)
+                            if (a is IEssenceCost mod)
                             {
                                 EssenceCosts.Remove(mod);
                                 mod.PropertyChanged -= OnSubscribedChanged;
@@ -125,8 +124,7 @@ namespace SR5Builder.DataModels
                         if (baseType == typeof(KeyValuePair<,>))
                         {
                             object a = valueType.GetProperty("Value").GetValue(item, null);
-                            IEssenceCost mod = a as IEssenceCost;
-                            if (mod != null)
+                            if (a is IEssenceCost mod)
                             {
                                 EssenceCosts.Remove(mod);
                                 mod.PropertyChanged += OnSubscribedChanged;
@@ -158,11 +156,9 @@ namespace SR5Builder.DataModels
                         if (baseType == typeof(KeyValuePair<,>))
                         {
                             object a = valueType.GetProperty("Value").GetValue(item, null);
-
-                            Gear gear = a as Gear;
-
-                            if (gear != null)
-                            {   
+                            
+                            if (a is Gear gear)
+                            {
                                 (gear).PropertyChanged -= OnSubscribedChanged;
                                 (gear).Mods.CollectionChanged -= OnGearModsChanged;
 
@@ -196,9 +192,7 @@ namespace SR5Builder.DataModels
                         {
                             object a = valueType.GetProperty("Value").GetValue(item, null);
 
-                            Gear gear = a as Gear;
-
-                            if (gear != null)
+                            if (a is Gear gear)
                             {
                                 gear.PropertyChanged += OnSubscribedChanged;
                                 gear.Mods.CollectionChanged += OnGearModsChanged;

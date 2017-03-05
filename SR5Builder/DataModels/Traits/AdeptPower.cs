@@ -64,13 +64,18 @@ namespace SR5Builder.DataModels
             get { return mFlatPoints + mBaseRating * mPointsPerLevel; }
         }
 
+        public string OriginalName { get; private set; }
+        public string Ext { get; private set; }
+
         #endregion // Properties
 
         #region Constructors
 
-        public AdeptPower(SR5Character c)
+        public AdeptPower(SR5Character c, string originalName, string ext)
             : base(c)
         {
+            OriginalName = originalName;
+            Ext = ext;
             GivenAugments = new ObservableCollection<Augment>();
         }
 

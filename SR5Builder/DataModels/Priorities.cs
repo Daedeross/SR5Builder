@@ -220,6 +220,26 @@ namespace SR5Builder.DataModels
         {
             Initialize();
         }
+
+        public Priorities(CharGenMethod method, Priority m, Priority a, Priority sp, Priority sk, Priority r)
+        {
+            Initialize();
+            Method = method;
+            mMetatype = m;
+            mAttributes = a;
+            mSpecial = sp;
+            mSkills = sk;
+            mResources = r;
+        }
+
+        public void Refresh()
+        {
+            OnPropertyChanged(nameof(Metatype));
+            OnPropertyChanged(nameof(Attributes));
+            OnPropertyChanged(nameof(Special));
+            OnPropertyChanged(nameof(Skills));
+            OnPropertyChanged(nameof(Resources));
+        }
 		
 		public void Reset()
 		{

@@ -16,5 +16,15 @@ namespace SR5Builder.Prototypes.Loaders
         {
             return base.ToSpell(owner, IsFree, Ext);
         }
+
+        public SpellLoader()
+        { }
+
+        public SpellLoader(Spell s)
+            :base (s)
+        {
+            IsFree = s.Free;
+            Ext = "";
+        }
     }
 }
